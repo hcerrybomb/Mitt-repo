@@ -9,10 +9,7 @@
 html, body{width: 100%;height: 100%;margin: 0;padding: 0;}
 #one{grid-area:a;}#two{grid-area:b;}#three{grid-area:c;}
 #four{grid-area:d;}#five{grid-area:e;}#six{grid-area:f;}
-div{border: 1px solid rgb(0, 255, 157);}
-/*a comment*/
-/*a comment*/
-/*a comment*/
+div{border: 1px solid rgb(0, 255, 157); box-shadow:5px 5px 5px black;}
 #container{
 background-image: url("BG.png");
 width: inherit;
@@ -23,29 +20,20 @@ margin: 0;
 padding: 10px;
 
 display:grid;
-grid-template-columns: repeat(38, 1fr);
-grid-template-rows: repeat(20, 1fr);
+grid-template-columns: repeat(19, 1fr);
+grid-template-rows: repeat(10, 1fr);
 grid-template-areas:    
-"a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a"
-"a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a"
-"b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b"
-"b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b"
-"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
-"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
-"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
-"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
-"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
-"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
-"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
-"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
-"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
-"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
-"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
-"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
-"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
-"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
-"f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f"
-"f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f";}
+
+"a a a a a a a a a a a a a a a a a a a"
+"b b b b b b b b b b b b b b b b b b b"
+"c c c e e e e e e e e e e e e e e e d"
+"c c c e e e e e e e e e e e e e e e d"
+"c c c e e e e e e e e e e e e e e e d"
+"c c c e e e e e e e e e e e e e e e d"
+"c c c e e e e e e e e e e e e e e e d"
+"c c c e e e e e e e e e e e e e e e d"
+"c c c e e e e e e e e e e e e e e e d"
+"f f f f f f f f f f f f f f f f f f f";}
 .gridbox{
     padding:none;
     height:100%;
@@ -89,26 +77,27 @@ grid-template-areas:
 .text{
     position:absolute;
     
-    left:0;
+    left:5%;
     right:0;
-    margin-right:auto;
-    margin-left:auto;
-    width:68%;
+
+    width:fit-content;
     height:2%;
 
     display:flex;
     align-items:center;
     justify-content:left;
 
-    font-size:26px;font-family:monospace;
+    font-size:1.7vw  ;
+    font-family:monospace;
     color:rgba(0, 255, 255, 0.597);
     text-shadow:3px 3px 5px rgba(0, 0, 0, 0.75);
     transition:all .3s;
+    
 }
 .text:hover{
     color:cyan;
     text-shadow:7px 7px 20px rgba(0, 225, 255, 0.993);
-    font-size:29px;
+    font-size:1.8vw;
 }
 #listbox1{top:5%;}
 #listbox2{top:17.5%}
@@ -125,20 +114,23 @@ grid-template-areas:
 .menuitem{
     float:left;
     height:100%;
-    margin-left:2%;
+    margin-left:1%;
     
     width:10%;
     box-shadow: rgb(0, 208, 255) -0px -16px 1px -12px inset, 0px 40px 10px black;
-    color:cyan;
+    color:rgb(255, 255, 255);
     display:flex;
     align-items:flex-end;
     justify-content:center;
     font-family:monospace;
-    font-size:20px;
+    font-size:2vw;
+    font-weight: bolder;
     transition:all .3s;
 }
 .menuitem:hover{
     box-shadow: rgb(0, 208, 255) 0px -25px 10px -12px inset, 0px 30px 15px black;
+    font-size:2.2vw;
+    text-shadow:5px 5px 15px rgb(0, 247, 255);
 
 }
 
@@ -170,15 +162,15 @@ function imgout(){
     <div id=three class=gridbox>
         <img id=img src="tall.png" onmouseover="imgin()" onmouseleave="imgout()">
 
-        <div class=text id=listbox1 onmouseover="imgin()" onmouseleave="imgout()">L I N K 1</div>
+        <div class=text id=listbox1 onmouseover="imgin()" onmouseleave="imgout()">LINK1</div>
 
-        <div class=text id=listbox2 onmouseover="imgin()" onmouseleave="imgout()">L I N K 2</div>
+        <div class=text id=listbox2 onmouseover="imgin()" onmouseleave="imgout()">LINK1</div>
 
-        <div class=text id=listbox3 onmouseover="imgin()" onmouseleave="imgout()">L I N K 3</div>
+        <div class=text id=listbox3 onmouseover="imgin()" onmouseleave="imgout()">LINK1</div>
 
-        <div class=text id=listbox4 onmouseover="imgin()" onmouseleave="imgout()">L I N K 4</div>
+        <div class=text id=listbox4 onmouseover="imgin()" onmouseleave="imgout()">LINK1</div>
 
-        <div class=text id=listbox5 onmouseover="imgin()" onmouseleave="imgout()">L I N K 5</div>
+        <div class=text id=listbox5 onmouseover="imgin()" onmouseleave="imgout()">LINK1</div>
         
     </div>
     <div id=four class=gridbox><span></span></div>
