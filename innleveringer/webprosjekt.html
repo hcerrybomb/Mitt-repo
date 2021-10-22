@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+html, body{width: 100%;height: 100%;margin: 0;padding: 0;}
+#one{grid-area:a;}#two{grid-area:b;}#three{grid-area:c;}
+#four{grid-area:d;}#five{grid-area:e;}#six{grid-area:f;}
+div{border: 1px solid rgb(0, 255, 157);}
+
+#container{
+background-image: url("BG.png");
+width: inherit;
+height: inherit;
+box-sizing: border-box;
+gap:15px;
+margin: 0;
+padding: 10px;
+
+display:grid;
+grid-template-columns: repeat(38, 1fr);
+grid-template-rows: repeat(20, 1fr);
+grid-template-areas:    
+"a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a"
+"a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a"
+"b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b"
+"b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b"
+"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
+"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
+"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
+"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
+"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
+"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
+"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
+"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
+"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
+"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
+"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
+"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
+"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
+"c c c c c c c e e e e e e e e e e e e e e e e e e e e e e e e e e e e e d d"
+"f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f"
+"f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f";}
+.gridbox{
+    padding:none;
+    height:100%;
+    width:100%;
+    box-sizing: border-box;
+    /*box-shadow:rgba(240, 46, 170, 0.1) 5px 5px, rgba(240, 46, 170, 0.05) 10px 10px;*/
+    border-radius: 10px;
+    overflow:hidden;
+    transition: all .5s;
+
+}
+.gridbox:hover{
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
+
+#img{
+    height:100%;
+    width:100%;
+    transition: filter .3s, -webkit-filter .3s, -moz-filter .3s, -o-filter .3s, -ms-filter .3s, transform .5s, color .6s, font-size .6s, text-shadow .6s;  
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    transform:scale(1.05);  
+}
+#img:hover{
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    transform:scale(1.00);
+}
+
+#three{
+    position:relative;
+}
+
+.text{
+    position:absolute;
+    
+    left:0;
+    right:0;
+    margin-right:auto;
+    margin-left:auto;
+    width:68%;
+    height:2%;
+
+    display:flex;
+    align-items:center;
+    justify-content:left;
+
+    font-size:26px;font-family:monospace;
+    color:rgba(0, 255, 255, 0.597);
+    text-shadow:3px 3px 5px rgba(0, 0, 0, 0.75);
+    transition:all .3s;
+}
+.text:hover{
+    color:cyan;
+    text-shadow:7px 7px 20px rgba(0, 225, 255, 0.993);
+    font-size:29px;
+}
+#listbox1{top:5%;}
+#listbox2{top:17.5%}
+#listbox3{top:30%}
+#listbox4{top:42.5%}
+#listbox5{bottom:8%}
+
+#logo{
+    float:left;
+    width:4%;
+    height:100%;
+    color:cyan;
+}
+.menuitem{
+    float:left;
+    height:100%;
+    margin-left:2%;
+    
+    width:10%;
+    box-shadow: rgb(0, 208, 255) -0px -16px 1px -12px inset, 0px 40px 10px black;
+    color:cyan;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    font-family:monospace;
+    font-size:20px;
+    transition:all .3s;
+}
+.menuitem:hover{
+    box-shadow: rgb(0, 208, 255) 0px -25px 10px -12px inset, 0px 30px 15px black;
+
+}
+
+</style>
+<script>
+function imgin(){
+document.getElementById("img").setAttribute(
+       "style", "filter: blur(0px); -webkit-filter: blur(0px); -moz-filter: blur(0px); -o-filter: blur(0px); -ms-filter: blur(0px); transform:scale(1.00);");
+}
+function imgout(){
+    document.getElementById("img").setAttribute(
+       "style", "filter: blur(3px); -webkit-filter: blur(3px); -moz-filter: blur(3px); -o-filter: blur(3px); -ms-filter: blur(3px); transform:scale(1.05);");
+}
+</script>
+</head>
+<div id=container>
+    <div id=one class=gridbox>
+        <div id=logo>
+            LO
+            GO
+        </div>
+        <div class="menuitem">Link</div>
+        <div class="menuitem">Link</div>
+        <div class="menuitem">Link</div>
+        <div class="menuitem">Link</div>
+        <div class="menuitem">Link</div>
+    </div>
+    <div id=two class=gridbox><span></span></div>
+    <div id=three class=gridbox>
+        <img id=img src="tall.png" onmouseover="imgin()" onmouseleave="imgout()">
+
+        <div class=text id=listbox1 onmouseover="imgin()" onmouseleave="imgout()">L I N K 1</div>
+
+        <div class=text id=listbox2 onmouseover="imgin()" onmouseleave="imgout()">L I N K 2</div>
+
+        <div class=text id=listbox3 onmouseover="imgin()" onmouseleave="imgout()">L I N K 3</div>
+
+        <div class=text id=listbox4 onmouseover="imgin()" onmouseleave="imgout()">L I N K 4</div>
+
+        <div class=text id=listbox5 onmouseover="imgin()" onmouseleave="imgout()">L I N K 5</div>
+        
+    </div>
+    <div id=four class=gridbox><span></span></div>
+    <div id=five class=gridbox><span></span></div>
+    <div id=six class=gridbox><span></span></div>
+    </div>
+<body>
+    
+</body>
+</html>
