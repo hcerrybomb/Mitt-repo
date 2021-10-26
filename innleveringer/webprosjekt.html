@@ -9,7 +9,7 @@
 html, body{width: 100%;height: 100%;margin: 0;padding: 0;}
 #one{grid-area:a;}#three{grid-area:c;}
 #four{grid-area:d;}#five{grid-area:e;}#six{grid-area:f;}
-div{border: 0px solid rgb(134, 136, 135);
+div{border: 1px solid rgb(134, 136, 135);
     box-shadow:0.52vw 0.52vw 0.52vw black;
 
 
@@ -65,7 +65,7 @@ https://discohook.org/?data=eyJtZXNzYWdlcyI6W3siZGF0YSI6eyJjb250ZW50IjpudWxsLCJl
     width:100%;
     box-sizing: border-box;
     border-radius: 0.52vw;
-    overflow:hidden;
+    
     transition: all .5s;
 
 }
@@ -98,6 +98,16 @@ https://discohook.org/?data=eyJtZXNzYWdlcyI6W3siZGF0YSI6eyJjb250ZW50IjpudWxsLCJl
     -ms-filter: blur(0);
     transform:scale(1.00);
 }
+#one{overflow:hidden;}
+#three{overflow:hidden;}
+
+#four{overflow:hidden;}
+
+#five{overflow:hidden;}
+#six{overflow:hidden;}
+
+
+
 
 #three{
     position:relative;
@@ -122,22 +132,18 @@ https://discohook.org/?data=eyJtZXNzYWdlcyI6W3siZGF0YSI6eyJjb250ZW50IjpudWxsLCJl
     transform:scale(1.00);
 }
 
-#four{
-    position:relative;
-}
-
-
 
 .text{
     position:absolute;
-    left:5%;
-    right:0;
+    margin-right:auto;
+    margin-left:auto;
     width:fit-content;
-    height:2%;
+    left:8%;
+    height:6%;
     display:flex;
     align-items:center;
-    justify-content:left;
-    font-size:1.7vw  ;
+    justify-content:center;
+    font-size:1.6vw  ;
     font-family:monospace;
     color:rgba(0, 255, 255, 0.597);
     text-shadow:0.156vw 0.156vw 0.156vw rgba(0, 0, 0, 0.75);
@@ -148,15 +154,26 @@ https://discohook.org/?data=eyJtZXNzYWdlcyI6W3siZGF0YSI6eyJjb250ZW50IjpudWxsLCJl
 .text:hover{
     color:cyan;
     text-shadow:0.364vw 0.364vw 1.04vw rgba(0, 225, 255, 0.993);
-    font-size:1.8vw;
-    
+    font-size:1.7vw;   
+}
+#listbox1{top:5%;}
+#listbox2{top:17.5%}
+#listbox3{top:30%}
+#listbox4{top:42.5%}
+#listbox5{bottom:8%}
+
+
+
+/*############################################*/
+#four{
+    position:relative;
 }
 .text2{
     position:absolute;
     left:0;
     right:0;
     box-shadow:none;
-    height:2%;
+    height:50%;
     display:flex;
     align-items:center;
     justify-content:left;
@@ -172,18 +189,13 @@ https://discohook.org/?data=eyJtZXNzYWdlcyI6W3siZGF0YSI6eyJjb250ZW50IjpudWxsLCJl
     text-shadow:0.364vw 0.364vw 1.04vw rgba(0, 225, 255, 0.993);
     font-size:1.8vw;
 }
-
-#listbox1{top:5%;}
-#listbox2{top:17.5%}
-#listbox3{top:30%}
-#listbox4{top:42.5%}
-#listbox5{bottom:8%}
-#listbox12{top:5%;}
-#listbox22{top:17.5%}
-#listbox32{top:30%}
-#listbox42{top:42.5%}
-#listbox52{bottom:8%}
-
+#listbox12{top:0;
+    background-color:rgba(255, 255, 255, 0.316);
+}
+#listbox52{bottom:0;
+    box-shadow:5px 5px 5px red;
+}
+/*############################################*/
 #logo{
     
     float:left;
@@ -219,7 +231,7 @@ https://discohook.org/?data=eyJtZXNzYWdlcyI6W3siZGF0YSI6eyJjb250ZW50IjpudWxsLCJl
     margin-left:1%;
     margin-right:1%;
     height:100%;
-    width:12%;
+    width:14%;
         
     
     box-shadow: 
@@ -229,13 +241,13 @@ https://discohook.org/?data=eyJtZXNzYWdlcyI6W3siZGF0YSI6eyJjb250ZW50IjpudWxsLCJl
     rgba(46, 240, 204, 0.1) 0 -1vw 0.052vw -0.62vw inset,
     rgba(46, 240, 204, 0.05) 0 -1vw 0.052vw -0.62vw inset,
     
-    0 2.04vw 0.52vw black;
+    0 2.04vw 0.52vw rgba(255, 0, 0, 0);
     color:rgb(255, 255, 255);
     display:flex;
-    align-items:flex-end;
+    align-items:center;
     justify-content:center;
     font-family:monospace;
-    font-size:2vw;
+    font-size:1.26vw;
     font-weight: bolder;
     transition:all .3s;
 }
@@ -249,24 +261,59 @@ https://discohook.org/?data=eyJtZXNzYWdlcyI6W3siZGF0YSI6eyJjb250ZW50IjpudWxsLCJl
     
     
     0 1.56vw 0.78vw black;
-    font-size:2.2vw;
+    font-size:1.38vw;
     text-shadow:0.26vw 0.26vw 0.78vw rgb(0, 247, 255);
 
 }
+#five{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-right:1%;
+    padding-top:0.8%;
+    padding-bottom:1.2%;
+}
 #maincontainer{
-    width:100%;
+
+    width: 100%;
     border:0px solid red;
     box-sizing:border-box;
-    height:150%;
+    height:100%;
     overflow-x:hidden;
-    overflow-y:hidden;
+    overflow-y:auto;
     color:cyan;
+    box-shadow:none;
+    transition: all .5s;
     
-
 }
+
+#maincontainer::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: 0px 0px 0px rgba(0,0,0,0.3);
+  
+  border-radius: 10px;
+}
+
+#maincontainer::-webkit-scrollbar
+{
+
+  width: 10px;
+  
+}
+
+#maincontainer::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+
+
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgba(46, 240, 204, 0.8)),color-stop(0.72, rgba(46, 240, 204, 0.6)), color-stop(0.86, rgba(46, 240, 204, 0.4)));
+    
+}
+
 #smth{
     width:100%;
-    height:110%;
+    height:150%;
+    box-shadow:none;    
 }
 
 </style>
@@ -287,6 +334,7 @@ function imgout2(){
     document.getElementById("imgblur2").setAttribute(
        "style", "filter: blur(0.156vw); -webkit-filter: blur(0.156vw); -moz-filter: blur(0.156vw); -o-filter: blur(0.156vw); -ms-filter: blur(0.156vw); transform:scale(1.05);");
 }
+
 </script>
 </head>
 <div id=container>
@@ -295,36 +343,44 @@ function imgout2(){
             <img id=imglogo src="rustlogo.png">
         </div>
         <div id=menuitemcontainer>
-            <div class="menuitem" id=item1>Link</div>
-            <div class="menuitem" id=item2>Link</div>
-            <div class="menuitem" id=item3>Link</div>
-            <div class="menuitem" id=item4>Link</div>
-            <div class="menuitem" id=item5>Link</div>
+            <div class="menuitem" id=item1>HOME</div>
+            <div class="menuitem" id=item2>SERVERS</div>
+            <div class="menuitem" id=item3>LEADERBOARDS</div>
+            <div class="menuitem" id=item4>STORE</div>
+            <div class="menuitem" id=item5>DISCORD</div>
         </div>
     </div>
     
     <div id=three class=gridbox>
         <img id=imgblur src="tall.png" onmouseover="imgin()" onmouseleave="imgout()">
-        <div class=text id=listbox1 onmouseover="imgin()" onmouseleave="imgout()">LINK1</div>
-        <div class=text id=listbox2 onmouseover="imgin()" onmouseleave="imgout()">LINK1</div>
-        <div class=text id=listbox3 onmouseover="imgin()" onmouseleave="imgout()">LINK1</div>
-        <div class=text id=listbox4 onmouseover="imgin()" onmouseleave="imgout()">LINK1</div>
-        <div class=text id=listbox5 onmouseover="imgin()" onmouseleave="imgout()">LINK1</div>
+        <div class=text id=listbox1 onmouseover="imgin()" onmouseleave="imgout()">Discord</div>
+        <div class=text id=listbox2 onmouseover="imgin()" onmouseleave="imgout()">Steam group</div>
+        <div class=text id=listbox3 onmouseover="imgin()" onmouseleave="imgout()">Twitter</div>
+        <div class=text id=listbox4 onmouseover="imgin()" onmouseleave="imgout()"></div>
+        <div class=text id=listbox5 onmouseover="imgin()" onmouseleave="imgout()">Rust</div>
     </div>
     <div id=four class=gridbox>
         <img id=imgblur2 src="tall2.png" onmouseover="imgin2()" onmouseleave="imgout2()">
+        
         <div class=text2 id=listbox12 onmouseover="imgin2()" onmouseleave="imgout2()">1</div>
-        <div class=text2 id=listbox22 onmouseover="imgin2()" onmouseleave="imgout2()">1</div>
-        <div class=text2 id=listbox32 onmouseover="imgin2()" onmouseleave="imgout2()">1</div>
-        <div class=text2 id=listbox42 onmouseover="imgin2()" onmouseleave="imgout2()">1</div>
-        <div class=text2 id=listbox52 onmouseover="imgin2()" onmouseleave="imgout2()">1</div>
+        <div class=text2 id=listbox52 onmouseover="imgin2()" onmouseleave="imgout2()">2</div>
         
     </div>
     <div id=five class=gridbox>
-        <div id =maincontainer>
+        <div id =maincontainer >
             
-            <div id=smth></div>
+            
+            <div id=smth>
+                <pre>
+hello hello
+i am some text
+there will be content here
+someday
+hopefully
+                </pre>
+            </div>
         </div>
+        
     </div>
     <div id=six class=gridbox><span></span></div>
     </div>
