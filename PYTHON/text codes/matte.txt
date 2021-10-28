@@ -1,0 +1,9 @@
+faktoriser nevner
+finn nullpunkt ved å finne en faktor i nevneren som er ulovlig (aka lik 0)
+
+så polynomdeling for å sjekke at det er lik null
+
+faktoriser polynomdivisjon resultatet
+
+
+al

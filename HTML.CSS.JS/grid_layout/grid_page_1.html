@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="grid_stylesheet.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid_page_1</title>
+    <style>
+        /*html, body {
+            height:100%;
+            padding: 0;
+            margin:0;
+        }*/
+        #main {
+            display:grid;
+            width:400px;
+            height:400px;
+            margin:auto;
+            background-color:gray;
+            /*grid-template-columns: 100px auto 50px;
+            grid-template-rows: 100p auto 100px;*/
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 5px;
+        }
+        #main > div{
+            border: 1px solid black;
+            border-radius:50%;
+        }
+        #main > div:nth-child(even):hover{
+            background-color: burlywood;
+        }
+        #main > div:nth-child(odd):active{
+            background-color:cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div id=main>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+</body>
+</html>

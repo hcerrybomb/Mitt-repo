@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etterlikning 2</title>
+    <style>
+        body {background-color:#E8B686;}
+        #main {width:85%;height:620px;border:3px solid black;display:grid;gap: 20px;padding:5px;background-color:#ffffff;
+                grid-template-columns:repeat(4, 1fr);grid-template-rows:repeat(3, 1fr);justify-items:center;align-items: center;margin:auto;
+                grid-template-areas:"a a a a"
+                                    "b c c c"
+                                    "b c c c";}
+
+        #header{background-color: none;border:0px solid black;height:100%;width:100%;}
+        #bilde1 {width:100%;max-height:100%;}
+        
+        #leftlist{background-color: none;border:0px solid black;height:100%;width:100%;}
+        .imglist{width:85%;display:block;margin-left:3%;margin-right:auto;margin-top:1%;margin-bottom:2%;}
+
+        #textbox{background-color: none;border:0px solid black;height:100%;width:100%; }
+        span{font-size:53px;font: bold;font-family:'Times New Roman',Times,serif}
+        p{color:black;font-size:23px;padding-right:5%;}
+        #footerimg {width:100%;max-height:100%;}
+
+        #header{grid-area:a;}
+        #leftlist{grid-area:b;}
+        #textbox{grid-area:c;}
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+    <div id=main>
+        <div id=header>
+            <img id=bilde1 src="vertigo-flyreiser-logo.jpg">
+        </div>
+        <div id=leftlist>
+            <img id=imglist class=imglist src="knapp-destinasjoner.jpg">
+            <img class=imglist src="knapp-charter.jpg">
+            <img class=imglist src="knapp-flygods.jpg">
+            <img class=imglist src="knapp-kontakt.jpg">
+            <img class=imglist src="knapp-prisliste.jpg">
+            <img class=imglist src="knapp-omoss.jpg">
+        </div>
+        <div id=textbox>
+            <span>Overskrift</span>
+            <p>Her kommer det masse tekst klkølkløkøk kølkøkøkø orem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat porta purus id tristique. Mauris at velit urna. Vestibulum volutpat libero tincidunt, convallis eros sed, lacinia arcu. Vivamus ut felis elit. Quisque blandit at est in mollis. In hac habitasse platea dictumst. Aenean semper, tortor eu finibus facilisis, purus felis lacinia turpis, at pharetra purus risus eget ex. Aliquam maximus id orci eget ultrices. Curabitur vestibulum ipsum tristique odio vehicula, consectetur pulvinar dui tincidunt. In venenatis, est non imperdiet lacinia, lorem sem lacinia ex, vitae luctus lorem justo sed urna. Pellentesque congue, orci non luctus aliquet, dolor dolor iaculis purus, posuere semper ante odio at ex.</p>
+            <div id=footer></div>
+            <img src="bunntekst.jpg" id=footerimg>
+        </div>
+    </div>
+</body>
+</html>
