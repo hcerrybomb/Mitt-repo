@@ -1,0 +1,314 @@
+
+=======================================
+
+2.5
+
+print(" ")
+print("sjekk om et tall er et kvadrattall")
+SjekkTall = "ja"
+while SjekkTall == "ja":
+   tall1 = int(input("sett in heltall: "))
+   import math
+   rot = math.sqrt(tall1)
+   rot = float(rot)
+   tall1 = float(tall1)
+   if tall1%rot == 0:
+       print(" ")
+       print("=====================")
+       print("det er et kvadrattall")
+       print("kvadratrot:", int(rot))
+       print("=====================")
+   else:
+       print(" ")
+       print("===========================")
+       print("det er ikke et kvadrattall:")
+       print("===========================")
+   SjekkTall = input("vil du sjekke ett til tall(ja/nei)?: ")  
+
+==============================================
+
+3.1
+
+programnavn = input("hva heter du?: ")
+print(" ")
+print("===============")
+print("hei", programnavn)
+print("===============")
+kjør = 0
+månedslønn = 0
+totaltimer = 0
+float(månedslønn)
+lønn = int
+RegUke = "ja"
+while kjør != 4:
+    if kjør < 4:
+       if RegUke == "ja":
+          timer = float(input("hvor mange timer jobbet du (bare tall) denne uken?: "))
+          print(" ")
+          print("=========================================")
+          if timer > 0:
+              if timer < 166:
+                  if timer > 37.5:
+                   lønn = 400 * timer
+                  else:
+                      lønn = (timer * 400) * 0.5
+                  lønnmedskatt = lønn - ((lønn/100)*30)
+                  print("navn:", programnavn)
+                  print("du jobbet", timer, "timer denne uken")
+                  totaltimer = totaltimer + timer
+                  print("du har jobbet totalt:", totaltimer, "timer")
+                  kjør += 1
+                  print("uker registrert:", kjør)
+                  print("lønn før skatt:", int(lønn),"kr")
+                  print("lønn etter skatt:", int(lønnmedskatt),"kr")
+                  print("=========================================")
+                  månedslønn = månedslønn + lønnmedskatt
+                  if kjør == 4:
+                      break
+                  else:
+                      RegUke = input("vil du registrere en ny uke(ja/nei)?: ")
+              else:
+                  print(timer, "er ikke et gyldig antall timer")
+                  print("=========================================")
+          else:
+              print(timer, "er ikke et gyldig antall timer")
+              print("=========================================")
+       elif RegUke == "nei":
+           print(" ")
+           print("=========================================")
+           print("navn:", programnavn)
+           print("du jobbet totalt:", totaltimer, "timer")
+           print("uker registrert:", kjør)
+           print("lønn før skatt:", int(lønn),"kr")
+           print("lønn etter skatt:", int(lønnmedskatt),"kr")
+           print("ikke nok uker for å kalkulere månedslønn")
+           print("=========================================")
+           kjør = 5
+           break
+       else:
+           print(" ")
+           print("=========================================")
+           print(RegUke,"er ikke ett gyldig svar")
+           print("=========================================")
+           RegUke = input("vil du registrere en ny uke(ja/nei)?: ")
+if kjør == 4:
+   print("du jobbet totalt", totaltimer , "timer denne måneden")
+   print("månedslønn:",int(månedslønn),"kr")
+   print("=========================================")
+
+
+===============================================
+
+3.2
+
+blå = '\x1b[0;36;49m'
+rød = '\x1b[0;29;41m'
+ingen = '\x1b[0m'
+error = '\x1b[5m'
+totalpris = 0
+NyBruker = "ja"
+antallbillett = 0
+while NyBruker == "ja":        
+   var1 = int(input("Hvor gammel er du(bare tall)?: "))
+   prisunder6 = 0
+   prisunder17 = 19
+   prisover18 = 37
+   prisover67 = 19
+   pris = int
+   totalpris = totalpris
+   if int(var1) in range (0,6):
+       pris = prisunder6
+   elif int(var1) in range (6,17):
+       pris = prisunder17
+   else:
+       if int(var1) in range (18,67):
+           pris = prisover18
+       elif int(var1) in range (67,150):
+           pris = prisover67
+       else:           
+           pris = -2
+   if pris > 0:     
+       soner = int(input("hvor mange soner(1-4)?: "))
+       if 0 < soner < 5:
+         if pris == 19:
+            pris = pris + 12*soner - 12
+         elif pris == 37:
+            pris = pris + 24*soner - 24 
+         totalpris = totalpris + pris
+         antallbillett += 1
+         print(" ")
+         print("===================================================")
+         print("billetter registrert:",blå,antallbillett,ingen,"billetter")
+         print("din pris er:",blå,pris,ingen,"kr")
+         print("totalprisen for alle passasjerene hittil er:",blå,totalpris,ingen,"kr")
+         print("===================================================")    
+         NyBruker = input("vil du legge til en billett?(ja/nei): ")    
+       else:
+          while not 0 < soner < 5:
+              print(" ")
+              print("===================================================",rød)
+              print("ERROR:",ingen,"det er ikke et gyldig antall soner")
+              print("===================================================")
+              soner = int(input("hvor mange soner(1-4)?: "))
+          else:
+              if pris == 19:
+                  pris = pris + 12*soner - 12
+              elif pris == 37:
+                  pris = pris + 24*soner - 24
+              totalpris = totalpris + pris
+              antallbillett += 1
+              print(" ")
+              print("===================================================")
+              print("billetter registrert:",blå,antallbillett,ingen,"billetter")
+              print("din pris er:",blå,pris,ingen,"kr")
+              print("totalprisen for alle passasjerene hittil er:",blå,totalpris,ingen,"kr")
+              print("===================================================")
+              NyBruker = input("vil du legge til en billett?(ja/nei): ")
+   else:
+       if pris == 0:  
+          antallbillett += 1
+          print(" ")
+          print("===================================================")
+          print("billetter registrert:",blå,antallbillett,ingen,"billetter")
+          print("din pris er:",blå,pris,ingen,"kr")
+          print("totalprisen for alle passasjerene hittil er:",blå,totalpris,ingen,"kr")
+          print("===================================================")
+          NyBruker = input("vil du legge til en billett?(ja/nei): ") 
+       elif pris == -2:                     
+          print(" ")
+          print("===================================================",rød)
+          print("ERROR:",ingen,"det er ikke en gyldig alder")
+          print("===================================================")  
+else:
+    if NyBruker == "nei":
+        print(" ")
+        print("===================================================")
+        print("billetter registrert:",blå,antallbillett,ingen,"billetter")
+        print("totalprisen for alle passasjerene er:",blå,totalpris,ingen,"kr")
+        print("===================================================")
+    else:
+        print(" ")
+        print("===================================================",rød)
+        print("ERROR:",ingen,"det er ikke ett gyldig svar")
+        print("===================================================")
+        print(" ")
+        print("===================================================")
+        print("billetter registrert:",blå,antallbillett,ingen,"billetter")
+        print("totalprisen for alle passasjerene er:",blå,totalpris,ingen,"kr")
+        print("===================================================")
+        
+==============================================
+
+3.4
+
+# og forklaring bak hver linje i koden under 
+
+primtall = [] #lager en liste kalt "primtall"
+
+for muligePrimtall in range(2, 100): #kjører loopen med verdiene for "muligePrimtall" mellom 2 og 100
+
+    erPrimtall = True #omgjør variablen "erPrimtall" til true
+
+    for num in range(2, muligePrimtall): #kjører loopen med verdiene for "num" mellom 2 og variablen "muligePrimtall"
+
+        if muligePrimtall % num == 0: #kjører loopen om variablen resten av "muligePrimtall" delt på "num" er 0
+
+            erPrimtall = False #gjør variablen "erPrimtall" om til false
+
+            break #slutter loopen
+
+ 
+
+    if erPrimtall: #kjører loopen om variablen "erPrimtall" er true
+
+        primtall.append(muligePrimtall) #legger til "muligePrimtall" i listen "primtall"
+
+print(primtall) #printer listen "primtall"
+
+========================================================================================================
+
+3.5
+
+blå = '\x1b[0;36;49m'
+ingen = '\x1b[0m'
+anmeldelser = []
+LeggTil = input("vil du legge til en vurdering?(ja/nei): ")
+while LeggTil == "ja":
+   vurdering = int(input("vurder filmen fra 1-10: "))
+   if vurdering in range(1,11):
+       anmeldelser.append(vurdering)
+       print(" ")
+       print("============================================")
+       print("din vurdering er lagt til")
+       print("============================================")
+       LeggTil = input("vil du legge til en ny vurdering?(ja/nei): ")
+   else:   
+       while not vurdering in range(1,11):
+           print(" ")
+           print("det tallet er ikke mellom 1 og 10")
+           vurdering = int(input("vurder filmen fra 1-10: "))
+       else:
+           anmeldelser.append(vurdering)
+           print(" ")
+           print("============================================")
+           print("din vurdering er lagt til")
+           print("============================================")
+           LeggTil = input("vil du legge til en ny vurdering?(ja/nei): ")
+else:
+    Sum = sum(anmeldelser)
+    Antall = len(anmeldelser)
+    gjennomsnitt = Sum / Antall
+    gjennomsnitt = round(gjennomsnitt, 2)
+    print(" ")
+    print("============================================")
+    print("antall vurderinger:",blå,Antall,ingen)
+    print("gjennomsnittlig vurdering er:",blå,gjennomsnitt,ingen,"/ 10")
+    print("============================================")
+
+=====================================================================
+
+3.6
+
+from sympy import symbols, solve
+from sympy import *
+
+x = symbols('x')
+expr = N(x ** 2 - 3) 
+
+var1 = solve(expr)
+svar1 = var1[0]
+svar2 = var1[-1]
+float(svar1)
+float(svar2)
+svar1 = round(svar1, 3)
+svar2 = round(svar2, 3)
+print(svar1)
+blå = '\x1b[0;36;49m'
+ingen = '\x1b[0m'
+print(" ")
+print(" for",blå,"x",ingen,"^ 2 - 3 = 0")
+print(" ")
+print(blå,"x",ingen,"=",blå,svar1,ingen,"/",blå,svar2,ingen)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
