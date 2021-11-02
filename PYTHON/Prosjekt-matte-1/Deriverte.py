@@ -1,4 +1,5 @@
 from pylab import *
+import numpy
 x = linspace(-4, 6, 1000)  #   <--- bør endres basert på funksjonen
 
 delta_x = 0000.1
@@ -8,7 +9,7 @@ def funksjonsverdi(x):
 #    y = 2*x**3 - 3*x**2 - 7*x + 20     #EGET TREDJEGRADSEKSEMPEL EKSEMPEL
 #    y = 2*x**2 + 3*x - 2               #ANDREGRADS EKSEMPEL
 #    y = e**(2*x+1) - 1                 #EKSPONENTIELL EKSEMPEL
-    y = log(x)*(x**2 - 3*x)             #SAMMENSATT FUNKSJON EKSEMPEL
+    y = np.log(x)*(x**2 - 3*x)             #SAMMENSATT FUNKSJON EKSEMPEL
     return y           
 
 def derivert(x):
@@ -35,3 +36,7 @@ plot(x, dy, "r", label = "f'(x)")
 plot(x[0:1000-1], ddy, "g", label = "f''(x)")
 legend()
 show()                        
+import sys
+print("1")
+print(sys.version)
+print("2")
