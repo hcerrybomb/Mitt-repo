@@ -6,50 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 <style>
-html, body{width: 100%;height: 100%;margin: 0;padding: 0;}
-#one{grid-area:a;}#three{grid-area:c;}
-#four{grid-area:d;}#five{grid-area:e;}#six{grid-area:f;}
-div{border: 0px solid rgb(0, 255, 72);
-    box-shadow:0.52vw 0.52vw 0.52vw black;
-
-
-}
-p{
-    display:inline-block;
-}
-#container{
-background-image: url("Background-0.png");
-background-size:cover;
-width: inherit;
-height: inherit;
-box-sizing: border-box;
-row-gap:2.8%;
-column-gap:1.5%;
-margin: 0;
-padding: 1.6%;
-
-display:grid;
-grid-template-columns: repeat(19, 1fr);
-grid-template-rows: repeat(10, 1fr);
-grid-template-areas:    
-
-"a a a a a a a a a a a a a a a a a a a"
-"d e e e e e e e e e e e e e e e c c c"
-"d e e e e e e e e e e e e e e e c c c"
-"d e e e e e e e e e e e e e e e c c c"
-"d e e e e e e e e e e e e e e e c c c"
-"d e e e e e e e e e e e e e e e c c c"
-"d e e e e e e e e e e e e e e e c c c"
-"d e e e e e e e e e e e e e e e c c c"
-"d e e e e e e e e e e e e e e e c c c"
-"f f f f f f f f f f f f f f f f f f f";}
+/*############################################*/
 /*
-commit test comment
-https://discohook.org/?data=eyJtZXNzYWdlcyI6W3siZGF0YSI6eyJjb250ZW50IjpudWxsLCJlbWJlZHMiOlt7InRpdGxlIjoiR3JvdXAgaW5mbyIsImRlc2NyaXB0aW9uIjoiQW55b25lIHdobyB3aXNoZXMgdG8gam9pbiBtYXkgam9pbiwgYmVpbmcgU2NhbmRpbmF2aWFuIGlzIG5vdCBuZWNlc3NhcnkiLCJjb2xvciI6MjYzNjcsImZpZWxkcyI6W3sibmFtZSI6IkNsYW4gdGFnOiIsInZhbHVlIjoiW1NDXVxuJ1NjYW5kaSBDdW50cycifV19XX19XX0
-commit test comment
-https://discohook.org/?data=eyJtZXNzYWdlcyI6W3siZGF0YSI6eyJjb250ZW50IjpudWxsLCJlbWJlZHMiOlt7InRpdGxlIjoiU2VydmVyIEluZm8iLCJkZXNjcmlwdGlvbiI6IlRoZSB3aXBlIHdpbGwgYmUgaGFwcGVuaW5nIG9uIFJ1c3RvcmlhIEVVIE1haW4iLCJjb2xvciI6MTY3MTE4MzMsImZpZWxkcyI6W3sibmFtZSI6IlRoZSBzZXJ2ZXI6IiwidmFsdWUiOiJCYXR0bGVNZXRyaWNzOiBbUnVzdG9yaWEgRVUgTWFpbl0oaHR0cHM6Ly93d3cuYmF0dGxlbWV0cmljcy5jb20vc2VydmVycy9ydXN0LzkyNTUyODMpXG5cblN0ZWFtIGxpbms6IHN0ZWFtOi8vY29ubmVjdC92YW5pbGxhLnJ1c3RvcmlhLnVrOjI4MDE1XG5cbklQOiBgY29ubmVjdCAyMDguMTAzLjE2OS4yNDY6MjgwMTVgIn0seyJuYW1lIjoiV2lwZSB0aW1lOiIsInZhbHVlIjoiVGh1cnNkYXlzIEA6XG40IHBtIENFU1Q6ICAoMTY6MDApIFxuTm9yd2F5LCBEZW5tYXJrLCBTd2VkZW5cblxuNSBwbSBFRVNUOiAoMTc6MDApXG5GaW5sYW5kXG5cbjIgcG0gR01UOiAgKDE0OjAwKVxuSWNlbGFuZCJ9XX1dfX1dfQ
-remote commit test
-    
 1px ===     0.052vw
 2px ===     0.104vw
 3px ===     0.156vw
@@ -61,22 +19,52 @@ remote commit test
 15px ===    0.78vw
 20px ===    1.04vw
 25px ===    1.3vw
-30px ===    1.56vw
-
-border:1px solid     ;
-
+30px ===    1.56vw  
 */
-.gridbox{
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#PageContainer{
+background-image: url("Background-0.png");
+background-size:cover;
+width: inherit;
+height: inherit;
+box-sizing: border-box;
+row-gap:2.8%;
+column-gap:1.5%;
+margin: 0;
+padding: 1.6%;
+display:grid;
+grid-template-columns: repeat(19, 1fr);
+grid-template-rows: repeat(10, 1fr);
+grid-template-areas:    
+"a a a a a a a a a a a a a a a a a a a"
+"b c c c c c c c c c c c c c c c d d d"
+"b c c c c c c c c c c c c c c c d d d"
+"b c c c c c c c c c c c c c c c d d d"
+"b c c c c c c c c c c c c c c c d d d"
+"b c c c c c c c c c c c c c c c d d d"
+"b c c c c c c c c c c c c c c c d d d"
+"b c c c c c c c c c c c c c c c d d d"
+"b c c c c c c c c c c c c c c c d d d"
+"e e e e e e e e e e e e e e e e e e e";}
+div{
+    box-shadow:0.52vw 0.52vw 0.52vw black;
+    border:1px solid cyan;
+}
+.GridBox{
+    overflow:hidden;
     padding:none;
     height:100%;
     width:100%;
     box-sizing: border-box;
     border-radius: 0.52vw;
-    
-    transition: all .5s;
-
+    transition: all .9s;
 }
-.gridbox:hover{
+.GridBox:hover{
     box-shadow: 
     rgba(46, 240, 204, 0.4) 0.26vw 0.26vw, 
     rgba(46, 240, 204, 0.3) 0.52vw 0.52vw, 
@@ -84,99 +72,90 @@ border:1px solid     ;
     rgba(46, 240, 204, 0.1) 1.04vw 1.04vw, 
     rgba(46, 240, 204, 0.05) 1.3vw 1.3vw;
 }
-
-
-#imgblur{
-    height:100%;
+/*############################################
+ALT CONTENT FRA GRIDBOX 1
+############################################*/
+#One{
+    grid-area:a;
+}
+#LogoContainer{
+    float:left;
+    width:3%;
+    height:95%; 
+    margin-right:9.5%; 
+    box-shadow:none;
+}
+#LogoImg{
     width:100%;
-    transition: filter .3s, -webkit-filter .3s, -moz-filter .3s, -o-filter .3s, -ms-filter .3s, transform .5s, color .6s, font-size .6s, text-shadow .6s;  
-    filter: blur(0.156vw);
-    -webkit-filter: blur(0.156vw);
-    -moz-filter: blur(0.156vw);
-    -o-filter: blur(0.156vw);
-    -ms-filter: blur(0.156vw);
-    transform:scale(1.05);  
 }
-#imgblur:hover{
-    filter: blur(0);
-    -webkit-filter: blur(0);
-    -moz-filter: blur(0);
-    -o-filter: blur(0);
-    -ms-filter: blur(0);
-    transform:scale(1.00);
-}
-#one{overflow:hidden;
-}
-#three{overflow:hidden;}
-
-#four{overflow:hidden;}
-
-#five{overflow:hidden;}
-#six{overflow:hidden;}
-
-
-
-
-#three{
-    position:relative;
-}
-#imgblur2{
+#MenuItemContainer{
+    width:75%;
     height:100%;
-    width:100%;
-    transition: filter .3s, -webkit-filter .3s, -moz-filter .3s, -o-filter .3s, -ms-filter .3s, transform .5s, color .6s, font-size .6s, text-shadow .6s;  
-    filter: blur(0.156vw);
-    -webkit-filter: blur(0.156vw);
-    -moz-filter: blur(0.156vw);
-    -o-filter: blur(0.156vw);
-    -ms-filter: blur(0.156vw);
-    transform:scale(1.05);  
+    box-shadow:none;
+    display:flex;
+    justify-content: center;
+    border:0px solid     blueviolet;
 }
-#imgblur2:hover{
-    filter: blur(0);
-    -webkit-filter: blur(0);
-    -moz-filter: blur(0);
-    -o-filter: blur(0);
-    -ms-filter: blur(0);
-    transform:scale(1.00);
-}
-
-
-.text{
-    position:absolute;
-    margin-right:auto;
-    margin-left:auto;
-    width:fit-content;
-    left:8%;
-    height:6%;
+.MenuItems{
+    margin-left:1%;
+    margin-right:1%;
+    height:100%;
+    width:14%;
+    box-shadow: 
+    rgba(46, 240, 204, 0.4) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.3) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.2) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.1) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.05) 0 -1vw 0.052vw -0.62vw inset,
+    0 2.04vw 0.52vw rgba(255, 0, 0, 0);
+    color:rgb(255, 255, 255);
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:1.6vw  ;
     font-family:monospace;
-    color:rgba(0, 255, 255, 0.597);
-    text-shadow:0.156vw 0.156vw 0.156vw rgba(0, 0, 0, 0.75);
-    transition:all .3s;
+    font-size:1.26vw;
     font-weight: bolder;
-    box-shadow:none;
+    transition:all .3s;
+    border:0px solid     greenyellow;
 }
-.text:hover{
-    color:cyan;
-    text-shadow:0.364vw 0.364vw 1.04vw rgba(0, 225, 255, 0.993);
-    font-size:1.7vw;   
+.MenuItems:hover{
+    box-shadow: 
+    rgba(46, 240, 204, 0.4) 0 -1.3vw 0.52vw -0.624vw inset,
+    rgba(46, 240, 204, 0.3) 0 -1.3vw 0.52vw -0.624vw inset,
+    rgba(46, 240, 204, 0.2) 0 -1.3vw 0.52vw -0.624vw inset,
+    rgba(46, 240, 204, 0.1) 0 -1.3vw 0.52vw -0.624vw inset,
+    rgba(46, 240, 204, 0.05) 0 -1.3vw 0.52vw -0.624vw inset,
+    0 1.56vw 0.78vw black;
+    font-size:1.38vw;
+    text-shadow:0.26vw 0.26vw 0.78vw rgb(0, 247, 255);
 }
-#listbox1{top:5%;}
-#listbox2{top:17.5%}
-#listbox3{top:30%}
-#listbox4{top:42.5%}
-#listbox5{bottom:8%}
-
-
-
-/*############################################*/
-#four{
+/*############################################
+ALT CONTENT FRA GRIDBOX 2
+############################################*/
+#Two{
+    grid-area:b;
     position:relative;
 }
-.text2{
+#LeftSideBarImg{
+    height:100%;
+    width:100%;
+    transition: filter .3s, -webkit-filter .3s, -moz-filter .3s, -o-filter .3s, -ms-filter .3s, transform .5s, color .6s, font-size .6s, text-shadow .6s;  
+    filter: blur(0.156vw);
+    -webkit-filter: blur(0.156vw);
+    -moz-filter: blur(0.156vw);
+    -o-filter: blur(0.156vw);
+    -ms-filter: blur(0.156vw);
+    transform:scale(1.05);  
+}
+#LeftSideBarImg:hover{
+    filter: blur(0);
+    -webkit-filter: blur(0);
+    -moz-filter: blur(0);
+    -o-filter: blur(0);
+    -ms-filter: blur(0);
+    transform:scale(1.00);
+}
+.LeftSideBarTextBox{
     position:absolute;
     left:0;
     right:0;
@@ -192,93 +171,20 @@ border:1px solid     ;
     transition:all .3s;
     font-weight: bolder;
 }
-.text2:hover{
+.LeftSideBarTextBox:hover{
     color:cyan;
     text-shadow:0.364vw 0.364vw 1.04vw rgba(0, 225, 255, 0.993);
     font-size:1.8vw;
 }
-#listbox12{top:0;
-    
+#LeftSideBarTopBox{top:0;
 }
-#listbox52{bottom:0;
-    
+#LeftSideBarBottomBox{bottom:0;
 }
-/*############################################*/
-#logo{
-    
-    float:left;
-    width:3%;
-    height:95%;
-    
-    
-    margin-right:9.5%;
-    
-    
-    
-    box-shadow:none;
-    
-    border:0px solid     red;
-}
-
-#imglogo{
-    width:100%;
-
-    
-
-    border:0px solid     blue;
-    
-}
-#menuitemcontainer{
-    width:75%;
-    height:100%;
-    box-shadow:none;
-    display:flex;
-    justify-content: center;
-    
-    border:0px solid     blueviolet;
-}
-
-.menuitem{
-    margin-left:1%;
-    margin-right:1%;
-    height:100%;
-    width:14%;
-        
-    
-    box-shadow: 
-    rgba(46, 240, 204, 0.4) 0 -1vw 0.052vw -0.62vw inset,
-    rgba(46, 240, 204, 0.3) 0 -1vw 0.052vw -0.62vw inset,
-    rgba(46, 240, 204, 0.2) 0 -1vw 0.052vw -0.62vw inset,
-    rgba(46, 240, 204, 0.1) 0 -1vw 0.052vw -0.62vw inset,
-    rgba(46, 240, 204, 0.05) 0 -1vw 0.052vw -0.62vw inset,
-    
-    0 2.04vw 0.52vw rgba(255, 0, 0, 0);
-    color:rgb(255, 255, 255);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:monospace;
-    font-size:1.26vw;
-    font-weight: bolder;
-    transition:all .3s;
-
-    border:0px solid     greenyellow;
-}
-.menuitem:hover{
-    box-shadow: 
-    rgba(46, 240, 204, 0.4) 0 -1.3vw 0.52vw -0.624vw inset,
-    rgba(46, 240, 204, 0.3) 0 -1.3vw 0.52vw -0.624vw inset,
-    rgba(46, 240, 204, 0.2) 0 -1.3vw 0.52vw -0.624vw inset,
-    rgba(46, 240, 204, 0.1) 0 -1.3vw 0.52vw -0.624vw inset,
-    rgba(46, 240, 204, 0.05) 0 -1.3vw 0.52vw -0.624vw inset,
-    
-    
-    0 1.56vw 0.78vw black;
-    font-size:1.38vw;
-    text-shadow:0.26vw 0.26vw 0.78vw rgb(0, 247, 255);
-
-}
-#five{
+/*############################################
+ALT CONTENT FRA GRIDBOX 3
+############################################*/
+#Three{
+    grid-area:c;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -286,8 +192,7 @@ border:1px solid     ;
     padding-top:0.8%;
     padding-bottom:1.2%;
 }
-#maincontainer{
-
+#NewsFeedContainer{
     width: 100%;
     border:0px solid red;
     box-sizing:border-box;
@@ -296,60 +201,35 @@ border:1px solid     ;
     overflow-y:auto;
     color:cyan;
     box-shadow:none;
-    transition: all .5s;
-    
+    transition: all .5s;   
 }
-
-#maincontainer::-webkit-scrollbar-track
-{
+#NewsFeedContainer::-webkit-scrollbar-track{
     box-shadow: 0px 0px 0px rgba(0,0,0,0.3);
-  -webkit-box-shadow: 0px 0px 0px rgba(0,0,0,0.3);
-  
-  border-radius: 10px;
-}
-
-#maincontainer::-webkit-scrollbar
-{
-
-  width: 10px;
-  
-}
-
-#maincontainer::-webkit-scrollbar-thumb
-{
+    -webkit-box-shadow: 0px 0px 0px rgba(0,0,0,0.3);
     border-radius: 10px;
-
-
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgba(46, 240, 204, 0.8)),color-stop(0.72, rgba(46, 240, 204, 0.6)), color-stop(0.86, rgba(46, 240, 204, 0.4)));
-    
 }
-
-#smth{
+#NewsFeedContainer::-webkit-scrollbar{
+    width: 10px;
+}
+#NewsFeedContainer::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgba(46, 240, 204, 0.8)),color-stop(0.72, rgba(46, 240, 204, 0.6)), color-stop(0.86, rgba(46, 240, 204, 0.4)));
+}
+#NewsFeedContentContainer{
     width:100%;
     height:fit-content;
     box-shadow:none;
     padding-bottom:50%;
-
 }
-/*
-#article1{background-color:blueviolet;}
-#article2{background-color:brown;}
-#article3{background-color:gray;}
-*/
-
-
-.articlecontainer{
+.NewsArticleContainer{
     position:relative;
     height:fit-content;
     top:0px;
     border:0px solid red;
     box-shadow:none;
-    margin:3px;
-    
+    margin:3px;   
 }
-
-
-.stickyheader{
+.NewsArticleHeader{
     position:sticky;
     top:0px;
     display:flex;
@@ -368,16 +248,12 @@ border:1px solid     ;
     rgba(46, 240, 204, 0.3) 0 -1vw 0.052vw -0.62vw inset,
     rgba(46, 240, 204, 0.2) 0 -1vw 0.052vw -0.62vw inset,
     rgba(46, 240, 204, 0.1) 0 -1vw 0.052vw -0.62vw inset,
-    rgba(46, 240, 204, 0.05) 0 -1vw 0.052vw -0.62vw inset,
-    
+    rgba(46, 240, 204, 0.05) 0 -1vw 0.052vw -0.62vw inset,  
     0 2.04vw 0.52vw rgba(255, 0, 0, 0);   
     text-shadow:0.26vw 0.26vw 0.78vw rgb(0, 247, 255);
     transition:all .2s;
 }
-
-
-.articletext{
-    
+.NewsArticleText{ 
     border:0px solid rgb(0, 255, 229);
     box-shadow:none;
     margin:3px;
@@ -387,151 +263,155 @@ border:1px solid     ;
     padding-right:20%;
     font-size:1vw;
     line-height:1.5vw;;
-
 }
-
-
+/*############################################
+ALT CONTENT FRA GRIDBOX 4
+############################################*/
+#Four{
+    grid-area:d;
+    position:relative;
+}
+#RightSideBarimg{
+    height:100%;
+    width:100%;
+    transition: filter .3s, -webkit-filter .3s, -moz-filter .3s, -o-filter .3s, -ms-filter .3s, transform .5s, color .6s, font-size .6s, text-shadow .6s;  
+    filter: blur(0.156vw);
+    -webkit-filter: blur(0.156vw);
+    -moz-filter: blur(0.156vw);
+    -o-filter: blur(0.156vw);
+    -ms-filter: blur(0.156vw);
+    transform:scale(1.05);  
+}
+#RightSideBarimg:hover{
+    filter: blur(0);
+    -webkit-filter: blur(0);
+    -moz-filter: blur(0);
+    -o-filter: blur(0);
+    -ms-filter: blur(0);
+    transform:scale(1.00);
+}
+.RightSideBarTextBox{
+    position:absolute;
+    margin-right:auto;
+    margin-left:auto;
+    width:fit-content;
+    left:8%;
+    height:6%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.6vw  ;
+    font-family:monospace;
+    color:rgba(0, 255, 255, 0.597);
+    text-shadow:0.156vw 0.156vw 0.156vw rgba(0, 0, 0, 0.75);
+    transition:all .3s;
+    font-weight: bolder;
+    box-shadow:none;
+}
+.RightSideBarTextBox:hover{
+    color:cyan;
+    text-shadow:0.364vw 0.364vw 1.04vw rgba(0, 225, 255, 0.993);
+    font-size:1.7vw;   
+}
+#RightSideBarTextBox1{top:5%;}
+#RightSideBarTextBox2{top:17.5%}
+#RightSideBarTextBox3{top:30%}
+#RightSideBarTextBox4{bottom:8%}
+/*############################################
+ALT CONTENT FRA GRIDBOX 5
+############################################*/
+#Five{
+    grid-area:e;
+}
 
 </style>
 <script>
-function imgin(){
-document.getElementById("imgblur").setAttribute(
-       "style", "filter: blur(0); -webkit-filter: blur(0); -moz-filter: blur(0); -o-filter: blur(0); -ms-filter: blur(0); transform:scale(1.00);");
-}
-function imgout(){
-    document.getElementById("imgblur").setAttribute(
-       "style", "filter: blur(0.156vw); -webkit-filter: blur(0.156vw); -moz-filter: blur(0.156vw); -o-filter: blur(0.156vw); -ms-filter: blur(0.156vw); transform:scale(1.05);");
-}
-function imgin2(){
-document.getElementById("imgblur2").setAttribute(
-       "style", "filter: blur(0); -webkit-filter: blur(0); -moz-filter: blur(0); -o-filter: blur(0); -ms-filter: blur(0); transform:scale(1.00);");
-}
-function imgout2(){
-    document.getElementById("imgblur2").setAttribute(
-       "style", "filter: blur(0.156vw); -webkit-filter: blur(0.156vw); -moz-filter: blur(0.156vw); -o-filter: blur(0.156vw); -ms-filter: blur(0.156vw); transform:scale(1.05);");
-}
 
+function LeftSideBarIn(){
+document.getElementById("LeftSideBarImg").setAttribute(
+       "style", "filter: blur(0); -webkit-filter: blur(0); -moz-filter: blur(0); -o-filter: blur(0); -ms-filter: blur(0); transform:scale(1.00);");
+}
+function LeftSideBarOut(){
+    document.getElementById("LeftSideBarImg").setAttribute(
+       "style", "filter: blur(0.156vw); -webkit-filter: blur(0.156vw); -moz-filter: blur(0.156vw); -o-filter: blur(0.156vw); -ms-filter: blur(0.156vw); transform:scale(1.05);");
+}
+function RightSideBarIn(){
+document.getElementById("RightSideBarimg").setAttribute(
+       "style", "filter: blur(0); -webkit-filter: blur(0); -moz-filter: blur(0); -o-filter: blur(0); -ms-filter: blur(0); transform:scale(1.00);");
+}
+function RightSideBarOut(){
+    document.getElementById("RightSideBarimg").setAttribute(
+       "style", "filter: blur(0.156vw); -webkit-filter: blur(0.156vw); -moz-filter: blur(0.156vw); -o-filter: blur(0.156vw); -ms-filter: blur(0.156vw); transform:scale(1.05);");
+}
 </script>
 </head>
-<div id=container>
-    <div id=one class=gridbox>
-        <div id=logo>
-            <img id=imglogo src="Logo-0.png">
-        </div>
-        <div id=menuitemcontainer>
-            <div class="menuitem" id=item1>NEWSFEED</div>
-            <div class="menuitem" id=item2>SERVERS</div>
-            <div class="menuitem" id=item3>LEADERBOARDS</div>
-            <div class="menuitem" id=item4>STORE</div>
-            <div class="menuitem" id=item5>DISCORD</div>
-        </div>
-    </div>
-    
-    <div id=three class=gridbox>
-        <img id=imgblur src="Sidebar-0.png" onmouseover="imgin()" onmouseleave="imgout()">
-        <div class=text id=listbox1 onmouseover="imgin()" onmouseleave="imgout()">Discord</div>
-        <div class=text id=listbox2 onmouseover="imgin()" onmouseleave="imgout()">Steam group</div>
-        <div class=text id=listbox3 onmouseover="imgin()" onmouseleave="imgout()">Twitter</div>
-        <div class=text id=listbox4 onmouseover="imgin()" onmouseleave="imgout()"></div>
-        <div class=text id=listbox5 onmouseover="imgin()" onmouseleave="imgout()">Rust</div>
-    </div>
-    <div id=four class=gridbox>
-        <img id=imgblur2 src="sidebar-1.png" onmouseover="imgin2()" onmouseleave="imgout2()">
-        
-        <div class=text2 id=listbox12 onmouseover="imgin2()" onmouseleave="imgout2()">1</div>
-        <div class=text2 id=listbox52 onmouseover="imgin2()" onmouseleave="imgout2()">2</div>
-        
-    </div>
-
-
-
-    <div id=five class=gridbox>
-            <div id =maincontainer >
-                    <div id=smth>
-                        <div id=article1 class=articlecontainer>
-                            
-                            <div id=stickyheader1 class=stickyheader>
-                                    <p>FORCE WIPE</p>
-                            </div>
-                            
-                            <div id=articletext1 class=articletext>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
-
-                                    Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
-                                </p>
-                            </div>
-                        </div>
-                        <div id=article2 class=articlecontainer>
-                            <div id=stickyheader2 class=stickyheader>
-                                <p>header tekst 2</p>
-                            </div>
-                            
-                            <div id=articletext2 class=articletext>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
-
-                                    Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
-                                </p>
-                            </div>
-                        </div>
-                        <div id=article3 class=articlecontainer>
-                            
-                            <div id=stickyheader3 class=stickyheader>
-                                <p>header tekst 3</p>
-                            </div>
-                            
-                            <div id=articletext3 class=articletext>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
-
-                                    Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
-                                </p>
-                            </div>
-                        </div>
-                        <div id=article1 class=articlecontainer>
-                            
-                            <div id=stickyheader1 class=stickyheader>
-                                    <p>FORCE WIPE</p>
-                            </div>
-                            
-                            <div id=articletext1 class=articletext>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
-
-                                    Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
-                                </p>
-                            </div>
-                        </div>
-                        <div id=article2 class=articlecontainer>
-                            <div id=stickyheader2 class=stickyheader>
-                                <p>header tekst 2</p>
-                            </div>
-                            
-                            <div id=articletext2 class=articletext>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
-
-                                    Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
-                                </p>
-                            </div>
-                        </div>
-                        <div id=article3 class=articlecontainer>
-                            
-                            <div id=stickyheader3 class=stickyheader>
-                                <p>header tekst 3</p>
-                            </div>
-                            
-                            <div id=articletext3 class=articletext>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
-
-                                    Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-            </div>
-    </div>
-    <div id=six class=gridbox><span>g</span></div>
-
-    
 <body>
-    
+<div id=PageContainer>
+    <div id=One class=GridBox>
+        <div id=LogoContainer>
+            <img id=LogoImg src="Logo-0.png">
+        </div>
+        <div id=MenuItemContainer>
+            <div class="MenuItems">NEWSFEED</div>
+            <div class="MenuItems">SERVERS</div>
+            <div class="MenuItems">LEADERBOARDS</div>
+            <div class="MenuItems">STORE</div>
+            <div class="MenuItems">DISCORD</div>
+        </div>
+    </div>
+    <div id=Two class=GridBox>
+        <img id=LeftSideBarImg src="sidebar-0.png" onmouseover="LeftSideBarIn()" onmouseleave="LeftSideBarOut()">
+        <div class=LeftSideBarTextBox id=LeftSideBarTopBox onmouseover="LeftSideBarIn()" onmouseleave="LeftSideBarOut()">1</div>
+        <div class=LeftSideBarTextBox id=LeftSideBarBottomBox onmouseover="LeftSideBarIn()" onmouseleave="LeftSideBarOut()">2</div>
+    </div>
+    <div id=Three class=GridBox>
+        <div id =NewsFeedContainer>
+            <div id=NewsFeedContentContainer>
+                <div id=NewsArticle1 class=NewsArticleContainer>
+                    <div id=NewsArticleHeader1 class=NewsArticleHeader>
+                        <p>FORCE WIPE</p>
+                    </div>
+                    <div id=NewsArticleText1 class=NewsArticleText>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
+                            Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
+                        </p>
+                    </div>
+                </div>
+                <div id=NewsArticle2 class=NewsArticleContainer>
+                    <div id=NewsArticleHeader2 class=NewsArticleHeader>
+                        <p>header tekst 2</p>
+                    </div>
+                    <div id=NewsArticleText2 class=NewsArticleText>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
+                            Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
+                        </p>
+                    </div>
+                </div>
+                <div id=NewsArticle3 class=NewsArticleContainer>
+                    <div id=NewsArticleHeader3 class=NewsArticleHeader>
+                        <p>header tekst 3</p>
+                    </div>
+                    <div id=NewsArticleText3 class=NewsArticleText>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
+                            Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div id=Four class=GridBox>
+        <img id=RightSideBarimg src="Sidebar-1.png" onmouseover="RightSideBarIn()" onmouseleave="RightSideBarOut()">
+        <div class=RightSideBarTextBox id=RightSideBarTextBox1 onmouseover="RightSideBarIn()" onmouseleave="RightSideBarOut()">Discord</div>
+        <div class=RightSideBarTextBox id=RightSideBarTextBox2 onmouseover="RightSideBarIn()" onmouseleave="RightSideBarOut()">Steam group</div>
+        <div class=RightSideBarTextBox id=RightSideBarTextBox3 onmouseover="RightSideBarIn()" onmouseleave="RightSideBarOut()">Twitter</div>
+        <div class=RightSideBarTextBox id=RightSideBarTextBox4 onmouseover="RightSideBarIn()" onmouseleave="RightSideBarOut()">Rust</div>
+    </div>    
+    <div id=Five class=GridBox>
+        <span>g</span>
+    </div>
 </body>
 </html>
