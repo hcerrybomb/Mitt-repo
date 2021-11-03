@@ -14,9 +14,12 @@ div{border: 0px solid rgb(0, 255, 72);
 
 
 }
+p{
+    display:inline-block;
+}
 #container{
-background-image: url("Backgound-0.png");
-background-size:100%;
+background-image: url("Background-0.png");
+background-size:cover;
 width: inherit;
 height: inherit;
 box-sizing: border-box;
@@ -59,6 +62,9 @@ remote commit test
 20px ===    1.04vw
 25px ===    1.3vw
 30px ===    1.56vw
+
+border:1px solid     ;
+
 */
 .gridbox{
     padding:none;
@@ -99,7 +105,8 @@ remote commit test
     -ms-filter: blur(0);
     transform:scale(1.00);
 }
-#one{overflow:hidden;}
+#one{overflow:hidden;
+}
 #three{overflow:hidden;}
 
 #four{overflow:hidden;}
@@ -191,32 +198,35 @@ remote commit test
     font-size:1.8vw;
 }
 #listbox12{top:0;
-    background-color:rgba(255, 255, 255, 0.316);
+    
 }
 #listbox52{bottom:0;
-    box-shadow:5px 5px 5px red;
+    
 }
 /*############################################*/
 #logo{
     
     float:left;
-    width:4%;
-    height:90%;
-    margin-right:8.5%;
+    width:3%;
+    height:95%;
     
     
-    box-shadow: 0.26vw 0.26vw 0.52vw black;
-    color:cyan;
-    font-family:monospace;
-    font-size:2vw;
-    border-radius: 100%;
-    /*box-shadow: #CE422B 0 0.156vw 0.156vw 0, #CE422B 0 -0.156vw 0.156vw 0, #CE422B -0.156vw 0 0.156vw 0,#CE422B 0.156vw 0 0.156vw 0;*/
+    margin-right:9.5%;
     
+    
+    
+    box-shadow:none;
+    
+    border:0px solid     red;
 }
 
 #imglogo{
     width:100%;
-    height:100%;
+
+    
+
+    border:0px solid     blue;
+    
 }
 #menuitemcontainer{
     width:75%;
@@ -225,7 +235,7 @@ remote commit test
     display:flex;
     justify-content: center;
     
-
+    border:0px solid     blueviolet;
 }
 
 .menuitem{
@@ -251,6 +261,8 @@ remote commit test
     font-size:1.26vw;
     font-weight: bolder;
     transition:all .3s;
+
+    border:0px solid     greenyellow;
 }
 .menuitem:hover{
     box-shadow: 
@@ -290,6 +302,7 @@ remote commit test
 
 #maincontainer::-webkit-scrollbar-track
 {
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.3);
   -webkit-box-shadow: 0px 0px 0px rgba(0,0,0,0.3);
   
   border-radius: 10px;
@@ -313,12 +326,70 @@ remote commit test
 
 #smth{
     width:100%;
-    height:500%;
-    box-shadow:none;    
+    height:fit-content;
+    box-shadow:none;
+    padding-bottom:50%;
+
 }
-#article1{position:sticky;height:15.04vw;top:0px;border:1px solid red;background-color:blueviolet}
-#article2{position:sticky;height:15.04vw;top:0px;border:1px solid red;background-color:brown}
-#article3{position:sticky;height:15.04vw;top:0px;border:1px solid red;background-color:gray}
+/*
+#article1{background-color:blueviolet;}
+#article2{background-color:brown;}
+#article3{background-color:gray;}
+*/
+
+
+.articlecontainer{
+    position:relative;
+    height:fit-content;
+    top:0px;
+    border:0px solid red;
+    box-shadow:none;
+    margin:3px;
+    
+}
+
+
+.stickyheader{
+    position:sticky;
+    top:0px;
+    display:flex;
+    align-items: center;
+    font-weight:bolder;
+    font-size:2.2vw;color:beige;
+    border:0px solid rgb(200, 255, 0);
+    margin:3px;
+    height:2.4vw;
+    width:fit-content;
+    padding-left: 0vw;
+    padding-right:0vw;
+    font-family:monospace;
+    box-shadow: 
+    rgba(46, 240, 204, 0.4) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.3) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.2) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.1) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.05) 0 -1vw 0.052vw -0.62vw inset,
+    
+    0 2.04vw 0.52vw rgba(255, 0, 0, 0);   
+    text-shadow:0.26vw 0.26vw 0.78vw rgb(0, 247, 255);
+    transition:all .2s;
+}
+
+
+.articletext{
+    
+    border:0px solid rgb(0, 255, 229);
+    box-shadow:none;
+    margin:3px;
+    color:rgba(0, 255, 255, 0.597);
+    font-family:monospace;
+    font-weight: bold;
+    padding-right:20%;
+    font-size:1vw;
+    line-height:1.5vw;;
+
+}
+
 
 
 </style>
@@ -348,7 +419,7 @@ function imgout2(){
             <img id=imglogo src="Logo-0.png">
         </div>
         <div id=menuitemcontainer>
-            <div class="menuitem" id=item1>HOME</div>
+            <div class="menuitem" id=item1>NEWSFEED</div>
             <div class="menuitem" id=item2>SERVERS</div>
             <div class="menuitem" id=item3>LEADERBOARDS</div>
             <div class="menuitem" id=item4>STORE</div>
@@ -377,30 +448,83 @@ function imgout2(){
     <div id=five class=gridbox>
             <div id =maincontainer >
                     <div id=smth>
-                        <div id=article1>
-                            <div id=stickyheader1>
-                                <p>header text 1</p>
+                        <div id=article1 class=articlecontainer>
+                            
+                            <div id=stickyheader1 class=stickyheader>
+                                    <p>FORCE WIPE</p>
                             </div>
-                            <div id=articletext1>
-                                <pre>article text 1</pre>
-                            </div>
-                        </div>
-                        <div id=article2>
-                            <div id=sticyheader2>
-                                <p>header text 2</p>
-                            </div>
-                            <div id=articletext2>
-                                <pre>article test 2</pre>
+                            
+                            <div id=articletext1 class=articletext>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
+
+                                    Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
+                                </p>
                             </div>
                         </div>
-                        <div id=article3>
-                            <div id=stickyheader3>
-                                <p>header text 3</p>
+                        <div id=article2 class=articlecontainer>
+                            <div id=stickyheader2 class=stickyheader>
+                                <p>header tekst 2</p>
                             </div>
-                            <div id=articletext3>
-                                <pre>article text 3</pre>
+                            
+                            <div id=articletext2 class=articletext>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
+
+                                    Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
+                                </p>
                             </div>
                         </div>
+                        <div id=article3 class=articlecontainer>
+                            
+                            <div id=stickyheader3 class=stickyheader>
+                                <p>header tekst 3</p>
+                            </div>
+                            
+                            <div id=articletext3 class=articletext>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
+
+                                    Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
+                                </p>
+                            </div>
+                        </div>
+                        <div id=article1 class=articlecontainer>
+                            
+                            <div id=stickyheader1 class=stickyheader>
+                                    <p>FORCE WIPE</p>
+                            </div>
+                            
+                            <div id=articletext1 class=articletext>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
+
+                                    Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
+                                </p>
+                            </div>
+                        </div>
+                        <div id=article2 class=articlecontainer>
+                            <div id=stickyheader2 class=stickyheader>
+                                <p>header tekst 2</p>
+                            </div>
+                            
+                            <div id=articletext2 class=articletext>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
+
+                                    Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
+                                </p>
+                            </div>
+                        </div>
+                        <div id=article3 class=articlecontainer>
+                            
+                            <div id=stickyheader3 class=stickyheader>
+                                <p>header tekst 3</p>
+                            </div>
+                            
+                            <div id=articletext3 class=articletext>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et varius erat. Duis a luctus magna. Donec ut dui mauris. Morbi consequat egestas tempor. Suspendisse ut purus non velit placerat interdum pretium at arcu. Praesent eget ligula et purus bibendum imperdiet. Proin mattis libero diam, sit amet lobortis felis mattis et. Sed condimentum orci justo, id euismod turpis vulputate eu.
+
+                                    Integer varius lorem a elementum semper. Maecenas iaculis elementum arcu non egestas. Integer efficitur nisi fermentum velit maximus egestas. Sed ultrices, dolor eget euismod eleifend, dui sapien sollicitudin elit, id faucibus metus purus id metus. Phasellus ac pellentesque nulla. Pellentesque odio ipsum, efficitur sit amet varius non, euismod nec lectus. Etiam ut ante ut odio hendrerit imperdiet. Vestibulum maximus egestas euismod. Duis et ipsum mauris. Aenean feugiat nibh est, eu pharetra ex commodo vel. Nam vulputate commodo tellus ac elementum. Nam consequat turpis ac consequat placerat.
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
             </div>
     </div>

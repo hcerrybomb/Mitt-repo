@@ -8,7 +8,7 @@ def funksjonsverdi(x):
 #    y = x**3 - 4*x**2 - 9*x + 28       #ORGINALT EKSEMPEL
 #    y = 2*x**3 - 3*x**2 - 7*x + 20     #EGET TREDJEGRADSEKSEMPEL EKSEMPEL
 #    y = 2*x**2 + 3*x - 2               #ANDREGRADS EKSEMPEL
-#    y = e**(2*x+1) - 1                 #EKSPONENTIELL EKSEMPEL
+#   y = np.e**(2*x+1) - 1                 #EKSPONENTIELL EKSEMPEL
     y = np.log(x)*(x**2 - 3*x)             #SAMMENSATT FUNKSJON EKSEMPEL
     return y           
 

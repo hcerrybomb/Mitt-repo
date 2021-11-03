@@ -1,8 +1,8 @@
 from pylab import * 
+import numpy
+import time
 
-  
-
-x = linspace(-30, 40, 100000) # Verdier for x  <--- bør endres baser på hvilken funksjon du velger 
+x = linspace(-2, 5, 100000) # Verdier for x  <--- bør endres baser på hvilken funksjon du velger 
 
   
 
@@ -12,7 +12,7 @@ delta_x = 0.000001 # Setter nøyaktigheten til delta_x, <--- tweaket her
 
 def f(x): # Funksjon som regner ut y-verdiene 
 
-    y = x**3 - 4*x**2 - 9*x - 28       # Funksjonen         
+#    y = x**3 - 4*x**2 - 9*x - 28       # Funksjonen         
 
 #    y = x**3 - 4*x**2 - 9*x + 28       #ORGINALT EKSEMPEL 
 
@@ -22,9 +22,9 @@ def f(x): # Funksjon som regner ut y-verdiene
 
 #    y = (-4*x+79)/x                  #RASJONAL FUNKSJON 
 
-#    y = e**(2*x+1) - 1                 #EKSPONENTIELL EKSEMPEL 
+#    y = np.e**(2*x+1) - 1                 #EKSPONENTIELL EKSEMPEL 
 
-#    y = log(x)*(x**2 - 3*x)             #SAMMENSATT FUNKSJON EKSEMPEL     
+    y = np.log(x)*(x**2 - 3*x)             #SAMMENSATT FUNKSJON EKSEMPEL     
 
     return y # Returnerer funksjonsverdiene 
 
@@ -64,7 +64,7 @@ ylabel("y")
 
 grid() 
 
-ylim(-20, 20)     #  <--- bør endres baser på hvilken funksjon du velger 
+ylim(-4, 10)     #  <--- bør endres baser på hvilken funksjon du velger 
 
 axhline(y=0, color="k") 
 
@@ -83,5 +83,7 @@ while abs(x2-x1) > delta_x: #sjekker om forskjellen mellom x2 og x1 er lav nok t
     x2 = ny_x_verdi(x1) #regner ut formelen med det nye forslaget  
 
     print("Et bedre forslag er gitt ved x = ", (x2))    
+    
+    time.sleep(0.05)
 
 print("nullpunktet er ved x = ", round(x2, 3)) 

@@ -1,5 +1,6 @@
 from pylab import *
 import time 
+import numpy
 
 x = linspace(-3, 4, 100000) # Verdier for x  <--- bør endres baser på hvilken funksjon du velger
 
@@ -11,8 +12,8 @@ def f(x): # Funksjon som regner ut y-verdiene
 #    y = 2*x**3 - 3*x**2 - 7*x + 20     #EGET TREDJEGRADSEKSEMPEL EKSEMPEL
 #    y = 2*x**2 + 3*x - 2               #ANDREGRADS EKSEMPEL
 #    y = (-4*x+79)/x                  #RASJONAL FUNKSJON
-#    y = e**(2*x+1) - 1                 #EKSPONENTIELL EKSEMPEL
-    y = log(x)*(x**2 - 3*x)             #SAMMENSATT FUNKSJON EKSEMPEL    
+#    y = np.e**(2*x+1) - 1                 #EKSPONENTIELL EKSEMPEL
+    y = np.log(x)*(x**2 - 3*x)             #SAMMENSATT FUNKSJON EKSEMPEL    
     return y # Returnerer funksjonsverdiene
 
 def derivert(x): # Funksjon som regner ut den deriverte
