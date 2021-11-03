@@ -1,0 +1,361 @@
+/*
+1px ===     0.052vw
+2px ===     0.104vw
+3px ===     0.156vw
+4px ===     0.208vw
+5px ===     0.26vw
+7px ===     0.364vw
+10px ===    0.52vw
+12px ===    0.624vw
+15px ===    0.78vw
+20px ===    1.04vw
+25px ===    1.3vw
+30px ===    1.56vw  
+*/
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+@font-face{
+    font-family: "link";
+    src: url("fonts/Blinker-ExtraLight.ttf") format("truetype")
+}
+#PageContainer{
+background-image: url("Background-0.png");
+background-size:cover;
+width: inherit;
+height: inherit;
+box-sizing: border-box;
+row-gap:2.8%;
+column-gap:1.5%;
+margin: 0;
+padding: 1.6%;
+display:grid;
+grid-template-columns: repeat(19, 1fr);
+grid-template-rows: repeat(10, 1fr);
+grid-template-areas:    
+"a a a a a a a a a a a a a a a a a a a"
+"b c c c c c c c c c c c c c c c d d d"
+"b c c c c c c c c c c c c c c c d d d"
+"b c c c c c c c c c c c c c c c d d d"
+"b c c c c c c c c c c c c c c c d d d"
+"b c c c c c c c c c c c c c c c d d d"
+"b c c c c c c c c c c c c c c c d d d"
+"b c c c c c c c c c c c c c c c d d d"
+"b c c c c c c c c c c c c c c c d d d"
+"e e e e e e e e e e e e e e e e e e e";
+}
+div{
+    border:0px solid cyan;
+}
+.GridBox{
+    overflow:hidden;
+    padding:none;
+    height:100%;
+    width:100%;
+    box-sizing: border-box;
+    border-radius: 0.52vw;
+    transition: all .9s;
+    box-shadow:0.52vw 0.52vw 0.52vw black;
+}
+.GridBox:hover{
+    box-shadow: 
+    rgba(46, 240, 204, 0.4) 0.26vw 0.26vw, 
+    rgba(46, 240, 204, 0.3) 0.52vw 0.52vw, 
+    rgba(46, 240, 204, 0.2) 0.78vw 0.78vw, 
+    rgba(46, 240, 204, 0.1) 1.04vw 1.04vw, 
+    rgba(46, 240, 204, 0.05) 1.3vw 1.3vw;
+}
+/*############################################
+
+
+ALT CONTENT FRA GRIDBOX 1
+
+
+############################################*/
+#One{
+    grid-area:a;
+}
+#LogoContainer{
+    float:left;
+    width:3%;
+    height:95%; 
+    margin-right:9.5%; 
+    box-shadow:none;
+}
+#LogoImg{
+    width:100%;
+}
+#MenuItemContainer{
+    width:75%;
+    height:100%;
+    box-shadow:none;
+    display:flex;
+    justify-content: center;
+}
+.MenuItems{
+    margin-left:1%;
+    margin-right:1%;
+    height:100%;
+    width:14%;
+    box-shadow: 
+    rgba(46, 240, 204, 0.4) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.3) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.2) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.1) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.05) 0 -1vw 0.052vw -0.62vw inset,
+    0 2.04vw 0.52vw rgba(255, 0, 0, 0);
+    color:rgb(255, 255, 255);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:monospace;
+    font-size:1.26vw;
+    font-weight: bolder;
+    transition: all .2s;
+}
+.MenuItems:hover{
+    box-shadow: 
+    rgba(46, 240, 204, 0.4) 0 -1.3vw 0.52vw -0.624vw inset,
+    rgba(46, 240, 204, 0.3) 0 -1.3vw 0.52vw -0.624vw inset,
+    rgba(46, 240, 204, 0.2) 0 -1.3vw 0.52vw -0.624vw inset,
+    rgba(46, 240, 204, 0.1) 0 -1.3vw 0.52vw -0.624vw inset,
+    rgba(46, 240, 204, 0.05) 0 -1.3vw 0.52vw -0.624vw inset,
+    0 1.56vw 0.78vw black;
+    font-size:1.38vw;
+    text-shadow:0.26vw 0.26vw 0.78vw rgb(0, 247, 255);
+}
+/*############################################
+
+
+ALT CONTENT FRA GRIDBOX 2
+
+
+############################################*/
+#Two{
+    grid-area:b;
+    position:relative;
+}
+#LeftSideBarImg{
+    height:100%;
+    width:100%;
+    transition: filter .3s, -webkit-filter .3s, -moz-filter .3s, -o-filter .3s, -ms-filter .3s, transform .5s, color .6s, font-size .6s, text-shadow .6s;  
+    filter: blur(0.156vw);
+    -webkit-filter: blur(0.156vw);
+    -moz-filter: blur(0.156vw);
+    -o-filter: blur(0.156vw);
+    -ms-filter: blur(0.156vw);
+    transform:scale(1.05);  
+}
+#LeftSideBarImg:hover{
+    filter: blur(0);
+    -webkit-filter: blur(0);
+    -moz-filter: blur(0);
+    -o-filter: blur(0);
+    -ms-filter: blur(0);
+    transform:scale(1.00);
+}
+.LeftSideBarTextBox{
+    position:absolute;
+    left:0;
+    right:0;
+    box-shadow:none;
+    height:50%;
+    display:flex;
+    align-items:center;
+    justify-content:left;
+    font-size:1.7vw  ;
+    font-family:monospace;
+    color:rgba(0, 255, 255, 0.597);
+    text-shadow:0.156vw 0.156vw 0.156vw rgba(0, 0, 0, 0.75);
+    transition:all .3s;
+    font-weight: bolder;
+}
+.LeftSideBarTextBox:hover{
+    color:cyan;
+    text-shadow:0.364vw 0.364vw 1.04vw rgba(0, 225, 255, 0.993);
+    font-size:1.8vw;
+}
+#LeftSideBarTopBox{top:0;
+}
+#LeftSideBarBottomBox{bottom:0;
+}
+/*############################################
+
+
+ALT CONTENT FRA GRIDBOX 3
+
+
+############################################*/
+#Three{
+    grid-area:c;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-right:1%;
+    padding-top:0.8%;
+    padding-bottom:1.2%;
+}
+#NewsFeedContainer{
+    width: 100%;
+    box-sizing:border-box;
+    height:100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+    color:cyan;
+    box-shadow:none;
+    transition: all .5s;
+    
+}
+#NewsFeedContainer::-webkit-scrollbar-track{
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 0px 0px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+#NewsFeedContainer::-webkit-scrollbar{
+    width: 10px;
+}
+#NewsFeedContainer::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgba(46, 240, 204, 0.8)),color-stop(0.72, rgba(46, 240, 204, 0.6)), color-stop(0.86, rgba(46, 240, 204, 0.4)));
+}
+#NewsFeedContentContainer{
+    width:100%;
+    height:fit-content;
+    box-shadow:none;
+    padding-bottom:50%;
+    
+}
+.NewsArticleContainer{
+    position:relative;
+    height:fit-content;
+    top:0px;
+    box-shadow:none;
+    margin:3px;   
+}
+.NewsArticleHeader{
+    position:relative; /*skulle egentlig være sticky slik at man kunne se det man kunne bli minnet på det man leste om mens man gikk gjennom artiklene men klarte ikke få den effekten jeg letter etter*/
+    top:0;
+    display:flex;
+    align-items: center;
+    font-weight:bolder;
+    font-size:2.2vw;color:beige;
+    margin:3px;
+    height:2.4vw;
+    width:fit-content;
+    padding-left: 0vw;
+    padding-right:0vw;
+    font-family:monospace;
+    box-shadow: 
+    rgba(46, 240, 204, 0.4) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.3) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.2) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.1) 0 -1vw 0.052vw -0.62vw inset,
+    rgba(46, 240, 204, 0.05) 0 -1vw 0.052vw -0.62vw inset,  
+    0 2.04vw 0.52vw rgba(255, 0, 0, 0);   
+    text-shadow:0.26vw 0.26vw 0.78vw rgb(124, 123, 123), -0.1vw -0.1vw 0.48vw rgb(124, 123, 123);
+    transition:all .2s;
+}
+.NewsArticleText{ 
+    
+    box-shadow:none;
+    margin:3px;
+    color:rgba(0, 255, 255, 0.597);
+    font-family:monospace;
+    font-weight: bold;
+    padding-right:20%;
+    font-size:1vw;
+    line-height:1.5vw;;
+}
+/*############################################
+
+
+ALT CONTENT FRA GRIDBOX 4
+
+
+############################################*/
+#Four{
+    grid-area:d;
+    position:relative;
+}
+#RightSideBarimg{
+    height:100%;
+    width:100%;
+    transition: filter .3s, -webkit-filter .3s, -moz-filter .3s, -o-filter .3s, -ms-filter .3s, transform .5s, color .6s, font-size .6s, text-shadow .6s;  
+    filter: blur(0.156vw);
+    -webkit-filter: blur(0.156vw);
+    -moz-filter: blur(0.156vw);
+    -o-filter: blur(0.156vw);
+    -ms-filter: blur(0.156vw);
+    transform:scale(1.05);  
+}
+#RightSideBarimg:hover{
+    filter: blur(0);
+    -webkit-filter: blur(0);
+    -moz-filter: blur(0);
+    -o-filter: blur(0);
+    -ms-filter: blur(0);
+    transform:scale(1.00);
+}
+.RightSideBarTextBox{
+    position:absolute;
+    margin-right:auto;
+    margin-left:auto;
+    width:fit-content;
+    left:8%;
+    height:6%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.6vw  ;
+    font-family:monospace;
+    color:rgba(0, 255, 255, 0.597);
+    text-shadow:0.156vw 0.156vw 0.156vw rgba(0, 0, 0, 0.75);
+    transition:all .3s;
+    font-weight: bolder;
+    box-shadow:none;
+}
+.RightSideBarTextBox:hover{
+    color:cyan;
+    text-shadow:0.364vw 0.364vw 1.04vw rgba(0, 225, 255, 0.993);
+    font-size:1.7vw;   
+}
+#RightSideBarTextBox1{top:5%;}
+#RightSideBarTextBox2{top:17.5%}
+#RightSideBarTextBox3{top:30%}
+#RightSideBarTextBox4{bottom:8%}
+/*############################################
+
+
+ALT CONTENT FRA GRIDBOX 5
+
+    
+############################################*/
+#Five{
+    grid-area:e;
+}
+#FooterContainer{
+    width:100%;
+    text-align:center;
+    height:100%;
+    
+
+}
+.FooterItems{
+    padding-right:1%;
+    padding-left:1%;
+    height:100%;
+    display: inline-block;
+    vertical-align: middle;
+    border:1px solid cyan;
+}
+.FooterTextBox{
+    height:100%;
+    color:cyan;
+    font-family:link;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
