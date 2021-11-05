@@ -22,7 +22,103 @@ html, body{
     font-family: "link";
     src: url("fonts/Blinker-ExtraLight.ttf") format("truetype")
 }
-#PageContainer{
+div{
+    border:0px solid rgb(255, 0, 0);
+}
+/*######################################################################################
+########################################################################################
+########################################################################################
+
+HOME PAGE - START
+
+########################################################################################
+########################################################################################
+########################################################################################*/
+#HomePageContainer {
+    height: 100%;
+    width: 100%;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    position:relative;
+
+    
+}
+
+#ColumnItemContainer{
+    width:40%;
+    
+    height:8%;
+    padding:0;
+    box-sizing: border-box;
+    position:absolute;
+    top:0;
+    left:30%;
+
+}
+.ColumnItems{
+    margin-left:1%;
+    margin-right:1%;
+    float:left;
+    width: 23%;
+    height:100%;
+    box-sizing:border-box;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    font-family:link;
+    color:cornsilk;
+    font-size:1vw;
+}
+#BackgroundImage{
+    filter:brightness(0.2);
+    height:100%;
+    width:100%;
+}
+#HomeTitle{
+    position:absolute;
+    width:40%;
+    left:30%;
+    top:40%;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    font-family:link;
+    color:cornsilk;
+    font-size:3vw;
+    height:10%;
+}
+#HomeUnderTitle{
+    position:absolute;
+    width:30%;
+    left:35%;
+    top:50%;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    font-family:link;
+    color:rgb(99, 99, 99);
+    font-size:1.2vw;
+    text-align:center;
+    font-weight:bold;
+}
+
+
+
+
+
+
+/*######################################################################################
+########################################################################################
+########################################################################################
+
+HOME PAGE - END
+NEWS PAGE- START
+
+########################################################################################
+########################################################################################
+########################################################################################*/
+#NewsPageContainer{
 background-image: url("Background-0.png");
 background-size:cover;
 width: inherit;
@@ -47,9 +143,7 @@ grid-template-areas:
 "b c c c c c c c c c c c c c c c d d d"
 "e e e e e e e e e e e e e e e e e e e";
 }
-div{
-    border:0px solid cyan;
-}
+
 .GridBox{
     overflow:hidden;
     padding:none;
@@ -68,13 +162,13 @@ div{
     rgba(46, 240, 204, 0.1) 1.04vw 1.04vw, 
     rgba(46, 240, 204, 0.05) 1.3vw 1.3vw;
 }
-/*############################################
+/*########################################################################################
 
 
 ALT CONTENT FRA GRIDBOX 1
 
 
-############################################*/
+########################################################################################*/
 #One{
     grid-area:a;
 }
@@ -127,13 +221,13 @@ ALT CONTENT FRA GRIDBOX 1
     font-size:1.38vw;
     text-shadow:0.26vw 0.26vw 0.78vw rgb(0, 247, 255);
 }
-/*############################################
+/*########################################################################################
 
 
 ALT CONTENT FRA GRIDBOX 2
 
 
-############################################*/
+########################################################################################*/
 #Two{
     grid-area:b;
     position:relative;
@@ -182,13 +276,13 @@ ALT CONTENT FRA GRIDBOX 2
 }
 #LeftSideBarBottomBox{bottom:0;
 }
-/*############################################
+/*########################################################################################
 
 
 ALT CONTENT FRA GRIDBOX 3
 
 
-############################################*/
+########################################################################################*/
 #Three{
     grid-area:c;
     display:flex;
@@ -269,13 +363,13 @@ ALT CONTENT FRA GRIDBOX 3
     font-size:1vw;
     line-height:1.5vw;;
 }
-/*############################################
+/*########################################################################################
 
 
 ALT CONTENT FRA GRIDBOX 4
 
 
-############################################*/
+########################################################################################*/
 #Four{
     grid-area:d;
     position:relative;
@@ -326,13 +420,13 @@ ALT CONTENT FRA GRIDBOX 4
 #RightSideBarTextBox2{top:17.5%}
 #RightSideBarTextBox3{top:30%}
 #RightSideBarTextBox4{bottom:8%}
-/*############################################
+/*########################################################################################
 
 
 ALT CONTENT FRA GRIDBOX 5
 
     
-############################################*/
+########################################################################################*/
 #Five{
     grid-area:e;
 }
@@ -349,7 +443,10 @@ ALT CONTENT FRA GRIDBOX 5
     height:100%;
     display: inline-block;
     vertical-align: middle;
-    border:1px solid cyan;
+    border:0px solid cyan;
+}
+.FooterItems:hover{
+    background-color:rgba(0, 0, 0, 0.302);
 }
 .FooterTextBox{
     height:100%;
@@ -358,4 +455,15 @@ ALT CONTENT FRA GRIDBOX 5
     display:flex;
     align-items: center;
     justify-content: center;
+    font-size:0.8vw;
 }
+/*######################################################################################
+########################################################################################
+########################################################################################
+
+NEWS PAGE - END
+_____ - START
+
+########################################################################################
+########################################################################################
+########################################################################################*/
