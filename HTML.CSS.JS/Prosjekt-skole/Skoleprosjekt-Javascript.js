@@ -8,9 +8,9 @@ function LeftSideBarIn(){
     }
     function RightSideBarIn(){
     document.getElementById("RightSideBarimg").setAttribute(
-           "style", "filter: blur(0); -webkit-filter: blur(0); -moz-filter: blur(0); -o-filter: blur(0); -ms-filter: blur(0); transform:scale(1.00);");
+           "style", "filter: blur(0); -webkit-filter: blur(0); -moz-filter: blur(0); -o-filter: blur(0); -ms-filter: blur(0); transform:scale(1.00); opacity:0.4;");
     }
     function RightSideBarOut(){
         document.getElementById("RightSideBarimg").setAttribute(
-           "style", "filter: blur(0.156vw); -webkit-filter: blur(0.156vw); -moz-filter: blur(0.156vw); -o-filter: blur(0.156vw); -ms-filter: blur(0.156vw); transform:scale(1.05);");
+           "style", "filter: blur(0.156vw); -webkit-filter: blur(0.156vw); -moz-filter: blur(0.156vw); -o-filter: blur(0.156vw); -ms-filter: blur(0.156vw); transform:scale(1.05); opacity: 0.2;");
     }
