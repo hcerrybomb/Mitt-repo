@@ -36,28 +36,43 @@ HOME PAGE - START
 ########################################################################################*/
 #HomePageLogoContainer{
     float:left;
-    width:4%;
-    height:100%; 
-    margin-left:1%;
-    box-shadow:none;
-    display:flex;
-    align-items: center;
-}
-#HomePageLogoContainer:hover{
-    background-color:rgba(0, 0, 0, 0.357)
-}
-#HomePageLogo{
-    float:left;
-    width:4%;
+    width:5%;
     height:100%; 
     
     box-shadow:none;
     display:flex;
     align-items: center;
+    justify-content: center;
+    border:0px solid red;
+    
+    
+    
 }
+#HomePageLogoContainer:hover{
+    background-color:rgba(0, 0, 0, 0.357)
+}
+
 #HomePageLogoImg{
-    width:90%;
-    height:70%;
+    width:85%;
+    margin-left:7.5%;
+    margin-right:7.5%;
+    height:80%;
+    
+    object-fit:contain;
+    
+    margin-top:10%;
+    
+    margin-bottom:10%;
+    border:0px solid blue;
+
+    filter: drop-shadow(0.2vw 0.2vw 0.2vw black);
+    transition:all .3s;
+
+    
+}
+#HomePageLogoImg:hover{
+    transform:scale(1.08);
+    filter: drop-shadow(0.4vw 0.4vw 0.4vw black);
 }
 #HomePageContainer {
     height: 100%;
@@ -96,15 +111,16 @@ HOME PAGE - START
 .ColumnItems:hover{
     background-color:rgba(0, 0, 0, 0.118)
 }
+
+#ColumnItem1{margin-left:28%;}
+#ColumnItem2{margin-left:1%;margin-right:1%;}
+#ColumnItem3{margin-right:1%;}
+#ColumnItem4{margin-right:34%}
 #BackgroundImage{
     filter:brightness(0.2);
     height:100%;
     width:100%;
 }
-#ColumnItem1{margin-left:29%;}
-#ColumnItem2{margin-left:1%;margin-right:1%;}
-#ColumnItem3{margin-right:1%;}
-#ColumnItem4{margin-right:34%}
 #HomeTitle{
     position:absolute;
     width:40%;
@@ -206,7 +222,7 @@ ALT CONTENT FRA GRIDBOX 1
     grid-area:a;
     border-radius:0.624vw;
 }
-#One:hover{
+#One{
     box-shadow: 
     rgba(46, 240, 204, 0.4) 0vw 0.26vw, 
     rgba(46, 240, 204, 0.3) 0vw 0.52vw, 
@@ -221,10 +237,26 @@ ALT CONTENT FRA GRIDBOX 1
     box-shadow:none;
     display:flex;
     align-items: center;
+    justify-content: center;
+    border:0px solid red;
 }
 
 #LogoImg{
-    width:100%;
+    width:90%;
+    margin-left:5%;
+    margin-right:5%;
+    height:80%;
+    object-fit:contain;
+    margin-top:10%;
+    margin-bottom:10%;
+    border:0px solid blue;
+    transition: all .3s;
+    filter: drop-shadow(0.2vw 0.2vw 0.2vw black);
+}
+#LogoImg:hover{
+    transform:scale(1.08);
+    
+    filter: drop-shadow(0.4vw 0.4vw 0.4vw black);
 }
 
 #MenuItemContainer{
