@@ -1,97 +1,68 @@
 import subprocess
 from pynput.keyboard import *
 from time import time, ctime, sleep
+import pathlib
 import os
+import win32gui
 
+os.system("") #to fix the color somehow
 keyboard = Controller()
 #C:\Users\Gaming Dator VII\Desktop
 #C:\Users\Gaming Dator VII\Desktop\Mitt-repo\PYTHON
-e =str
-sleep(1)
-print(" ")
-print("")
-print("!!!IMPORTANT!!! you MUST have the GAME OVERLAY activity setting in DISCORD  ENABLED  for this program to work")
-print(" ")
-sleep(1)
-print("continuing program")
-print(" ")
-sleep(5)
-print("the program needs the file path location of 1:")
-sleep(1)
-print(" ")
-print("your rust shortcut .lnk file, AKA your rust desktop shortcut")
-sleep(1)
-print(" ")
-print("this will typically look something like  C:\\Users\\YourUserName\\Desktop ")
-sleep(1)
-print(" ")
-print("to find this:")
-sleep(1)
-print(" ")
-print(">  find  the Rust shortcut  on your Desktop ")
-sleep(0.3)
-print(">  right click  it")
-sleep(0.3)
-print(">  click  properties")
-sleep(0.3)
-print(">  click  the 'General' tab")
-sleep(0.3)
-print(">  copy  the 'Location'")
-sleep(0.3)
-print(" ")
-print(" ")
-RustShortcut = str(input("> and paste it here : "))
-RustShortcut = RustShortcut + "\Rust.lnk"
-RustShortcut = r'%s ' %RustShortcut
-sleep(2)
-print(" ")
-print(" ")
-print(" ")
-print(" file locations stored ")
-sleep(1)
-print(" ")
-print(" ")
-print(" ")
-print("secondly the program needs the path location of this folder that the program is in:")
-sleep(1)
-print(" ")
-print("this will typically look something like C:\\Downloads")
-sleep(1)
-print(" ")
-print("to find this:")
-sleep(1)
-print(" ")
-print("> find  where  this folder  is located on your computer in windows file explorer")
-sleep(0.3)
-print("> right click  it")
-sleep(0.3)
-print(">  click  properties")
-sleep(0.3)
-print(">  click  'General' tab")
-sleep(0.3)
-print(">  copy  'Location'")
-sleep(0.3)
-print(" ")
-print(" ")
-BatLocation = str(input("> and paste it here : "))
-BatLocation = BatLocation + r"\RustAutomated\nonsecureSendKeys.bat"
-BatLocation = r'%s ' %BatLocation
-print(" ")
-print(" ")
-print(" ")
-print(" file locations stored ")
-print(" ")
-print(" ")
-print(" ")
-sleep(1)
-print("what local time is wipe for you?")
-sleep(0.3)
-print("the format is 00:00")
-sleep(0.3)
-print(" ")
-print(" ")
 
-WipeTime = str(input("type the time here : "))
+#use os command to install pip keyboard
+
+#press esc 3 time to close sidebar,task manager etc
+
+e=str
+__location__ = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__)))
+class style():
+    BLACK = '\033[30m'
+    RED = '\033[31m'
+    GREEN = '\033[32m'
+    YELLOW = '\033[33m'
+    BLUE = '\033[34m'
+    MAGENTA = '\033[35m'
+    CYAN = '\033[36m'
+    WHITE = '\033[37m'
+    UNDERLINE = '\033[4m'
+    RESET = '\033[0m'
+    BLINK = '\33[5m'
+
+print( style.RED + "\n!!!IMPORTANT!!!" + style.RESET)
+print("\nYou MUST have the"+style.YELLOW+" GAME OVERLAY"+style.RESET+" activity setting in"+style.YELLOW+" DISCORD  "+style.UNDERLINE+"ENABLED"+style.RESET+"  for this program to work")
+
+
+
+
+
+desktop = pathlib.Path.home() / 'Desktop'
+
+desktop = str(desktop)
+desktop = desktop + "\Rust.lnk"
+
+desktop = r'%s ' %desktop
+
+if os.path.exists(desktop) == True:
+    print("desktop shortcut present")
+else:
+    print("desktop shortcut not present")
+
+
+
+
+BatLocation = os.path.join(__location__, 'nonsecureSendKeys.bat')
+
+BatLocation = r'%s ' %BatLocation
+
+print("what local time is wipe for you?")
+
+print("the format is 00:00")
+
+
+#WipeTime = str(input("type the time here : "))
+WipeTime="12:12"
 
 WipeTime = WipeTime.split(":")
 
@@ -103,10 +74,23 @@ WipeMIN = int(WipeTime[1])
 
 WipeTime = str(WipeTime[0] + WipeTime[1])
 
-print(" ")
-print(" ")
-
 print("your wipe time is: ",WipeTime)
+
+
+def find_window(cls):
+    """find a window by its class_name"""
+    _handle = win32gui.FindWindow(class_name, window_name)
+    win32gui.SetForegroundWindow(_handle)
+    
+
+
+
+find_window()
+
+
+
+
+
 
 def WhatsTheTime():
 
@@ -139,7 +123,9 @@ def process_exists(process_name):
 
 def connect_server():
 
-    keyboard.tap(Key.f1)
+    keyboard.press(Key.f1)
+    sleep(0.2)
+    keyboard.release(Key.f1)
 
     sleep(5)
 
@@ -149,11 +135,13 @@ def connect_server():
 
     sleep(5)
 
-    keyboard.tap(Key.f1)
+    keyboard.press(Key.f1)
+    sleep(0.2)
+    keyboard.release(Key.f1)
 
 def anti_afk():
 
-    keyboard.press(Key.w)
+    keyboard.press(Key.w) #fix wrong 
     sleep(5)
     keyboard.release(Key.w)
 
@@ -173,7 +161,7 @@ def anti_afk():
 
 def focus_rust():
 
-    subprocess.call([BatLocation, "Rust", ""])
+    subprocess.call([BatLocation, "Rust", ""]) #add support for focusin when minimized
 
     print("rust focused")
 
@@ -211,7 +199,7 @@ if process_exists('RustClient.exe') == True:
 
 else:
     
-    os.startfile (RustShortcut)
+    os.startfile (desktop)
     y=1
     while process_exists('DiscordHookHelper64.exe') != True:
         if y < 100:
