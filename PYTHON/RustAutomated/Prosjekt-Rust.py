@@ -52,9 +52,27 @@ else:
 
 
 
-BatLocation = os.path.join(__location__, 'nonsecureSendKeys.bat')
+batLocation = os.path.join(__location__, 'nonsecureSendKeys.bat')
 
-BatLocation = r'%s ' %BatLocation
+batLocation = r'%s ' %batLocation
+
+
+projFolder = os.path.join(__location__)
+
+
+projFolder = r'%s' %projFolder
+
+print(projFolder)
+os.system('cd '+projFolder)
+os.system('python txtFileLocationHandler.py')
+WipeTimeInputPath=projFolder+'\WipeTimeInput.txt'
+print(WipeTimeInputPath)
+txtFileRead = open(WipeTimeInputPath, "r")
+txtfilecontent = txtFileRead.read()
+
+while txtfilecontent == "NotConfig":
+    sleep(1)
+    print("not ready yet")
 
 print("what local time is wipe for you?")
 
@@ -62,35 +80,19 @@ print("the format is 00:00")
 
 
 #WipeTime = str(input("type the time here : "))
-WipeTime="12:12"
+wipeTime="12:12"
 
-WipeTime = WipeTime.split(":")
+wipeTime = wipeTime.split(":")
 
-WipeHR = int(WipeTime[0])
+wipeHR = int(wipeTime[0])
 
-WipeMIN = int(WipeTime[1])
-
-
-
-WipeTime = str(WipeTime[0] + WipeTime[1])
-
-print("your wipe time is: ",WipeTime)
-
-
-def find_window(cls):
-    """find a window by its class_name"""
-    _handle = win32gui.FindWindow(class_name, window_name)
-    win32gui.SetForegroundWindow(_handle)
-    
+wipeMIN = int(wipeTime[1])
 
 
 
-find_window()
+wipeTime = str(wipeTime[0] + wipeTime[1])
 
-
-
-
-
+print("your wipe time is: ",wipeTime)
 
 def WhatsTheTime():
 
@@ -103,11 +105,8 @@ def WhatsTheTime():
     d= c[3].split(":")
     
     e = str(d[0] + d[1])
-   
-    print("program initiation: ",WipeHR,":",WipeMIN)
-    print(" ")
-    print("current time:       ",d[0],":",d[1],":",d[2])
-    print(" ")
+
+    print("program initiation: ",wipeHR,":",wipeMIN,"\n","current time:       ",d[0],":",d[1],":",d[2],end="\r")
 
     return e
 
@@ -161,11 +160,11 @@ def anti_afk():
 
 def focus_rust():
 
-    subprocess.call([BatLocation, "Rust", ""]) #add support for focusin when minimized
+    subprocess.call([batLocation, "Rust", ""]) #add support for focusin when minimized
 
     print("rust focused")
 
-while WhatsTheTime() != WipeTime:
+while WhatsTheTime() != wipeTime:
 
     WhatsTheTime()
     
