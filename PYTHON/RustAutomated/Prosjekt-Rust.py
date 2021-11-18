@@ -1,24 +1,21 @@
+######      IMPORTS                 
+
 import subprocess
 from pynput.keyboard import *
 from time import time, ctime, sleep
 import pathlib
 import os
 
+######      VARIABLE DECLARATIONS
 
-import win32gui
-
-os.system("") #to fix the color somehow
+os.system("") 
 keyboard = Controller()
-#C:\Users\Gaming Dator VII\Desktop
-#C:\Users\Gaming Dator VII\Desktop\Mitt-repo\PYTHON
-
-#use os command to install pip keyboard
-
-#press esc 3 time to close sidebar,task manager etc
-
 e=str
-__location__ = os.path.realpath(
+__location__ = os.path.realpath(        #declares __location__ as a string of the path of this projects folder
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+######      COLOR STYLING
+
 class style():
     BLACK = '\033[30m'
     RED = '\033[31m'
@@ -32,83 +29,76 @@ class style():
     RESET = '\033[0m'
     BLINK = '\33[5m'
 
-print( style.RED + "\n!!!IMPORTANT!!!" + style.RESET)
+######      FIRST STATEMENT
+
+print(style.RED+"\n!!!IMPORTANT!!!"+style.RESET)
+
 print("\nYou MUST have the"+style.YELLOW+" GAME OVERLAY"+style.RESET+" activity setting in"+style.YELLOW+" DISCORD  "+style.UNDERLINE+"ENABLED"+style.RESET+"  for this program to work")
 
+######      CHECK FOR RUST DESKTOP SHORTCUT
 
+desktop = str(pathlib.Path.home() / 'Desktop') + "\Spyder (Anaconda3).lnk"   #is meant to be + "\Rust.lnk"
 
+desktop = r'%s ' %desktop               #declares the full path for the placement of possible rust shortcut
 
+if os.path.exists(desktop) == True:     #checks if that path (aka the shortcut) exists
 
-desktop = pathlib.Path.home() / 'Desktop'
-
-desktop = str(desktop)
-desktop = desktop + "\Rust.lnk"
-
-desktop = r'%s ' %desktop
-
-if os.path.exists(desktop) == True:
     print("desktop shortcut present")
+
+
 else:
+
     print("desktop shortcut not present")
+
     
+######
+
+projFolder = os.path.join(__location__) #declares projFolder as path for this folder
+
+projFolder = r'%s' %projFolder          #converts that into a real string
+
+WipeTimeInputPath=projFolder+'\WipeTimeInput.txt'   #declared WipeTimeInputPath as full path of text file
+
+txtFileRead = open(WipeTimeInputPath, "r")          #opens the txt file in read mode
+
+txtfilecontent = txtFileRead.read()                 #declares txtfilecontent as txt file, read
+
+while txtfilecontent == "NotConfig":                #checks if content is NotConfig'd, which is its default state beofre the txtfilehandler changes it
 
 
-
-
-batLocation = os.path.join(__location__, 'nonsecureSendKeys.bat')
-
-batLocation = r'%s ' %batLocation
-
-
-projFolder = os.path.join(__location__)
-
-
-projFolder = r'%s' %projFolder
-
-print(projFolder)
-
-WipeTimeInputPath=projFolder+'\WipeTimeInput.txt'
-
-print(WipeTimeInputPath)
+    import txtFileLocationHandler                   #makes the txtfilecontent to the users input time
+    txtFileRead = open(WipeTimeInputPath, "r")
+    txtfilecontent = txtFileRead.read()             #changes the txtfilecontent into that users input
 
 txtFileRead = open(WipeTimeInputPath, "r")
-
 txtfilecontent = txtFileRead.read()
 
+wipeTime=txtfilecontent            #makes var for the temp var
 
+txtFileRead.close()                     #closes the txt file in read mode
 
+tempVar = str(wipeTime)                 #declares the temp var as the users input
 
-while txtfilecontent == "NotConfig":
-    
-    sleep(1)
-    print("not ready yet")
+txtFileWrite = open(WipeTimeInputPath, "w") #opens txt file in write mode
 
+txtFileWrite.write("NotConfig")         #writes the txt file back into NotConfig'd
 
-    import txtFileLocationHandler
-    txtfilecontent = txtFileRead.read()
+txtFileWrite.close()                    #closes txt file out of write mode
 
-
-
-
-
-txtFileRead = open(WipeTimeInputPath, "r")
-wipeTime=txtFileRead.read()
-txtFileRead.close()
-
-tempVar = str(wipeTime)
-txtFileRead = open(WipeTimeInputPath, "w")
-txtFileRead.write("NotConfig")
-txtFileRead.close()
 print("program will initiate at: ",tempVar,"until then, dont close the process")
-tempVar = tempVar.split(":")
-tempVarHour =tempVar[0] 
-tempVarMin =tempVar[1]
-tempVar = str(tempVar[0]+tempVar[1])
+
+tempVarSplit = tempVar.split(":")       #string stuff
+
+tempVarHour =tempVarSplit[0]
+
+tempVarMin =tempVarSplit[1]
+
+tempVarCombined = str(tempVarSplit[0]+tempVarSplit[1])  #4 letter string of the time of wipe
 
 
-def WhatsTheTime():
+def WhatsTheTime():             #returns the time as a 4 letter string
 
-    t = time()
+    t = time()                          #string stuff
 
     b = str(ctime(t))
     
@@ -118,16 +108,15 @@ def WhatsTheTime():
     
     e = str(d[0] + d[1])
 
-    WipeHour =d[0]
-    WipeMin =d[1]
-    WipeSec =d[2]
+    CurrentHour =d[0]
 
-    print(e,tempVar)
+    CurrentMin =d[1]
+
+    CurrentSec =d[2]
+
     return e
 
-
-
-def process_exists(process_name):
+def process_exists(process_name):       #function for checking if a process exists, arg is the full process name.exe    
 
     call = 'TASKLIST', '/FI', 'imagename eq %s' % process_name
     
@@ -137,51 +126,51 @@ def process_exists(process_name):
     
     return last_line.lower().startswith(process_name.lower())
 
-def connect_server():
+def connect_server():       #simulates key presses for connecting via console
 
-    keyboard.press(Key.f1)
+    keyboard.press(Key.f1)      #open console
     sleep(0.2)
     keyboard.release(Key.f1)
 
-    sleep(5)
+    sleep(5)                    #lag timer
 
-    keyboard.type("connect 164.132.200.22:28026")
-    sleep(10)
-    keyboard.tap(Key.enter)
+    keyboard.type("connect 164.132.200.22:28026")   #connects to server
+    sleep(10)                   #lag time
+    keyboard.tap(Key.enter)                         #executes
 
-    sleep(5)
+    sleep(5)                    #lag time
 
-    keyboard.press(Key.f1)
+    keyboard.press(Key.f1)  #close console
     sleep(0.2)
     keyboard.release(Key.f1)
 
-def anti_afk():
+def anti_afk():         #simulates keypresses for not getting afk kicked
 
-    keyboard.press(Key.w) #fix wrong 
-    sleep(5)
-    keyboard.release(Key.w)
-
-    keyboard.press(Key.a)
-    sleep(5)
-    keyboard.release(Key.a)
-
-    keyboard.press(Key.s)
-    sleep(5)
-    keyboard.release(Key.s)
-
-    keyboard.press(Key.d)
-    sleep(5)
-    keyboard.release(Key.d)
-    sleep(1)
+    keyboard.press('w') 
     keyboard.tap(Key.space)
+    sleep(5)
+    keyboard.release('w')
 
-def focus_rust():
-    return None
+    keyboard.press('a')
+    keyboard.tap(Key.space)
+    sleep(5)
+    keyboard.release('a')
+
+    keyboard.press('s')
+    keyboard.tap(Key.space)
+    sleep(5)
+    keyboard.release('s')
+
+    keyboard.press('d')
+    keyboard.tap(Key.space)
+    sleep(5)
+    keyboard.release('d')
 
 
-print(WhatsTheTime,tempVar)
-while WhatsTheTime() != tempVar:
 
+
+while WhatsTheTime() != tempVarCombined:
+    print("check check")
     WhatsTheTime()
     
     sleep(1)
@@ -190,12 +179,16 @@ print("wipe time reached, program initiating...")
 sleep(1)
 print("checking if rust is open or not")
 sleep(1)
-if process_exists('RustClient.exe') == True:
+if process_exists('pythonw.exe') == True:   #is meant to be 'RustClient.exe
     print("rust is open")
     sleep(1)
     print("Rust hooked")
     sleep(1)
-    focus_rust()
+
+
+    import focus
+
+
     print("focused rust tab")
     sleep(1)
     print("starting server connection")
@@ -216,7 +209,7 @@ else:
     
     os.startfile (desktop)
     y=1
-    while process_exists('DiscordHookHelper64.exe') != True:
+    while process_exists('DiscordHookHelper64.exe') != True:  #can just leave for testing since it has a timed out timer
         if y < 100:
             y=y+1
 
@@ -229,7 +222,7 @@ else:
     print("waiting incase its still booting up")
     sleep(20)
 
-    focus_rust()
+    import focus
     print("focused rust tab")
     print("starting server connection")
     connect_server()
