@@ -3,6 +3,8 @@ from pynput.keyboard import *
 from time import time, ctime, sleep
 import pathlib
 import os
+
+
 import win32gui
 
 os.system("") #to fix the color somehow
@@ -48,6 +50,7 @@ if os.path.exists(desktop) == True:
     print("desktop shortcut present")
 else:
     print("desktop shortcut not present")
+    
 
 
 
@@ -63,36 +66,45 @@ projFolder = os.path.join(__location__)
 projFolder = r'%s' %projFolder
 
 print(projFolder)
-os.system('cd '+projFolder)
-os.system('python txtFileLocationHandler.py')
+
 WipeTimeInputPath=projFolder+'\WipeTimeInput.txt'
+
 print(WipeTimeInputPath)
+
 txtFileRead = open(WipeTimeInputPath, "r")
+
 txtfilecontent = txtFileRead.read()
 
+
+
+
 while txtfilecontent == "NotConfig":
+    
     sleep(1)
     print("not ready yet")
 
-print("what local time is wipe for you?")
 
-print("the format is 00:00")
-
-
-#WipeTime = str(input("type the time here : "))
-wipeTime="12:12"
-
-wipeTime = wipeTime.split(":")
-
-wipeHR = int(wipeTime[0])
-
-wipeMIN = int(wipeTime[1])
+    import txtFileLocationHandler
+    txtfilecontent = txtFileRead.read()
 
 
 
-wipeTime = str(wipeTime[0] + wipeTime[1])
 
-print("your wipe time is: ",wipeTime)
+
+txtFileRead = open(WipeTimeInputPath, "r")
+wipeTime=txtFileRead.read()
+txtFileRead.close()
+
+tempVar = str(wipeTime)
+txtFileRead = open(WipeTimeInputPath, "w")
+txtFileRead.write("NotConfig")
+txtFileRead.close()
+print("program will initiate at: ",tempVar,"until then, dont close the process")
+tempVar = tempVar.split(":")
+tempVarHour =tempVar[0] 
+tempVarMin =tempVar[1]
+tempVar = str(tempVar[0]+tempVar[1])
+
 
 def WhatsTheTime():
 
@@ -106,9 +118,14 @@ def WhatsTheTime():
     
     e = str(d[0] + d[1])
 
-    print("program initiation: ",wipeHR,":",wipeMIN,"\n","current time:       ",d[0],":",d[1],":",d[2],end="\r")
+    WipeHour =d[0]
+    WipeMin =d[1]
+    WipeSec =d[2]
 
+    print(e,tempVar)
     return e
+
+
 
 def process_exists(process_name):
 
@@ -159,12 +176,11 @@ def anti_afk():
     keyboard.tap(Key.space)
 
 def focus_rust():
+    return None
 
-    subprocess.call([batLocation, "Rust", ""]) #add support for focusin when minimized
 
-    print("rust focused")
-
-while WhatsTheTime() != wipeTime:
+print(WhatsTheTime,tempVar)
+while WhatsTheTime() != tempVar:
 
     WhatsTheTime()
     
