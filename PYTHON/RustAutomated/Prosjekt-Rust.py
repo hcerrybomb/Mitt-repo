@@ -6,7 +6,7 @@ from time import time, ctime, sleep
 import pathlib
 import os
 
-######      VARIABLE DECLARATIONS
+######       VARIABLE DECLARATIONS
 
 os.system("") 
 keyboard = Controller()
