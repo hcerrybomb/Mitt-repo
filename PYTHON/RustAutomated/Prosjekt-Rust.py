@@ -232,6 +232,7 @@ while WhatsTheTime() != tempVarCombined:
 
     14:25 current
     14:10 temp
+    ss
 
 
 
