@@ -57,33 +57,73 @@ projFolder = os.path.join(__location__) #declares projFolder as path for this fo
 
 projFolder = r'%s' %projFolder          #converts that into a real string
 
-WipeTimeInputPath=projFolder+'\WipeTimeInput.txt'   #declared WipeTimeInputPath as full path of text file
-
-txtFileRead = open(WipeTimeInputPath, "r")          #opens the txt file in read mode
-
-txtfilecontent = txtFileRead.read()                 #declares txtfilecontent as txt file, read
-
-while txtfilecontent == "NotConfig":                #checks if content is NotConfig'd, which is its default state beofre the txtfilehandler changes it
 
 
-    import txtFileLocationHandler                   #makes the txtfilecontent to the users input time
-    txtFileRead = open(WipeTimeInputPath, "r")
-    txtfilecontent = txtFileRead.read()             #changes the txtfilecontent into that users input
 
-txtFileRead = open(WipeTimeInputPath, "r")
-txtfilecontent = txtFileRead.read()
 
-wipeTime=txtfilecontent            #makes var for the temp var
 
-txtFileRead.close()                     #closes the txt file in read mode
+
+
+
+            #checks if content is NotConfig'd, which is its default state beofre the txtfilehandler changes it
+
+UserInputStatus = False     #status for wether the users input is valid or not
+
+######      FIRST STATEMENT
+
+print(style.CYAN + "\nwhat time is wipe for you?"+style.RESET+"\n\ngive your answer in an 00:00 format\n\nexamples:\n\n    17:00\n    15:30\n    04:45\n\n")
+
+######      USER INPUT
+
+UserInput = str(input("give your answer here:   "))     #creates a variable for the users input
+
+while UserInputStatus == False:     #while the users input is invalid
+
+
+    if len(UserInput)>5:            #if there are too many characters in the user input
+
+        print("\n"+style.RED+"Error:"+style.RESET+" Too many charcters\n\ntry again")
+
+        UserInputStatus = False     #user input stays invalid
+
+        UserInput = str(input("\ngive your answer here:   "))   #user needs to give input again
+
+
+    elif UserInput.count(":")<1:    #if there are no colons in the user input
+
+        print(style.RED+"Error:"+style.RESET+" Missing colon\n\ntry again")
+
+        UserInputStatus = False     #user input stays invalid
+
+        UserInput = str(input("\ngive your answer here:   "))   #user needs to give input again
+
+
+    elif len(UserInput)<5:          #if there are too few characters in the answer
+
+        print(style.RED+"Error:"+style.RESET+" too few characters\n\ntry again")
+
+        UserInputStatus = False     #user input stays invalid
+
+        UserInput = str(input("\ngive your answer here:   "))   #user needs to give input again
+
+
+    else:   #if none of the error conditions are met
+
+        __location__ = os.path.realpath(
+            os.path.join(os.getcwd(), os.path.dirname(__file__)))   #declares __location__ as this folders path
+
+        print(style.GREEN+"\n\nwipe time saved succsessfully"+style.RESET)
+
+        UserInputStatus = True      #user input is valid
+
+
+
+
+
+
+wipeTime=UserInput            #makes var for the temp var
 
 tempVar = str(wipeTime)                 #declares the temp var as the users input
-
-txtFileWrite = open(WipeTimeInputPath, "w") #opens txt file in write mode
-
-txtFileWrite.write("NotConfig")         #writes the txt file back into NotConfig'd
-
-txtFileWrite.close()                    #closes txt file out of write mode
 
 print("program will initiate at: ",tempVar,"until then, dont close the process")
 
@@ -107,11 +147,12 @@ def WhatsTheTime():             #returns the time as a 4 letter string
     d= c[3].split(":")
     
     e = str(d[0] + d[1])
-
+    global CurrentHour
     CurrentHour =d[0]
-
+    
+    global CurrentMin
     CurrentMin =d[1]
-
+    global CurrentSec
     CurrentSec =d[2]
 
     return e
@@ -170,10 +211,42 @@ def anti_afk():         #simulates keypresses for not getting afk kicked
 
 
 while WhatsTheTime() != tempVarCombined:
-    print("check check")
-    WhatsTheTime()
+
+    CurrentHour = int(CurrentHour)
+    tempVarHour = int(tempVarHour)
+    CurrentMin = int(CurrentMin)
+    tempVarMin = int(tempVarMin)
+    CurrentSec = int(CurrentSec)
+
+
+    if CurrentHour == tempVarHour:
+        if CurrentMin < tempVarMin:
+            HoursUntil = 0
+            MinsUntil = tempVarMin - CurrentMin
+
+        if CurrentMin > tempVarMin:
+            HoursUntil = 23
+            MinsUntil = (60-CurrentMin)+tempVarMin
+    if CurrentHour < tempVarHour:
+
+
+    14:25 current
+    14:10 temp
+
+
+
+
+
+
+
+
+
+    print("current hour:\t",CurrentHour,"\tcurrent min\t",CurrentMin,"\tcurrent second\t",CurrentSec)
+    print("wipe hour:\t",tempVarHour,"\twipe min:\t",tempVarMin)
+    
     
     sleep(1)
+    WhatsTheTime()
     
 print("wipe time reached, program initiating...")
 sleep(1)
