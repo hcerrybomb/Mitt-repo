@@ -1,163 +1,194 @@
-######      IMPORTS                 
+######                                                                      IMPORTS                 
 
 import subprocess
 from pynput.keyboard import *
 from time import time, ctime, sleep
 import pathlib
 import os
+import win32con
+import sys
+import win32gui
+import win32process as wproc
+import win32api as wapi
 
-######       VARIABLE DECLARATIONS
+######                                                                      VARIABLE DECLARATIONS
 
-os.system("") 
+os.system("")
+
 keyboard = Controller()
-e=str
-__location__ = os.path.realpath(        #declares __location__ as a string of the path of this projects folder
+
+__location__ = os.path.realpath(                                            #declares __location__ as a string of the path of this projects folder
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
-######      COLOR STYLING
+programToFind = "Rust"
+
+######                                                                      COLOR STYLING
 
 class style():
-    BLACK = '\033[30m'
-    RED = '\033[31m'
-    GREEN = '\033[32m'
-    YELLOW = '\033[33m'
-    BLUE = '\033[34m'
-    MAGENTA = '\033[35m'
-    CYAN = '\033[36m'
-    WHITE = '\033[37m'
-    UNDERLINE = '\033[4m'
-    RESET = '\033[0m'
-    BLINK = '\33[5m'
+    Red =       '\033[31m'
+    Green =     '\033[32m'
+    Yellow =    '\033[33m'
+    Cyan =      '\033[36m'
+    Underline = '\033[4m'
+    Reset =     '\033[0m'
 
-######      FIRST STATEMENT
+######                                                                      FIRST STATEMENT
 
-print(style.RED+"\n!!!IMPORTANT!!!"+style.RESET)
-
-print("\nYou MUST have the"+style.YELLOW+" GAME OVERLAY"+style.RESET+" activity setting in"+style.YELLOW+" DISCORD  "+style.UNDERLINE+"ENABLED"+style.RESET+"  for this program to work")
-
-######      CHECK FOR RUST DESKTOP SHORTCUT
-
-desktop = str(pathlib.Path.home() / 'Desktop') + "\Spyder (Anaconda3).lnk"   #is meant to be + "\Rust.lnk"
-
-desktop = r'%s ' %desktop               #declares the full path for the placement of possible rust shortcut
-
-if os.path.exists(desktop) == True:     #checks if that path (aka the shortcut) exists
-
-    print("desktop shortcut present")
-
-
-else:
-
-    print("desktop shortcut not present")
+def haveYou(input):
+    if input == "Y" or input == "y" or input == "Yes" or input == "YES" or input == "yes":
+        return True
+    if input == "N" or input =="n" or input =="no" or input =="NO" or input == "No":
+        return False
+    else:
+        return "invalid"
 
     
-######
 
-projFolder = os.path.join(__location__) #declares projFolder as path for this folder
+sleep(1)
+print(style.Red+"\n================!!!IMPORTANT!!!================"+style.Reset)
+sleep(0.5)
+print("\n Step 1:\tFor the program to be its most efficient you should have the",style.Cyan,"Game Overlay",style.Reset,"Activity setting",style.Green,"Enabled",style.Reset,"on discord")
+sleep(0.5)
+print("\n Step 2:\tIf your game is open, make sure your screen mode is either borderless or windowed")
+sleep(0.5)
+print("\n        \tTo do this > open your game > open your menu > click OPTIONS > click SCREEN > set the screen MODE to either Borderless or Windowd > click APPLY CHANGES")
+sleep(0.5)
+screenModeInput = str(input("\n\n Is your screen mode correct? [Y/N] : "))
+sleep(0.5)
+while haveYou(screenModeInput) != True:
+    if haveYou(screenModeInput)==False:
+        print("\n Ok, please turn the setting on and restart the program")
+        sleep(0.5)
+        print("\n Program closing")
+        sleep(3)
+        raise SystemExit
+    if haveYou(screenModeInput)=="invalid":
+        print("\n Invalid input, try again")
+        sleep(0.5)
+        screenModeInput = str(input("\n\n Is your screen mode correct? [Y/N] : "))
+sleep(0.5)
+print("\n Step 3:\tMake sure you have a rust shortcut on your desktop, the program will now check this for you . . .")
+sleep(2)
+######                                                                      CHECK FOR RUST DESKTOP SHORTCUT
 
-projFolder = r'%s' %projFolder          #converts that into a real string
+desktopPath = str(pathlib.Path.home() / 'Desktop')
 
+rustShortcut = desktopPath + "\Rust.lnk"                                    #defines desktop variable for the shortcut
 
+rawRustShortcut = r'%s ' %rustShortcut                                         #declares the full path for the placement of possible rust shortcut
 
+if os.path.exists(rawRustShortcut) != True:                                    #checks if that path (aka the shortcut) exists
+    print("\n there is",style.Red,"not",style.Reset,"a shortcut for rust present on your desktop, please create one and restart the program")
+    sleep(0.5)
+    print("\n Program closing")
+    sleep(5)
+    raise SystemExit
 
-
-
-
-
-
-            #checks if content is NotConfig'd, which is its default state beofre the txtfilehandler changes it
-
-UserInputStatus = False     #status for wether the users input is valid or not
-
-######      FIRST STATEMENT
-
-print(style.CYAN + "\nwhat time is wipe for you?"+style.RESET+"\n\ngive your answer in an 00:00 format\n\nexamples:\n\n    17:00\n    15:30\n    04:45\n\n")
-
-######      USER INPUT
-
-UserInput = str(input("give your answer here:   "))     #creates a variable for the users input
-
-while UserInputStatus == False:     #while the users input is invalid
-
-
-    if len(UserInput)>5:            #if there are too many characters in the user input
-
-        print("\n"+style.RED+"Error:"+style.RESET+" Too many charcters\n\ntry again")
-
-        UserInputStatus = False     #user input stays invalid
-
-        UserInput = str(input("\ngive your answer here:   "))   #user needs to give input again
-
-
-    elif UserInput.count(":")<1:    #if there are no colons in the user input
-
-        print(style.RED+"Error:"+style.RESET+" Missing colon\n\ntry again")
-
-        UserInputStatus = False     #user input stays invalid
-
-        UserInput = str(input("\ngive your answer here:   "))   #user needs to give input again
+print("\n Rust shortcut",style.Green,"present",style.Reset,"on desktop, continuing program")
+sleep(2)
 
 
-    elif len(UserInput)<5:          #if there are too few characters in the answer
 
-        print(style.RED+"Error:"+style.RESET+" too few characters\n\ntry again")
+projFolder = os.path.join(__location__)                                     #declares projFolder as path for this folder
 
-        UserInputStatus = False     #user input stays invalid
+projFolder = r'%s' %projFolder                                              #converts that into a real string
 
-        UserInput = str(input("\ngive your answer here:   "))   #user needs to give input again
+errorCheck = False                                                          #status for wether the users input is valid or not
+
+######                                                                      FIRST STATEMENT
+
+print(style.Cyan + "\n What time is wipe for you?"+style.Reset+"\n\n give your answer in an",style.Green,"00:00",style.Reset,"format")
+sleep(0.5)
+print("\n For example;\t13:20\t23:40\t17:00\t . . .")
+sleep(0.5)
+
+######                                                                      USER INPUT
+
+wipeTimeInput = str(input("\n Give your answer here : "))                         #creates a variable for the users input
+sleep(0.2)
 
 
-    else:   #if none of the error conditions are met
+while errorCheck == False:                                             #while the users input is invalid
+
+
+    if len(wipeTimeInput)>5:                                                    #if there are too many characters in the user input
+
+        print("\n"+style.Red+"Error :\t\t"+style.Reset+"Too many charcters")
+        sleep(0.5)
+
+        errorCheck = False                                             #user input stays invalid
+
+        wipeTimeInput = str(input("\n Try again, give your answer here : "))               #user needs to give input again
+
+
+    elif wipeTimeInput.count(":")<1:                                            #if there are no colons in the user input
+
+        print(style.Red+"Error :\t\t"+style.Reset+"Missing colon")
+        sleep(0.5)
+
+        errorCheck = False                                             #user input stays invalid
+
+        wipeTimeInput = str(input("\n Try again, give your answer here : "))               #user needs to give input again
+
+
+    elif len(wipeTimeInput)<5:                                                  #if there are too few characters in the answer
+
+        print(style.Red+"Error :\t\t"+style.Reset+" too few characters")
+        sleep(0.5)
+
+        errorCheck = False                                             #user input stays invalid
+
+        wipeTimeInput = str(input("\n Try again, give your answer here:   "))               #user needs to give input again
+
+
+    else:                                                                   #if none of the error conditions are met
 
         __location__ = os.path.realpath(
-            os.path.join(os.getcwd(), os.path.dirname(__file__)))   #declares __location__ as this folders path
+            os.path.join(os.getcwd(), os.path.dirname(__file__)))           #declares __location__ as this folders path
 
-        print(style.GREEN+"\n\nwipe time saved succsessfully"+style.RESET)
+        print(style.Green+"\n\n Wipe time saved succsessfully !"+style.Reset)
+        sleep(0.5)
+        print("\n\n The program will now initialize at the time of wipe,",style.Red,"do not",style.Reset,"close it")
 
-        UserInputStatus = True      #user input is valid
+        errorCheck = True                                              #user input is valid
 
+wipeTime = str(wipeTimeInput)                                                     #declares the temp var as the users input
 
+wipeTimeSplit = wipeTime.split(":")                                           #string stuff
 
+wipeHour = wipeTimeSplit[0]
 
+wipeMin = wipeTimeSplit[1]
 
+integerWipeTime = str(wipeTimeSplit[0]+wipeTimeSplit[1])                      #4 letter string of the time of wipe
 
-wipeTime=UserInput            #makes var for the temp var
+def getCurrentTime():                                                         #returns the time as a 4 letter string
 
-tempVar = str(wipeTime)                 #declares the temp var as the users input
+    fullTime = time()                                                              #string stuff
 
-print("program will initiate at: ",tempVar,"until then, dont close the process")
-
-tempVarSplit = tempVar.split(":")       #string stuff
-
-tempVarHour =tempVarSplit[0]
-
-tempVarMin =tempVarSplit[1]
-
-tempVarCombined = str(tempVarSplit[0]+tempVarSplit[1])  #4 letter string of the time of wipe
-
-
-def WhatsTheTime():             #returns the time as a 4 letter string
-
-    t = time()                          #string stuff
-
-    b = str(ctime(t))
+    fullTimeString = str(ctime(fullTime))
     
-    c= b.split(" ")
+    fullTimeStringSplit = fullTimeString.split(" ")
     
-    d= c[3].split(":")
+    clockTimes = fullTimeStringSplit[3].split(":")
     
-    e = str(d[0] + d[1])
-    global CurrentHour
-    CurrentHour =d[0]
-    
-    global CurrentMin
-    CurrentMin =d[1]
-    global CurrentSec
-    CurrentSec =d[2]
+    integerTime = str(clockTimes[0] + clockTimes[1])
 
-    return e
+    global currentHour
 
-def process_exists(process_name):       #function for checking if a process exists, arg is the full process name.exe    
+    currentHour = clockTimes[0]
+    
+    global currentMin
+
+    currentMin = clockTimes[1]
+
+    global currentSec
+
+    currentSec = clockTimes[2]
+
+    return integerTime
+
+def getProcessStatus(process_name):                                           #function for checking if a process exists, arg is the full process name.exe    
 
     call = 'TASKLIST', '/FI', 'imagename eq %s' % process_name
     
@@ -167,7 +198,7 @@ def process_exists(process_name):       #function for checking if a process exis
     
     return last_line.lower().startswith(process_name.lower())
 
-def connect_server():       #simulates key presses for connecting via console
+def connectToServer():                                                       #simulates key presses for connecting via console      TOTAL TIME PER 20.4 sec
 
     keyboard.press(Key.f1)      #open console
     sleep(0.2)
@@ -185,8 +216,7 @@ def connect_server():       #simulates key presses for connecting via console
     sleep(0.2)
     keyboard.release(Key.f1)
 
-def anti_afk():         #simulates keypresses for not getting afk kicked
-
+def antiAfk():                                                             #simulates keypresses for not getting afk kicked         TOTAL TIME PER 20 sec
     keyboard.press('w') 
     keyboard.tap(Key.space)
     sleep(5)
@@ -207,108 +237,252 @@ def anti_afk():         #simulates keypresses for not getting afk kicked
     sleep(5)
     keyboard.release('d')
 
+def window_enum_handler(hwnd, resultList):
+    if win32gui.IsWindowVisible(hwnd) and win32gui.GetWindowText(hwnd) != '':
+        resultList.append((hwnd, win32gui.GetWindowText(hwnd)))
 
+def get_app_list(handles=[]):
+    mlst=[]
+    win32gui.EnumWindows(window_enum_handler, handles)
+    for handle in handles:
+        mlst.append(handle)
+    return mlst
 
+windowsList = get_app_list()
 
-while WhatsTheTime() != tempVarCombined:
+numberOfWindows = len(windowsList)
 
-    CurrentHour = int(CurrentHour)
-    tempVarHour = int(tempVarHour)
-    CurrentMin = int(CurrentMin)
-    tempVarMin = int(tempVarMin)
-    CurrentSec = int(CurrentSec)
+while getCurrentTime() != integerWipeTime:                                    #while the return value of the WhatsTheTime function does not match the time of wipe, update the whats the time function
 
+    getCurrentTime()
 
-    if CurrentHour == tempVarHour:
-        if CurrentMin < tempVarMin:
+    currentHour = int(currentHour)
+    wipeHour = int(wipeHour)
+    currentMin = int(currentMin)
+    wipeMin = int(wipeMin)
+    currentSec = int(currentSec)
+
+    if currentHour == wipeHour:
+
+        if currentMin < wipeMin:
+
             HoursUntil = 0
-            MinsUntil = tempVarMin - CurrentMin
+            MinsUntil = wipeMin - currentMin
 
-        if CurrentMin > tempVarMin:
+        if currentMin > wipeMin:
+
             HoursUntil = 23
-            MinsUntil = (60-CurrentMin)+tempVarMin
-    if CurrentHour < tempVarHour:
+            MinsUntil = (60 - currentMin) + wipeMin
 
+    if currentHour < wipeHour:
 
-    14:25 current
-    14:10 temp
-    ss
+        if currentMin < wipeMin:
 
+            HoursUntil = wipeHour-currentHour
+            MinsUntil = wipeMin - currentMin
 
+        if currentMin > wipeMin:
 
+            HoursUntil = (wipeHour - currentHour) - 1
+            MinsUntil = (60 - currentMin) + wipeMin
 
+    if currentHour > wipeHour:
 
+        if currentMin < wipeMin:
 
+            HoursUntil = (24 - currentHour) + wipeHour
+            MinsUntil = wipeMin - currentMin
 
+        if currentMin > wipeMin:
 
+            HoursUntil = ((24 - currentHour) + wipeHour) - 1
+            MinsUntil = (60 - currentMin) + wipeMin                 #fix minute wrong bug
 
-    print("current hour:\t",CurrentHour,"\tcurrent min\t",CurrentMin,"\tcurrent second\t",CurrentSec)
-    print("wipe hour:\t",tempVarHour,"\twipe min:\t",tempVarMin)
-    
-    
+    print("",HoursUntil,"Hrs",MinsUntil-1,"Mins",60-currentSec,"Seconds"," until Initialization",end = "\r")
+
     sleep(1)
-    WhatsTheTime()
-    
-print("wipe time reached, program initiating...")
+print("\n Program starting . . .")
+sleep(0.5)
+print("\n Checking if Rust is open")
 sleep(1)
-print("checking if rust is open or not")
-sleep(1)
-if process_exists('pythonw.exe') == True:   #is meant to be 'RustClient.exe
-    print("rust is open")
-    sleep(1)
-    print("Rust hooked")
-    sleep(1)
+if getProcessStatus('RustClient.exe') == True:                                #check if rust is open or not
+    print("\n Rust is open")
+    sleep(0.5)
+    print("\n Locating window \n")
+    sleep(0.5)
+    for x in range(0,numberOfWindows):
+        sleep(0.1)
+
+        if programToFind == (str(windowsList[x]).split("'"))[1]:
+            print("\tProgram nr\t",x,style.Green,"Match found\t",style.Reset,(str(windowsList[x]).split("'"))[1])
+            correctProgram = (str(windowsList[x]).split("'"))[1]
+        else:
+            print("\tProgram nr\t",x,style.Red,"No match\t",style.Reset,(str(windowsList[x]).split("'"))[1])
 
 
-    import focus
+    
+    handle = win32gui.FindWindow(None, correctProgram)
+    print("\n Hooking window")  
+    if 1==1:
+        try:
+            
+            win32gui.BringWindowToTop(handle)
+            sleep(0.2)
 
+            
+            keyboard.press(Key.alt)
+            win32gui.SetForegroundWindow(handle)
+            sleep(0.5)
 
-    print("focused rust tab")
-    sleep(1)
-    print("starting server connection")
-    connect_server()
-    print("starts the script for continuing to connect and anti-afk")
+            keyboard.release(Key.alt)
+            
+            remote_thread, _ = wproc.GetWindowThreadProcessId(handle)
+            wproc.AttachThreadInput(wapi.GetCurrentThreadId(), remote_thread, True)
+            win32gui.SetFocus(handle)
+            sleep(0.2)
+
+            
+            win32gui.ShowWindow(handle, win32con.SW_MAXIMIZE)
+            sleep(0.2)
+
+            
+            win32gui.BringWindowToTop(handle)
+            sleep(0.2)
+
+              
+            win32gui.SetForegroundWindow(handle)
+            sleep(0.2)
+
+            
+            win32gui.SetFocus(handle)
+            sleep(0.2)
+            print("\n Window hooked")
+            sleep(1)
+            
+
+        except:
+
+            print("\n",style.Yellow,"Expected error : ",style.Red,sys.exc_info(),style.Reset,"occurred")
+            print("\n Program continuing")
+
     x=1
-    while x<100:
-        connect_server()
+    print("\n Window hooked")
+    sleep(0.2)
+    print("\n Connecting to server . . .")
+    connectToServer()
+    sleep(1)
+    print("\n Anti afk kicker will start in 20 minutes . . .")
+    sleep(1200)
+    while x<100:                                                            #runs connect and anti afk 100 times
+
+        connectToServer()
+
         sleep(1)
-        anti_afk()
+
+        antiAfk()
+
+        sleep(1)
+
 
         x=x+1
+      
+else:                                                                       #if it isnt open 
+    print("\n Rust not open, opening Rust\n")
+    print("\n")
+    os.startfile(rawRustShortcut)                                                  #starts the DESKTOP SHORTCUT
 
-        print("ur no longer afk")
-        sleep(1)
-
-else:
-    
-    os.startfile (desktop)
     y=1
-    while process_exists('DiscordHookHelper64.exe') != True:  #can just leave for testing since it has a timed out timer
+
+    while getProcessStatus('DiscordHookHelper64.exe') != True:                #checks 100 times if the discord hook is open, aka the game has reached main menu
+        print("\n Checking if program is ready, check ", y, "/", "100",end="\r")
         if y < 100:
+
+            sleep(0.5)
+
             y=y+1
 
-            print("program not ready yet")
-            sleep(0.5)
-        else:
-            print("ready checker timed out")
-            break
-    print("Rust hooked")
-    print("waiting incase its still booting up")
-    sleep(20)
+        else:                                                               #if none of the 100 checks come back as true TIME OUT the checking
 
-    import focus
-    print("focused rust tab")
-    print("starting server connection")
-    connect_server()
+            print("\n Checker timed out, skipping check")
+
+            break                         
+    print("\n ")
+    sleep(15)                                                               #waiting time to make sure the game boots up
+    print("\n ")
+    print("\n Locating window")
+    windowsList = get_app_list()
+
+    numberOfWindows = len(windowsList)
+    for x in range(0,numberOfWindows):
+        sleep(0.1)
+
+        if programToFind == (str(windowsList[x]).split("'"))[1]:
+            print("\tProgram nr\t",x,style.Green,"Match found\t",style.Reset,(str(windowsList[x]).split("'"))[1])
+            correctProgram = (str(windowsList[x]).split("'"))[1]
+        else:
+            print("\tProgram nr\t",x,style.Red,"No match\t",style.Reset,(str(windowsList[x]).split("'"))[1])
+
+
     
-    print("starts the script for continuing to connect and anti-afk")
+    handle = win32gui.FindWindow(None, correctProgram)
+    print("\n Hooking window")  
+    if 1==1:
+        try:
+            
+            win32gui.BringWindowToTop(handle)
+            sleep(0.2)
+
+            
+            keyboard.press(Key.alt)
+            win32gui.SetForegroundWindow(handle)
+            sleep(0.5)
+
+            keyboard.release(Key.alt)
+            
+            remote_thread, _ = wproc.GetWindowThreadProcessId(handle)
+            wproc.AttachThreadInput(wapi.GetCurrentThreadId(), remote_thread, True)
+            win32gui.SetFocus(handle)
+            sleep(0.2)
+
+            
+            win32gui.ShowWindow(handle, win32con.SW_MAXIMIZE)
+            sleep(0.2)
+
+            
+            win32gui.BringWindowToTop(handle)
+            sleep(0.2)
+
+              
+            win32gui.SetForegroundWindow(handle)
+            sleep(0.2)
+
+            
+            win32gui.SetFocus(handle)
+            sleep(0.2)
+            print("\n Window hooked")
+            sleep(1)
+            
+
+        except:
+
+            print("\n",style.Yellow,"Expected error : ",style.Red,sys.exc_info(),style.Reset,"occurred")
+            print("\n Program continuing")
+                                                                #when its up, focus the tab
+
+    print("\n Connecting to server")
+    connectToServer()                                                        #runs the connect server function
+    sleep(1)
     x=1
-    while x<100:
-        connect_server()
+    print("\n Anti afk kicker will start in 20 minutes . . .")
+    sleep(1200)
+    while x<100:                                                            #runs connect and anti afk 100 times
+
+        connectToServer()
+
         sleep(1)
-        anti_afk()
+
+        antiAfk()
+
+        sleep(1)
 
         x=x+1
-
-        print("ur no longer afk")
-        sleep(1)
