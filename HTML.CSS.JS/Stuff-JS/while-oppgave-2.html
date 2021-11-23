@@ -11,18 +11,19 @@
 </head>
 <body>
     <script>
-
+        function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+        }   
         let sum = 0;
-        
-
-        for(let i=0; i<=1000;1++){
-            let terning = Math.floor(Math.random()*6)+1;
-
+        for(let i = 0; i <= 1000; i++){
+            //let terning = Math.floor(Math.random() * 6) + 1;
+            let terning = getRndInteger(1,6)
             if(terning === 6){
                 sum = sum + 1;
             }
         }
-        document.write(sum)
+        console.log(sum);
+        
 
 
 

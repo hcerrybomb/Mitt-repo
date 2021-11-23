@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "frhtylcn.pythonsnippets",
+        "kevinrose.vsc-python-indent",
+        "tht13.python",
+        "tushortz.python-extended-snippets",
+        "aaron-bond.better-comments",
+        "coenraads.bracket-pair-colorizer-2"
+    ]
+}
