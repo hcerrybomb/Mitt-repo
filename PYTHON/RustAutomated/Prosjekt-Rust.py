@@ -1,6 +1,8 @@
 # IMPORTS
 
+#pyinstaller --onefile -i"logo.ico" Prosjekt-Rust.py
 import subprocess
+from numpy.core.numeric import full
 from pynput.keyboard import *
 from time import time, ctime, sleep
 import pathlib
@@ -101,35 +103,64 @@ projFolder = os.path.join(__location__)
 
 projFolder = r'%s' % projFolder  # converts that into a real string
 
-errorCheck = False  # status for wether the users input is valid or not
+errorCheckZero = False
 
 # FIRST STATEMENT
 print(style.Cyan, "\n What is the IP of the Rust server?", style.Reset)
 sleep(0.5)
-ipAddress = str(input("\n Paste the full ip",
-                      style.Yellow, "here : ", style.Reset))
+ipAddress = str(input("\n Paste the full ip"+style.Yellow+ " here : "+ style.Reset))
+while errorCheckZero == False:
+    if ipAddress.count(":") < 1:
+        print(style.Red+"Error :\t\t"+style.Reset+"Missing colon")
+        sleep(0.5)
+        errorCheckZero = False
+        ipAddress = str(input("\n Try again, paste the full ip"+style.Yellow+ " here : "+ style.Reset))
+    tempIntAddress = str(ipAddress)
+    tempIntAddress = tempIntAddress.split(":")
+    tempIntAddress = str(tempIntAddress[0]+tempIntAddress[1])
+    tempIntAddress = tempIntAddress.split(".")
+    fullTempIntAddress = ""
+    for x in range(0,len(tempIntAddress)):
+        fullTempIntAddress = fullTempIntAddress + str(tempIntAddress[x])
+    if ipAddress.count(".") < 3:
+        print(style.Red+"Error :\t\t"+style.Reset+"Invalid ip, missing period")
+        sleep(0.5)
+        errorCheckZero = False
+        ipAddress = str(input("\n Try again, paste the full ip"+style.Yellow+ " here : "+ style.Reset))
+    if fullTempIntAddress.isnumeric() != True:
+        print(style.Red+"Error :\t\t"+style.Reset+"Invalid ip, no letters in ip")
+        sleep(0.5)
+        errorCheckZero = False
+        ipAddress = str(input("\n Try again, paste the full ip"+style.Yellow+ " here : "+ style.Reset))
+    else:
+        print(style.Green+"\n\n Ip saved succsessfully !"+style.Reset)
+        sleep(0.5)
+        errorCheckZero = True
+
 sleep(0.5)
 print(style.Cyan + "\n What time is wipe for you?"+style.Reset +
-      "\n\n give your answer in an", style.Green, "00:00", style.Reset, "format")
+      "\n\n give your answer in an"+ style.Green, "00:00 "+ style.Reset+ "format")
+
+
+
 sleep(0.5)
 print("\n For example;\t13:20\t23:40\t17:00\t . . .")
 sleep(0.5)
 
 # USER INPUT
-errorCheck = False
+errorCheckOne = False
 # creates a variable for the users input
-wipeTimeInput = str(input("\n Give your answer",
-                          style.Yellow, "here : ", style.Reset))
+wipeTimeInput = str(input("\n Give your answer"+style.Yellow+ " here : "+ style.Reset))
 sleep(0.2)
 
 
-while errorCheck == False:  # while the users input is invalid
+while errorCheckOne == False:  # while the users input is invalid
     if wipeTimeInput.count(":") < 1:  # if there are no colons in the user input
 
         print(style.Red+"Error :\t\t"+style.Reset+"Missing colon")
         sleep(0.5)
 
-        errorCheck = False  # user input stays invalid
+        errorCheckOne = False  # user input stays invalid
 
         wipeTimeInput = str(input("\n Try again, give your answer here : "))
     tempIntTime = str(wipeTimeInput)
@@ -140,7 +171,7 @@ while errorCheck == False:  # while the users input is invalid
         print("\n"+style.Red+"Error :\t\t"+style.Reset+"Too many charcters")
         sleep(0.5)
 
-        errorCheck = False  # user input stays invalid
+        errorCheckOne = False  # user input stays invalid
 
         # user needs to give input again
         wipeTimeInput = str(input("\n Try again, give your answer here : "))
@@ -151,7 +182,7 @@ while errorCheck == False:  # while the users input is invalid
         print(style.Red+"Error :\t\t"+style.Reset+" too few characters")
         sleep(0.5)
 
-        errorCheck = False  # user input stays invalid
+        errorCheckOne = False  # user input stays invalid
 
         # user needs to give input again
         wipeTimeInput = str(input("\n Try again, give your answer here:   "))
@@ -159,12 +190,12 @@ while errorCheck == False:  # while the users input is invalid
     elif tempIntTime.isnumeric() != True:
         print(style.Red+"Error :\t\t"+style.Reset+" no letters in input")
         sleep(0.5)
-        errorCheck = False
+        errorCheckOne = False
         wipeTimeInput = str(input("\n Try again, give your answer here : "))
-    elif tempIntTime > 2400:
+    elif int(tempIntTime) > 2400:
         print(style.Red+"Error :\t\t"+style.Reset+" invalid time")
         sleep(0.5)
-        errorCheck = False
+        errorCheckOne = False
         wipeTimeInput = str(input("\n Try again, give your answer here : "))
     else:  # if none of the error conditions are met
 
@@ -176,7 +207,7 @@ while errorCheck == False:  # while the users input is invalid
         print("\n\n The program will now initialize at the time of wipe,",
               style.Red, "do not", style.Reset, "close it")
 
-        errorCheck = True  # user input is valid
+        errorCheckOne = True  # user input is valid
 
 wipeTime = str(wipeTimeInput)  # declares the temp var as the users input
 
@@ -238,7 +269,7 @@ def connectToServer():  # simulates key presses for connecting via console      
 
     sleep(5)  # lag timer
 
-    keyboard.type("connect ", ipAddress)  # connects to server
+    keyboard.type("connect "+ ipAddress)  # connects to server
     sleep(10)  # lag time
     keyboard.tap(Key.enter)  # executes
 
@@ -335,7 +366,7 @@ while getCurrentTime() != integerWipeTime:  # while the return value of the What
             MinsUntil = (60 - currentMin) + wipeMin  # fix minute wrong bug
 
     print("", HoursUntil, "Hrs", MinsUntil-1, "Mins", 60 -
-          currentSec, "Seconds", " until Initialization", end="\r")
+          currentSec, "Seconds", "until Initialization", end="\r")
 
     sleep(1)
 print("\n Program starting . . .")
@@ -405,7 +436,9 @@ if getProcessStatus('RustClient.exe') == True:  # check if rust is open or not
     connectToServer()
     sleep(1)
     print("\n Anti afk kicker will start in 20 minutes . . .")
-    sleep(1200)
+    for i in range(0,30):
+        sleep(19.6)
+        connectToServer()
     while x < 100:  # runs connect and anti afk 100 times
 
         connectToServer()
@@ -503,7 +536,9 @@ else:  # if it isnt open
     sleep(1)
     x = 1
     print("\n Anti afk kicker will start in 20 minutes . . .")
-    sleep(1200)
+    for i in range(0,30):
+        sleep(19.6)
+        connectToServer()
     while x < 100:  # runs connect and anti afk 100 times
 
         connectToServer()
