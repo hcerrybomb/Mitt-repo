@@ -29,4 +29,5 @@ print("\nthe two string variables combined is: ",combinedStringVariable)
 
                                     #we can use this same concept for number variables, except we have a lot more
                                     #possibilities since numbers have math, and we can use all mathematical operators
-                                    #
+
+integersAdded = integerVariable + integerVariableTwo
