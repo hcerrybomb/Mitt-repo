@@ -30,14 +30,18 @@ print("\nthe two string variables combined is: ",combinedStringVariable)
                                     #we can use this same concept for number variables, except we have a lot more
                                     #possibilities since numbers have math, and we can use all mathematical operators
 
-integersAdded = integerVariable + integerVariableTwo
+integersAdded       =   integerVariable     +    integerVariableTwo
 
-integersSubtracted = integerVariableTwo - integerVariable
+integersSubtracted  =   integerVariableTwo  -    integerVariable
 
-integersMultiplied = integerVariable * integerVariableTwo
+integersMultiplied  =   integerVariable     *    integerVariableTwo
 
-integersDivided = integerVariableTwo / integerVariable
+integersDivided     =   integerVariableTwo  /    integerVariable
 
+print("the number variables added is: ", integersAdded)
 
+print("the number variables subtracted is: ", integersSubtracted)
 
+print("the number variables multiplied is: ", integersMultiplied)
 
+print("the number variables divided is: ", integersDivided)
