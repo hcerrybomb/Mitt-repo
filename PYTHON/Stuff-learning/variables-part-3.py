@@ -31,3 +31,13 @@ print("\nthe two string variables combined is: ",combinedStringVariable)
                                     #possibilities since numbers have math, and we can use all mathematical operators
 
 integersAdded = integerVariable + integerVariableTwo
+
+integersSubtracted = integerVariableTwo - integerVariable
+
+integersMultiplied = integerVariable * integerVariableTwo
+
+integersDivided = integerVariableTwo / integerVariable
+
+
+
+
