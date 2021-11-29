@@ -1,3 +1,4 @@
+#%%
 from pylab import *
 import numpy
 x = linspace(-4, 6, 1000)  #   <--- bør endres basert på funksjonen
@@ -7,9 +8,9 @@ delta_x = 0000.1
 def funksjonsverdi(x):              
 #    y = x**3 - 4*x**2 - 9*x + 28       #ORGINALT EKSEMPEL
 #    y = 2*x**3 - 3*x**2 - 7*x + 20     #EGET TREDJEGRADSEKSEMPEL EKSEMPEL
-#    y = 2*x**2 + 3*x - 2               #ANDREGRADS EKSEMPEL
+    y = 2*x**2 + 3*x - 2               #ANDREGRADS EKSEMPEL
 #   y = np.e**(2*x+1) - 1                 #EKSPONENTIELL EKSEMPEL
-    y = np.log(x)*(x**2 - 3*x)             #SAMMENSATT FUNKSJON EKSEMPEL
+#    y = np.log(x)*(x**2 - 3*x)             #SAMMENSATT FUNKSJON EKSEMPEL
     return y           
 
 def derivert(x):
@@ -24,6 +25,9 @@ def dobbelderivert(x):
 y = funksjonsverdi(x) 
 dy = derivert(x)
 ddy = dobbelderivert(x)
+print(y)
+print(dy)
+print(ddy)
 axhline(y=0, color="k") 
 axvline(x=0, color="k") 
 xlabel("X")
@@ -40,3 +44,4 @@ import sys
 print("1")
 print(sys.version)
 print("2")
+# %%
