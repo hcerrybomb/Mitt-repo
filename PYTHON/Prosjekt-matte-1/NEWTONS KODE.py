@@ -1,3 +1,4 @@
+#%%
 from pylab import *
 import time 
 import numpy
@@ -46,3 +47,5 @@ while abs(x2-x1) > delta_x: #sjekker om forskjellen mellom x2 og x1 er lav nok t
     time.sleep(0.1)
     
 print("nullpunktet er ved x = ", round(x2, 3))
+
+# %%
