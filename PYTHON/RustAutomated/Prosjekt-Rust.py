@@ -1,5 +1,3 @@
-# IMPORTS
-
 #pyinstaller --onefile -i"logo.ico" Prosjekt-Rust.py
 import subprocess
 from numpy.core.numeric import full
@@ -12,31 +10,34 @@ import sys
 import win32gui
 import win32process as wproc
 import win32api as wapi
-
-# VARIABLE DECLARATIONS
+import logging
+def logger():
+    logging.debug("debug info")
+    logging.info("general info")
+    logging.error("uh oh :(")
+def main():
+    level = logging.debug
+    fmt = '[%(levelname)s] %(asctime)s - %(message)s'
+    logging.basicConfig(level=level, format=fmt)
+    logger()
+    
 
 os.system("")
 
 keyboard = Controller()
 
-__location__ = os.path.realpath(  # declares __location__ as a string of the path of this projects folder
+__location__ = os.path.realpath(  
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 programToFind = "Rust"
 
-# COLOR STYLING
-
-
-class style():
-    Red = '\033[31m'
-    Green = '\033[32m'
-    Yellow = '\033[33m'
-    Cyan = '\033[36m'
-    Underline = '\033[4m'
-    Reset = '\033[0m'
-
-# FIRST STATEMENT
-
+class col():
+    red = '\033[31m'
+    gre = '\033[32m'
+    yel = '\033[33m'
+    cya = '\033[36m'
+    und = '\033[4m'
+    res = '\033[0m'
 
 def haveYou(input):
     if input == "Y" or input == "y" or input == "Yes" or input == "YES" or input == "yes":
@@ -46,12 +47,11 @@ def haveYou(input):
     else:
         return "invalid"
 
-
 sleep(1)
-print(style.Red+"\n================!!!IMPORTANT!!!================"+style.Reset)
+print(f"{col.red}\n================!!!IMPORTANT!!!==============={col.res}")
 sleep(0.5)
-print("\n Step 1:\tFor the program to be its most efficient you should have the", style.Cyan,
-      "Game Overlay", style.Reset, "Activity setting", style.Green, "Enabled", style.Reset, "on discord")
+print("\n Step 1:\tFor the program to be its most efficient you should have the", col.cya,
+      "Game Overlay", col.res, "Activity setting", col.gre, "Enabled", col.res, "on discord")
 sleep(0.5)
 print("\n Step 2:\tIf your game is open, make sure your screen mode is either borderless or windowed")
 sleep(0.5)
@@ -86,15 +86,15 @@ rawRustShortcut = r'%s ' % rustShortcut
 
 # checks if that path (aka the shortcut) exists
 if os.path.exists(rawRustShortcut) != True:
-    print("\n there is", style.Red, "not", style.Reset,
+    print("\n there is", col.red, "not", col.res,
           "a shortcut for rust present on your desktop, please create one and restart the program")
     sleep(0.5)
     print("\n Program closing")
     sleep(5)
     raise SystemExit
 
-print("\n Rust shortcut", style.Green, "present",
-      style.Reset, "on desktop, continuing program")
+print("\n Rust shortcut", col.gre, "present",
+      col.res, "on desktop, continuing program")
 sleep(2)
 
 
@@ -106,15 +106,15 @@ projFolder = r'%s' % projFolder  # converts that into a real string
 errorCheckZero = False
 
 # FIRST STATEMENT
-print(style.Cyan, "\n What is the IP of the Rust server?", style.Reset)
+print(col.cya, "\n What is the IP of the Rust server?", col.res)
 sleep(0.5)
-ipAddress = str(input("\n Paste the full ip"+style.Yellow+ " here : "+ style.Reset))
+ipAddress = str(input("\n Paste the full ip"+col.yel+ " here : "+ col.res))
 while errorCheckZero == False:
     if ipAddress.count(":") < 1:
-        print(style.Red+"Error :\t\t"+style.Reset+"Missing colon")
+        print(col.red+"Error :\t\t"+col.res+"Missing colon")
         sleep(0.5)
         errorCheckZero = False
-        ipAddress = str(input("\n Try again, paste the full ip"+style.Yellow+ " here : "+ style.Reset))
+        ipAddress = str(input("\n Try again, paste the full ip"+col.yel+ " here : "+ col.res))
     tempIntAddress = str(ipAddress)
     tempIntAddress = tempIntAddress.split(":")
     tempIntAddress = str(tempIntAddress[0]+tempIntAddress[1])
@@ -123,23 +123,23 @@ while errorCheckZero == False:
     for x in range(0,len(tempIntAddress)):
         fullTempIntAddress = fullTempIntAddress + str(tempIntAddress[x])
     if ipAddress.count(".") < 3:
-        print(style.Red+"Error :\t\t"+style.Reset+"Invalid ip, missing period")
+        print(col.red+"Error :\t\t"+col.res+"Invalid ip, missing period")
         sleep(0.5)
         errorCheckZero = False
-        ipAddress = str(input("\n Try again, paste the full ip"+style.Yellow+ " here : "+ style.Reset))
+        ipAddress = str(input("\n Try again, paste the full ip"+col.yel+ " here : "+ col.res))
     if fullTempIntAddress.isnumeric() != True:
-        print(style.Red+"Error :\t\t"+style.Reset+"Invalid ip, no letters in ip")
+        print(col.red+"Error :\t\t"+col.res+"Invalid ip, no letters in ip")
         sleep(0.5)
         errorCheckZero = False
-        ipAddress = str(input("\n Try again, paste the full ip"+style.Yellow+ " here : "+ style.Reset))
+        ipAddress = str(input("\n Try again, paste the full ip"+col.yel+ " here : "+ col.res))
     else:
-        print(style.Green+"\n\n Ip saved succsessfully !"+style.Reset)
+        print(col.gre+"\n\n Ip saved succsessfully !"+col.res)
         sleep(0.5)
         errorCheckZero = True
 
 sleep(0.5)
-print(style.Cyan + "\n What time is wipe for you?"+style.Reset +
-      "\n\n give your answer in an"+ style.Green, "00:00 "+ style.Reset+ "format")
+print(col.cya + "\n What time is wipe for you?"+col.res +
+      "\n\n give your answer in an"+ col.gre, "00:00 "+ col.res+ "format")
 
 
 
@@ -150,14 +150,14 @@ sleep(0.5)
 # USER INPUT
 errorCheckOne = False
 # creates a variable for the users input
-wipeTimeInput = str(input("\n Give your answer"+style.Yellow+ " here : "+ style.Reset))
+wipeTimeInput = str(input("\n Give your answer"+col.yel+ " here : "+ col.res))
 sleep(0.2)
 
 
 while errorCheckOne == False:  # while the users input is invalid
     if wipeTimeInput.count(":") < 1:  # if there are no colons in the user input
 
-        print(style.Red+"Error :\t\t"+style.Reset+"Missing colon")
+        print(col.red+"Error :\t\t"+col.res+"Missing colon")
         sleep(0.5)
 
         errorCheckOne = False  # user input stays invalid
@@ -168,7 +168,7 @@ while errorCheckOne == False:  # while the users input is invalid
     tempIntTime = str(tempIntTime[0]+tempIntTime[1])
     if len(wipeTimeInput) > 5:  # if there are too many characters in the user input
 
-        print("\n"+style.Red+"Error :\t\t"+style.Reset+"Too many charcters")
+        print("\n"+col.red+"Error :\t\t"+col.res+"Too many charcters")
         sleep(0.5)
 
         errorCheckOne = False  # user input stays invalid
@@ -179,7 +179,7 @@ while errorCheckOne == False:  # while the users input is invalid
         # user needs to give input again
     elif len(wipeTimeInput) < 5:  # if there are too few characters in the answer
 
-        print(style.Red+"Error :\t\t"+style.Reset+" too few characters")
+        print(col.red+"Error :\t\t"+col.res+" too few characters")
         sleep(0.5)
 
         errorCheckOne = False  # user input stays invalid
@@ -188,12 +188,12 @@ while errorCheckOne == False:  # while the users input is invalid
         wipeTimeInput = str(input("\n Try again, give your answer here:   "))
 
     elif tempIntTime.isnumeric() != True:
-        print(style.Red+"Error :\t\t"+style.Reset+" no letters in input")
+        print(col.red+"Error :\t\t"+col.res+" no letters in input")
         sleep(0.5)
         errorCheckOne = False
         wipeTimeInput = str(input("\n Try again, give your answer here : "))
     elif int(tempIntTime) > 2400:
-        print(style.Red+"Error :\t\t"+style.Reset+" invalid time")
+        print(col.red+"Error :\t\t"+col.res+" invalid time")
         sleep(0.5)
         errorCheckOne = False
         wipeTimeInput = str(input("\n Try again, give your answer here : "))
@@ -202,10 +202,10 @@ while errorCheckOne == False:  # while the users input is invalid
         __location__ = os.path.realpath(
             os.path.join(os.getcwd(), os.path.dirname(__file__)))  # declares __location__ as this folders path
 
-        print(style.Green+"\n\n Wipe time saved succsessfully !"+style.Reset)
+        print(col.gre+"\n\n Wipe time saved succsessfully !"+col.res)
         sleep(0.5)
         print("\n\n The program will now initialize at the time of wipe,",
-              style.Red, "do not", style.Reset, "close it")
+              col.red, "do not", col.res, "close it")
 
         errorCheckOne = True  # user input is valid
 
@@ -382,12 +382,12 @@ if getProcessStatus('RustClient.exe') == True:  # check if rust is open or not
         sleep(0.1)
 
         if programToFind == (str(windowsList[x]).split("'"))[1]:
-            print("\tProgram nr\t", x, style.Green, "Match found\t",
-                  style.Reset, (str(windowsList[x]).split("'"))[1])
+            print("\tProgram nr\t", x, col.gre, "Match found\t",
+                  col.res, (str(windowsList[x]).split("'"))[1])
             correctProgram = (str(windowsList[x]).split("'"))[1]
         else:
-            print("\tProgram nr\t", x, style.Red, "No match\t",
-                  style.Reset, (str(windowsList[x]).split("'"))[1])
+            print("\tProgram nr\t", x, col.red, "No match\t",
+                  col.res, (str(windowsList[x]).split("'"))[1])
 
     handle = win32gui.FindWindow(None, correctProgram)
     print("\n Hooking window")
@@ -425,8 +425,8 @@ if getProcessStatus('RustClient.exe') == True:  # check if rust is open or not
 
         except:
 
-            print("\n", style.Yellow, "Expected error : ",
-                  style.Red, sys.exc_info(), style.Reset, "occurred")
+            print("\n", col.yel, "Expected error : ",
+                  col.red, sys.exc_info(), col.res, "occurred")
             print("\n Program continuing")
 
     x = 1
@@ -483,12 +483,12 @@ else:  # if it isnt open
         sleep(0.1)
 
         if programToFind == (str(windowsList[x]).split("'"))[1]:
-            print("\tProgram nr\t", x, style.Green, "Match found\t",
-                  style.Reset, (str(windowsList[x]).split("'"))[1])
+            print("\tProgram nr\t", x, col.gre, "Match found\t",
+                  col.res, (str(windowsList[x]).split("'"))[1])
             correctProgram = (str(windowsList[x]).split("'"))[1]
         else:
-            print("\tProgram nr\t", x, style.Red, "No match\t",
-                  style.Reset, (str(windowsList[x]).split("'"))[1])
+            print("\tProgram nr\t", x, col.red, "No match\t",
+                  col.res, (str(windowsList[x]).split("'"))[1])
 
     handle = win32gui.FindWindow(None, correctProgram)
     print("\n Hooking window")
@@ -526,8 +526,8 @@ else:  # if it isnt open
 
         except:
 
-            print("\n", style.Yellow, "Expected error : ",
-                  style.Red, sys.exc_info(), style.Reset, "occurred")
+            print("\n", col.yel, "Expected error : ",
+                  col.red, sys.exc_info(), col.res, "occurred")
             print("\n Program continuing")
             # when its up, focus the tab
 
