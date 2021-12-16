@@ -229,9 +229,9 @@ def getCurrentTime():  # returns the time as a 4 letter string
     fullTimeString = str(ctime(fullTime))
 
     fullTimeStringSplit = fullTimeString.split(" ")
-
-    clockTimes = fullTimeStringSplit[3].split(":")
-
+    
+    clockTimes = fullTimeStringSplit[4].split(":")
+    
     integerTime = str(clockTimes[0] + clockTimes[1])
 
     global currentHour
@@ -247,6 +247,7 @@ def getCurrentTime():  # returns the time as a 4 letter string
     currentSec = clockTimes[2]
 
     return integerTime
+
 
 
 # function for checking if a process exists, arg is the full process name.exe
