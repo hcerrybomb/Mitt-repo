@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        html, body{
+            margin:0;
+            padding:0;
+            height:100%;
+            width:100%;
+        }
+        #main {
+            box-sizing: border-box;
+            width:100%;
+            height:100%;
+            padding:2%;
+            display:grid;
+            background-color:#0f0e2e;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas: "a b c d d"
+                                 "a e e f g"
+                                 "h e e i g";
+            row-gap: 3%;        /* gap between the boxes */
+            column-gap:7%;      /* will push grid out of its container if % is more than its fraction */
+            border-radius:15px;
+            box-shadow: 10px 10px 30px black;
+        }
+        #main > div{
+            
+            background-color: #57739c;
+            height:100%;
+            width:100%; 
+            border-radius:15px;
+            
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            
+            font-size:100px;
+            font-family:monospace;
+            color:cyan;
+            text-shadow:7px 7px 20px rgba(0, 225, 255, 0.993);
+            box-shadow: 10px 10px 30px black;
+        }
+        .one{
+            grid-area: a ;
+        }
+        .two{grid-area:b;}
+        .three{grid-area:c;}
+        .four{grid-area:d;}
+        .five{grid-area:e;}
+        .six{grid-area:f;}
+        .seven{grid-area:g;}
+        .eight{grid-area:h;}
+        .nine{grid-area:i;}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class=one><span>1</span></div>
+        <div class=two><span>2</span></div>
+        <div class=three><span>3</span></div>
+        <div class=four><span>4</span></div>
+        <div class=five><span>5</span></div>
+        <div class=six><span>6</span></div>
+        <div class=seven><span>7</span></div>
+        <div class=eight><span>8</span></div>
+        <div class=nine><span>9</span></div>
+    </div>
+</body>
+</html>
