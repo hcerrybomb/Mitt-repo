@@ -19,7 +19,7 @@ byer.shift()                    //*       =     .del at index 0
 let length = tall2.length        //*       =     .len
 
 
-////console.log(length)
+//console.log(length)
 
 //!     OPPGAVE 1.0
 
