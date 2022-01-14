@@ -54,12 +54,15 @@ navn.push(legTilNavn)
 navn.sort()     //*     sorteres alfabetisk
 
 for(let i = 0; i < navn.length; i++){
-    document.write("1.1)  ",navn[i],"<br>")
+    //*document.write("1.1)  ",navn[i],"<br>")
+    console.log("1.1)  ",navn[i],"\n")
 }
-document.write("<br><br>")
+//*document.write("<br><br>")
+console.log("\n\n")
 navn.reverse()
 for(let i = 0; i < navn.length; i++){
-    document.write("1.1)  ",navn[i],"<br>")
+    //*document.write("1.1)  ",navn[i],"<br>")
+    console.log("1.1)  ",navn[i],"\n")
 }  
 }
 
