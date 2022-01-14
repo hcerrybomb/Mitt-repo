@@ -1,6 +1,5 @@
 from pynput.keyboard import Listener, Key, Controller
 import time
-import psutil
 #TrueOrFalse = "RustClient.exe" in (i.name() for i in psutil.process_iter())
 keyboard = Controller()
 
@@ -18,11 +17,11 @@ def on_release(key):
         return
     else:
         if key.char == 'g':
-            keyboard.press('|')
             time.sleep(0.05)
-            keyboard.release('|')
-            keyboard.press(Key.backspace)
-            keyboard.release(Key.backspace)
+            keyboard.press(Key.scroll_lock)
+            time.sleep(0.05)
+            keyboard.release(Key.scroll_lock)
+
             
             
             
