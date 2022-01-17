@@ -1,3 +1,4 @@
+
 function randMinMax(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
     } 
@@ -101,16 +102,25 @@ const opg5List = [];
 fillWithRandomHundred(opg5List,500)
 console.log("5.",opg5List)
 
-function findRepeats(array){
-    //TODO      FINISH 
+const dupes = []
+
+function findRepeats(array,dupelist){
+    for(let i = 0; i < array.length; i++){
+        if(array.indexOf(array[i], array.indexOf(array[i]) + 1) !== -1){
+            if(dupelist.indexOf(array[i]) === -1 )dupelist.push(array[i])
+        } 
+    }
 }
 
-
+findRepeats(opg5List, dupes)
+console.log("5. ",dupes)
 //!     OPPGAVE 6
 
 const opg6List = ["Per", "Pål", "Espen"];
 
-let input = prompt("nytt navn: ")
+//*let input = prompt("nytt navn: ")
+
+let input = "pÅtTeTREnt"
 
 let firstLetter = input.charAt(0).toUpperCase()
 
@@ -166,9 +176,9 @@ threePercentage = amtOfThree / 10
 fourPercentage = amtOfFour / 10
 fivePercentage = amtOfFive / 10
 sixPercentage = amtOfSix / 10
-console.log("prosent 1'ere:",onePercentage,"%")
-console.log("prosent 2'ere:",twoPercentage,"%")
-console.log("prosent 3'ere:",threePercentage,"%")
-console.log("prosent 4'ere:",fourPercentage,"%")
-console.log("prosent 5'ere:",fivePercentage,"%")
-console.log("prosent 6'ere:",sixPercentage,"%")
+console.log("7. prosent 1'ere:",onePercentage,"%")
+console.log("7. prosent 2'ere:",twoPercentage,"%")
+console.log("7. prosent 3'ere:",threePercentage,"%")
+console.log("7. prosent 4'ere:",fourPercentage,"%")
+console.log("7. prosent 5'ere:",fivePercentage,"%")
+console.log("7. prosent 6'ere:",sixPercentage,"%")
