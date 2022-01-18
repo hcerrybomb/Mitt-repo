@@ -9,10 +9,6 @@ console.log(land['navn'])
 console.table(land.storsteByer)
 function randMinMax(min, max) {return Math.floor(Math.random() * (max - min + 1) ) + min;} 
 
-
-
-
-
 //!     OPPGAVE 1
 
 let meg = {
