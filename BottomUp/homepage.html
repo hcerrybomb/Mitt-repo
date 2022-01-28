@@ -7,33 +7,156 @@
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="stylesheet.css">
     <title>Nordic Rust</title>
+    <script>
+        function getValuesRockets(){
+    let LGF, frags, explosives, pipes, pureGPSulf, GPForExplosives, sulfurForExplosives, exploGPSulf
+    let amtOfRockets = document.getElementById("amtOfRockets").value
+    
+        pipes = amtOfRockets * 2
+        rocketGP = amtOfRockets * 150
+            pureGPSulf = rocketGP * 2
+
+        explosives = amtOfRockets * 10
+            LGF = explosives * 3
+            frags = explosives * 10
+            sulfurForExplosives = explosives * 10
+            GPForExplosives = explosives * 50
+                exploGPSulf = GPForExplosives * 2
+    
+    document.getElementById("pipes").innerHTML =
+    `<pre>Pipes needed                       ${pipes}</pre><br>`
+    document.getElementById("rocketGP").innerHTML =
+    `<pre>Rocket gp needed                   ${rocketGP}</pre><br>`
+    document.getElementById("explosives").innerHTML =
+    `<pre>Sulf for that gp needed            ${pureGPSulf}</pre><br>`
+    document.getElementById("pureGPsulf").innerHTML =
+    `<pre>Explosives needed                  ${explosives}</pre><br>`
+    document.getElementById("LGF").innerHTML =
+    `<pre>Low grade fuel needed                         ${LGF}</pre><br>`
+    document.getElementById("frags").innerHTML =
+    `<pre>Metal fr needed                       ${frags}</pre><br>`
+    document.getElementById("sulfForExplosives").innerHTML =
+    `<pre>Sulfur for the explosives needed   ${sulfurForExplosives} </pre><br>`
+    document.getElementById("GPForExplosives").innerHTML =
+    `<pre>Gp for that explosives needed      ${GPForExplosives}</pre><br>`
+    document.getElementById("exploGPSulf").innerHTML =
+    `<pre>Sulf for that gp needed            ${exploGPSulf}</pre><br>`
+
+    document.getElementById("totalSulf").value = amtOfRockets * 1400
+
+}
+function getValuesSulfur(){
+    let LGF, frags, explosives, pipes, pureGPSulf, GPForExplosives, sulfurForExplosives, exploGPSulf
+
+    let amtOfRockets = Math.floor(document.getElementById("totalSulf").value/1400)
+    
+        pipes = amtOfRockets * 2
+        rocketGP = amtOfRockets * 150
+            pureGPSulf = rocketGP * 2
+
+        explosives = amtOfRockets * 10
+            LGF = explosives * 3
+            frags = explosives * 10
+            sulfurForExplosives = explosives * 10
+            GPForExplosives = explosives * 50
+                exploGPSulf = GPForExplosives * 2
+    
+    document.getElementById("pipes").innerHTML =
+    `<pre>pipes needed                       ${pipes} </pre><br>`
+    document.getElementById("rocketGP").innerHTML =
+    `<pre>rocket gp needed                   ${rocketGP}</pre><br>`
+    document.getElementById("explosives").innerHTML =
+    `<pre>sulf for that gp needed            ${pureGPSulf}</pre><br>`
+    document.getElementById("pureGPsulf").innerHTML =
+    `<pre>explosives needed                  ${explosives}</pre><br>`
+    document.getElementById("LGF").innerHTML =
+    `<pre>LGF needed                         ${LGF}</pre><br>`
+    document.getElementById("frags").innerHTML =
+    `<pre>frags needed                       ${frags}</pre><br>`
+    document.getElementById("sulfForExplosives").innerHTML =
+    `<pre>sulfur for the explosives needed   ${sulfurForExplosives} </pre><br>`
+    document.getElementById("GPForExplosives").innerHTML =
+    `<pre>gp for that explosives needed      ${GPForExplosives}</pre><br>`
+    document.getElementById("exploGPSulf").innerHTML =
+    `<pre>sulf for that gp needed            ${exploGPSulf}</pre><br>`
+
+    document.getElementById("amtOfRockets").value = amtOfRockets 
+    totalSulf2 = document.getElementById("totalSulf").value
+    restOfSulf = totalSulf2 - exploGPSulf - pureGPSulf - sulfurForExplosives
+    document.getElementById("extraSulf").innerHTML = `sulfur left: ${restOfSulf}` 
+}
+    </script>
+    <style>
+        body{
+            background-color: #7f00a974;
+        }
+        div {
+            border: 1px solid rgb(0, 225, 255);
+            width:fit-content;
+            font-family: monospace;
+            margin:auto;
+            font-size:18px;
+            font-weight:bold;
+            text-align: left;
+        }
+        pre {
+            font-family: monospace;
+            line-height: 0;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
+    <div id="inputContainer">
     <label for="amtOfRockets">How many rockets? : </label>
-    <input id="amtOfRockets" type="number" min="1" onchange="getValuesRockets()"><br>
+    <input id="amtOfRockets" type="number" min="1" max="9999999999" onchange="getValuesRockets()"><br>
+        <div id="totalSulfBox">
+            <div>OR<br></div>
+            <label for="totalSulf">How much sulfur? : </label>
+            <input id="totalSulf" type="number" min="1" max="9999999999" onchange="getValuesSulfur()"><br>
+            <div><br></div>
+            <div id="extraSulf">Sulfur left: </div>
+            <div><br></div>
+        </div>
+    </div>
     <div id="overBox">
-
         <div id="firstRow">
-            <div id="pipes" class="firstRow">
-
+            <div id="pipes"  class="items">
+                
             </div>
-            <div id="rocketGP" class="firstRow">
-
+            <div id="rocketGP"  class="items">
+                
             </div>
-            <div id="explosives" class="firstRow">
+            <div id="explosives"  class="items">
                 
             </div>
         </div>
 
         <div id="secondRow">
-            <div id="pureGP"
+            <div id="pureGPsulf" class="items">
+                
+            </div>
+            <div id="LGF" class="items">
+                
+            </div>
+            <div id="frags" class="items">
+                
+            </div>
+            <div id="sulfForExplosives" class="items">
+                
+            </div>
+            <div id="GPForExplosives" class="items">
+                
+            </div>
         </div>
 
         <div id="thirdRow">
-
+            <div id="exploGPSulf" class="items">
+                
+            </div>
         </div>
-
-
     </div>
 </body>
 </html>
