@@ -8,11 +8,24 @@
     <link rel="stylesheet" href="stylesheet.css">
     <title>Nordic Rust</title>
     <script>
-        function getValuesRockets(){
-    let LGF, frags, explosives, pipes, pureGPSulf, GPForExplosives, sulfurForExplosives, exploGPSulf
-    let amtOfRockets = document.getElementById("amtOfRockets").value
-    
-        pipes = amtOfRockets * 2
+
+
+let getElem = function getE(id){
+    return document.getElementById(id)
+}
+
+function startFunction(){
+    let LGF, frags, explosives, pipes, pureGPSulf, GPForExplosives, sulfurForExplosives, exploGPSulf, amtOfRockets
+    let sulfValue = 0
+    let GPValue = 0
+}
+
+function innerHtmlID(idString, textString){
+    return getElem(idString).innerHTML = textString;
+}
+
+function calcValues(){
+    pipes = amtOfRockets * 2
         rocketGP = amtOfRockets * 150
             pureGPSulf = rocketGP * 2
 
@@ -21,70 +34,76 @@
             frags = explosives * 10
             sulfurForExplosives = explosives * 10
             GPForExplosives = explosives * 50
-                exploGPSulf = GPForExplosives * 2
-    
-    document.getElementById("pipes").innerHTML =
-    `<pre>Pipes needed                       ${pipes}</pre><br>`
-    document.getElementById("rocketGP").innerHTML =
-    `<pre>Rocket gp needed                   ${rocketGP}</pre><br>`
-    document.getElementById("explosives").innerHTML =
-    `<pre>Sulf for that gp needed            ${pureGPSulf}</pre><br>`
-    document.getElementById("pureGPsulf").innerHTML =
-    `<pre>Explosives needed                  ${explosives}</pre><br>`
-    document.getElementById("LGF").innerHTML =
-    `<pre>Low grade fuel needed                         ${LGF}</pre><br>`
-    document.getElementById("frags").innerHTML =
-    `<pre>Metal fr needed                       ${frags}</pre><br>`
-    document.getElementById("sulfForExplosives").innerHTML =
-    `<pre>Sulfur for the explosives needed   ${sulfurForExplosives} </pre><br>`
-    document.getElementById("GPForExplosives").innerHTML =
-    `<pre>Gp for that explosives needed      ${GPForExplosives}</pre><br>`
-    document.getElementById("exploGPSulf").innerHTML =
-    `<pre>Sulf for that gp needed            ${exploGPSulf}</pre><br>`
+                exploGPSulf = GPForExplosives * 2}
+             
+function printStuff(){
+    innerHtmlID("pipes",            `<pre>Pipes needed                       ${pipes}</pre><br>`)
+    innerHtmlID("rocketGP",         `<pre>Rocket gp needed                   ${rocketGP}</pre><br>`)
+    innerHtmlID("explosives",       `<pre>Sulf for that gp needed            ${pureGPSulf}</pre><br>`)
+    innerHtmlID("pureGPsulf",       `<pre>Explosives needed                  ${explosives}</pre><br>`)
+    innerHtmlID("LGF",              `<pre>Low grade fuel needed              ${LGF}</pre><br>`)
+    innerHtmlID("frags",            `<pre>Metal fr needed                    ${frags}</pre><br>`)
+    innerHtmlID("sulfForExplosives",`<pre>Sulfur for the explosives needed   ${sulfurForExplosives} </pre><br>`)
+    innerHtmlID("GPForExplosives",  `<pre>Gp for that explosives needed      ${GPForExplosives}</pre><br>`)
+    innerHtmlID("exploGPSulf",      `<pre>Sulf for that gp needed            ${exploGPSulf}</pre><br>`)
+}
 
-    document.getElementById("totalSulf").value = amtOfRockets * 1400
+function getValuesRockets(){
+
+    amtOfRockets = getElem("amtOfRockets").value
+
+    calcValues()
+    
+    printStuff()
+
+    getElem("totalSulf").value = amtOfRockets * 1400}
+
+function calcSulfPlusGP(){
+
+    //?         0.1 : 1.3
+
+    
+
+
+
+    calcValues()
+    printStuff()
 
 }
+
 function getValuesSulfur(){
-    let LGF, frags, explosives, pipes, pureGPSulf, GPForExplosives, sulfurForExplosives, exploGPSulf
 
-    let amtOfRockets = Math.floor(document.getElementById("totalSulf").value/1400)
+    GPValue = getElem("inputGP").value 
+
+    if(GPValue === "") innerHtmlID("inputGPLabel",`How much GP? (optional) :`)
+
+    else if(GPValue === 0) innerHtmlID("inputGPLabel",`How much GP? :`)
+
+    amtOfRockets = Math.floor(getElem("totalSulf").value/1400)
+
+    calcValues()
     
-        pipes = amtOfRockets * 2
-        rocketGP = amtOfRockets * 150
-            pureGPSulf = rocketGP * 2
+    printStuff()
 
-        explosives = amtOfRockets * 10
-            LGF = explosives * 3
-            frags = explosives * 10
-            sulfurForExplosives = explosives * 10
-            GPForExplosives = explosives * 50
-                exploGPSulf = GPForExplosives * 2
-    
-    document.getElementById("pipes").innerHTML =
-    `<pre>pipes needed                       ${pipes} </pre><br>`
-    document.getElementById("rocketGP").innerHTML =
-    `<pre>rocket gp needed                   ${rocketGP}</pre><br>`
-    document.getElementById("explosives").innerHTML =
-    `<pre>sulf for that gp needed            ${pureGPSulf}</pre><br>`
-    document.getElementById("pureGPsulf").innerHTML =
-    `<pre>explosives needed                  ${explosives}</pre><br>`
-    document.getElementById("LGF").innerHTML =
-    `<pre>LGF needed                         ${LGF}</pre><br>`
-    document.getElementById("frags").innerHTML =
-    `<pre>frags needed                       ${frags}</pre><br>`
-    document.getElementById("sulfForExplosives").innerHTML =
-    `<pre>sulfur for the explosives needed   ${sulfurForExplosives} </pre><br>`
-    document.getElementById("GPForExplosives").innerHTML =
-    `<pre>gp for that explosives needed      ${GPForExplosives}</pre><br>`
-    document.getElementById("exploGPSulf").innerHTML =
-    `<pre>sulf for that gp needed            ${exploGPSulf}</pre><br>`
+    getElem("amtOfRockets").value = amtOfRockets 
 
-    document.getElementById("amtOfRockets").value = amtOfRockets 
-    totalSulf2 = document.getElementById("totalSulf").value
+    totalSulf2 = getElem("totalSulf").value
+
     restOfSulf = totalSulf2 - exploGPSulf - pureGPSulf - sulfurForExplosives
-    document.getElementById("extraSulf").innerHTML = `sulfur left: ${restOfSulf}` 
+
+    getElem("extraSulf").innerHTML = `Sulfur left: ${restOfSulf}` 
 }
+function addGP(){
+
+    sulfValue = getElem("totalSulf").value 
+
+    if(sulfValue === ""){
+        getElem("inputSulfLabel").innerHTML = `How much sulfur? (optional) :`}
+
+    else if(sulfValue === 0){
+        getElem("inputSulfLabel").innerHTML = `How much sulfur? :`}
+}
+
     </script>
     <style>
         body{
@@ -94,7 +113,7 @@ function getValuesSulfur(){
             border: 1px solid rgb(0, 225, 255);
             width:fit-content;
             font-family: monospace;
-            margin:auto;
+            
             font-size:18px;
             font-weight:bold;
             text-align: left;
@@ -108,16 +127,21 @@ function getValuesSulfur(){
         }
     </style>
 </head>
-<body>
+<body onload="startFunction()">
     <div id="inputContainer">
     <label for="amtOfRockets">How many rockets? : </label>
     <input id="amtOfRockets" type="number" min="1" max="9999999999" onchange="getValuesRockets()"><br>
         <div id="totalSulfBox">
             <div>OR<br></div>
-            <label for="totalSulf">How much sulfur? : </label>
+            <label for="totalSulf" id="inputSulfLabel">How much sulfur? : </label>
             <input id="totalSulf" type="number" min="1" max="9999999999" onchange="getValuesSulfur()"><br>
             <div><br></div>
             <div id="extraSulf">Sulfur left: </div>
+            <div><br></div>
+        </div>
+        <div id="GPBox">
+            <label for="inputGP" id="inputGPLabel">How much GP? : </label>
+            <input id="inputGP" type="number" min="1" max="9999999999" onchange="addGP()"><br>
             <div><br></div>
         </div>
     </div>
