@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="stylesheet.css">
     <title>Nordic Rust</title>
     <script>
-
-
 let getElem = function getE(id){
     return document.getElementById(id)
 }
@@ -18,6 +15,7 @@ function startFunction(){
     let LGF, frags, explosives, pipes, pureGPSulf, GPForExplosives, sulfurForExplosives, exploGPSulf, amtOfRockets
     let sulfValue = 0
     let GPValue = 0
+    let roc = 0
 }
 
 function innerHtmlID(idString, textString){
@@ -59,75 +57,82 @@ function getValuesRockets(){
     getElem("totalSulf").value = amtOfRockets * 1400}
 
 function calcSulfPlusGP(){
-
-    //?         1 : 13
-    let roc = 0
+    roc = 0
+    let ratioCheck = true
     while(ratioCheck){
-        
-        if(GPValue - 750 > 0  && sulfValue - 100 > 0) {
-            GPValue     = GPValue   - 750
-            sulfValue   = sulfValue - 100
-            roc++
+        if(sulfValue < 100){
+            ratioCheck = false
         }
-        else if((GPValue - 750 > 0)){
-            if(sulfValue > 1400)while(sulfValue > 1400){
-                sulfValue = sulfValue - 1400
-                roc ++ 
+        if((GPValue < 650)){
+            if(GPValue > 0 ){
+                sulfValue += (GPValue*2)
+                GPValue = 0
             }
-                
-
-                
-
-            
+            if(GPValue<0) GPValue = 0
+            if(sulfValue >= 1400){
+                while(sulfValue >= 1400){
+                    sulfValue -= 1400
+                    roc++  
+                }
+                ratioCheck = false
+            }
         }
-            
-            //not enough for any more rockets, unless 
-        
-
+        if(GPValue >= 650  && sulfValue >= 100) {
+            while(GPValue >= 650  && sulfValue >= 100){
+                GPValue -= 650
+                sulfValue -= 100
+                roc++
+            }
+        }
     }
-
-    
-
-
-
-    calcValues()
-    printStuff()
-
+    return
 }
 
 function getValuesSulfur(){
+    GPValue = Number(getElem("inputGP").value) 
+    sulfValue = Number(getElem("totalSulf").value)
 
-    GPValue = getElem("inputGP").value 
+    if(GPValue === ""){ 
+        
+        innerHtmlID("inputGPLabel",`How much GP? (optional) :`)
 
-    if(GPValue === "") innerHtmlID("inputGPLabel",`How much GP? (optional) :`)
+        amtOfRockets = Math.floor(getElem("totalSulf").value/1400)
+    }
 
-    else if(GPValue === 0) innerHtmlID("inputGPLabel",`How much GP? :`)
+    else if(GPValue === 0){
 
-    amtOfRockets = Math.floor(getElem("totalSulf").value/1400)
+        innerHtmlID("inputGPLabel",`How much GP? :`)
+
+        amtOfRockets = Math.floor(getElem("totalSulf").value/1400)
+    }
+
+    else{
+        calcSulfPlusGP()
+        amtOfRockets = roc
+    }
 
     calcValues()
-    
     printStuff()
 
     getElem("amtOfRockets").value = amtOfRockets 
 
-    totalSulf2 = getElem("totalSulf").value
-
-    restOfSulf = totalSulf2 - exploGPSulf - pureGPSulf - sulfurForExplosives
-
-    getElem("extraSulf").innerHTML = `Sulfur left: ${restOfSulf}` 
 }
 function addGP(){
-
-    sulfValue = getElem("totalSulf").value 
+    GPValue = Number(getElem("inputGP").value) 
+    sulfValue = Number(getElem("totalSulf").value)
 
     if(sulfValue === ""){
-        getElem("inputSulfLabel").innerHTML = `How much sulfur? (optional) :`}
+        getElem("inputSulfLabel").innerHTML = `How much sulfur? :`}
 
     else if(sulfValue === 0){
         getElem("inputSulfLabel").innerHTML = `How much sulfur? :`}
-}
 
+    calcSulfPlusGP()
+    amtOfRockets = roc
+    calcValues()
+    printStuff()
+    getElem("amtOfRockets").value = amtOfRockets 
+}
     </script>
     <style>
         body{
@@ -152,59 +157,29 @@ function addGP(){
     </style>
 </head>
 <body onload="startFunction()">
+
     <div id="inputContainer">
-    <label for="amtOfRockets">How many rockets? : </label>
-    <input id="amtOfRockets" type="number" min="1" max="9999999999" onchange="getValuesRockets()"><br>
-        <div id="totalSulfBox">
-            <div>OR<br></div>
-            <label for="totalSulf" id="inputSulfLabel">How much sulfur? : </label>
-            <input id="totalSulf" type="number" min="1" max="9999999999" onchange="getValuesSulfur()"><br>
-            <div><br></div>
-            <div id="extraSulf">Sulfur left: </div>
-            <div><br></div>
-        </div>
-        <div id="GPBox">
-            <label for="inputGP" id="inputGPLabel">How much GP? : </label>
-            <input id="inputGP" type="number" min="1" max="9999999999" onchange="addGP()"><br>
-            <div><br></div>
-        </div>
+        <label for="amtOfRockets">How many rockets? : </label>
+        <input id="amtOfRockets" type="number" min="1" max="9999999999" onchange="getValuesRockets()">
+        <div>OR<br></div>
+        <label for="totalSulf" id="inputSulfLabel">How much sulfur? : </label>
+        <input id="totalSulf" type="number" min="1" max="9999999999" onchange="getValuesSulfur()"><br>
+        <div><br></div>
+        <label for="inputGP" id="inputGPLabel">How much GP? : </label>
+        <input id="inputGP" type="number" min="1" max="9999999999" onchange="addGP()"><br>
+        <div><br></div>
     </div>
     <div id="overBox">
-        <div id="firstRow">
-            <div id="pipes"  class="items">
-                
-            </div>
-            <div id="rocketGP"  class="items">
-                
-            </div>
-            <div id="explosives"  class="items">
-                
-            </div>
-        </div>
-
-        <div id="secondRow">
-            <div id="pureGPsulf" class="items">
-                
-            </div>
-            <div id="LGF" class="items">
-                
-            </div>
-            <div id="frags" class="items">
-                
-            </div>
-            <div id="sulfForExplosives" class="items">
-                
-            </div>
-            <div id="GPForExplosives" class="items">
-                
-            </div>
-        </div>
-
-        <div id="thirdRow">
-            <div id="exploGPSulf" class="items">
-                
-            </div>
-        </div>
+        <div id="pipes"  class="items"></div>
+        <div id="rocketGP"  class="items"></div>
+        <div id="explosives"  class="items"></div>
+        <div id="pureGPsulf" class="items"></div>
+        <div id="LGF" class="items"></div>
+        <div id="frags" class="items"></div>
+        <div id="sulfForExplosives" class="items"></div>
+        <div id="GPForExplosives" class="items"></div>
+        <div id="exploGPSulf" class="items"></div>
     </div>
+
 </body>
 </html>
