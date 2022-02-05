@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css">
-    <title>Nordic Rust</title>
-    <script>
 let getElem = function getElem(id){
     return document.getElementById(id)
 }
@@ -177,53 +168,3 @@ function addGP(){
     printStuff()
     getElem("rockets_input").value = rockets 
 }
-    </script>
-    <style>
-        body{
-            background-color: #7f00a974;
-        }
-        div {
-            border: 1px solid rgb(0, 225, 255);
-            width:fit-content;
-            font-family: monospace;
-            
-            font-size:18px;
-            font-weight:bold;
-            text-align: left;
-        }
-        pre {
-            font-family: monospace;
-            line-height: 0;
-            margin-top: 4px;
-            margin-bottom: 4px;
-            text-align: left;
-        }
-    </style>
-</head>
-<body onload="startFunction()">
-
-    <div id="input_container">
-        <label id="rockets_label"   for="rockets_input"   >How many rockets? :   </label>
-        <input id="rockets_input"   type="number"     min="1" max="9999999999" onchange="getValuesRockets()">
-        <div>OR<br></div>
-        <label id="sulfur_label"    for="sulfur_input"    >How much sulfur? :    </label>
-        <input id="sulfur_input"    type="number"     min="1" max="9999999999" onchange="getValuesSulfur()">
-        <div><br></div>
-        <label id="gunpowder_label" for="gunpowder_input"        >How much GP? :        </label>
-        <input id="gunpowder_input" type="number"     min="1" max="9999999999" onchange="addGP()">
-        <div><br></div>
-    </div>
-    <div id="overBox">
-        <div id="pipes_tag"                     class="items"></div>
-        <div id="rocketGunpowder_tag"           class="items"></div>
-        <div id="explosives_tag"                class="items"></div>
-        <div id="rocketGunpowderSulfur_tag"     class="items"></div>
-        <div id="lowGrad_tag"                   class="items"></div>
-        <div id="metalFrags_tag"                class="items"></div>
-        <div id="explosivesSulfur_tag"          class="items"></div>
-        <div id="explosivesGunpowder_tag"       class="items"></div>
-        <div id="explosivesGunpowderSulfur_tag" class="items"></div>
-    </div>
-
-</body>
-</html>
