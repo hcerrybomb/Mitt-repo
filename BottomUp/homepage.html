@@ -11,7 +11,7 @@ let getElem = function getElem(id){
     return document.getElementById(id)
 }
 
-function startFunction(){
+function onloadFunction(){
     let rockets, 
             pipes,
             rocketGunpowder, 
@@ -25,114 +25,131 @@ function startFunction(){
            
     let sulfurValue = 0
     let gunPowderValue   = 0
-    let roc       = 0
+    let rocketsPlaceholder       = 0
 }
 
 function innerHtmlID(idString, textString){
     return getElem(idString).innerHTML = textString;
 }
 
-function calcValues(){
+function calcCraftables(){
     pipes = rockets * 2
-        rocketGunpowder = rockets * 150
-            rocketGunpowderSulfur = rocketGunpowder * 2
+    rocketGunpowder = rockets * 150
+        rocketGunpowderSulfur = rocketGunpowder * 2
 
-        explosives = rockets * 10
-            lowGrade = explosives * 3
-            metalFrags = explosives * 10
-            explosivesSulfur = explosives * 10
-            explosivesGunpowder = explosives * 50
-                explosivesGunpowderSulfur = explosivesGunpowder * 2}
+    explosives = rockets * 10
+        lowGrade = explosives * 3
+        metalFrags = explosives * 10
+        explosivesSulfur = explosives * 10
+        explosivesGunpowder = explosives * 50
+            explosivesGunpowderSulfur = explosivesGunpowder * 2}
              
-function printStuff(){
-    innerHtmlID("pipes_tag",                        `<pre>Pipes needed                       ${pipes}</pre><br>`)
-    innerHtmlID("rocketGunpowder_tag",              `<pre>Rocket gp needed                   ${rocketGunpowder}</pre><br>`)
-    innerHtmlID("explosives_tag",                   `<pre>Sulf for that gp needed            ${rocketGunpowderSulfur}</pre><br>`)
-    innerHtmlID("rocketGunpowderSulfur_tag",        `<pre>Explosives needed                  ${explosives}</pre><br>`)
-    innerHtmlID("lowGrad_tag",                      `<pre>Low grade fuel needed              ${lowGrade}</pre><br>`)
-    innerHtmlID("metalFrags_tag",                   `<pre>Metal fr needed                    ${metalFrags}</pre><br>`)
-    innerHtmlID("explosivesSulfur_tag",             `<pre>Sulfur for the explosives needed   ${explosivesSulfur} </pre><br>`)
-    innerHtmlID("explosivesGunpowder_tag",          `<pre>Gp for that explosives needed      ${explosivesGunpowder}</pre><br>`)
-    innerHtmlID("explosivesGunpowderSulfur_tag",    `<pre>Sulf for that gp needed            ${explosivesGunpowderSulfur}</pre><br>`)
+function printRocketCraftables(){
+    innerHtmlID("pipes_tag",                        
+    `<pre>Pipes needed                                          ${pipes}</pre><br>`)
+
+    innerHtmlID("rocketGunpowder_tag",              
+    `<pre>Rocket gp needed                                      ${rocketGunpowder}</pre><br>`)
+
+    innerHtmlID("rocketGunpowderSulfur_tag",        
+    `<pre>      sulfur for the rocket gunpowder                 ${rocketGunpowderSulfur}</pre><br>`)
+
+    innerHtmlID("explosives_tag",                   
+    `<pre>Explosives needed                                     ${explosives}</pre><br>`)
+
+    innerHtmlID("lowGrad_tag",                      
+    `<pre>      Low grade fuel needed                           ${lowGrade}</pre><br>`)
+
+    innerHtmlID("metalFrags_tag",                   
+    `<pre>      Metal fr needed                                 ${metalFrags}</pre><br>`)
+    
+    innerHtmlID("explosivesSulfur_tag",             
+    `<pre>      Sulfur for the explosives needed                ${explosivesSulfur} </pre><br>`)
+
+    innerHtmlID("explosivesGunpowder_tag",          
+    `<pre>      Gp for that explosives needed                   ${explosivesGunpowder}</pre><br>`)
+
+    innerHtmlID("explosivesGunpowderSulfur_tag",    
+    `<pre>              sulfur for the explosives gunpowder     ${explosivesGunpowderSulfur}</pre><br>`)
 }
 
 
-function getValuesRockets(){
+function rocketInput(){
 
     rockets = getElem("rockets_input").value
 
-    calcValues()
+    calcCraftables()
     
-    printStuff()
+    printRocketCraftables()
 
     getElem("sulfur_input").value = rockets * 1400}
 
-function calcSulfPlusGP(){
-    roc = 0
-    let ratioCheck = true
-    let sulfRocketLoop = 0
+function calcSulfurPlusGunPowder(){
+    rocketsPlaceholder = 0
+    let calcLoopCheck = true
+    let rocketSulfurLoopCheck = 0
     let sulfAndGpRocketLoop = 0
-    let runs = 0
-    while(ratioCheck){
-        runs++
-        console.log(`starting ratio run nr${runs}`)
+    let calcLoopRuns = 0
+    while(calcLoopCheck){
+        calcLoopRuns++
+        console.log(`starting ratio run nr${calcLoopRuns}`)
 
         if(sulfurValue < 100){
-            console.log(`${sulfurValue} Sulfur was less than 100 on ratio run ${runs}`)
-            console.log(`exiting loop on ratio run ${runs}, ${sulfurValue} sulfur and ${gunPowderValue} GP`)
-            ratioCheck = false
+            console.log(`${sulfurValue} Sulfur was less than 100 on ratio run ${calcLoopRuns}`)
+            console.log(`exiting loop on ratio run ${calcLoopRuns}, ${sulfurValue} sulfur and ${gunPowderValue} GP`)
+            calcLoopCheck = false
         }
         if((gunPowderValue < 650)){
             if(gunPowderValue > 0 ){
-                console.log(`${gunPowderValue} gp value was between 650 and 0 and was turned into sulf on ratio run ${runs}`)
-                console.log(`${sulfurValue} before sulf value on ratio run ${runs}`)
+                console.log(`${gunPowderValue} gp value was between 650 and 0 and was turned into sulf on ratio run ${calcLoopRuns}`)
+                console.log(`${sulfurValue} before sulf value on ratio run ${calcLoopRuns}`)
                 sulfurValue += (gunPowderValue*2)
-                console.log(`${sulfurValue} after sulf value on ratio run ${runs}`)
+                console.log(`${sulfurValue} after sulf value on ratio run ${calcLoopRuns}`)
                 gunPowderValue = 0
-                console.log(`${gunPowderValue} after on ratio run ${runs}`)
+                console.log(`${gunPowderValue} after on ratio run ${calcLoopRuns}`)
             }
             if(gunPowderValue<0){ 
-                console.log(`${gunPowderValue} gp value was less than 0 and therefore turned into 0 on ratio run ${runs}`)
+                console.log(`${gunPowderValue} gp value was less than 0 and therefore turned into 0 on ratio run ${calcLoopRuns}`)
                 gunPowderValue = 0
-                console.log(`${gunPowderValue} gp value is now 0 on ratio run ${runs}`)
+                console.log(`${gunPowderValue} gp value is now 0 on ratio run ${calcLoopRuns}`)
             }
             if(sulfurValue >= 1400){
-                console.log(`${sulfurValue} was more than 1400 on ratio run ${runs}, starting sulf rocket loop`)
+                console.log(`${sulfurValue} was more than 1400 on ratio run ${calcLoopRuns}, starting sulf rocket loop`)
                 while(sulfurValue >= 1400){
-                    sulfRocketLoop++
-                    console.log(`${sulfurValue} was more than 1400 on sulf rocket loop nr ${sulfRocketLoop}`)
+                    rocketSulfurLoopCheck++
+                    console.log(`${sulfurValue} was more than 1400 on sulf rocket loop nr ${rocketSulfurLoopCheck}`)
                     sulfurValue -= 1400
-                    roc++
-                    console.log(`added a rocket! now ${roc} rockets`)
+                    rocketsPlaceholder++
+                    console.log(`added a rocket! now ${rocketsPlaceholder} rockets`)
                 }
-                console.log(`exiting loop on ratio run ${runs}, ${sulfurValue} sulfur and ${gunPowderValue} GP`)
-                ratioCheck = false
+                console.log(`exiting loop on ratio run ${calcLoopRuns}, ${sulfurValue} sulfur and ${gunPowderValue} GP`)
+                calcLoopCheck = false
             }
             if(sulfurValue < 1400){
-                console.log(`${sulfurValue} sulf was less than 1400, meaning no more rockets on ratio run ${runs}`)
+                console.log(`${sulfurValue} sulf was less than 1400, meaning no more rockets on ratio run ${calcLoopRuns}`)
                 console.log(`spare sulfur is ${sulfurValue}`)
-                console.log(`exiting loop on ratio run ${runs}, ${sulfurValue} sulfur and ${gunPowderValue} GP`)
-                ratioCheck = false
+                console.log(`exiting loop on ratio run ${calcLoopRuns}, ${sulfurValue} sulfur and ${gunPowderValue} GP`)
+                calcLoopCheck = false
             }
         }
         if(gunPowderValue >= 650  && sulfurValue >= 100) {
             console.log(`${gunPowderValue} GP was more than or the same as 650, ${sulfurValue} sulfur was more than or the same as 100`)
-            console.log(`starting rocket craft loop on ratio run ${runs}`)
+            console.log(`starting rocket craft loop on ratio run ${calcLoopRuns}`)
             while(gunPowderValue >= 650  && sulfurValue >= 100){
                 sulfAndGpRocketLoop++
                 console.log(`${gunPowderValue} GP was more then 650, ${sulfurValue} sulf was more than 100 on sulf+gp rocket loop nr ${sulfAndGpRocketLoop}`)
                 gunPowderValue -= 650
                 sulfurValue -= 100
-                roc++
-                console.log(`added a rocket! now ${roc} rockets`)
+                rocketsPlaceholder++
+                console.log(`added a rocket! now ${rocketsPlaceholder} rockets`)
             }
         }
     }
-    console.log(`exiting loop on ratio run ${runs}, ${sulfurValue} sulfur and ${gunPowderValue} GP`)
+    console.log(`exiting loop on ratio run ${calcLoopRuns}, ${sulfurValue} sulfur and ${gunPowderValue} GP`)
     return
 }
 
-function getValuesSulfur(){
+function sulfurInput(){
     gunPowderValue = Number(getElem("gunpowder_input").value) 
     sulfurValue = Number(getElem("sulfur_input").value)
 
@@ -151,17 +168,17 @@ function getValuesSulfur(){
     }
 
     else{
-        calcSulfPlusGP()
-        rockets = roc
+        calcSulfurPlusGunPowder()
+        rockets = rocketsPlaceholder
     }
 
-    calcValues()
-    printStuff()
+    calcCraftables()
+    printRocketCraftables()
 
     getElem("rockets_input").value = rockets 
 
 }
-function addGP(){
+function gunPowderInput(){
     gunPowderValue = Number(getElem("gunpowder_input").value) 
     sulfurValue = Number(getElem("sulfur_input").value)
 
@@ -171,11 +188,15 @@ function addGP(){
     else if(sulfurValue === 0){
         getElem("sulfur_label").innerHTML = `How much sulfur? :`}
 
-    calcSulfPlusGP()
-    rockets = roc
-    calcValues()
-    printStuff()
+    calcSulfurPlusGunPowder()
+    rockets = rocketsPlaceholder
+    calcCraftables()
+    printRocketCraftables()
     getElem("rockets_input").value = rockets 
+}
+
+function c4Input(){
+
 }
     </script>
     <style>
@@ -183,7 +204,7 @@ function addGP(){
             background-color: #7f00a974;
         }
         div {
-            border: 1px solid rgb(0, 225, 255);
+            border: 0px solid rgb(0, 225, 255);
             width:fit-content;
             font-family: monospace;
             
@@ -200,29 +221,41 @@ function addGP(){
         }
     </style>
 </head>
-<body onload="startFunction()">
+<body onload="onloadFunction()">
 
     <div id="input_container">
+        <label id="c4_label"        for="c4_input"        >How many c4? :   </label>
+        <input id="c4_input"        type="number"     min="1" max="9999999999" onchange="rocketInput()">
         <label id="rockets_label"   for="rockets_input"   >How many rockets? :   </label>
-        <input id="rockets_input"   type="number"     min="1" max="9999999999" onchange="getValuesRockets()">
-        <div>OR<br></div>
+        <input id="rockets_input"   type="number"     min="1" max="9999999999" onchange="rocketInput()">
+        <div><br><br>OR<br><br><br></div>
         <label id="sulfur_label"    for="sulfur_input"    >How much sulfur? :    </label>
-        <input id="sulfur_input"    type="number"     min="1" max="9999999999" onchange="getValuesSulfur()">
+        <input id="sulfur_input"    type="number"     min="1" max="9999999999" onchange="sulfurInput()">
         <div><br></div>
         <label id="gunpowder_label" for="gunpowder_input"        >How much GP? :        </label>
-        <input id="gunpowder_input" type="number"     min="1" max="9999999999" onchange="addGP()">
+        <input id="gunpowder_input" type="number"     min="1" max="9999999999" onchange="gunPowderInput()">
         <div><br></div>
     </div>
     <div id="overBox">
+
         <div id="pipes_tag"                     class="items"></div>
+
         <div id="rocketGunpowder_tag"           class="items"></div>
-        <div id="explosives_tag"                class="items"></div>
+
         <div id="rocketGunpowderSulfur_tag"     class="items"></div>
+
+        <div id="explosives_tag"                class="items"></div>
+
         <div id="lowGrad_tag"                   class="items"></div>
+
         <div id="metalFrags_tag"                class="items"></div>
+
         <div id="explosivesSulfur_tag"          class="items"></div>
+
         <div id="explosivesGunpowder_tag"       class="items"></div>
+
         <div id="explosivesGunpowderSulfur_tag" class="items"></div>
+
     </div>
 
 </body>
