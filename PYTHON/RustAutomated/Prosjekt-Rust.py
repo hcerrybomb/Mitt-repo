@@ -227,11 +227,14 @@ def getCurrentTime():  # returns the time as a 4 letter string
     fullTime = time()  # string stuff
 
     fullTimeString = str(ctime(fullTime))
+    print(fullTimeString)
 
     fullTimeStringSplit = fullTimeString.split(" ")
-    
-    clockTimes = fullTimeStringSplit[4].split(":")
-    
+    print(fullTimeStringSplit)
+
+    clockTimes = fullTimeStringSplit[3].split(":")
+    print(clockTimes)
+
     integerTime = str(clockTimes[0] + clockTimes[1])
 
     global currentHour
@@ -282,25 +285,14 @@ def connectToServer():  # simulates key presses for connecting via console      
 
 
 def antiAfk():  # simulates keypresses for not getting afk kicked         TOTAL TIME PER 20 sec
-    keyboard.press('w')
-    keyboard.tap(Key.space)
+    keyboard.press('c')
     sleep(5)
-    keyboard.release('w')
-
-    keyboard.press('a')
-    keyboard.tap(Key.space)
+    keyboard.release('c')
     sleep(5)
-    keyboard.release('a')
-
-    keyboard.press('s')
-    keyboard.tap(Key.space)
+    keyboard.press(Key.space)
     sleep(5)
-    keyboard.release('s')
-
-    keyboard.press('d')
-    keyboard.tap(Key.space)
+    keyboard.release(Key.space)
     sleep(5)
-    keyboard.release('d')
 
 
 def window_enum_handler(hwnd, resultList):
