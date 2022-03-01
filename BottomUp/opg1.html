@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+let tall1 = 25;
+
+let tall2 = 400; 
+
+let tall3 = (tall1 / 100) * tall2; 
+
+console.log(`${tall1}  prosent av  ${tall2}  blir  ${tall3}.`);
+
+
+
+
+
+
+let a = 3; 
+
+let b = 7; 
+
+let c = 12; 
+
+let d = 9; 
+
+let x = a + b + c + d; 
+
+console.log(`Det ble ${x}`); 
+
+let e = 6; 
+
+let f = 5; 
+
+let g = 9; 
+
+let y = e + f + g; 
+
+console.log(`Det ble ${y}`)
+
+
+
+function opg1(født){
+    let dinAlder = 2022 - født
+    return dinAlder
+}
+console.log(opg1(2004))
+
+
+
+
+
+let timer =  0
+
+function opg2(minutter){
+    timer = Math.floor(minutter / 60)
+    minutter = minutter % 60
+    return `${timer} timer og ${minutter} minutter`
+}
+
+console.log(opg2(123))
+
+
+
+
+
+
+
+
+function finneTallVennene(tall){
+    for(let i = 0; i <= tall;i++){
+        console.log(`et par tallvenner for ${tall} er ${i} og ${tall-i}`)
+    }
+}
+finneTallVennene(5)
+
+function gangMedFem(annetTall){
+
+    let gangetTall = annetTall + "0" 
+    gangetTall = Number(gangetTall) / 2
+    console.log(`${gangetTall} er ${annetTall} * 5`)
+}
+
+gangMedFem(9)
+
+let resultat = 0
+
+function gangMedNi(inputTall){
+    let inputTallMinus = inputTall - 1
+    for(let i = 0; i <= 9;i++){
+        if(i === inputTallMinus){resultat = i + " " + inputTall}
+        else{resultat = Number(inputTall-i) + " " + Number(inputTall)}
+    }
+    console.log(`resultatet er ${resultat}`)
+}
+
+gangMedNi(7)
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

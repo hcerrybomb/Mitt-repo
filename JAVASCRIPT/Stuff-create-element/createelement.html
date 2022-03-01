@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .blaa{
+            color:blue;
+        }
+        #hoved{
+            display:grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: 100px;
+            gap:5px;
+
+        }
+
+        .boks{
+            width:100px;
+            height:100px;
+            border: 1px solid darkmagenta;
+            background-color: lightblue;
+
+        }
+
+        .rod{
+            background-color:red;
+            color:black;
+        }
+        .gronn{
+            background-color:green;
+            color:black;
+        }
+
+
+        td {
+        /*border: 1px solid green;*/
+        box-shadow: 2px 2px 2px black;
+        font-family: Arial;
+        font-size: medium;
+        padding: 8px;
+        transition: background-color .2s, box-shadow .2s, font-size .3s;
+    }
+    table {
+        border-collapse: separate;
+        border-spacing: 5px 17px;
+
+    }
+    </style>
+
+
+</head>
+<body>
+    
+
+
+    <script>
+        let bodyEl = document.querySelector("body")
+        let nyttAvsnittEl = document.createElement('p')
+        nyttAvsnittEl.innerHTML = 'Dette avsnittet er nytt!'
+        nyttAvsnittEl.className = 'blaa'
+
+        bodyEl.appendChild(nyttAvsnittEl)
+
+        let hovedDiv = document.createElement('div')
+        hovedDiv.id = "hoved";
+        for (let i = 0; i < 4;i++){
+            let divEl = document.createElement("div")
+            divEl.innerHTML = i
+            divEl.className = "boks"
+            hovedDiv.appendChild(divEl)
+            console.log(divEl)
+
+        }
+        bodyEl.appendChild(hovedDiv)
+
+        let listeEl = document.createElement("ul")
+        listeEl.id = "liste"
+        for (let i = 0; i < 8;i++){
+            let punktEl = document.createElement("li")
+
+            punktEl.innerHTML = `punkt nr. ${i}`
+            if(i%2==0){punktEl.className = "rod"}
+            else{punktEl.className = "gronn"}
+            listeEl.appendChild(punktEl)
+
+        }
+        bodyEl.appendChild(listeEl)
+
+
+        function createList(amt){
+            let listeEl = document.createElement("ul")
+        listeEl.id = "liste"
+        for (let i = 0; i < amt;i++){
+            let punktEl = document.createElement("li")
+
+            punktEl.innerHTML = `punkt nr. ${i}`
+            if(i%2==0){punktEl.className = "rod"}
+            else{punktEl.className = "gronn"}
+            listeEl.appendChild(punktEl)
+
+        }
+        bodyEl.appendChild(listeEl)
+        }
+
+        createList(9)
+
+        let tableContainer = document.createElement("table")
+        tableContainer.id = "tableId"
+        for (let i = 0; i < 3;i++){
+            console.log("test 1 here")
+            let rowEl = document.createElement("tr")
+            for (let x = 0; x <4;x++){
+                let colEl = document.createElement("td")
+                colEl.innerHTML = `test string nr. ${i}:${x}`
+                rowEl.appendChild(colEl)
+            }
+            tableContainer.appendChild(rowEl)
+        }
+        bodyEl.appendChild(tableContainer)
+
+
+    </script>
+</body>
+</html>

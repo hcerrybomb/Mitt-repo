@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: 625px;
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const farger = [
+            ["#F69C7C","Rød"],
+            ["#FED777","Oransje"],
+            ["#EFEE8C","Gul"],
+            ["#C3DE97","Grønn"],
+            ["#8ED2CD","Blå"],
+            ["#98AAD7","Fiolett"]
+        ]
+        bodyEl = document.querySelector("body")
+        for (let i = 0; i < farger.length; i++){
+            let colEl = document.createElement("div")
+            colEl.style.backgroundColor = farger[i][0]
+            colEl.innerHTML = farger[i][1]
+            bodyEl.appendChild(colEl)
+        }
+    </script>
+</body>
+</html>
