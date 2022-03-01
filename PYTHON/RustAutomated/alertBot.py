@@ -42,6 +42,7 @@ async def on_message(message):
             output_dict = json.loads(output)
             if output_dict['data']['attributes']['online'] == True:
                 status = "online"
+                #comment
             else:
                 status = "offline"
             
