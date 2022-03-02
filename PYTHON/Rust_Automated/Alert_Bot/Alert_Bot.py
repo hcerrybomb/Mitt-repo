@@ -2,13 +2,13 @@ import os
 import json
 import discord
 #70902823
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 from selenium import webdriver
 driver = webdriver.Chrome("C:/Users/Gaming Dator VII/Desktop/Mitt-repo/PYTHON/RustAutomated/chromedriver.exe")
 
 
-load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
+#load_dotenv()
+#TOKEN = os.getenv('DISCORD_TOKEN')
 
 
 client = discord.Client()
@@ -88,4 +88,4 @@ async def on_message(message):
             await message.channel.send("Player "+player+" with a battlemetrics id of: "+player_id+" is currently "+status+" on server "+serverString+" with a battlemetrics id of:"+server_id)
 
 
-client.run(TOKEN)
+client.run("IvCwLr8GWayZvxruOZNic4BXZw_ev2pb")

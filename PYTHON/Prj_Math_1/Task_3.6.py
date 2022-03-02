@@ -1,4 +1,5 @@
 from sympy import symbols, solve
+
 from sympy import *
 x = symbols('x')
 expr = N(x ** 2 - 3) 
