@@ -1,10 +1,15 @@
 import os
 import json
 import discord
-#from selenium import webdriver
-#from BeautifulSoup import BeautifulSoup
 #70902823
-TOKEN = 'OTQ4MTMzMjEyNTQ5NDM1Mzky.Yh3X3Q.W2Fnf5bViPaO5-CZVbt8httCvJA'
+from dotenv import load_dotenv
+from selenium import webdriver
+driver = webdriver.Chrome("C:/Users/Gaming Dator VII/Desktop/Mitt-repo/PYTHON/RustAutomated/chromedriver.exe")
+
+
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
+
 
 client = discord.Client()
 
@@ -28,25 +33,59 @@ async def on_message(message):
     if message.author == client.user:
         return
     if message.content.startswith(';'):
-        if ';checkstatus' in message.content.lower():
+
+        if ';checkplayerserver' in message.content.lower():
+            
             splitMsg = message.content.split()
-            id = splitMsg[1]
 
-            player_id = id
+            player = splitMsg[1]
+            server = splitMsg[2:]
 
-            server_id = 660901
+            serverString = ""
+
+            for i in range(len(server)):
+                serverString = serverString + server[i]+"%20"
+
+            length = len(serverString)
+            serverString = serverString[:length - 3]
+
+            URL = "https://www.battlemetrics.com/players?filter%5Bsearch%5D="+player+"&filter%5BplayerFlags%5D=&filter%5Bserver%5D%5Bsearch%5D="+serverString+"&filter%5Bserver%5D%5Bgame%5D=rust&sort=score"
+            driver.get(URL)
+
+            element = driver.find_element_by_xpath('//*[@id="PlayerInstancesPage"]/div/ul/li[1]/p/a')
+
+            playerIdLink = element.get_attribute('href')
+            
+            idLinkSplit = playerIdLink.split("/")
+
+            player_id = idLinkSplit[-1]
+
+            element2 = driver.find_element_by_xpath('//*[@id="PlayerInstancesPage"]/div/ul/li[1]/table/tbody/tr[1]/td[3]/a')
+            serverIdLink = element2.get_attribute('href')
+            serverLinkSplit = serverIdLink.split("/")
+
+            server_id = serverLinkSplit[-1]
 
             stream = os.popen('curl -n https://api.battlemetrics.com/players/'+str(player_id)+'/servers/'+str(server_id))
+            
             output = stream.read()
-
             output_dict = json.loads(output)
             if output_dict['data']['attributes']['online'] == True:
                 status = "online"
-                #comment2
             else:
                 status = "offline"
-            
-            await message.channel.send("User with battlemetrics id of "+ id + " is " + status + " on Rustafied EU Odd")
-        #elif ';check'
+
+            print(player)
+            print(player_id)
+            print(status)
+            print(server)
+            print(server_id)
+            serverString = ""
+            for ele in server:
+                serverString += ele+" "
+            print(serverString)
+
+            await message.channel.send("Player "+player+" with a battlemetrics id of: "+player_id+" is currently "+status+" on server "+serverString+" with a battlemetrics id of:"+server_id)
+
 
 client.run(TOKEN)
