@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>body</title>
+    <style>
+        html{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            width:100%;
+            height:100%;
+        }
+        body{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            width:100%;
+
+          /*height:100%;        for only filling the viewport*/
+
+            /*                  for page longer than viewport*/
+            min-height:100vh;
+
+            /**/
+            border: 0px solid rgb(0, 204, 255);
+        }
+        #main{      /* yes, main could just be the body, but i see it as good practice to have your own container
+                       to not have child divs inherit body-specific styles */           
+            box-sizing: border-box;
+            margin: 0;
+            padding: 20px;
+            width:100%;
+
+          /*height:100%;        for only filling viewport*/
+
+            /*                  for page longer than viewport*/
+            min-height:100vh;
+            height:fit-content;
+            border: 0px solid red;
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas:
+            "a b c" 
+            "d e f" 
+            ;
+        }
+        .gridbox{
+            min-height:100%;    /* page will grow downwards according with the content size */
+            height:fit-content;
+            width:100%;
+            border: 2px solid rgb(146, 132, 132);
+        }
+        #a{grid-area:a}#b{grid-area:b}#c{grid-area:c}#d{grid-area:d}#e{grid-area:e}#f{grid-area:f}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="a" class="gridbox">a</div>
+        <div id="b" class="gridbox">b</div>
+        <div id="c" class="gridbox">c</div>
+        <div id="d" class="gridbox">d</div>
+        <div id="e" class="gridbox">e</div>
+        <div id="f" class="gridbox">f</div>
+    </div>
+
+</body>
+</html>
