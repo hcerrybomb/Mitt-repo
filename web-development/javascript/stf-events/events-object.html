@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="tekst1">Te</p>
+        <p id="tekst2">Kaffe</p>
+        <p id="tekst3"></p>
+    </div>
+    <script>
+        //put same listener to more elem's
+        // listener comes with listener object
+        // can be used to find what element we have pressed
+
+        let tekstEl1 = document.querySelector("#tekst1");
+        let tekstEl2 = document.querySelector("#tekst2");
+        let tekstEl3 = document.querySelector("#tekst3");
+
+        tekstEl1.addEventListener("click", minFunction);
+
+        tekstEl2.addEventListener("click", minFunction);
+
+        function minFunction(e){
+            //letter e stands for event
+            console.log(e.target);
+            let pick = e.target;
+            tekstEl3.innerHTML = `id til valget er: ${pick.id}
+            <br>du har valgt ${pick.innerHTML}`
+        }
+
+    </script>
+</body>
+</html>

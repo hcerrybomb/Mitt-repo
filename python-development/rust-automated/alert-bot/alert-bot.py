@@ -1,14 +1,21 @@
 import os
 import json
 import discord
+from pathlib import Path
 #70902823
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 from selenium import webdriver
-driver = webdriver.Chrome("C:/Users/Gaming Dator VII/Desktop/Mitt-repo/PYTHON/RustAutomated/chromedriver.exe")
+#driver = webdriver.Chrome(executable_path="C:/Users/Gaming Dator VII/Desktop/Mitt-repo/PYTHON/RustAutomated/chromedriver.exe")
 
+driver = webdriver.Chrome(executable_path="C:/Users/wista002/Desktop/Mitt-repo/python-development/rust-automated/alert-bot/chromedriver.exe")
 
-#load_dotenv()
-#TOKEN = os.getenv('DISCORD_TOKEN')
+#dotenv_path = "path on home pc"
+
+dotenv_path = Path('C:/Users/wista002/Desktop/.env-files/rust-token.env')
+
+load_dotenv(dotenv_path=dotenv_path)
+TOKEN = os.getenv('DISCORD_TOKEN')
+
 
 
 client = discord.Client()
@@ -84,8 +91,14 @@ async def on_message(message):
             for ele in server:
                 serverString += ele+" "
             print(serverString)
+            fullTitle = ""
+            fullTitle = "Status of "+player+" on server "+serverString
+            fullDescription="player id: "+player_id+"\n server id: "+server_id
+            #https://stackoverflow.com/questions/44862112/how-can-i-send-an-embed-via-my-discord-bot-w-python
+            embedOne = discord.Embed(title=fullTitle, description=fullDescription,color=0x00ff00)
 
+            await message.channel.send()
             await message.channel.send("Player "+player+" with a battlemetrics id of: "+player_id+" is currently "+status+" on server "+serverString+" with a battlemetrics id of:"+server_id)
 
 
-client.run("IvCwLr8GWayZvxruOZNic4BXZw_ev2pb")
+client.run(TOKEN)
