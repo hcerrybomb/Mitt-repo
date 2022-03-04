@@ -95,6 +95,7 @@ async def on_message(message):
             fullTitle = "Status of "+player+" on server "+serverString
             fullDescription="player id: "+player_id+"\n server id: "+server_id
             #https://stackoverflow.com/questions/44862112/how-can-i-send-an-embed-via-my-discord-bot-w-python
+            #just a link
             embedOne = discord.Embed(title=fullTitle, description=fullDescription,color=0x00ff00)
 
             await message.channel.send()
