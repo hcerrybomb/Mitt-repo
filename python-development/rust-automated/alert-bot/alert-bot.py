@@ -2,7 +2,6 @@ import os
 import json
 import discord
 from pathlib import Path
-#70902823
 from dotenv import load_dotenv
 from selenium import webdriver
 from discord.ext import commands, tasks
@@ -15,16 +14,27 @@ dotenv_path = Path('C:/Users/Gaming_Dator_VII/Desktop/.env-files/rust-token.env'
 #dotenv_path = Path('C:/Users/wista002/Desktop/.env-files/rust-token.env')
 
 
-#https://www.battlemetrics.com/players?filter%5Bsearch%5D=    placeholder    &filter%5BplayerFlags%5D=&sort=score
-#https://www.battlemetrics.com/players?filter%5Bsearch%5D=    КакТак         &filter%5BplayerFlags%5D=&filter%5Bserver%5D%5Bsearch%5D=  
-#    placeholder%20placeholder%20placeholder           &filter%5Bserver%5D%5Bgame%5D=rust&sort=score
-#https://www.battlemetrics.com/players?filter%5Bsearch%5D=КакТак&filter%5BplayerFlags%5D=&filter%5Bserver%5D%5Bsearch%5D=Rustafied%20EU%20Odd&filter%5Bserver%5D%5Bgame%5D=rust&sort=score
+#eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImQ2NzY0ZjU3OTcwY2ZlYmYiLCJpYXQiOjE2NDY1NjU2NTUsIm5iZiI6MTY0NjU2NTY1NSwiaXNzIjoiaHR0cHM6Ly93d3cuYmF0dGxlbWV0cmljcy5jb20iLCJzdWIiOiJ1cm46dXNlcjo1Mjk3NTMifQ.CCAsM9QodXjl1OUi-dqY-PFnv5_2_d6J8eShuNuJ9oQ
+
+curl -n -X POST https://api.battlemetrics.com/players/match \ -d '{ "data": [ {"type": "identifier", "attributes": {"type": "steamID", "identifier": "76561198313072306" } } ] }' \ -H "Content-Type: application/json" \ -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImQ2NzY0ZjU3OTcwY2ZlYmYiLCJpYXQiOjE2NDY1NjU2NTUsIm5iZiI6MTY0NjU2NTY1NSwiaXNzIjoiaHR0cHM6Ly93d3cuYmF0dGxlbWV0cmljcy5jb20iLCJzdWIiOiJ1cm46dXNlcjo1Mjk3NTMifQ.CCAsM9QodXjl1OUi-dqY-PFnv5_2_d6J8eShuNuJ9oQ"
+
+
+
+
+
+
 load_dotenv(dotenv_path=dotenv_path)
 TOKEN = os.getenv('DISCORD_TOKEN')
 bot = commands.Bot(command_prefix=';')
 watchlist = []
+watchlist_dict = {}
+channel_id = 692411124616003587
 
-
+def onlineStatus(PLAYER_ID,SERVER_ID):
+    stream          = os.popen('curl -n https://api.battlemetrics.com/players/'+str(PLAYER_ID)+'/servers/'+str(SERVER_ID))
+    output          = stream.read()
+    output_dict     = json.loads(output)
+    return output_dict['data']['attributes']['online']
 
 @bot.event
 async def on_ready():
@@ -36,134 +46,80 @@ async def on_ready():
 
 @tasks.loop(seconds=15)
 async def loop_function():
-    print("loop run")
-    for i in range(len(watchlist)):
 
-        channel = bot.get_channel(692411124616003587)
+    for i in range(len(watchlist_dict)):
 
-        player_id = watchlist[i][0]
-        server_id = watchlist[i][1]
-        player_status = watchlist[i][2]
+        channel     = bot.get_channel(channel_id)
 
-        stream = os.popen('curl -n https://api.battlemetrics.com/players/'+str(player_id)+'/servers/'+str(server_id))
-        output = stream.read()
-        output_dict = json.loads(output)
-        status = output_dict['data']['attributes']['online']
+        player_id   = watchlist_dict[i]["PLAYER_ID"]
+        server_id   = watchlist_dict[i]["ASSOCIATED_SERVER_ID"]
+        online_msg  = watchlist_dict[i]["ON_PLAYER_MSG_SENT"]
+        offline_msg = watchlist_dict[i]["OF_PLAYER_MSG_SENT"]
 
-        if player_status == None:
-            if status == True: 
-                await channel.send(f"newly added player with id {player_id} is ONLINE on server with id: {server_id}")
-            if status == False:           
-                await channel.send(f"newly added player with id {player_id} is OFFLINE on server with id: {server_id}")
+        status      = onlineStatus(player_id,server_id)
 
-        if status and watchlist[i][3] == False:
-            watchlist[i][3] = True
-            watchlist[i][4] = False
-            watchlist[i][2] = True
+        if status and online_msg == False:
+
+            watchlist_dict[i]["ON_PLAYER_MSG_SENT"] = True
+            watchlist_dict[i]["OF_PLAYER_MSG_SENT"] = False
+            watchlist_dict[i]["PLAYER_STATUS"]      = True
+
             await channel.send(f"player with id {player_id} has logged ON to server with id: {server_id}")
 
-        if status == False and watchlist[i][4] == False:
-            watchlist[i][4] = True
-            watchlist[i][3] = False
-            watchlist[i][2] = False
-            await channel.send(f"player with id {player_id} has logged OFF to server with id: {server_id}")
+        if status == False and offline_msg == False:
 
-        print(watchlist[i])
+            watchlist_dict[i]["OF_PLAYER_MSG_SENT"] = True
+            watchlist_dict[i]["ON_PLAYER_MSG_SENT"] = False
+            watchlist_dict[i]["PLAYER_STATUS"]      = False
+
+            await channel.send(f"player with id {player_id} has logged OFF to server with id: {server_id}")
 
     
 
 @bot.command(name="getWatchlist", help=";getWatchlist \n\nprints the current watchlist")
-async def printWatchlist(ctx):
-    embedOne = discord.Embed(title="Player Watchlist", description="",color=0x00ff00)
-    for i in range(len(watchlist)):
-        if watchlist[i][2]==True:
-            embedOne.add_field(name=f"Player ID {watchlist[i][0]} ", value=f"is currently ONLINE on server ID {watchlist[i][1]}\n", inline=False)
-        else:
-            embedOne.add_field(name=f"Player ID {watchlist[i][0]} ", value=f"is currently OFFLINE on server ID {watchlist[i][1]}\n", inline=False)
+async def getWatchlist(ctx):
 
+    embed_one = discord.Embed(title="Player Watchlist", description="",color=0x00ff00)
 
-    await ctx.message.channel.send(embed=embedOne)
+    for i in range(len(watchlist_dict)):
+
+        status_string = "ONLINE" if watchlist_dict[i]["PLAYER_STATUS"] else "OFFLINE"
+
+        embed_one.add_field(name=f"Player ID {watchlist_dict[i]['PLAYER_ID']} ", 
+        value=f"is currently {status_string} on server ID {watchlist_dict[i]['ASSOCIATED_SERVER_ID']}\n", 
+        inline=False)
+
+    await ctx.message.channel.send(embed=embed_one)
     
-
-
 
 @bot.command(name="addIdToWatchList", help=";addIdToWatchList <PLayerId> <ServerId> \n\nwhen the id is detected on the given server the bot will alert, updates every 30 seconds")
-async def playerWatchList(ctx, *args):
+async def addIdToWatchList(ctx, *args):
 
-    argsList = list(args)
-    playerId = argsList[0]
-    serverId = argsList[1]
-    playerStatus = None
-    onPlayerMsgSent = False
-    ofPlayerMsgSent = False
-    playerProfile = [playerId,serverId,playerStatus,onPlayerMsgSent,ofPlayerMsgSent]
-    watchlist.append(playerProfile)
-    print(watchlist)
+    args_list = list(args)
+
+    player_id = args_list[0]
+    server_id = args_list[1]
+
+    status = onlineStatus(player_id,server_id)
+
+    watchlist_dict[len(watchlist_dict)] = {
+
+        "PLAYER_ID":player_id,
+        "ASSOCIATED_SERVER_ID":server_id,
+        "PLAYER_STATUS":status,
+        "ON_PLAYER_MSG_SENT":False,
+        "OF_PLAYER_MSG_SENT":False
+
+        }
+
+    status_string = "ONLINE" if status else "OFFLINE"
+
+    await ctx.message.channel.send(f"newly added player with id {player_id} is {status_string} on server with id: {server_id}")
 
 
-
-@bot.command(name="checkPlayerServer", help=";addIdToWatchList <PLayerName> <Server Name> \n\ngets sent to BM site and PlayerName gets searched up with Server Name in server search, very unreliable")
-async def playerCheck(ctx):
-    if ctx.message.author == bot.user:
-        return
-    splitMsg = ctx.message.content.split()
-
-    player = splitMsg[1]
-    server = splitMsg[2:]
-
-    serverString = ""
-
-    for i in range(len(server)):
-        serverString = serverString + server[i]+"%20"
-
-    length = len(serverString)
-    serverString = serverString[:length - 3]
-
-    URL = "https://www.battlemetrics.com/players?filter%5Bsearch%5D="+player+"&filter%5BplayerFlags%5D=&filter%5Bserver%5D%5Bsearch%5D="+serverString+"&filter%5Bserver%5D%5Bgame%5D=rust&sort=score"
-    driver.get(URL)
-
-    element = driver.find_element_by_xpath('//*[@id="PlayerInstancesPage"]/div/ul/li[1]/p/a')
-
-    playerIdLink = element.get_attribute('href')
-    
-    idLinkSplit = playerIdLink.split("/")
-
-    player_id = idLinkSplit[-1]
-
-    element2 = driver.find_element_by_xpath('//*[@id="PlayerInstancesPage"]/div/ul/li[1]/table/tbody/tr[1]/td[3]/a')
-    serverIdLink = element2.get_attribute('href')
-    serverLinkSplit = serverIdLink.split("/")
-
-    server_id = serverLinkSplit[-1]
-
-    stream = os.popen('curl -n https://api.battlemetrics.com/players/'+str(player_id)+'/servers/'+str(server_id))
-    
-    output = stream.read()
-    output_dict = json.loads(output)
-    if output_dict['data']['attributes']['online'] == True:
-        status = "online"
-    else:
-        status = "offline"
-
-    print(player)
-    print(player_id)
-    print(status)
-    print(server)
-    print(server_id)
-    serverString = ""
-    for ele in server:
-        serverString += ele+" "
-    print(serverString)
-    fullTitle = ""
-    fullTitle = "Status of "+player+" on server "+serverString
-    fullDescription="player id: "+player_id+"\n server id: "+server_id
-    #https://stackoverflow.com/questions/44862112/how-can-i-send-an-embed-via-my-discord-bot-w-python
-
-    embedOne = discord.Embed(title=fullTitle, description=fullDescription,color=0x00ff00)
-    embedOne.add_field(name="Field1", value="Status: "+status, inline=False)
-
-    await ctx.message.channel.send(embed=embedOne)
-    #await ctx.message.channel.send("Player "+player+" with a battlemetrics id of: "+player_id+" is currently "+status+" on server "+serverString+" with a battlemetrics id of:"+server_id)
-
+#   https://www.battlemetrics.com/players?filter%5Bsearch%5D=    placeholder    &filter%5BplayerFlags%5D=&sort=score
+#   https://www.battlemetrics.com/players?filter%5Bsearch%5D=    КакТак         &filter%5BplayerFlags%5D=&filter%5Bserver%5D%5Bsearch%5D=  
+#   placeholder%20placeholder%20placeholder           &filter%5Bserver%5D%5Bgame%5D=rust&sort=score
+#   https://www.battlemetrics.com/players?filter%5Bsearch%5D=КакТак&filter%5BplayerFlags%5D=&filter%5Bserver%5D%5Bsearch%5D=Rustafied%20EU%20Odd&filter%5Bserver%5D%5Bgame%5D=rust&sort=score
 
 bot.run(TOKEN)
