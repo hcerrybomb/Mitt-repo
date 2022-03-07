@@ -6,17 +6,17 @@ from dotenv import load_dotenv
 from selenium import webdriver
 from discord.ext import commands, tasks
 
-driver = webdriver.Chrome(executable_path="C:/Users/Gaming_Dator_VII/Desktop/Mitt-repo/python-development/rust-automated/alert-bot/chromedriver.exe")
-dotenv_path = Path('C:/Users/Gaming_Dator_VII/Desktop/.env-files/rust-token.env')
+#driver = webdriver.Chrome(executable_path="C:/Users/Gaming_Dator_VII/Desktop/Mitt-repo/python-development/rust-automated/alert-bot/chromedriver.exe")
+#dotenv_path = Path('C:/Users/Gaming_Dator_VII/Desktop/.env-files/rust-token.env')
 
 
-#driver = webdriver.Chrome(executable_path="C:/Users/wista002/Desktop/Mitt-repo/python-development/rust-automated/alert-bot/chromedriver.exe")
-#dotenv_path = Path('C:/Users/wista002/Desktop/.env-files/rust-token.env')
+driver = webdriver.Chrome(executable_path="C:/Users/wista002/Desktop/Mitt-repo/python-development/rust-automated/alert-bot/chromedriver.exe")
+dotenv_path = Path('C:/Users/wista002/Desktop/.env-files/rust-token.env')
 
 
 #eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImQ2NzY0ZjU3OTcwY2ZlYmYiLCJpYXQiOjE2NDY1NjU2NTUsIm5iZiI6MTY0NjU2NTY1NSwiaXNzIjoiaHR0cHM6Ly93d3cuYmF0dGxlbWV0cmljcy5jb20iLCJzdWIiOiJ1cm46dXNlcjo1Mjk3NTMifQ.CCAsM9QodXjl1OUi-dqY-PFnv5_2_d6J8eShuNuJ9oQ
 
-curl -n -X POST https://api.battlemetrics.com/players/match \ -d '{ "data": [ {"type": "identifier", "attributes": {"type": "steamID", "identifier": "76561198313072306" } } ] }' \ -H "Content-Type: application/json" \ -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImQ2NzY0ZjU3OTcwY2ZlYmYiLCJpYXQiOjE2NDY1NjU2NTUsIm5iZiI6MTY0NjU2NTY1NSwiaXNzIjoiaHR0cHM6Ly93d3cuYmF0dGxlbWV0cmljcy5jb20iLCJzdWIiOiJ1cm46dXNlcjo1Mjk3NTMifQ.CCAsM9QodXjl1OUi-dqY-PFnv5_2_d6J8eShuNuJ9oQ"
+#curl -n -X POST https://api.battlemetrics.com/players/match \ -d '{ "data": [ {"type": "identifier", "attributes": {"type": "steamID", "identifier": "76561198313072306" } } ] }' \ -H "Content-Type: application/json" \ -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImQ2NzY0ZjU3OTcwY2ZlYmYiLCJpYXQiOjE2NDY1NjU2NTUsIm5iZiI6MTY0NjU2NTY1NSwiaXNzIjoiaHR0cHM6Ly93d3cuYmF0dGxlbWV0cmljcy5jb20iLCJzdWIiOiJ1cm46dXNlcjo1Mjk3NTMifQ.CCAsM9QodXjl1OUi-dqY-PFnv5_2_d6J8eShuNuJ9oQ"
 
 
 
@@ -34,6 +34,8 @@ def onlineStatus(PLAYER_ID,SERVER_ID):
     stream          = os.popen('curl -n https://api.battlemetrics.com/players/'+str(PLAYER_ID)+'/servers/'+str(SERVER_ID))
     output          = stream.read()
     output_dict     = json.loads(output)
+    print(output_dict)
+    print(output_dict['data']['attributes']['online'])
     return output_dict['data']['attributes']['online']
 
 @bot.event
