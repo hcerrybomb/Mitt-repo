@@ -28,6 +28,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 bot = commands.Bot(command_prefix=';')
 watchlist = []
 watchlist_dict = {}
+watchlist_servers = []
 channel_id = 692411124616003587
 
 def onlineStatus(PLAYER_ID,SERVER_ID):
@@ -76,7 +77,9 @@ async def loop_function():
 
             await channel.send(f"player with id {player_id} has logged OFF to server with id: {server_id}")
 
-    
+
+
+@bot.command(name="addServerToWatchlist", help=";addServerToWatchlist <name> \n\nadds server to list of servers the watchlist checks")
 
 @bot.command(name="getWatchlist", help=";getWatchlist \n\nprints the current watchlist")
 async def getWatchlist(ctx):
