@@ -67,6 +67,8 @@ if False:
 
 
 with open("C:\\Users\\wista002\\Desktop\\Mitt-repo\\python-development\\env-new-environment\\request.json","w") as outfile:
+#with open("C:\\Users\\Gaming_Dator_VII\Desktop\\Mitt-repo\\python-development\\env-new-environment\\request.json","w") as outfile:
+
     outfile.write(parsed_data2)
     print()
 
