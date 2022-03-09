@@ -10,9 +10,20 @@ now = now[0:20]
 
 month = now[5] + now[6]
 
+year = now[0]+now[1]+now[2]+now[3]
 
 month = int(month)
-print(month)
+if month == 1:
+    month = 12
+    year = int(year)
+    year -= 1
+
+else:
+    month -= 1
+
+
+print(f"year here {year}")
+print(f"month here {month}")
 
 
 
@@ -37,7 +48,7 @@ PARAMS = {
 
 playerPARAMS = {
     "filter[search]":playerSearchTerm,
-    "filter[after]":now
+    #"filter[after]":now
 }
 
 x = requests.get(url = URL, params = PARAMS)
@@ -66,11 +77,10 @@ if False:
 
 
 
-with open("C:\\Users\\wista002\\Desktop\\Mitt-repo\\python-development\\env-new-environment\\request.json","w") as outfile:
-#with open("C:\\Users\\Gaming_Dator_VII\Desktop\\Mitt-repo\\python-development\\env-new-environment\\request.json","w") as outfile:
+#with open("C:\\Users\\wista002\\Desktop\\Mitt-repo\\python-development\\env-new-environment\\request.json","w") as outfile:
+with open("C:\\Users\\Gaming_Dator_VII\\Desktop\\Mitt-repo\\python-development\\rust-automated\\alert-bot\\testing\\request.json","w") as outfile:
 
     outfile.write(parsed_data2)
-    print()
 
 
     

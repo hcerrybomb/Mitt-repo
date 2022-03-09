@@ -1,0 +1,138 @@
+{
+    "data": [
+        {
+            "attributes": {
+                "createdAt": "2019-12-27T11:48:56.806Z",
+                "id": "920191605",
+                "name": "ostritch",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2020-08-23T00:27:11.789Z"
+            },
+            "id": "920191605",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2021-03-24T21:41:44.107Z",
+                "id": "989990650",
+                "name": "Ostritch",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-02-21T19:12:42.177Z"
+            },
+            "id": "989990650",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2022-03-04T05:16:22.188Z",
+                "id": "1033608241",
+                "name": "[SB]",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-03-04T05:16:23.353Z"
+            },
+            "id": "1033608241",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2017-01-02T01:16:16.937Z",
+                "id": "146680463",
+                "name": "[SB]",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-03-02T06:11:39.073Z"
+            },
+            "id": "146680463",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2022-02-26T02:10:43.394Z",
+                "id": "1026739170",
+                "name": "[SB]",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-03-01T01:51:50.020Z"
+            },
+            "id": "1026739170",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2017-02-12T18:21:11.916Z",
+                "id": "183469090",
+                "name": "[SB] ostritch",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-03-08T12:31:03.121Z"
+            },
+            "id": "183469090",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2019-11-01T11:52:12.018Z",
+                "id": "913352214",
+                "name": "the ostritch",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2021-12-18T03:10:34.537Z"
+            },
+            "id": "913352214",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2016-09-22T21:41:30.099Z",
+                "id": "85471986",
+                "name": "hostile ostritch",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2016-09-23T23:03:35.685Z"
+            },
+            "id": "85471986",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2016-07-05T19:06:58.651Z",
+                "id": "50973911",
+                "name": "Jim Ostritch",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2016-07-24T19:32:11.152Z"
+            },
+            "id": "50973911",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2018-08-04T07:13:07.981Z",
+                "id": "625931062",
+                "name": "Malicious Ostritch",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2021-09-27T02:49:35.841Z"
+            },
+            "id": "625931062",
+            "relationships": {},
+            "type": "player"
+        }
+    ],
+    "included": [],
+    "links": {
+        "next": "https://api.battlemetrics.com/players?filter%5Bsearch%5D=%5BSB%5D%20ostritch&page%5Boffset%5D=10"
+    }
+}
