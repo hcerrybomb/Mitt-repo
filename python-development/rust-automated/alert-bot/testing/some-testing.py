@@ -1,32 +1,27 @@
 import requests
 import json 
 from datetime import datetime
-
 now = datetime.now()
 now = str(now)
 now = list(now)
 now[10] = "T"; now[19] = "Z"
 now = now[0:20]
-
 month = now[5] + now[6]
-
 year = now[0]+now[1]+now[2]+now[3]
-
-month = int(month)
-if month == 1:
-    month = 12
-    year = int(year)
-    year -= 1
-
+INTmonth = int(month)
+if INTmonth == 1:
+    now[5] = "1"
+    now[6] = "2"
+    now[3] = int(now[3]) - 1
+    now[3] = str(now[3])
 else:
-    month -= 1
-
-
-print(f"year here {year}")
-print(f"month here {month}")
-
-
-
+    if INTmonth >10:
+        INTmonth -= 1
+        now[5] = "1"
+        now[6] = str(INTmonth - 10)
+    else:
+        now[5] = "0"
+        now[6] = str(INTmonth - 1)
 now = "".join(now)
 print(now)
 
@@ -48,7 +43,7 @@ PARAMS = {
 
 playerPARAMS = {
     "filter[search]":playerSearchTerm,
-    #"filter[after]":now
+    "filter[after]":now
 }
 
 x = requests.get(url = URL, params = PARAMS)
@@ -77,8 +72,8 @@ if False:
 
 
 
-#with open("C:\\Users\\wista002\\Desktop\\Mitt-repo\\python-development\\env-new-environment\\request.json","w") as outfile:
-with open("C:\\Users\\Gaming_Dator_VII\\Desktop\\Mitt-repo\\python-development\\rust-automated\\alert-bot\\testing\\request.json","w") as outfile:
+with open("C:\\Users\\wista002\\Desktop\\Mitt-repo\\python-development\\rust-automated\\alert-bot\\testing\\request.json","w") as outfile:
+#with open("C:\\Users\\Gaming_Dator_VII\\Desktop\\Mitt-repo\\python-development\\rust-automated\\alert-bot\\testing\\request.json","w") as outfile:
 
     outfile.write(parsed_data2)
 
