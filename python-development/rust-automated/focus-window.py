@@ -29,7 +29,7 @@ for x in range(0,numberOfPrograms):
         correctProgram = (str(appwindows[x]).split("'"))[1]
     else:
         print("program nr.",x,"\tNo match\t",(str(appwindows[x]).split("'"))[1])
-
+#CMD TEST (???)
 print(correctProgram)
 handle = win32gui.FindWindow(None, correctProgram)  
 if x==x:
