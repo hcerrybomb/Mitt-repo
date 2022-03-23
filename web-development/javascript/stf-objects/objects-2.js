@@ -164,7 +164,7 @@ figur1.countProperties = function(){
    for (let property in this){
        propCount++;
 
-   }
+   } //? Add properties
    console.log('3. D)   antall properties',propCount)
 }
 figur1.countProperties()

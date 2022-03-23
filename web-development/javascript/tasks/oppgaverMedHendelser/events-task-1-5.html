@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .underline{
+            text-decoration: underline;
+            text-decoration-color: aqua;
+            
+        }
+        .underline2{
+            text-decoration: underline;
+            text-decoration-color: red;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Du har trykket på meg 0 ganger.</h1>
+    <p>litt tekst nedenfor overskriften</p>
+    <script>
+
+        let overskriftEl = document.querySelector("h1");
+        overskriftEl.addEventListener("click",skrivAntall);
+        let pEl = document.querySelector("p")
+        pEl.addEventListener("click",addStyle);
+
+        let antallTrykk = 0;
+        function skrivAntall(){
+            antallTrykk++;
+            if(antallTrykk==10){
+                overskriftEl.innerHTML = `Du har trykket på meg ${antallTrykk} ganger, nå er det nok!`;
+                overskriftEl.removeEventListener("click",skrivAntall)
+                return
+            }            
+            overskriftEl.innerHTML = `Du har trykket på meg ${antallTrykk} ganger.`;
+            overskriftEl.classList.add("underline");
+
+        }
+        counter = 0
+        function addStyle(){
+            counter++
+            if(counter%2==0) pEl.classList.add("underline"), pEl.classList.remove("underline2");
+            else pEl.classList.add("underline2"), pEl.classList.remove("underline");
+        }
+
+        //overskriftEl.removeEventListener("click",skrivAntall);
+
+    </script>
+</body>
+</html>

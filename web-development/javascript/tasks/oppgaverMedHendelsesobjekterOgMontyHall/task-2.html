@@ -19,13 +19,13 @@
     </style>
 </head>
 <body>
-    <div id="colorpick1">content 1</div>
-    <div id="colorpick2">content 2</div>
-    <div id="colorpick3">content 3</div>
+    <div id="colorpick1" data-farge = "aquamarine">content 1</div>
+    <div id="colorpick2" data-farge = "red">content 2</div>
+    <div id="colorpick3" data-farge = "green">content 3</div>
 
 
     <script>
-
+        let body = document.querySelector("body")
         let buttonEl1 = document.querySelector("#colorpick1");
         let buttonEl2 = document.querySelector("#colorpick2");
         let buttonEl3 = document.querySelector("#colorpick3");
@@ -34,11 +34,11 @@
         buttonEl2.addEventListener("click", minFunction);
         buttonEl3.addEventListener("click", minFunction);
 
-        function minFunction(e){
+        function minFunction(e){    
             console.log("test")
-            if(e.target.innerHTML ===       "content 1"){}
-            else if(e.target.innerHTML ===  "content 2"){amt2++}
-            else{amt3++}
+            if(e.target.innerHTML === "content 1")body.style.backgroundColor = "aquamarine"
+            else if(e.target.innerHTML === "content 2")body.style.backgroundColor = "red"
+            else body.style.backgroundColor = "green"
         }
 
 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        background-color: #f5f5f5;
+        font-family: Georgia, serif; 
+      }
+      #hoved {
+        width: 60%;                  
+        margin: 50px auto;          
+        padding: 40px;	            
+        background-color: white; 	 
+        border: 1px solid #cccccc; 
+      }
+      h1, h2 {
+        font-family: Arial, sans-serif; 
+      }
+      img:hover {
+        cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+    <div id="hoved">
+        <h1>Monty Hall</h1>
+        <p>Hvilken dør vil du velge?</p>
+        <img id="dor1" src="./bilder/dor_1.png" width="164" height="146" alt="Dør">
+        <img id="dor2" src="./bilder/dor_2.png" width="164" height="146" alt="Dør">
+        <img id="dor3" src="./bilder/dor_3.png" width="164" height="146" alt="Dør">
+    </div>
+    <script>
+        function randMinMax(min, max){return Math.floor(Math.random() * (max - min + 1) ) + min;}
+        //Monty Hall problemet
+        //velger en av 3 dører
+        //en av de andre dørene blir åpnet - der er en geit
+        //bytte dør?
+        //valgt dør åpnes
+
+        let dorbilderEl = document.querySelectorAll("img");
+
+        // Går gjennom alle bildene og legger på samme lytter på hver av dem
+        for (let i = 0; i < dorbilderEl.length; i++) {
+            dorbilderEl[i].addEventListener("click", sjekkDor);
+        }
+
+        let doorPick = randMinMax(1,3)
+        let list = [1,2,3]
+        const index = list.indexOf(doorPick)
+        goatDoors = list.splice(index,1)
+
+
+
+        
+        
+
+
+        let doors = {
+          carDoor:"dor"+doorPick,
+          goatDoorOne:"dor"+goatDoors[0],
+          goatDoorTwo:"dor"+goatDoors[1],
+        }
+        console.log(doors)
+
+        function sjekkDor(e) {
+           if(car["door"] == e.target.id) console.log("right door")
+           else console.log("wrong door")
+        }
+
+        
+    </script>
+</body>
+</html>

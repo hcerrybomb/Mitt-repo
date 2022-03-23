@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select element</title>
+</head>
+
+<style></style>
+
+<body>
+    
+    <label for="aldersgrense"></label>
+    <select name="" id="aldersgrense">
+        <option value="alle">tillat for alle</option>
+        <option value="syv">7 år</option>
+        <option value="tretten">13 år</option>
+        <option value="femten">15 år</option>
+        <option value="atten">18 år</option>
+
+    </select>
+
+    <button>register</button>
+
+    <p id="infoTekst"></p>
+<script>
+    let aldersEl = document.querySelector("#aldersgrense")
+    let knappEl = document.querySelector("button")
+    let infoTekstEl = document.querySelector("#infoTekst")
+
+    knappEl.addEventListener("click",skrivUt)
+
+    function skrivUt(){
+        infoTekstEl.innerHTML = `aldersgrensen er ${aldersEl.value} år`
+    }
+
+</script>
+
+</body>
+</html>

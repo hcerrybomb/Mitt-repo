@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="rødEl">rød</p>
+    <p id="gulEl">gul</p>
+    <p id="gronnEl">grønn</p>
+    <p id="klikkEl">Klikk på den røde firkanten</p>
+
+    <script>
+        let rødEl = document.getElementById("rødEl");
+        let gulEl = document.getElementById("gulEl");
+        let gronnEl = document.getElementById("gronnEl");
+        let klikkEl = document.getElementById("klikkEl");
+
+        rødEl.addEventListener("click", rødFunction)
+        
+
+        function rødFunction() {
+            rødEl.innerHTML = "Før musepekeren over den gule firkanten"
+            rødEl.removeEventListener("click", rødFunction)
+            gulEl.addEventListener("click", gulFunction)
+        }
+        function gulFunction() {
+            gulEl.innerHTML = "Dobbeltklikk på den grønne firkanten"
+            gulEl.removeEventListener("click", gulFunction)
+            gronnEl.addEventListener("click", gronnFunction) 
+        }
+        function gronnFunction() {
+            gronnEl.innerHTML = "Klikk på den siste firkanten"
+            gronnEl.removeEventListener("click", gronnFunction)
+            klikkEl.addEventListener("click", klikkFunction)
+        }
+        function klikkFunction() {
+            klikkEl.innerHTML = "Klikk på den røde firkanten"
+            klikkEl.removeEventListener("click", klikkFunction)
+            rødEl.innerHTML = "rød"
+            gulEl.innerHTML = "gul"
+            gronnEl.innerHTML = "grønn"
+            rødEl.addEventListener("click", rødFunction)
+        }
+
+    </script>
+</body>
+</html>

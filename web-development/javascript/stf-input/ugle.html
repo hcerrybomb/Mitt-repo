@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: olive;
+        }
+        #ugle{
+            width:300px;
+            margin:150px;
+            border:2px solid black;
+            transition:0.5s;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <input type="color" name="" id="fargelegger">
+        <input type="range" name="" id="rotasjon" min="0" max = "360" value = "0">
+        
+
+    </div>
+    <img src="caldera.jpg" alt="" id="ugle">
+
+<script>
+    let ugleEl = document.querySelector("#ugle")
+    let fargeEl = document.querySelector("#fargelegger")
+    let rotasjonEl = document.querySelector("#rotasjon")
+
+    fargeEl.addEventListener("input",endreFarge);
+    rotasjonEl.addEventListener("input",endreRotasjon)
+
+    function endreFarge() {
+        document.body.style.backgroundColor = fargeEl.value
+    }
+
+    function endreRotasjon() {
+        ugleEl.style.transform = `rotate(${rotasjonEl.value}deg)`
+    }
+</script>
+</body>
+</html>

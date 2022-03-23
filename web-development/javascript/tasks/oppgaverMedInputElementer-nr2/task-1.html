@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="country-input">
+        <option value="">Velg land</option>
+        <option value="0">Sverige</option>
+        <option value="1">Norge</option>
+        <option value="2">Danmark</option>
+        <option value="3">Island</option>
+        <option value="4">Finland</option>
+    </select>
+    <p id="output">Velg et land</p>
+    <script>
+        let countryEl = document.getElementById("country-input")
+        let countryArr = [
+            {land:"Sverige",språk:"svensk"},
+            {land:"Norge",språk:"norsk"},
+            {land:"Danmark",språk:"dansk"},
+            {land:"Island",språk:"islandsk"},
+            {land:"Finland",språk:"finsk"}
+        ];
+    </script>
+</body>
+</html>

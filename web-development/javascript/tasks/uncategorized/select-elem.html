@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="billett">
+        <option value="">Velg billet</option>
+        <option value="0">barn</option>
+        <option value="1">voksen</option>
+        <option value="2">honnør</option>
+    </select>
+    <p id="print">Velg en billett</p>
+
+
+    <script>
+        let billettEl = document.querySelector("#billett")
+        let printEl = document.querySelector("#print")
+
+        let billettArr = [
+            {type:"barn",pris:"20"},
+            {type:"voksen",pris:"40"},
+            {type:"honnør",pris:"30"}]
+            
+        optRemoved = false
+        billettEl.addEventListener("change",velgBillett);
+        function velgBillett() {
+            if(!optRemoved) billettEl.remove(0);optRemoved = true;
+            let indeks = billettEl.value;
+            let billType = billettArr[indeks].type;
+            let billPris = billettArr[indeks].pris;
+            console.log(billType, billPris);
+            printEl.innerHTML = `Du har valgt ${billType} til en pris av ${billPris}`
+        }
+        
+
+    </script>
+</body>
+</html>

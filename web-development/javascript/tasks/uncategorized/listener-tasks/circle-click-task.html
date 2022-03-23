@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html, body {
+        height:100%;
+        
+    }
+    body {
+        cursor: pointer;
+    }
+    div {
+        background-color: hotpink;
+        width:50px;
+        height:50px;
+        border-radius: 50%;
+        position:absolute;
+        border:1px solid black;
+    }
+</style>
+<body id="body">
+    <script>
+
+
+
+    let bodyEl = document.getElementById("body")
+
+    bodyEl.addEventListener("click", klikkElement)
+
+    let width = 50
+    let height = 50
+    function klikkElement(e){
+        width += 10
+        height += 10
+        console.log("hei")
+        let divEl = document.createElement("div")
+        divEl.style.left = e.clientX + "px"
+        divEl.style.top = e.clientY + "px"
+        divEl.style.width = width + "px"
+        divEl.style.height = height + "px"
+
+        bodyEl.appendChild(divEl)
+
+    }
+    </script>
+    
+</body>
+</html>

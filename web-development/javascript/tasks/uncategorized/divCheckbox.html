@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .checkbox > label{
+            display:block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "checkbox">
+    <label for="chkPasta"></label>
+    <input type="checkbox" id="chkPasta" value = "Pasta">jeg liker pasta
+    <label for="chkPizza"></label>
+    <input type="checkbox" id="chkPizza" value = "Pizza">jeg liker pizza
+    <label for="chkPTaco"></label>
+    <input type="checkbox" id="chkTaco" value = "Taco">jeg liker taco
+    </div>
+    <br>
+    <button id="btn">Registrer</button>
+    <p id="info1">Her kommer info</p>
+    <p id="info2">Her kommer info</p>
+
+    <script>
+        let chkPastaEl = document.querySelector("#chkPasta");
+        let chkPizzaEl = document.querySelector("#chkPizza");
+        let chkTacoEl = document.querySelector("#chkTaco");
+
+        let cbEl = document.querySelectorAll("input[type='checkbox']")
+        let btnEl = document.querySelector("#btn")
+
+        btnEl.addEventListener("click",visNyMelding)
+
+        let info1El = document.querySelector("#info1");
+        let info2El = document.querySelector("#info2");
+
+        chkPastaEl.addEventListener("change",visMelding)
+        chkPizzaEl.addEventListener("change",visMelding)
+        chkTacoEl.addEventListener("change",visMelding)
+
+        function visMelding(){
+            console.log(cbEl)
+            info1El.innerHTML = "";
+            if(chkPizzaEl.checked) info1El.innerHTML += `jeg liker pizza <br>`
+            if(chkPastaEl.checked) info1El.innerHTML += `jeg liker pasta <br>`
+            if(chkTacoEl.checked) info1El.innerHTML += `jeg liker taco <br>`
+        }
+
+        function visNyMelding(){
+            info2El.innerHTML = "Jeg liker "
+            for(let i = 0;i < cbEl.length;i++){
+                if(cbEl[i].checked) info2El.innerHTML += `${cbEl[i].value} `
+            }
+        }
+    </script>
+</body>
+</html>
