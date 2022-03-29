@@ -1,0 +1,138 @@
+{
+    "data": [
+        {
+            "attributes": {
+                "createdAt": "2017-06-07T23:10:00.997Z",
+                "id": "277284052",
+                "name": "Crack",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-03-11T22:35:42.753Z"
+            },
+            "id": "277284052",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2019-12-31T06:50:28.603Z",
+                "id": "920853725",
+                "name": "crack",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-03-08T21:08:56.991Z"
+            },
+            "id": "920853725",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2020-07-19T00:25:11.919Z",
+                "id": "954476698",
+                "name": "Crack!",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-03-18T18:42:44.087Z"
+            },
+            "id": "954476698",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2020-09-07T16:39:01.838Z",
+                "id": "961189301",
+                "name": "crack",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-03-14T15:19:45.321Z"
+            },
+            "id": "961189301",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2021-07-03T00:57:44.123Z",
+                "id": "1002480271",
+                "name": "Crack",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-03-13T09:02:16.639Z"
+            },
+            "id": "1002480271",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2016-04-25T18:50:03.343Z",
+                "id": "24658077",
+                "name": "Crack",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-03-09T17:14:39.498Z"
+            },
+            "id": "24658077",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2016-05-01T14:30:06.730Z",
+                "id": "26502986",
+                "name": "CRACK",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-03-07T06:55:55.260Z"
+            },
+            "id": "26502986",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2018-12-26T02:33:00.540Z",
+                "id": "746996824",
+                "name": "CRACK",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-03-18T11:54:20.302Z"
+            },
+            "id": "746996824",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2019-11-10T00:23:59.787Z",
+                "id": "914382491",
+                "name": "crack",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-03-18T17:53:44.636Z"
+            },
+            "id": "914382491",
+            "relationships": {},
+            "type": "player"
+        },
+        {
+            "attributes": {
+                "createdAt": "2021-01-08T04:22:16.590Z",
+                "id": "978029896",
+                "name": "Crack",
+                "positiveMatch": false,
+                "private": false,
+                "updatedAt": "2022-02-27T02:18:29.956Z"
+            },
+            "id": "978029896",
+            "relationships": {},
+            "type": "player"
+        }
+    ],
+    "included": [],
+    "links": {
+        "prev": "https://api.battlemetrics.com/players?filter%5Bsearch%5D=.crack%20TisU&filter%5Bafter%5D=2022-02-18T22%3A31%3A01Z&filter%5Bserver%5D%5Bgame%5D=rust&page%5Boffset%5D=80"
+    }
+}

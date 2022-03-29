@@ -1,6 +1,8 @@
 import requests
 import json 
 from datetime import datetime
+import difflib
+import pprint
 now = datetime.now()
 now = str(now)
 now = list(now)
@@ -72,11 +74,58 @@ if False:
 
 
 
-with open("C:\\Users\\wista002\\Desktop\\Mitt-repo\\python-development\\rust-automated\\alert-bot\\testing\\request.json","w") as outfile:
-#with open("C:\\Users\\Gaming_Dator_VII\\Desktop\\Mitt-repo\\python-development\\rust-automated\\alert-bot\\testing\\request.json","w") as outfile:
-
+#with open("C:\\Users\\wista002\\Desktop\\Mitt-repo\\python-development\\rust-automated\\alert-bot\\testing\\request.json","w") as outfile:
+with open("C:\\Users\\Gaming_Dator_VII\\Desktop\\Mitt-repo\\python-development\\rust-automated\\alert-bot\\testing\\request.json","w") as outfile:
     outfile.write(parsed_data2)
 
+difflib_matches = []
+top_ten_searches = []
+for i in range(10):
+    top_ten_searches.append(parsed_data_dict2["data"][i]["attributes"]["name"])
+    difflib_matches += difflib.get_close_matches(playerSearchTerm,top_ten_searches[-1:],n=1)
+    if len(difflib_matches) > 0:
+        print(difflib_matches[0])
+        print(f"\n\nSearch string: \t\t\t\t {playerSearchTerm}  \n\nBattleMetrics top results list:")
+        pprint.pprint(top_ten_searches,indent=4)
+        print("match found ^ ")
+        print(f"\nBattlmetrics closest match:\t\t {top_ten_searches[0]}")
+        print(f"Program closest match:\t\t\t {difflib_matches[0]}      found on run {1} on index {i}\n")
+        player_match_name = parsed_data_dict2["data"][i]["attributes"]["name"]
+        player_match_id = parsed_data_dict2["data"][i]["id"]
 
-    
+if len(difflib_matches)== 0:
+    for i in range(9):
+        
+        if len(difflib_matches) > 0:
+            break
+        
+        y = requests.get(url = parsed_data_dict2["links"]["next"])
+        data2 = y.json()
+        parsed_data2 = json.dumps(data2,indent=4,sort_keys=True)
+        parsed_data_dict2 = json.loads(parsed_data2)
+        for x in range(10):
+            top_ten_searches.append(parsed_data_dict2["data"][x]["attributes"]["name"])
+            
+            difflib_matches += difflib.get_close_matches(playerSearchTerm,top_ten_searches[-1:],n=1)
+            if len(difflib_matches) > 0: 
+
+
+
+                print(f"\n\nSearch string: \t\t\t\t {playerSearchTerm}  \n\nBattleMetrics top results list:")
+                pprint.pprint(top_ten_searches,indent=4)
+                print("match found ^ ")
+                print(f"\nBattlmetrics closest match:\t\t {top_ten_searches[0]}")
+                print(f"Program closest match:\t\t\t {difflib_matches[0]}      found on run {i+2} on index {x}\n")
+
+
+
+                player_match_name = parsed_data_dict2["data"][x]["attributes"]["name"]
+                player_match_id = parsed_data_dict2["data"][x]["id"]
+                break
+
+        
+        if len(difflib_matches) > 0:
+            break
+
+print(f"player match id: {player_match_id}\nplayer match name: {player_match_name}")
 

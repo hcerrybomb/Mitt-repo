@@ -1,0 +1,637 @@
+{
+    "data": [
+        {
+            "attributes": {
+                "address": null,
+                "country": "BR",
+                "createdAt": "2022-03-03T22:53:18.325Z",
+                "details": {
+                    "environment": "w",
+                    "map": "RustyZ.net Map Generation",
+                    "official": false,
+                    "pve": false,
+                    "rust_born": "2022-03-03T21:54:09.000Z",
+                    "rust_build": "69177",
+                    "rust_description": "Servidor 100% Vanilla, sin ninguna regla, entra a vivir la experiencia difinitiva de Rust.",
+                    "rust_ent_cnt_i": 67661,
+                    "rust_fps": 30,
+                    "rust_fps_avg": 30,
+                    "rust_gc_cl": 190,
+                    "rust_gc_mb": 1916,
+                    "rust_hash": "e4d453c3",
+                    "rust_headerimage": "https://i.imgur.com/lKx9VWE.png",
+                    "rust_last_wipe": "2022-03-03T21:54:09.000Z",
+                    "rust_last_wipe_ent": null,
+                    "rust_mem_pv": null,
+                    "rust_mem_ws": null,
+                    "rust_modded": false,
+                    "rust_queued_players": 0,
+                    "rust_type": "community",
+                    "rust_uptime": 74847,
+                    "rust_url": "https://paradisegaming.net",
+                    "rust_world_seed": 1021145563,
+                    "rust_world_size": 3500,
+                    "serverSteamId": "90156819796759552"
+                },
+                "id": "14541770",
+                "ip": "177.54.149.146",
+                "location": [
+                    -46.636108,
+                    -23.547501
+                ],
+                "maxPlayers": 301,
+                "name": "RustyZ.net - BR Main",
+                "players": 0,
+                "port": 28215,
+                "portQuery": 28215,
+                "private": false,
+                "rank": 10158,
+                "status": "dead",
+                "updatedAt": "2022-03-12T00:15:28.930Z"
+            },
+            "id": "14541770",
+            "relationships": {
+                "game": {
+                    "data": {
+                        "id": "rust",
+                        "type": "game"
+                    }
+                }
+            },
+            "type": "server"
+        },
+        {
+            "attributes": {
+                "address": null,
+                "country": "FI",
+                "createdAt": "2020-02-12T22:19:39.955Z",
+                "details": {
+                    "environment": "w",
+                    "map": "Procedural Map",
+                    "official": false,
+                    "pve": false,
+                    "rust_build": "51017",
+                    "rust_description": "discord.me/viinakellari\n\nFIN/ENG Vanilla server\nNo max group or max team limit\nENGLISH or Finnish in chat!\nSpamming will get you muted\n\n-Weekly Map Wipes at Thursday 5PM EET\n-Monthly BP Wipe on Rust Update day\n-Map wipe joka Torstai klo 17\n-Full BP Wipe kerran kuussa Rust p\u00e4ivityksen ohessa",
+                    "rust_ent_cnt_i": 60356,
+                    "rust_fps": 60,
+                    "rust_fps_avg": 59.72,
+                    "rust_gc_cl": 2293,
+                    "rust_gc_mb": 2145,
+                    "rust_hash": "464d490b",
+                    "rust_headerimage": "https://i.imgur.com/B29eo9B.jpg",
+                    "rust_last_ent_drop": "2020-05-21T14:02:37.937Z",
+                    "rust_last_seed_change": "2020-05-28T14:06:05.116Z",
+                    "rust_last_wipe": "2020-05-28T14:06:05.116Z",
+                    "rust_last_wipe_ent": 37223,
+                    "rust_mem_pv": null,
+                    "rust_mem_ws": null,
+                    "rust_modded": false,
+                    "rust_queued_players": 0,
+                    "rust_type": "community",
+                    "rust_uptime": 577147,
+                    "rust_url": "https://discord.gg/at5zzNH",
+                    "rust_world_seed": 860990480,
+                    "rust_world_size": 4000,
+                    "serverSteamId": "90135672245584907"
+                },
+                "id": "5601543",
+                "ip": "95.217.61.170",
+                "location": [
+                    24.93545,
+                    60.169521
+                ],
+                "maxPlayers": 250,
+                "name": "[EU/FIN] VIINAKELLARI - MAIN - JUST WIPED 28.5",
+                "players": 0,
+                "port": 28015,
+                "portQuery": 28015,
+                "private": false,
+                "rank": 13452,
+                "status": "dead",
+                "updatedAt": "2022-03-12T08:51:12.218Z"
+            },
+            "id": "5601543",
+            "relationships": {
+                "game": {
+                    "data": {
+                        "id": "rust",
+                        "type": "game"
+                    }
+                }
+            },
+            "type": "server"
+        },
+        {
+            "attributes": {
+                "address": null,
+                "country": "FR",
+                "createdAt": "2022-01-20T15:14:22.333Z",
+                "details": {
+                    "environment": "l",
+                    "map": "Procedural Map",
+                    "official": false,
+                    "pve": false,
+                    "rust_born": "2022-03-10T15:25:52.000Z",
+                    "rust_build": "69224",
+                    "rust_description": "Welcome! to The Island of the Barats\n\nMap and Bp's Full Wipe the first Thursday of each month.\nMap wipe every Thursday.\n\n- Spawn minicopter random\n- Be TOXIC or INSULT reason for BAN.\n- Not racism.\n- MAX 5 Players per team.\n- The use of hacks, scripts or exploits is not allowed.\n- Forbidden to do Stream Sniping.\n\nEnter our Discord - Rincon del Barat https://discord.gg/GSUx4SAY in case you need help, want to give some suggestion\nOr are you just looking for someone to play with?",
+                    "rust_ent_cnt_i": 69791,
+                    "rust_fps": 212,
+                    "rust_fps_avg": 203.23,
+                    "rust_gc_cl": 202,
+                    "rust_gc_mb": 1533,
+                    "rust_hash": "3eaa3404",
+                    "rust_headerimage": "https://media.discordapp.net/attachments/814901639835811890/950077161329553458/gaming-cosplay-youtube-thumbnail-maker-885b.png?width=1214&height=683",
+                    "rust_last_seed_change": "2022-03-06T18:24:38.069Z",
+                    "rust_last_wipe": "2022-03-06T18:24:38.069Z",
+                    "rust_last_wipe_ent": 51774,
+                    "rust_maps": {
+                        "barren": false,
+                        "monuments": 210,
+                        "seed": 1628523264,
+                        "size": 3500,
+                        "thumbnailUrl": "https://files.rustmaps.com/img/221/986f34e4-5e48-44f3-970c-7a9fe37bca11/Thumbnail.png",
+                        "url": "https://rustmaps.com/map/3500_1628523264"
+                    },
+                    "rust_mem_pv": null,
+                    "rust_mem_ws": null,
+                    "rust_modded": true,
+                    "rust_queued_players": 0,
+                    "rust_type": "modded",
+                    "rust_uptime": 56431,
+                    "rust_url": "https://discord.gg/GSUx4SAY",
+                    "rust_world_seed": 1628523264,
+                    "rust_world_size": 3500,
+                    "serverSteamId": "90157039773242370"
+                },
+                "id": "14077948",
+                "ip": "37.59.44.28",
+                "location": [
+                    3.17456,
+                    50.69421
+                ],
+                "maxPlayers": 150,
+                "name": "[EU/] Barats MAIN / 3x VANILLA / 10/03",
+                "players": 2,
+                "port": 2018,
+                "portQuery": 2018,
+                "private": false,
+                "rank": 5448,
+                "status": "online",
+                "updatedAt": "2022-03-12T17:30:17.572Z"
+            },
+            "id": "14077948",
+            "relationships": {
+                "game": {
+                    "data": {
+                        "id": "rust",
+                        "type": "game"
+                    }
+                }
+            },
+            "type": "server"
+        },
+        {
+            "attributes": {
+                "address": null,
+                "country": "DE",
+                "createdAt": "2022-01-03T17:05:13.584Z",
+                "details": {
+                    "environment": "l",
+                    "map": "Procedural Map",
+                    "official": false,
+                    "pve": false,
+                    "rust_born": "2022-03-03T22:46:58.000Z",
+                    "rust_build": "69224",
+                    "rust_description": "Welcome to EU/UK | Rustier Up North | Main | Bi-Weekly\n\nWipes:\n\u27a4 Map Wipe = Bi-Weekly \n\u27a4 Blueprint Wipe = First Thursday of the Month\n\nServer restarts everyday 5am GMT\n\nRules:\n\n\u27a4 NO Hacking / Scripting\n\u27a4 NO Intentional Bug Abuse\n\u27a4 NO EAC Banned Alts\n\u27a4 NO Ban Evading\n\u27a4 NO Racism / Abuse",
+                    "rust_ent_cnt_i": 80429,
+                    "rust_fps": 225,
+                    "rust_fps_avg": 223.83,
+                    "rust_gc_cl": 204,
+                    "rust_gc_mb": 1459,
+                    "rust_hash": "3eaa3404",
+                    "rust_headerimage": "https://imgur.com/tVxq0rB.png",
+                    "rust_last_ent_drop": "2022-03-03T22:51:38.395Z",
+                    "rust_last_seed_change": "2022-03-03T22:51:38.395Z",
+                    "rust_last_wipe": "2022-03-03T22:51:38.395Z",
+                    "rust_last_wipe_ent": 55108,
+                    "rust_maps": {
+                        "barren": false,
+                        "monuments": 234,
+                        "seed": 338418690,
+                        "size": 3700,
+                        "thumbnailUrl": "https://files.rustmaps.com/img/221/e4851128-ff25-4e6a-83f4-894ec48b8fc7/Thumbnail.png",
+                        "url": "https://rustmaps.com/map/3700_338418690"
+                    },
+                    "rust_mem_pv": null,
+                    "rust_mem_ws": null,
+                    "rust_modded": true,
+                    "rust_queued_players": 0,
+                    "rust_type": "modded",
+                    "rust_uptime": 45673,
+                    "rust_url": "https://rustierupnorth.net",
+                    "rust_world_seed": 338418690,
+                    "rust_world_size": 3700,
+                    "serverSteamId": "90157043334133766"
+                },
+                "id": "13865604",
+                "ip": "116.202.118.99",
+                "location": [
+                    8.68417,
+                    50.11552
+                ],
+                "maxPlayers": 100,
+                "name": "EU/UK | Rustier Up North | Main | Bi-Weekly | WIPED 03/03",
+                "players": 0,
+                "port": 25571,
+                "portQuery": 25571,
+                "private": false,
+                "rank": 17547,
+                "status": "online",
+                "updatedAt": "2022-03-12T17:37:00.266Z"
+            },
+            "id": "13865604",
+            "relationships": {
+                "game": {
+                    "data": {
+                        "id": "rust",
+                        "type": "game"
+                    }
+                }
+            },
+            "type": "server"
+        },
+        {
+            "attributes": {
+                "address": null,
+                "country": "FR",
+                "createdAt": "2018-04-06T13:44:12.214Z",
+                "details": {
+                    "environment": "w",
+                    "map": "Procedural Map",
+                    "rust_build": "2278889",
+                    "rust_description": "22787392278749227875910421227876922787792278779227877922787792278779227877922787792278779227877922787792278779",
+                    "rust_ent_cnt_i": 18164,
+                    "rust_fps": 61,
+                    "rust_fps_avg": 60.77,
+                    "rust_gc_cl": 12133,
+                    "rust_gc_mb": 521,
+                    "rust_hash": "2278789",
+                    "rust_headerimage": "2278829",
+                    "rust_last_seed_change": "2018-04-06T14:01:19.322Z",
+                    "rust_last_wipe": "2018-04-06T14:01:19.322Z",
+                    "rust_last_wipe_ent": 15144,
+                    "rust_mem_pv": null,
+                    "rust_mem_ws": null,
+                    "rust_modded": false,
+                    "rust_pve": false,
+                    "rust_queued_players": 0,
+                    "rust_uptime": 2679149,
+                    "rust_url": "2278839",
+                    "rust_world_seed": 2278799,
+                    "rust_world_size": 2278809,
+                    "serverSteamId": "90114131876444168"
+                },
+                "id": "2149965",
+                "ip": "151.80.22.102",
+                "location": [
+                    3.17456,
+                    50.69421
+                ],
+                "maxPlayers": 250,
+                "name": "[EU] Europe Kings Main | FULLWIPED 06.04 - 16:00CEST",
+                "players": 0,
+                "port": 49035,
+                "portQuery": 49035,
+                "private": false,
+                "rank": 12431,
+                "status": "dead",
+                "updatedAt": "2022-03-12T08:32:08.096Z"
+            },
+            "id": "2149965",
+            "relationships": {
+                "game": {
+                    "data": {
+                        "id": "rust",
+                        "type": "game"
+                    }
+                }
+            },
+            "type": "server"
+        },
+        {
+            "attributes": {
+                "address": null,
+                "country": "FR",
+                "createdAt": "2019-08-10T19:09:28.163Z",
+                "details": {
+                    "environment": "l",
+                    "lastRestart": "2019-09-24T19:48:14.719Z",
+                    "map": "Procedural Map",
+                    "rust_build": "38028",
+                    "rust_description": "2x Gather Rates (2.5x for Sulfur and Wood) \nHalf smelt and crafting speeds\nComponent System loot tables (Junk items removed)",
+                    "rust_ent_cnt_i": 146744,
+                    "rust_fps": 60,
+                    "rust_fps_avg": 59.93,
+                    "rust_gc_cl": 113,
+                    "rust_gc_mb": 990,
+                    "rust_hash": "15272ffa",
+                    "rust_headerimage": "1",
+                    "rust_last_seed_change": "2019-08-17T23:39:55.954Z",
+                    "rust_last_wipe": "2019-08-17T23:39:55.954Z",
+                    "rust_last_wipe_ent": 16979,
+                    "rust_mem_pv": null,
+                    "rust_mem_ws": null,
+                    "rust_modded": true,
+                    "rust_pve": false,
+                    "rust_queued_players": 0,
+                    "rust_uptime": 1775,
+                    "rust_url": "",
+                    "rust_world_seed": 700,
+                    "rust_world_size": 3500,
+                    "serverSteamId": "90129276602218506"
+                },
+                "id": "4156208",
+                "ip": "46.105.99.99",
+                "location": [
+                    3.17456,
+                    50.69421
+                ],
+                "maxPlayers": 50,
+                "name": "[EU] Tommy's x2 Main |Vanilla| 19/8",
+                "players": 0,
+                "port": 2023,
+                "portQuery": 2023,
+                "private": false,
+                "rank": 13114,
+                "status": "dead",
+                "updatedAt": "2022-03-12T09:50:56.800Z"
+            },
+            "id": "4156208",
+            "relationships": {
+                "game": {
+                    "data": {
+                        "id": "rust",
+                        "type": "game"
+                    }
+                }
+            },
+            "type": "server"
+        },
+        {
+            "attributes": {
+                "address": "eu.main.harmonynetwork.co",
+                "country": "GB",
+                "createdAt": "2022-01-31T04:22:06.343Z",
+                "details": {
+                    "environment": "l",
+                    "map": "Harmony Network Maps",
+                    "official": false,
+                    "pve": false,
+                    "rust_born": "2022-02-18T16:58:36.000Z",
+                    "rust_build": "68635",
+                    "rust_description": "Beat the best to be the best at Harmony.\n \n Join our Discord: https://discord.gg/harmonyservers \n\n Buy VIP, Wipe Pass and Skin Box: https://www.harmonynetwork.co\n\n Rules: \n- Hacking/scripting is subject to a permanent ban with no option to appeal \n- Use the F7 Report system in-game for hackers/scripters",
+                    "rust_ent_cnt_i": 120645,
+                    "rust_fps": 238,
+                    "rust_fps_avg": 236.75,
+                    "rust_gc_cl": 175,
+                    "rust_gc_mb": 2084,
+                    "rust_hash": "167e5568",
+                    "rust_headerimage": "1",
+                    "rust_last_wipe": "2022-01-31T02:33:37.000Z",
+                    "rust_last_wipe_ent": null,
+                    "rust_mem_pv": null,
+                    "rust_mem_ws": null,
+                    "rust_modded": true,
+                    "rust_queued_players": 0,
+                    "rust_type": "modded",
+                    "rust_uptime": 25680,
+                    "rust_url": "https://harmonynetwork.co",
+                    "rust_world_seed": 56855675,
+                    "rust_world_size": 5100,
+                    "serverSteamId": "90156379468903431"
+                },
+                "id": "14205093",
+                "ip": "185.212.119.29",
+                "location": [
+                    -0.12574,
+                    51.50853
+                ],
+                "maxPlayers": 250,
+                "name": "Harmony - EU Main 2x | No BPs | JUST WIPED!",
+                "players": 0,
+                "port": 28015,
+                "portQuery": 28015,
+                "private": false,
+                "rank": 18468,
+                "status": "dead",
+                "updatedAt": "2022-03-12T06:00:01.697Z"
+            },
+            "id": "14205093",
+            "relationships": {
+                "game": {
+                    "data": {
+                        "id": "rust",
+                        "type": "game"
+                    }
+                }
+            },
+            "type": "server"
+        },
+        {
+            "attributes": {
+                "address": null,
+                "country": "US",
+                "createdAt": "2022-02-06T23:08:52.622Z",
+                "details": {
+                    "environment": "l",
+                    "map": "Procedural Map",
+                    "official": false,
+                    "pve": false,
+                    "rust_born": "2022-03-05T03:41:45.000Z",
+                    "rust_build": "69224",
+                    "rust_description": "Magic Main 3x Better Loot 3500 Map Rules No racism No Griefing 8 Team ui 30 member limit 40 Turret limit No raiding between 11pm EST to 8am EST No calling out cheaters in chat Discord Rocky_#0001 (main admin) discord.gg/bNsk7g2s Feel Free to reach out at anytime i will respond when Free",
+                    "rust_ent_cnt_i": 170058,
+                    "rust_fps": 53,
+                    "rust_fps_avg": 52.77,
+                    "rust_gc_cl": 167,
+                    "rust_gc_mb": 2061,
+                    "rust_hash": "3eaa3404",
+                    "rust_headerimage": "1",
+                    "rust_last_ent_drop": "2022-02-24T14:38:11.967Z",
+                    "rust_last_seed_change": "2022-03-05T03:06:03.612Z",
+                    "rust_last_wipe": "2022-03-05T03:06:03.612Z",
+                    "rust_last_wipe_ent": 37629,
+                    "rust_maps": {
+                        "barren": false,
+                        "monuments": 239,
+                        "seed": 8800555,
+                        "size": 6000,
+                        "thumbnailUrl": "https://files.rustmaps.com/img/221/cfa343d8-6f7a-40a0-a69a-f1d875384d5b/Thumbnail.png",
+                        "url": "https://rustmaps.com/map/6000_8800555"
+                    },
+                    "rust_mem_pv": null,
+                    "rust_mem_ws": null,
+                    "rust_modded": true,
+                    "rust_queued_players": 0,
+                    "rust_type": "modded",
+                    "rust_uptime": 3279,
+                    "rust_url": "1",
+                    "rust_world_seed": 8800555,
+                    "rust_world_size": 6000,
+                    "serverSteamId": "90156971842356231"
+                },
+                "id": "14283932",
+                "ip": "208.52.152.41",
+                "location": [
+                    -96.879204,
+                    32.814899
+                ],
+                "maxPlayers": 40,
+                "name": "Magic Main 3x",
+                "players": 0,
+                "port": 28024,
+                "portQuery": 28024,
+                "private": false,
+                "rank": 5293,
+                "status": "dead",
+                "updatedAt": "2022-03-12T04:07:24.089Z"
+            },
+            "id": "14283932",
+            "relationships": {
+                "game": {
+                    "data": {
+                        "id": "rust",
+                        "type": "game"
+                    }
+                }
+            },
+            "type": "server"
+        },
+        {
+            "attributes": {
+                "address": null,
+                "country": "DE",
+                "createdAt": "2021-08-29T18:07:56.058Z",
+                "details": {
+                    "environment": "l",
+                    "map": "Procedural Map",
+                    "official": false,
+                    "pve": false,
+                    "rust_born": "2022-02-03T19:13:35.000Z",
+                    "rust_build": "68603",
+                    "rust_description": "Group Limit: No limit \nThis is a Full Vanilla server \nMap size: 4000 \nFullwipes on every Friday 18:00 CET \nLast Wipe: 14.01 18:00 CET Type: Fullwipe(BP wipe) \nNext Wipe: 21.01 18:00 CET Type: Fullwipe(BP wipe) \nStore, Rules and Commands can be found on our Website: bestrustservers.com  \nIf you want to contact us go to our website(bestrustservers.com) click on 'view webpage' and you will find 'Contact us' button there. \nJoin to our Discord server: https://discord.gg/eF5wj6d \nJoin to our Steam group: https://steamcommunity.com/groups/bestrustservers  \nFollow us on Twitter: https://twitter.com/BestrustServers \nCheck out our YouTube channel for base designs, tips, streams about wipe hypes on our servers, online raids and more content will be on: Bestrust Servers \nFollow us on Twitch for interesting streams and useful videos: https://www.twitch.tv/bestrustservers   \nThis Server supports http://just-wiped.net",
+                    "rust_ent_cnt_i": 67508,
+                    "rust_fps": 322,
+                    "rust_fps_avg": 294.85,
+                    "rust_gc_cl": 330,
+                    "rust_gc_mb": 2069,
+                    "rust_hash": "14f8cac8",
+                    "rust_headerimage": "https://i.imgur.com/OREyo5k.png",
+                    "rust_last_seed_change": "2022-01-14T17:03:12.125Z",
+                    "rust_last_wipe": "2022-01-14T17:03:12.125Z",
+                    "rust_last_wipe_ent": 52173,
+                    "rust_mem_pv": null,
+                    "rust_mem_ws": null,
+                    "rust_modded": false,
+                    "rust_queued_players": 0,
+                    "rust_type": "community",
+                    "rust_uptime": 149975,
+                    "rust_url": "http://bestrustservers.com",
+                    "rust_world_seed": 1087141568,
+                    "rust_world_size": 3950,
+                    "serverSteamId": "90155818226992132"
+                },
+                "id": "12604130",
+                "ip": "217.182.196.236",
+                "location": [
+                    8.0503,
+                    50.383598
+                ],
+                "maxPlayers": 250,
+                "name": "[EU] Bestrust Main | Fullwiped: 03.02 20:00 CET",
+                "players": 0,
+                "port": 28015,
+                "portQuery": 28015,
+                "private": false,
+                "rank": 16436,
+                "status": "dead",
+                "updatedAt": "2022-03-12T02:18:59.986Z"
+            },
+            "id": "12604130",
+            "relationships": {
+                "game": {
+                    "data": {
+                        "id": "rust",
+                        "type": "game"
+                    }
+                }
+            },
+            "type": "server"
+        },
+        {
+            "attributes": {
+                "address": null,
+                "country": "GB",
+                "createdAt": "2022-01-27T09:56:43.145Z",
+                "details": {
+                    "environment": "l",
+                    "map": "Renegade\u2122 Custom Generation",
+                    "official": false,
+                    "pve": false,
+                    "rust_born": "2022-03-03T19:08:24.000Z",
+                    "rust_build": "69224",
+                    "rust_description": "===Welcome to EU RenegadeRust.com 2x Monthly Main===\n Map wipes monthly on the 1st Thursday of the month @ 2 PM EST (No BP Wipe)\n VIP PERKS - https://www.RenegadeRust.com\n DISCORD - https://discord.gg/renegaderust\n\n ===KEY FEATURES===\n -PLAY TO WIN - Earn points for playtime to purchase FREE VIP\n -RAID ALARM - Alerts you via Rust+ when your base is damaged\n -Best Admins in the game including CAMOMO_10\n -50% Upkeep\n -Some mini helis and boats spawn\n -Extra recyclers at dome, oilrig, fishing, and cargo\n -Loot tables with junk removed\n -Short nights\n\n ===RULES===\n -No VAC or Steam game bans within 90 days\n -No EAC bans within 180 days\n -No more than 2 total bans\n -No racism or homophobia",
+                    "rust_ent_cnt_i": 231152,
+                    "rust_fps": 20,
+                    "rust_fps_avg": 20.62,
+                    "rust_gc_cl": 284,
+                    "rust_gc_mb": 3577,
+                    "rust_hash": "3eaa3404",
+                    "rust_headerimage": "https://media.discordapp.net/attachments/804553969085972481/832718835262029844/Banner.png",
+                    "rust_last_ent_drop": "2022-03-03T19:12:35.568Z",
+                    "rust_last_wipe": "2022-03-03T19:12:35.568Z",
+                    "rust_last_wipe_ent": 71356,
+                    "rust_mem_pv": null,
+                    "rust_mem_ws": null,
+                    "rust_modded": true,
+                    "rust_queued_players": 0,
+                    "rust_type": "modded",
+                    "rust_uptime": 38053,
+                    "rust_url": "https://www.renegaderust.com",
+                    "rust_world_seed": 1337,
+                    "rust_world_size": 4000,
+                    "serverSteamId": "90157046342016008"
+                },
+                "id": "14154340",
+                "ip": "45.88.230.46",
+                "location": [
+                    -0.12574,
+                    51.50853
+                ],
+                "maxPlayers": 150,
+                "name": "EU RenegadeRust.com 2x Monthly Main | No BP Wipe | 50% Upkeep | Noob Friendly|Long|Vanilla|Main| WIPED 3/3",
+                "players": 73,
+                "port": 28015,
+                "portQuery": 28015,
+                "private": false,
+                "rank": 356,
+                "status": "online",
+                "updatedAt": "2022-03-12T17:42:21.787Z"
+            },
+            "id": "14154340",
+            "relationships": {
+                "game": {
+                    "data": {
+                        "id": "rust",
+                        "type": "game"
+                    }
+                }
+            },
+            "type": "server"
+        }
+    ],
+    "included": [],
+    "links": {
+        "prev": "https://api.battlemetrics.com/servers?filter%5Bsearch%5D=Rustopia%20EU%20Main&filter%5Bgame%5D=rust&page%5Boffset%5D=80"
+    }
+}

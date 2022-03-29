@@ -6,12 +6,12 @@ from dotenv import load_dotenv
 from selenium import webdriver
 from discord.ext import commands, tasks
 
-#driver = webdriver.Chrome(executable_path="C:/Users/Gaming_Dator_VII/Desktop/Mitt-repo/python-development/rust-automated/alert-bot/chromedriver.exe")
-#dotenv_path = Path('C:/Users/Gaming_Dator_VII/Desktop/.env-files/rust-token.env')
+driver = webdriver.Chrome(executable_path="C:/Users/Gaming_Dator_VII/Desktop/Mitt-repo/python-development/rust-automated/alert-bot/chromedriver.exe")
+dotenv_path = Path('C:/Users/Gaming_Dator_VII/Desktop/.env-files/rust-token.env')
 
 
-driver = webdriver.Chrome(executable_path="C:/Users/wista002/Desktop/Mitt-repo/python-development/rust-automated/alert-bot/chromedriver.exe")
-dotenv_path = Path('C:/Users/wista002/Desktop/.env-files/rust-token.env')
+#driver = webdriver.Chrome(executable_path="C:/Users/wista002/Desktop/Mitt-repo/python-development/rust-automated/alert-bot/chromedriver.exe")
+#dotenv_path = Path('C:/Users/wista002/Desktop/.env-files/rust-token.env')
 
 
 #eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImQ2NzY0ZjU3OTcwY2ZlYmYiLCJpYXQiOjE2NDY1NjU2NTUsIm5iZiI6MTY0NjU2NTY1NSwiaXNzIjoiaHR0cHM6Ly93d3cuYmF0dGxlbWV0cmljcy5jb20iLCJzdWIiOiJ1cm46dXNlcjo1Mjk3NTMifQ.CCAsM9QodXjl1OUi-dqY-PFnv5_2_d6J8eShuNuJ9oQ
