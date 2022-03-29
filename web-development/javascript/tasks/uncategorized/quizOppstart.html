@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz</title>
+    <style>
+        body{
+            background-color: #e0e0e0;
+            font-family: "Century Gothic",Arial, Helvetica, sans-serif;
+            font-size:14px;
+            color:#323232;
+        }
+        .innpakning{
+            width: 50%;
+            margin: auto;
+            padding: 5px;
+            background-color: #fefefe;
+            border: 3px solid black;
+        }
+        .resultat{
+            margin: 20px 5px;
+            padding: 20px;
+        }
+        .checkboxradio {
+            min-width: 130px;
+            width: 60%;
+        }
+        button {
+            padding: 10px;
+            color: white;
+            text-shadow: 0 -1px 1px #335166;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+            background-color: #5588AA;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+            outline: none;
+            cursor: pointer;
+        }
+        button:active {
+            transform: translate(1px, 1px);
+        }
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Quiz</h1>
+        <p class="resultat"></p>
+    </div>
+
+
+    <script>
+        let innpakningEl = document.querySelector(".innpakning");
+        let resultatEl = document.querySelector(".resultat");
+
+        //Lager en array med spørsmålsobjekter
+        let quiz = [
+            {sporsmaal:"Hva heter Norges hovedstad?",
+            alternativer: ["Oslo","Stockholm","København"],
+            fasit: ["riktig", "galt", "galt"]},
+            {sporsmaal:"Hvilke byer ligger i Europa?",
+            alternativer: ["Oslo","New York","London"],
+            fasit: ["riktig", "galt", "riktig"]},
+            {sporsmaal:"Hvilken innsjø er Norges største?",
+            alternativer: ["Røssvatnet","Mjøsa","Femunden"],
+            fasit: ["galt", "riktig", "galt"]}
+        ]
+
+        for(let i = 0; i < quiz.length;i++){
+            let sporsmaalEl = document.createElement("p")
+            sporsmaalEl.innerHTML += `<h3> ${quiz[i].sporsmaal} </h3>`
+            for(let j = 0; j < quiz[i].alternativer.length;j++){
+                let nyCheckbox = document.createElement("input")
+                nyCheckbox.type = "checkbox"
+                nyCheckbox.value = quiz[i].fasit[j]
+                
+                sporsmaalEl.appendChild(nyCheckbox)
+                sporsmaalEl.innerHTML += `${quiz[i].alternativer[j]} <br>`
+                
+            }
+            innpakningEl.appendChild(sporsmaalEl)
+        }
+
+        function finnPoeng(){
+            let cbEl = document.querySelectorAll("input[type='checkbox']")
+            let antallPoeng = 0
+            for(let i = 0; i < cbEl.length;i++){
+                if(cbEl[i].checked){
+                    if(cbEl[i].value=="riktig")antallPoeng++
+                    else antallPoeng--
+                }
+            }
+            console.log(`${antallPoeng}/4`)
+            resultatEl.innerHTML = `du fikk ${antallPoeng}/4 poeng`
+        }
+
+        let buttonEl = document.createElement("button")
+        buttonEl.innerHTML = `Sjekk svar`
+        innpakningEl.appendChild(buttonEl)
+        buttonEl.addEventListener("click",finnPoeng)
+
+    </script>
+    
+</body>
+</html>

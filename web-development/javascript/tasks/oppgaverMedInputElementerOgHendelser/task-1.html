@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="optionContainer">
+        <label for="voksne">Velg antall voksne:</label>
+        <input type="number" id="voksne" min=0 value="0" data-price=295><br>
+
+        <label for="barn-3-16">Velg antall barn (3-16 år):</label>
+        <input type="number" id="barn-3-16" min=0 value="0" data-price=149><br>
+
+        <label for="barn-0-3">Velg antall barn (0-3 år):</label>
+        <input type="number" id="barn-0-3" min=0 value="0" data-price=0><br>
+
+        <label for="barnevogn">Velg om du skal ha barnevogn:</label>
+
+
+        <select  id="barnevogn" data-price=0>
+            <option value="0">Nei</option>
+            <option value="1">Ja</option>
+            
+        </select><br>
+
+        <label for="badeland">Velg antall tilgang til badeland:</label>
+        <input type="number" id="badeland" min=0 max=0 value="0" data-price=139><br>
+
+        <label for="pose">Velg antall overraskelses poser:</label>
+        <input type="number" id="pose" min=0 max=0 value="0" data-price=99><br>
+    </div>
+    <div id="output">
+        <p id="totalpris">totalpris: 0 kr</p>
+        <p id="bestilling">din bestilling:</p>
+    </div>
+
+
+    <script>
+        
+        let totalprisEl = document.getElementById("totalpris")
+        let bestillingEl = document.getElementById("bestilling")
+        let inputs = document.querySelectorAll("input")
+        inputs = Array.prototype.slice.call(inputs)
+        inputs.push(document.getElementById("barnevogn"))
+        console.log(inputs)
+        let thingsAndPrices = []
+        let totalPrice = 0
+        
+
+        for(let i = 0; i < inputs.length;i++){
+            
+            inputs[i].addEventListener("change", inputChange)
+            thingsAndPrices.push({thing:inputs[i].id,price:Number(inputs[i].getAttribute("data-price")),amountPicked:0})
+            //console.log(`here: ${inputs[i].value}`)
+        }
+
+        console.table(thingsAndPrices)
+        let currentThing
+        let barnevogn
+        function inputChange(e){
+            
+        for(let i = 0; i < thingsAndPrices.length; i++){
+            if(thingsAndPrices[i].thing === e.target.id){
+                //console.log(`${thingsAndPrices[i].thing} MATCHED with ${e.target.id}`)
+                console.log(`thingsAndPrices[${i}]`)
+                console.table(thingsAndPrices[i])
+                console.log(`e.target.id: ${e.target.id}, e.target.value: ${e.target.value}`)
+                if(thingsAndPrices[i].amountPicked < e.target.value){
+                    // one is ADDED
+                    totalPrice += thingsAndPrices[i].price
+                    thingsAndPrices[i].amountPicked = e.target.value
+                }
+                else if(thingsAndPrices[i].amountPicked > e.target.value){
+                    // one is REMOVED
+                    totalPrice -= thingsAndPrices[i].price
+                    thingsAndPrices[i].amountPicked = e.target.value
+                }
+            }
+            else{
+                //console.log(`${thingsAndPrices[i].thing} DIDNT MATCH with ${e.target.id}`)
+            }
+        }
+
+
+            //console.log("here",currentThing)        
+            //console.log(e.target.getAttribute("data-price"))
+            //console.log(e.target.value)
+            //console.log(e.target.id)
+
+        totalprisEl.innerHTML = `totalpris: ${totalPrice} kr`
+        let totaltFolk = Number(thingsAndPrices[0].amountPicked) + Number(thingsAndPrices[1].amountPicked) + Number(thingsAndPrices[2].amountPicked)
+        
+        if(thingsAndPrices[3].amountPicked==1) barnevogn = "har"
+        else if(thingsAndPrices[3].amountPicked==0) barnevogn = "har ikke"
+        bestillingEl.innerHTML = `din bestilling:<br>
+        totalt antall folk: ${totaltFolk}<br>
+        barnevogn: du ${barnevogn} barnevogn<br>
+        voksne: ${thingsAndPrices[0].amountPicked}<br>
+        barn (3-16 år): ${thingsAndPrices[1].amountPicked}<br>
+        barn (0-3 år): ${thingsAndPrices[2].amountPicked}<br>
+
+        `
+        }
+    </script>
+</body>
+</html>
