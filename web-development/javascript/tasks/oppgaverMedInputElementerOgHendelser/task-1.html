@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+    </style>
 </head>
 <body>
     <div id="optionContainer">
@@ -42,10 +45,11 @@
         
         let totalprisEl = document.getElementById("totalpris")
         let bestillingEl = document.getElementById("bestilling")
-        let inputs = document.querySelectorAll("input")
-        inputs = Array.prototype.slice.call(inputs)
-        inputs.push(document.getElementById("barnevogn"))
-        console.log(inputs)
+
+        let inputs = document.querySelectorAll("input, #barnevogn")
+        
+        
+        //console.log(inputs)
         let thingsAndPrices = []
         let totalPrice = 0
         
@@ -57,42 +61,48 @@
             //console.log(`here: ${inputs[i].value}`)
         }
 
-        console.table(thingsAndPrices)
+        //console.table(thingsAndPrices)
         let currentThing
         let barnevogn
+
+
+
+        
         function inputChange(e){
             
         for(let i = 0; i < thingsAndPrices.length; i++){
             if(thingsAndPrices[i].thing === e.target.id){
                 //console.log(`${thingsAndPrices[i].thing} MATCHED with ${e.target.id}`)
-                console.log(`thingsAndPrices[${i}]`)
-                console.table(thingsAndPrices[i])
-                console.log(`e.target.id: ${e.target.id}, e.target.value: ${e.target.value}`)
+                //console.log(`thingsAndPrices[${i}]`)
+                //console.table(thingsAndPrices[i])
+                //console.log(`e.target.id: ${e.target.id}, e.target.value: ${e.target.value}`)
+
+                // CHANGE TO CALCULATE TARGET VALUE INSTEAD OF ADDING 1 AND 1 
+
                 if(thingsAndPrices[i].amountPicked < e.target.value){
+                    //console.log("IT DOES GET HERE")
                     // one is ADDED
+
                     totalPrice += thingsAndPrices[i].price
                     thingsAndPrices[i].amountPicked = e.target.value
                 }
                 else if(thingsAndPrices[i].amountPicked > e.target.value){
                     // one is REMOVED
+
                     totalPrice -= thingsAndPrices[i].price
                     thingsAndPrices[i].amountPicked = e.target.value
                 }
             }
-            else{
-                //console.log(`${thingsAndPrices[i].thing} DIDNT MATCH with ${e.target.id}`)
-            }
         }
 
-
-            //console.log("here",currentThing)        
-            //console.log(e.target.getAttribute("data-price"))
-            //console.log(e.target.value)
-            //console.log(e.target.id)
-
-        totalprisEl.innerHTML = `totalpris: ${totalPrice} kr`
-        let totaltFolk = Number(thingsAndPrices[0].amountPicked) + Number(thingsAndPrices[1].amountPicked) + Number(thingsAndPrices[2].amountPicked)
         
+        let totaltFolk = Number(thingsAndPrices[0].amountPicked) + Number(thingsAndPrices[1].amountPicked) + Number(thingsAndPrices[2].amountPicked)
+
+
+        document.getElementById("pose").setAttribute("max",totaltFolk)
+        document.getElementById("badeland").setAttribute("max",totaltFolk)
+        totalprisEl.innerHTML = `totalpris: ${totalPrice} kr`
+        //console.log(thingsAndPrices[3].amountPicked)
         if(thingsAndPrices[3].amountPicked==1) barnevogn = "har"
         else if(thingsAndPrices[3].amountPicked==0) barnevogn = "har ikke"
         bestillingEl.innerHTML = `din bestilling:<br>
@@ -101,6 +111,7 @@
         voksne: ${thingsAndPrices[0].amountPicked}<br>
         barn (3-16 år): ${thingsAndPrices[1].amountPicked}<br>
         barn (0-3 år): ${thingsAndPrices[2].amountPicked}<br>
+        overaskelsesposer: ${thingsAndPrices[5].amountPicked} <br>
 
         `
         }
