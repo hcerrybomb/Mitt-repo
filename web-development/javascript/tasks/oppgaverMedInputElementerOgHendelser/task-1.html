@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>doc</title>
 </head>
 <body>
     <div id="optionContainer">
@@ -39,70 +39,78 @@
 
 
     <script>
+        let doc = document
         
-        let totalprisEl = document.getElementById("totalpris")
-        let bestillingEl = document.getElementById("bestilling")
-        let inputs = document.querySelectorAll("input")
-        inputs = Array.prototype.slice.call(inputs)
-        inputs.push(document.getElementById("barnevogn"))
+        let totalprisEl = doc.getElementById("totalpris")
+        let bestillingEl = doc.getElementById("bestilling")
+        let poseEl = doc.getElementById("pose")
+        let badelandEl = doc.getElementById("badeland")
+        let inputs = doc.querySelectorAll("input, #barnevogn")
         console.log(inputs)
         let thingsAndPrices = []
         let totalPrice = 0
-        
+        let x,y,z
+        let barnevogn        
 
         for(let i = 0; i < inputs.length;i++){
-            
             inputs[i].addEventListener("change", inputChange)
             thingsAndPrices.push({thing:inputs[i].id,price:Number(inputs[i].getAttribute("data-price")),amountPicked:0})
-            //console.log(`here: ${inputs[i].value}`)
         }
 
         console.table(thingsAndPrices)
-        let currentThing
-        let barnevogn
-        function inputChange(e){
-            
-        for(let i = 0; i < thingsAndPrices.length; i++){
-            if(thingsAndPrices[i].thing === e.target.id){
-                //console.log(`${thingsAndPrices[i].thing} MATCHED with ${e.target.id}`)
-                console.log(`thingsAndPrices[${i}]`)
-                console.table(thingsAndPrices[i])
-                console.log(`e.target.id: ${e.target.id}, e.target.value: ${e.target.value}`)
-                if(thingsAndPrices[i].amountPicked < e.target.value){
-                    // one is ADDED
-                    totalPrice += thingsAndPrices[i].price
-                    thingsAndPrices[i].amountPicked = e.target.value
-                }
-                else if(thingsAndPrices[i].amountPicked > e.target.value){
-                    // one is REMOVED
-                    totalPrice -= thingsAndPrices[i].price
-                    thingsAndPrices[i].amountPicked = e.target.value
-                }
-            }
-            else{
-                //console.log(`${thingsAndPrices[i].thing} DIDNT MATCH with ${e.target.id}`)
+        
+        function calcPrices(){
+            for(let i = 0; i < thingsAndPrices.length; i++){
+                x = thingsAndPrices[i].price
+                y = thingsAndPrices[i].amountPicked
+                z = x * y
+                totalPrice += z
             }
         }
 
+        function inputChange(e){
+            totalPrice = 0
+            for(let i = 0; i < thingsAndPrices.length; i++){
+                if(thingsAndPrices[i].thing === e.target.id){           
+                    thingsAndPrices[i].amountPicked = Number(e.target.value)
+                }
+            }
+            
+            
+            
+            let totaltFolk = thingsAndPrices[0].amountPicked + thingsAndPrices[1].amountPicked + thingsAndPrices[2].amountPicked
+            
+            if(thingsAndPrices[3].amountPicked==1) barnevogn = "har"
+            else if(thingsAndPrices[3].amountPicked==0) barnevogn = "har ikke"
 
-            //console.log("here",currentThing)        
-            //console.log(e.target.getAttribute("data-price"))
-            //console.log(e.target.value)
-            //console.log(e.target.id)
+            poseEl.setAttribute("max",totaltFolk)
+            badelandEl.setAttribute("max",totaltFolk)
 
-        totalprisEl.innerHTML = `totalpris: ${totalPrice} kr`
-        let totaltFolk = Number(thingsAndPrices[0].amountPicked) + Number(thingsAndPrices[1].amountPicked) + Number(thingsAndPrices[2].amountPicked)
+            if(badelandEl.value > totaltFolk){
+                badelandEl.value = totaltFolk;
+                thingsAndPrices[4].amountPicked = Number(badelandEl.value)
+                
+            }
+
+            if(poseEl.value > totaltFolk){
+                poseEl.value = totaltFolk;
+                thingsAndPrices[5].amountPicked = Number(poseEl.value)
+                
+            }
         
-        if(thingsAndPrices[3].amountPicked==1) barnevogn = "har"
-        else if(thingsAndPrices[3].amountPicked==0) barnevogn = "har ikke"
-        bestillingEl.innerHTML = `din bestilling:<br>
-        totalt antall folk: ${totaltFolk}<br>
-        barnevogn: du ${barnevogn} barnevogn<br>
-        voksne: ${thingsAndPrices[0].amountPicked}<br>
-        barn (3-16 år): ${thingsAndPrices[1].amountPicked}<br>
-        barn (0-3 år): ${thingsAndPrices[2].amountPicked}<br>
+            console.table(thingsAndPrices)
+            calcPrices()
+            totalprisEl.innerHTML = `totalpris: ${totalPrice} kr`
 
-        `
+            bestillingEl.innerHTML = `din bestilling:<br><br>
+            totalt antall folk: ${totaltFolk}<br><br>
+            voksne: ${thingsAndPrices[0].amountPicked}<br>
+            barn (3-16 år): ${thingsAndPrices[1].amountPicked}<br>
+            barn (0-3 år): ${thingsAndPrices[2].amountPicked}<br>
+            barnevogn: du ${barnevogn} barnevogn<br>
+            antall med tilgang til badeland: ${thingsAndPrices[4].amountPicked}<br>
+            antall overraskelses-poser ${thingsAndPrices[5].amountPicked}<br>
+            `
         }
     </script>
 </body>

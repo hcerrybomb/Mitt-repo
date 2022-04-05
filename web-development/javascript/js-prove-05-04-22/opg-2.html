@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figurer velg</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <select name="" id="figur-input">
+        <option value="donald">Donald</option>
+        <option value="pippi">Pippi</option>
+        <option value="knerten">Knerten</option>
+    </select>
+    <button id="figur-submit">Velg figur</button>
+    <input type="color" id="color-input" >
+    <div id="imgcontainer">
+        <img src="vedleggElever/donald.jpg" alt="" id="img">
+    </div>
+    <div id="output-container">
+
+    </div>
+
+
+
+    <script>
+        let figuresObject = {
+            donald:{
+                navn:"Donald",
+                farge:"blue",
+                egenskap:"Uykkesfugl",
+                bilde:"vedleggElever/donald.jpg"
+            },
+            pippi:{
+                navn:"Pippi",
+                farge:"red",
+                egenskap:"Verdens sterkeste",
+                bilde:"vedleggElever/pippi.jpg"
+            },
+            knerten:{
+                navn:"Knerten",
+                farge:"brown",
+                egenskap:"Pinnemannen",
+                bilde:"vedleggElever/Knerten.jpg"
+            }
+        }, 
+
+        figurPickObject,
+        newEl,
+        outputCount = 0, 
+        fargeValgt = false, 
+
+        colorPick = document.getElementById("color-input"),
+        figurSubmit = document.getElementById("figur-submit"),
+        figurPick = document.getElementById("figur-input"),
+        imgEl = document.getElementById("img"),
+        outputEl = document.getElementById("output-container"),
+        outputs,
+        outputColorCount = 0
+
+        colorPick.addEventListener("input",function(){
+            //fargeValgt=true
+            outputs = document.querySelectorAll(".outputs")
+            for(let i = 0; i < outputs.length; i++){
+                outputColorCount++
+                if(outputColorCount%2==0)outputs[i].style.backgroundColor = colorPick.value  
+            }
+            outputColorCount = 0
+        })
+        figurSubmit.addEventListener("click",function(e){
+            outputCount++
+            figurPickObject = figuresObject[`${figurPick.value}`]
+            console.table(figurPickObject)
+            imgEl.setAttribute("src",figurPickObject.bilde)
+            newEl = document.createElement("p")
+            newEl.className = "outputs"
+            newEl.innerHTML = `Nr: ${outputCount} ${figurPickObject.navn} er kjent som ${figurPickObject.egenskap}`
+            //if(fargeValgt){
+            //    if(outputCount%2==0)newEl.style.backgroundColor = figurPickObject.farge
+            //    else newEl.style.backgroundColor = colorPick.value}
+            //else newEl.style.backgroundColor = figurPickObject.farge
+            newEl.style.backgroundColor = figurPickObject.farge
+            outputEl.appendChild(newEl)
+        })
+
+    </script>
+</body>
+</html>

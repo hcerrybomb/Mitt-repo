@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html, body {
+        height:100%;
+        width:100%;
+        margin:0
+    }
+    #container{
+        margin:0;
+    }
+    #vert-line{
+        height:100%;
+        
+        background-color:red;
+        position:absolute;
+    }
+    #hori-line{
+        width:100%;
+        
+        background-color:red;
+        position:absolute;
+    }
+    #topleft{
+        position:absolute;
+        top:0;
+        left:0;
+        background-color:green;
+    }
+    #topright{
+        position:absolute;
+        top:0;
+        background-color:blue;
+        
+    }
+</style>
+<body id="body">
+    <div id="container">
+      
+        <div id="vert-line"></div>
+        <div id="hori-line"></div>
+        <div id="topleft"></div>
+        <div id="topright">??</div>
+        <div id="bottomleft"></div>
+        <div id="topright"></div>
+    </div>
+    <script>
+
+let lineThickness = 5
+//const myObserver = new ResizeObserver(entries => {
+//    entries.forEach(entry => {
+//        console.log('width', entry.contentRect.width);
+//        console.log('height', entry.contentRect.height);
+//    })
+//})
+
+//myObserver.observe(document.body)
+
+document.getElementById("vert-line").style.width = `${lineThickness}px`
+document.getElementById("hori-line").style.height = `${lineThickness}px`
+
+document.addEventListener('mousemove', (event) => {
+    //console.log(`Window Size: Height ${document.body.clientHeight} With ${document.body.clientWidth}`);
+	
+    
+    console.log(`Mouse X: ${event.clientX}, Mouse Y: ${event.clientY}`);
+    document.getElementById("vert-line").style.left = event.clientX + "px";
+    document.getElementById("hori-line").style.top = event.clientY + "px";
+
+    document.getElementById("topleft").style.height = `${event.clientY}px`
+    document.getElementById("topleft").style.width = `${event.clientX}px`
+
+    document.getElementById("topright").style.height = `${event.clientY}px`
+    document.getElementById("topright").style.left = `${event.clientX}px`
+    document.getElementById("topright").style.width = `${document.getElementById("container").offsetWidth - event.clientX}px`
+});
+    </script>
+    
+</body>
+</html>

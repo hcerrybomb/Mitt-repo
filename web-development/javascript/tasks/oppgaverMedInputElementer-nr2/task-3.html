@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="maincontainer">
+        <label for="sennep">Sennep
+            <input type="checkbox" name="sennep" value="sennep" id="sennep">
+        </label>
+        <br>
+        <label for="ketchup">Ketchup
+            <input type="checkbox" name="ketchup" value="ketchup" id="ketchup">
+        </label>
+        <br>
+        <label for="løk">Løk
+            <input type="checkbox" name="løk" value="løk" id="løk">
+        </label>
+        <br>
+        <p id="output"></p>
+    </div>
+
+    <script>for(let i=0; i < document.querySelectorAll("input").length;i++) document.querySelectorAll("input")[i].addEventListener("change", function(){document.getElementById("output").innerHTML = "";for(let j=0; j < document.querySelectorAll("input").length;j++)if(document.querySelectorAll("input")[j].checked)document.getElementById("output").innerHTML +=`${document.querySelectorAll("input")[j].value} <br>`})</script>
+</body>
+</html>

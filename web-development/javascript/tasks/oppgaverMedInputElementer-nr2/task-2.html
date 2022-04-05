@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+
+    <div>
+
+        <p>Velg land</p>
+        <br>
+
+        <input id="land1" type="radio" name="land" value ="Norge">
+        <label for="land1">Norge</label>
+        <br>
+
+        <input id="land2" type="radio" name="land" value ="Sverige">
+        <label for="land2">Sverige</label>
+        <br>
+
+        <input id="land3" type="radio" name="land" value ="Danmark">
+        <label for="land3">Danmark</label>
+        <br>
+        
+        <p>Velg ferie</p>
+        <br>
+
+        <input id="ferie1" type="radio" name="ferie" value ="Fjell">
+        <label for="ferie1">Fjell</label>
+        <br>
+
+        <input id="ferie2" type="radio" name="ferie" value ="Sjø">
+        <label for="ferie2">Sjø</label>
+        <br>
+
+        <input id="ferie3" type="radio" name="ferie" value ="By">
+        <label for="ferie3">By</label>
+        <br>
+
+        <button id="submit">Velg ferie</button>
+
+        <p id="output"></p>
+
+        
+    </div>
+
+    <script>
+        buttonEl = document.getElementById("submit")
+        outputEl = document.getElementById("output")
+        buttonEl.addEventListener("click",function(){
+            landEls = document.querySelectorAll("input[name='land']")
+            for(let i=0;i<landEls.length;i++){
+                if(landEls[i].checked == true){
+                    valgtLand = landEls[i].value
+                }
+            }
+            ferieEls = document.querySelectorAll("input[name='ferie']")
+            for(let i=0;i<ferieEls.length;i++){
+                if(ferieEls[i].checked == true){
+                    valgtFerie = ferieEls[i].value
+                }
+            }
+            outputEl.innerHTML = `du valgte land ${valgtLand} og ferie type ${valgtFerie}`
+        })
+    </script>
+</body>
+</html>

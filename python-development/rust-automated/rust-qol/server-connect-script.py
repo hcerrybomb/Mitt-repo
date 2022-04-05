@@ -5,9 +5,9 @@ from pynput.keyboard import *
 from time import time, ctime, sleep
 import pathlib
 import os
-import win32con
+import win32.lib.win32con as win32con
 import sys
-import win32gui
+import win32.lib.win32con as win32gui
 import win32process as wproc
 import win32api as wapi
 import logging
@@ -53,7 +53,7 @@ sleep(0.5)
 print("\n Step 1:\tFor the program to be its most efficient you should have the", col.cya,
       "Game Overlay", col.res, "Activity setting", col.gre, "Enabled", col.res, "on discord")
 sleep(0.5)
-print("\n Step 2:\tIf your game is open, make sure your screen mode is either borderless or windowed")
+print("\n Step 2:\tIf your game is ALREADY open, make sure your screen mode is either borderless or windowed")
 sleep(0.5)
 print("\n        \tTo do this > open your game > open your menu > click OPTIONS > click SCREEN > set the screen MODE to either Borderless or Windowd > click APPLY CHANGES")
 sleep(0.5)

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <div id="maincontainer">
+
+        <div id="money">
+
+            <p>Sett inn penger:</p>
+
+            <button id="1kr" class ="money-choice" data-amount=1>1kr</button>
+            <button id="5kr" class ="money-choice" data-amount=5>5kr</button>
+            <button id="10kr" class ="money-choice" data-amount=10>10kr</button>
+            <button id="20kr" class ="money-choice" data-amount=20>20kr</button>
+
+            <p id="saldo">Din saldo er: </p>
+            <br>
+
+            <button id="veksel">Ta ut veksel</button>
+            <br>
+            <br>
+
+        </div>
+
+        <div id="brusvalg">
+
+            <label for="id-input">velg brus ved å sette in kode</label>
+            <input type="text"  id="id-input">
+            <br>
+            <br>
+        
+            <button id="kjøp">klikk for å kjøpe brus</button>
+            <br>
+
+            <p id="kjøp-info"></p>
+
+        </div>
+
+    </div>
+
+    <script>
+        let moneyIn = 0
+        let moneyInputs = document.querySelectorAll(".money-choice")
+        let saldoEl = document.getElementById("saldo")
+        let vekselEl = document.getElementById("veksel")
+
+        //console.log(moneyInputs)
+
+        let bruser = [
+            {
+                id:"001",
+                navn:"Pepsi",
+                pris:25,
+                beholdning:5
+            },
+            {
+                id:"002",
+                navn:"Fanta",
+                pris:25,
+                beholdning:5
+            },
+            {
+                id:"003",
+                navn:"Monster",
+                pris:30,
+                beholdning:5
+            },
+            {
+                id:"004",
+                navn:"Sprite",
+                pris:25,
+                beholdning:5
+            },
+            {
+                id:"005",
+                navn:"Villa",
+                pris:20,
+                beholdning:5
+            },
+        ]
+
+        for(let i = 0; i < moneyInputs.length; i++){
+            moneyInputs[i].addEventListener("click",function (e){
+                moneyIn += Number(e.target.getAttribute("data-amount"))
+                console.log(moneyIn)
+                saldoEl.innerHTML = `Din saldo er: ${moneyIn}kr`
+            })
+        }
+
+        vekselEl.addEventListener("click", function(){
+            moneyIn = 0
+            saldoEl.innerHTML = `Din saldo er: ${moneyIn}kr`
+        })
+
+        let kodeInputEl = document.getElementById("id-input")
+        let brusValgt = ""
+        let brusFunnet = false
+        let kjøpEl = document.getElementById("kjøp")
+
+        kjøpEl.addEventListener("click",function(){
+
+            kode = kodeInputEl.value
+
+            for(let i = 0; i < bruser.length; i++){
+
+                if(String(kode) === String(bruser[i].id)){
+                
+                    brusValgt = bruser[i]
+                    brusFunnet = true
+
+                }
+
+            }
+
+            //console.log("brus valgt",brusValgt)
+            //console.log("kjøp registrert")
+
+            if(brusFunnet){
+
+                if(moneyIn>=brusValgt.pris && brusValgt.beholdning>0){
+
+                    document.getElementById("kjøp-info").innerHTML = `
+                    du kjøpte en ${brusValgt.navn} for ${brusValgt.pris}
+                    `
+
+                    moneyIn -= brusValgt.pris
+
+                    brusValgt.beholdning -= 1
+
+                    //console.log("penger:",moneyIn)
+                    //console.log("beholdning:")
+                    console.table(bruser)
+                }
+                else{
+
+                    document.getElementById("kjøp-info").innerHTML = `
+                    din saldo av ${moneyIn} kr var ikke nok for å kjøpe en ${brusValgt.navn} for ${brusValgt.pris}
+                    ` 
+                }
+            }
+            if(!brusFunnet){
+
+                document.getElementById("kjøp-info").innerHTML = `
+                ingen brus med den koden
+                `
+            }
+
+            saldoEl.innerHTML = `Din saldo er: ${moneyIn}kr`
+
+            brusFunnet = false
+        })
+    </script>
+</body>
+</html>

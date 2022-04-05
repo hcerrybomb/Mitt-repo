@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <div id="container">
+        <button id="newnumber">Get new number</button>
+        <button id="reset">Reset machine</button>
+        <p id="numbers-list">Numbers = [<br></p>] <br><br> gjennomsnitt:
+        <p id="gjennomsnitt"><br><br></p>
+    </div>
+
+    <script>
+        function randMinMax(min, max) {
+
+            return Math.floor(Math.random() * (max - min + 1) ) + min;
+
+        }
+        newnumberEl = document.getElementById("newnumber")
+        resetEl = document.getElementById("reset")
+        gjennomsnittEl = document.getElementById("gjennomsnitt")
+
+        let numbers = []
+        
+        newnumberEl.addEventListener("click", addNumber)
+        resetEl.addEventListener("click", resetFunc)
+        newline = 0
+
+        let sum, avrg
+
+        function addNumber(){
+            numbers.push(randMinMax(1,1000))
+            console.log(numbers)
+            newline += 1
+            if(newline%5==0){
+                document.getElementById("numbers-list").innerHTML += `${numbers[numbers.length-1]}&#9; <br>`
+            }
+            else document.getElementById("numbers-list").innerHTML += `${numbers[numbers.length-1]},&#9;`
+
+            sum = numbers.reduce((a, b) => a + b, 0)
+            avrg = (sum / numbers.length) || 0
+            
+            gjennomsnittEl.innerHTML = avrg.toFixed(2)
+        }
+        function resetFunc(){
+            numbers = []
+            document.getElementById("numbers-list").innerHTML = "Numbers = [<br>"
+            gjennomsnittEl.innerHTML = ""
+        }
+    </script>
+</body>
+</html>
