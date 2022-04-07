@@ -14,6 +14,8 @@
     }
     #container{
         margin:0;
+        height:100%;
+        width:100%;
     }
     #vert-line{
         height:100%;
@@ -31,12 +33,26 @@
         position:absolute;
         top:0;
         left:0;
-        background-color:green;
+        background-color:rgb(134, 0, 158);
     }
     #topright{
         position:absolute;
         top:0;
+        right:0;
         background-color:blue;
+        
+    }
+    #bottomleft{
+        position:absolute;
+        bottom:0;
+        left:0;
+        background-color:rgb(0, 153, 255);
+    }
+    #bottomright{
+        position:absolute;
+        bottom:0;
+        right:0;
+        background-color:rgb(68, 243, 255);
         
     }
 </style>
@@ -46,9 +62,9 @@
         <div id="vert-line"></div>
         <div id="hori-line"></div>
         <div id="topleft"></div>
-        <div id="topright">??</div>
-        <div id="bottomleft"></div>
         <div id="topright"></div>
+        <div id="bottomleft"></div>
+        <div id="bottomright"></div>
     </div>
     <script>
 
@@ -62,23 +78,35 @@ let lineThickness = 5
 
 //myObserver.observe(document.body)
 
-document.getElementById("vert-line").style.width = `${lineThickness}px`
-document.getElementById("hori-line").style.height = `${lineThickness}px`
 
-document.addEventListener('mousemove', (event) => {
-    //console.log(`Window Size: Height ${document.body.clientHeight} With ${document.body.clientWidth}`);
-	
-    
-    console.log(`Mouse X: ${event.clientX}, Mouse Y: ${event.clientY}`);
-    document.getElementById("vert-line").style.left = event.clientX + "px";
-    document.getElementById("hori-line").style.top = event.clientY + "px";
+let vertLine = document.getElementById("vert-line"),
+horiLine = document.getElementById("hori-line"),
 
-    document.getElementById("topleft").style.height = `${event.clientY}px`
-    document.getElementById("topleft").style.width = `${event.clientX}px`
+topLeft = document.getElementById("topleft"),
+topRight = document.getElementById("topright"),
+bottomLeft = document.getElementById("bottomleft"),
+bottomRight = document.getElementById("bottomright"),
 
-    document.getElementById("topright").style.height = `${event.clientY}px`
-    document.getElementById("topright").style.left = `${event.clientX}px`
-    document.getElementById("topright").style.width = `${document.getElementById("container").offsetWidth - event.clientX}px`
+container = document.getElementById("container")
+
+vertLine.style.width = `${lineThickness}px`
+horiLine.style.height = `${lineThickness}px`
+
+document.addEventListener('mousemove', (event) => {    
+    vertLine.style.left = event.clientX + "px";
+    horiLine.style.top = event.clientY + "px";
+
+    topLeft.style.height = `${event.clientY}px`
+    topLeft.style.width = `${event.clientX}px`
+
+    topRight.style.height = `${event.clientY}px`
+    topRight.style.width = `${container.offsetWidth - event.clientX - lineThickness}px`
+
+    bottomLeft.style.height = `${container.offsetHeight - event.clientY - lineThickness}px`
+    bottomLeft.style.width = `${event.clientX}px`
+
+    bottomRight.style.height = `${container.offsetHeight - event.clientY - lineThickness}px`
+    bottomRight.style.width = `${container.offsetWidth - event.clientX - lineThickness}px`
 });
     </script>
     
