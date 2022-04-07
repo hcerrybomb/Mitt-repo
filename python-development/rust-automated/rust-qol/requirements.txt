@@ -1,3 +1,5 @@
 numpy
 pynput
 pywin32
+win32gui
+

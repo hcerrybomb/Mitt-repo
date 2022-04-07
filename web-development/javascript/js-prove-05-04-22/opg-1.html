@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bestilling av tur</title>
+    <style>
+      img{
+        width:250px;
+      }
+      #container{
+        display:flex;
+        flex-direction:column;
+        margin-left: 50px;
+      }
+      #destinasjon{
+        display:flex;
+        flex-direction:row;
+      }
+      #fjellet{
+        margin-left: 20px;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="">
+        <h2>Bestilling av tur</h2>
+      </div>
+      <div id="destinasjon">
+        <div id="nordmarka">
+          <p>
+            Tur 1: I Nordmarka.<br>
+            Pris: Voksen 500 kr, barn 250 kr. <br>
+          </p>
+          <img id="bilde1" class="bilder" src="vedleggElever/nordmarkaNy.jpg" alt="">
+          <br><br>
+          I Nordmarka <input type="radio" name="turvalg-input" id="marka-input" data-pris=500><br>
+
+          <br>
+          Antall Voksne:
+            <select id="voksne-input">
+              <option value=0>0</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
+            </select>
+            <br>
+            <br>
+          Antall Barn:
+          <select id="barn-input">
+              <option value=0>0</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
+          </select>
+        </div>
+        <div id="fjellet">
+          <p>
+            Tur 2: På fjellet.<br>
+            Pris: Voksen 700 kr, barn 350 kr
+          </p>
+          <img id="bilde2" class="bilder" src="vedleggElever/fjellturNy.jpg" alt="">
+          <br><br>
+          På fjellet <input type="radio" name="turvalg-input" id="fjell-input" data-pris=700>
+          <br><br>
+          <select id="guide-input">
+              <option value="guide">Guide</option>
+              <option value="Severin Suveren">Severin Suveren</option>
+              <option value="Turine Turesen">Turine Turesen</option>
+          </select>
+          <br>
+          <br>
+          <button id="submit-button">Bestill tur</button>
+        </div>
+      </div>
+
+
+      <div id="innhold">
+        <p id="bestilling-output"><b>Bestilling:</b></p>
+        <p></p>
+      </div>
+    </div>
+    <script>
+        function getId(id){return document.getElementById(id)}
+        let submitEl    = getId("submit-button"),
+        fjelletPick     = getId("fjell-input"),
+        markaPick       = getId("marka-input"),
+        bestillingEl    = getId("bestilling-output"),
+        voksnePick      = getId("voksne-input"),
+        barnPick        = getId("barn-input"),
+        guidePick       = getId("guide-input"),
+        turPick,
+        turPickEl
+        
+        submitEl.addEventListener("click",function(){
+        if(!fjelletPick.checked && !markaPick.checked){
+            bestillingEl.innerHTML = "<b>Bestilling:</b><br>Du må velge en tur!"
+        }
+        else{
+            if(fjelletPick.checked)turPick = "På fjellet", turPickEl = fjelletPick
+            else{turPick = "I Nordmarka", turPickEl = markaPick}
+            if(Number(voksnePick.value) + Number(barnPick.value) === 0){
+            bestillingEl.innerHTML = `<b>Bestilling:</b><br>Du har valgt turen: "${turPick}" <br>men u må velge antall deltakere!`
+            }
+            else{
+            if(guidePick.value === "guide"){
+                bestillingEl.innerHTML = `<b>Bestilling:</b><br>Du har valgt turen: "${turPick}" med<br>${voksnePick.value} voksne <br>${barnPick.value} barn <br>men u må velge en guide!`
+            }
+            else{
+                totalPris = Number(turPickEl.dataset.pris)* Number(voksnePick.value) + (Number(turPickEl.dataset.pris) / 2 ) * barnPick.value 
+                bestillingEl.innerHTML = `<b>Bestilling:</b><br>
+                Du har valgt turen: "${turPick}" med<br>
+                ${voksnePick.value} voksne<br>
+                ${barnPick.value} barn<br>
+                ${guidePick.value} som guide<br>
+                til en totalpris av: ${totalPris}
+                `
+            }
+            }
+        }
+        }
+        )
+
+
+    </script>
+  </body>
+</html>

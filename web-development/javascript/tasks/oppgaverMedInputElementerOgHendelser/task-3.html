@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <div id="maincontainer">
+
+        <div id="questioncontainer">
+
+            <p>Hva er 2 + 5?</p>
+
+            <input id="q1a1" type="radio" name="q1" value="7" data-riktig=true>
+            <label for="q1a1">7</label>
+            <br>
+            
+            <input id="q1a2" type="radio" name="q1" value="-3" data-riktig=false>
+            <label for="q1a2">-3</label>
+            <br>
+            
+            <input id="q1a3" type="radio" name="q1" value="25" data-riktig=false>
+            <label for="q1a3">25</label>
+            <br>
+            
+            <input id="q1a4" type="radio" name="q1" value="3" data-riktig=false>
+            <label for="q1a4">3</label>
+            <br>
+
+            <p>hvilke av disse svarene er sanne for 5*5?</p>
+            
+            <input type="checkbox" id="q2a1" name="q2a1" value="5^2" data-riktig=true>
+            <label for="q2a1">5^2</label>
+            <br>
+            <input type="checkbox" id="q2a2" name="q2a1" value="25" data-riktig=true>
+            <label for="q2a2">25</label>
+            <br>
+            <input type="checkbox" id="q2a3" name="q2a1" value="10" data-riktig=false>
+            <label for="q2a3">10</label>
+            <br>
+            
+            <p>Hva er 12 - 15?</p>
+
+            <input id="q3a1" type="radio" name="q3" value="7" data-riktig=false>
+            <label for="q3a1">7</label>
+            <br>
+            
+            <input id="q3a2" type="radio" name="q3" value="-3" data-riktig=true>
+            <label for="q3a2">-3</label>
+            <br>
+            
+            <input id="q3a3" type="radio" name="q3" value="25" data-riktig=false>
+            <label for="q3a3">25</label>
+            <br>
+            
+            <input id="q3a4" type="radio" name="q3" value="3" data-riktig=false>
+            <label for="q3a4">3</label>
+            <br>
+
+
+
+
+
+            <p>Hva er 2 - 5?</p>
+
+            <input id="q4a1" type="radio" name="q4" value="7" data-riktig=false>
+            <label for="q4a1">7</label>
+            <br>
+            
+            <input id="q4a2" type="radio" name="q4" value="-3" data-riktig=true>
+            <label for="q4a2">-3</label>
+            <br>
+            
+            <input id="q4a3" type="radio" name="q4" value="25" data-riktig=false>
+            <label for="q4a3">25</label>
+            <br>
+            
+            <input id="q4a4" type="radio" name="q4" value="3" data-riktig=false>
+            <label for="q4a4">3</label>
+            <br>
+
+            <p>hvilke av disse svarene er sanne for 5*2?</p>
+            
+            <input type="checkbox" id="q5a1" name="q5a1" value="5^2" data-riktig=false>
+            <label for="q5a1">5^2</label>
+            <br>
+            <input type="checkbox" id="q5a2" name="q5a1" value="25" data-riktig=false>
+            <label for="q5a2">25</label>
+            <br>
+            <input type="checkbox" id="q5a3" name="q5a1" value="10" data-riktig=true>
+            <label for="q5a3">10</label>
+            <br>
+            
+            <p>Hva er 12 + 15?</p>
+
+            <input id="q6a1" type="radio" name="q6" value="7" data-riktig=false>
+            <label for="q6a1">7</label>
+            <br>
+            
+            <input id="q6a2" type="radio" name="q6" value="-3" data-riktig=false>
+            <label for="q6a2">-3</label>
+            <br>
+            
+            <input id="q6a3" type="radio" name="q6" value="27" data-riktig=true>
+            <label for="q6a3">27</label>
+            <br>
+            
+            <input id="q6a4" type="radio" name="q6" value="3" data-riktig=false>
+            <label for="q6a4">3</label>
+            <br>
+
+            <button id="submit">svar!</button>
+
+            <p id="totalscore"></p>
+            
+        </div>
+
+    </div>
+
+    <script>
+document.getElementById("submit").addEventListener("click", function(){
+    let qs = document.querySelectorAll("input"),totalscore = 0
+    for(let i = 0; i < qs.length; i++)if(qs[i].checked && qs[i].dataset.riktig === "true")totalscore++
+    document.getElementById("totalscore").innerHTML = `${totalscore} / 7`})
+    </script>
+</body>
+</html>

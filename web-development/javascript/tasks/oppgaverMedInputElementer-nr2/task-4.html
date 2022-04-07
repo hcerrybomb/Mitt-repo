@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matkasse</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="maincontainer">
+        <img id="img" src="matkasse/middag.png" alt="MIDDAG">
+        <div id="pick">
+
+            <input type="radio" value="1" name="middager" id="middag1">
+            <label for="middag1">Middag #1: Taco (2 middager)</label>
+            <br>
+            <input type="radio" value="2" name="middager" id="middag2">
+            <label for="middag2">Middag #2: Pizza (3 middager)</label>
+            <br>
+            <input type="radio" value="3" name="middager" id="middag3">
+            <label for="middag3">Middag #3: Pasta (3 middager)</label>
+            <br>
+            <input type="radio" value="4" name="middager" id="middag4">
+            <label for="middag4">Middag #4: Burger (2 middager)</label>
+            <br>
+
+            <label for="personer">Hvor mange personer?</label>
+            <input type="number" min="0" max="50" id="personer" value="0">
+            
+
+            <p id="bekreft"></p>
+
+        </div>
+    </div>
+
+
+
+    <script>
+        let middager = [
+            {
+                id:1,
+                navn:"Taco",
+                middager:2
+            },
+            {
+                id:2,
+                navn:"Pizza",
+                middager:3
+            },
+            {
+                id:3,
+                navn:"Pasta",
+                middager:3
+            },
+            {
+                id:4,
+                navn:"Burger",
+                middager:2
+            }]
+            let inputs = document.querySelectorAll("input[type=radio]"), totalprice, personer, midaggerantall = 0, valgtmiddagid = 0
+            for(let i = 0;i < inputs.length;i++){
+                inputs[i].addEventListener("change",function(e) {
+
+                    for(let j = 0; j < inputs.length; j++) {
+                        if(Number(e.target.value) === middager[j].id){
+                            midaggerantall = middager[j].middager
+                            console.log(`du har valgt en matkasse med ${midaggerantall} middager`)
+                            document.getElementById("img").setAttribute("src",`matkasse/matkasse${midaggerantall}.png`)
+                            valgtmiddagid = middager[j].id
+                            if(document.getElementById("personer").value>0) console.log("huadusai")
+                        }
+                    }
+                    
+                })
+            }
+            document.getElementById("personer").addEventListener("change",function(e){
+                personer = document.getElementById("personer").value
+                if(personer < 5) totalprice = personer * 80 * midaggerantall
+                else totalprice = personer * 70 * midaggerantall
+                console.log(`personer: ${personer}, totalprice: ${totalprice}`)
+                if(valgtmiddagid>0) console.log("IUASODJ")
+            })
+            function printBekreft(a,b){
+                document.getElementById("bekreft").innerHTML = ""
+            }
+
+
+    </script>
+</body>
+</html>

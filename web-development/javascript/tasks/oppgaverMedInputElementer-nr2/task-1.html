@@ -9,22 +9,30 @@
 <body>
     <select name="" id="country-input">
         <option value="">Velg land</option>
-        <option value="0">Sverige</option>
-        <option value="1">Norge</option>
-        <option value="2">Danmark</option>
-        <option value="3">Island</option>
-        <option value="4">Finland</option>
+        <option value="Sverige">Sverige</option>
+        <option value="Norge">Norge</option>
+        <option value="Danmark">Danmark</option>
+        <option value="Island">Island</option>
+        <option value="Finland">Finland</option>
     </select>
     <p id="output">Velg et land</p>
     <script>
-        let countryEl = document.getElementById("country-input")
-        let countryArr = [
+        let countryEl = document.getElementById("country-input"),doc = document,countryArr = [
             {land:"Sverige",språk:"svensk"},
             {land:"Norge",språk:"norsk"},
             {land:"Danmark",språk:"dansk"},
             {land:"Island",språk:"islandsk"},
-            {land:"Finland",språk:"finsk"}
-        ];
+            {land:"Finland",språk:"finsk"}];
+            
+        countryEl.addEventListener("change",function(e){
+            let country = countryEl.value
+            console.log("lan",country)
+            for(let i = 0; i < countryArr.length; i++){
+                if(country == countryArr[i].land){
+                    doc.getElementById("output").innerHTML = `Da snakker du sannsynligvis ${countryArr[i].språk}`
+                }
+            }
+        })
     </script>
 </body>
 </html>

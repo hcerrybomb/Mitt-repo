@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="maincontainer">
+
+        <div id="inputscontainer">
+
+            <label for="title-input">Sett in tittel:</label>
+            <input type="text" id="tittel-input">
+            <br>
+            <br>
+
+            <label for="text-input">Sett in text:</label>
+            <input type="text" id="text-input">
+            <br>
+            <br>
+
+            <label for="signatur-input">Sett in signatur:</label>
+            <input type="text" id="signatur-input">
+            <br>
+            <br>
+
+            <button id="submit">submit</button>
+
+        </div>
+
+    </div>
+
+    <script>
+        
+        let submitEl = document.getElementById("submit")
+        let titleEl = document.getElementById("tittel-input")
+        let textEl = document.getElementById("text-input")
+        let signaturEl = document.getElementById("signatur-input")
+        let blogs = []
+        let sortedIds = []
+
+
+        submitEl.addEventListener("click",function (){
+            if(titleEl.value !=""&& textEl.value !="" && signaturEl.value != ""){
+                console.log("requirments met")
+                let id = Date.now()
+                let newBlog = {
+                    id:id,
+                    title: titleEl.value,
+                    text: textEl.value,
+                    signatur: signaturEl.value
+                }
+
+                blogs.push(newBlog)
+
+                sortedIds.push(newBlog.id)
+
+                titleEl.value = ""
+                textEl.value = ""
+                signaturEl.value = ""
+                
+                console.table("blogs", blogs)
+                console.table("ids", sortedIds)
+                
+            }
+            
+            else{
+                console.log("requirments NOT met")
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html, body {
+        height:100%;
+        width:100%;
+        margin:0
+    }
+    #container{
+        margin:0;
+        height:100%;
+        width:100%;
+    }
+    #vert-line{
+        height:100%;
+        
+        background-color:red;
+        position:absolute;
+    }
+    #hori-line{
+        width:100%;
+        
+        background-color:red;
+        position:absolute;
+    }
+    #topleft{
+        position:absolute;
+        top:0;
+        left:0;
+        background-color:rgb(134, 0, 158);
+    }
+    #topright{
+        position:absolute;
+        top:0;
+        right:0;
+        background-color:blue;
+        
+    }
+    #bottomleft{
+        position:absolute;
+        bottom:0;
+        left:0;
+        background-color:rgb(0, 153, 255);
+    }
+    #bottomright{
+        position:absolute;
+        bottom:0;
+        right:0;
+        background-color:rgb(68, 243, 255);
+        
+    }
+</style>
+<body id="body">
+    <div id="container">
+      
+        <div id="vert-line"></div>
+        <div id="hori-line"></div>
+        <div id="topleft"></div>
+        <div id="topright"></div>
+        <div id="bottomleft"></div>
+        <div id="bottomright"></div>
+    </div>
+    <script>
+
+let lineThickness = 5
+//const myObserver = new ResizeObserver(entries => {
+//    entries.forEach(entry => {
+//        console.log('width', entry.contentRect.width);
+//        console.log('height', entry.contentRect.height);
+//    })
+//})
+
+//myObserver.observe(document.body)
+
+
+let vertLine = document.getElementById("vert-line"),
+horiLine = document.getElementById("hori-line"),
+
+topLeft = document.getElementById("topleft"),
+topRight = document.getElementById("topright"),
+bottomLeft = document.getElementById("bottomleft"),
+bottomRight = document.getElementById("bottomright"),
+
+container = document.getElementById("container")
+
+vertLine.style.width = `${lineThickness}px`
+horiLine.style.height = `${lineThickness}px`
+
+document.addEventListener('mousemove', (event) => {    
+    vertLine.style.left = event.clientX + "px";
+    horiLine.style.top = event.clientY + "px";
+
+    topLeft.style.height = `${event.clientY}px`
+    topLeft.style.width = `${event.clientX}px`
+
+    topRight.style.height = `${event.clientY}px`
+    topRight.style.width = `${container.offsetWidth - event.clientX - lineThickness}px`
+
+    bottomLeft.style.height = `${container.offsetHeight - event.clientY - lineThickness}px`
+    bottomLeft.style.width = `${event.clientX}px`
+
+    bottomRight.style.height = `${container.offsetHeight - event.clientY - lineThickness}px`
+    bottomRight.style.width = `${container.offsetWidth - event.clientX - lineThickness}px`
+});
+    </script>
+    
+</body>
+</html>
