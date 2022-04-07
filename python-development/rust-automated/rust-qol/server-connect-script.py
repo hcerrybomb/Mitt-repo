@@ -3,6 +3,7 @@ import subprocess
 from numpy.core.numeric import full
 from pynput.keyboard import *
 from time import time, ctime, sleep
+from datetime import datetime
 import pathlib
 import os
 import win32con
@@ -50,7 +51,7 @@ def haveYou(input):
 sleep(1)
 print(f"{col.red}\n================!!!IMPORTANT!!!==============={col.res}")
 sleep(0.5)
-print("\n Step 1:\tFor the program to be its most efficient you should have the", col.cya,
+print("\n Step 1:\tFor the program to be more accurate in timing you should have the", col.cya,
       "Game Overlay", col.res, "Activity setting", col.gre, "Enabled", col.res, "on discord")
 sleep(0.5)
 print("\n Step 2:\tIf your game is open, make sure your screen mode is either borderless or windowed")
@@ -77,6 +78,9 @@ sleep(2)
 # CHECK FOR RUST DESKTOP SHORTCUT
 
 desktopPath = str(pathlib.Path.home() / 'Desktop')
+
+# FIX DESKTOP PATH NOT ALWAYS BEING RIGHt
+
 
 # defines desktop variable for the shortcut
 rustShortcut = desktopPath + "\Rust.lnk"
@@ -139,7 +143,7 @@ while errorCheckZero == False:
 
 sleep(0.5)
 print(col.cya + "\n What time is wipe for you?"+col.res +
-      "\n\n give your answer in an"+ col.gre, "00:00 "+ col.res+ "format")
+      "\n\n give your answer in an"+ col.gre, "00:00 "+ col.res+ "format (YOUR LOCAL TIME)")
 
 
 
@@ -224,16 +228,10 @@ integerWipeTime = str(wipeTimeSplit[0]+wipeTimeSplit[1])
 
 def getCurrentTime():  # returns the time as a 4 letter string
 
-    fullTime = time()  # string stuff
+    currentTime = datetime.now().strftime("%H:%M:%S")
 
-    fullTimeString = str(ctime(fullTime))
-    print(fullTimeString)
-
-    fullTimeStringSplit = fullTimeString.split(" ")
-    print(fullTimeStringSplit)
-
-    clockTimes = fullTimeStringSplit[3].split(":")
-    print(clockTimes)
+    clockTimes = currentTime.split(":")
+    #print(clockTimes)
 
     integerTime = str(clockTimes[0] + clockTimes[1])
 
