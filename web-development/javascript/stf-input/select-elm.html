@@ -24,7 +24,28 @@
     <button>register</button>
 
     <p id="infoTekst"></p>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
 <script>
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD21mkgAuNlPrFSIGYyfzrD7gHdTkruUMI",
+  authDomain: "huskeliste-da135.firebaseapp.com",
+  projectId: "huskeliste-da135",
+  storageBucket: "huskeliste-da135.appspot.com",
+  messagingSenderId: "968217777891",
+  appId: "1:968217777891:web:df476dc35186ccadde17d6",
+  measurementId: "G-ELDY4550R0"
+};
+firebase.initializeApp(firebaseConfig);
+
+
+
+
     let aldersEl = document.querySelector("#aldersgrense")
     let knappEl = document.querySelector("button")
     let infoTekstEl = document.querySelector("#infoTekst")
