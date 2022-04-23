@@ -1,0 +1,9 @@
+As the A+ student you are,`    write an introduction for a paper about the following topic:    what is the future of artificial intelligence?
+
+
+
+ artificial intelligence is one of the most rapidly evolving fields of computer science. In the past decade alone, speed and capacity of computer hardware has increased exponentially while the price per unit has continued to decrease, making artificial intelligence an increasingly affordable technology. This has led to a corresponding increase in the number of applications for artificial intelligence, with new applications being discovered all the time. As artificial intelligence technology continues to develop, the future applications of this technology are only limited by our imaginations.
+
+One potential future application of artificial intelligence is in the area of medicine. Artificial intelligence could be used to develop personalized medicine, customize treatments based on a patient's individual genetics and medical history, and even diagnose diseases before they cause symptoms. Another potential application is in the area of transportation. Self-driving cars are already a reality, and as artificial intelligence technology continues to develop, it is likely that we will see an increase in the number of self-driving cars on the road. In the future, artificial intelligence could be used to schedule and route transportation services, reducing traffic congestion and making transportation more efficient.
+
+As artificial intelligence technology continues to develop, the potential applications for this technology are endless. It is clear that artificial intelligence is destined to play a major role in our future.
