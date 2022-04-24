@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="main">
+        <div id="inputs">
+            <label for="land-navn-input">Navn på land: </label>
+            <input type="text" id="land-navn-input"><br>
+            <label for="hovedstat-navn-input">Navn på hovedstat: </label>
+            <input type="text" id="hovedstat-navn-input"><br>
+            <label for="verdensdel-navn-input">Navn på verdensdel: </label>
+            <input type="text" id="verdensdel-navn-input"><br>
+            <label for="populasjon-input">Populasjon: </label>
+            <input type="number" id="populasjon-input"><br>
+            <label for="areal-input">Areal: </label>
+            <input type="number" id="areal-input"><br>
+            <button id="leggtil">legg til</button>            
+        </div>
+        <div id="info">
+
+        </div>
+
+    </div>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js">
+</script>
+    
+<!-- 
+    ?TODO: Add SDKs for Firebase products that you want to use
+    ?https://firebase.google.com/docs/web/setup#available-libraries
+-->
+
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js">
+</script>
+<script>
+
+let inputsEl    = document.querySelector("#inputs")
+let infoEl      = document.querySelector("#info")
+let leggtilInput = document.querySelector("#leggtil")
+
+function createCountry(parent,db){
+    ch1 = document.createElement(`h1`)
+    ch1.setAttribute(`data-id`,db.id)
+    ch1.className = `land-navn`
+    ch1.innerHTML = `Land: ${db.data().navn}`
+    parent.appendChild(ch1)
+
+    ch2 = document.createElement(`p`)
+    ch2.setAttribute(`data-id`,db.id)
+    ch2.className = `verdensdel-navn`
+    ch2.innerHTML = `Verdensdel: ${db.data().verdensdel}`
+    parent.appendChild(ch2)
+
+    ch3 = document.createElement(`p`)
+    ch3.setAttribute(`data-id`,db.id)
+    ch3.className = `hovedstat-navn`
+    ch3.innerHTML = `Hovedstat: ${db.data().hovedstat}`
+    parent.appendChild(ch3)
+
+    ch4 = document.createElement(`p`)
+    ch4.setAttribute(`data-id`,db.id)
+    ch4.className = `populasjon`
+    ch4.innerHTML = `Populasjon: ${db.data().populasjon}`
+    parent.appendChild(ch4)
+
+    ch5 = document.createElement(`p`)
+    ch5.setAttribute(`data-id`,db.id)
+    ch5.className = `areal`
+    ch5.innerHTML = `Areal: ${db.data().areal} Km^2`
+    parent.appendChild(ch5)
+
+}
+
+const firebaseConfig = {
+  apiKey:             "AIzaSyD21mkgAuNlPrFSIGYyfzrD7gHdTkruUMI",
+  authDomain:         "huskeliste-da135.firebaseapp.com",
+  projectId:          "huskeliste-da135",
+  storageBucket:      "huskeliste-da135.appspot.com",
+  messagingSenderId:  "968217777891",
+  appId:              "1:968217777891:web:df476dc35186ccadde17d6",
+  measurementId:      "G-ELDY4550R0"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+let db = firebase.firestore();
+
+db.collection(`geografi`).onSnapshot(snapshot => {
+    update()
+})
+
+function update(){
+    db.collection(`geografi`)
+    .orderBy(`populasjon`)
+    .get().then((snapshot => {
+        dbDocs = snapshot.docs
+        infoEl.innerHTML = ``
+        for(let i = 0; i < dbDocs.length; i++){
+            landEl = document.createElement(`div`)
+            landEl.className = `land`
+            landEl.setAttribute(`data-id`,dbDocs[i].id)
+            createCountry(landEl,dbDocs[i])
+            infoEl.appendChild(landEl)
+        }
+    }))
+}
+
+leggtilInput.addEventListener(`click`,function(){
+    if(
+        
+    )
+})
+</script>
+</body>
+</html>
