@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+          background-color: #f5f5f5; 
+          font-family: Georgia, serif; 
+        }
+        #hoved {
+          width: 60%;                 
+          margin: 50px auto;          
+          padding: 40px;	             
+          background-color: white; 	
+          border: 1px solid #cccccc; 
+        }
+        h1, h2 {
+          font-family: Arial, sans-serif; 
+        }
+        
+        .listediv {
+          display: flex;
+          margin: 12px 0;
+        }
+        .listediv > div {
+          border: 2px solid #7a9a99;
+          border-radius: 0 5px;
+          background-color: #c9d6d6;
+          padding: 15px;
+          margin-right: 10px;
+          cursor: pointer;
+          flex-grow: 1;
+        }
+        .ferdig {
+          opacity: 0.3;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+          display: block; 
+          margin-top: 2px; 
+          margin-bottom: 10px; 
+          font-family: inherit; 
+          color: #666666;
+          border: 1px solid rgba(0,0,0,0.1); 
+          border-radius: 2px;
+          padding: 5px;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.7);
+          box-sizing: border-box;
+        }
+        input[type="text"] {
+          min-width: 130px;
+          width: 60%;
+        }
+        
+        button {
+          padding: 10px;
+          color: white;
+          text-shadow: 0 -1px 1px #335166;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: 2px;
+          background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+          background-color: #5588AA;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+          outline: none;
+          cursor: pointer;
+        }
+        button:active {
+          transform: translate(1px,1px);
+        }
+        button.ok {
+          background-color: #66BB00;
+        }
+        button.avbryt {
+          background-color: #CC0000;
+        }
+        </style>
+</head>
+<body>
+    <div id="hoved">
+
+        <h1>Legg til vare:</h1>
+        <label for="vare-input">Legg til vare:</label>
+        <input type="text" id="vare-input">
+        <label for="pris-input">Legg til pris:</label>
+        <input type="number" id="pris-input">
+
+        <button id="legg-til-input" class="ok">Legg til</button>
+
+        <br><br><br>
+
+        <h1>Oppdater vare:</h1>
+        <label for="vareliste-input">Velg vare</label>
+        <select name="" id="vareliste-input">
+            
+        </select>
+        <label for="oppdater-pris-input">Ny pris:</label>
+        <input type="number" id="oppdater-pris-input">
+        <label for="oppdater-navn-input">Nytt navn:</label>
+        <input type="text" id="oppdater-navn-input">
+
+        <button id="oppdater-input" class="ok">Oppdater</button>
+
+        <br><br><br>
+
+        <h1>Vareliste</h1>
+        <ul id="liste"></ul>
+    </div>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js">
+    </script>
+     
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries
+    -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js">
+    </script>
+    <script>
+const firebaseConfig = {
+  apiKey: "AIzaSyD21mkgAuNlPrFSIGYyfzrD7gHdTkruUMI",
+  authDomain: "huskeliste-da135.firebaseapp.com",
+  projectId: "huskeliste-da135",
+  storageBucket: "huskeliste-da135.appspot.com",
+  messagingSenderId: "968217777891",
+  appId: "1:968217777891:web:df476dc35186ccadde17d6",
+  measurementId: "G-ELDY4550R0"
+};
+firebase.initializeApp(firebaseConfig);
+
+let db = firebase.firestore();
+
+let listEl = document.querySelector("ul")
+
+
+let vareInput = document.querySelector("#vare-input")
+let prisInput = document.querySelector("#pris-input")
+let leggtilButtonInput = document.querySelector("#legg-til-input")
+
+
+let vareListeInput = document.querySelector("#vareliste-input")
+
+let oppdaterNavnInput = document.querySelector("#oppdater-navn-input")
+let oppdaterPrisInput = document.querySelector("#oppdater-pris-input")
+let oppdaterButtonInput = document.querySelector("#oppdater-input")
+
+
+let varer
+
+
+function getVarer(){
+    varer = document.querySelectorAll(".vare")
+    vareListeInput.innerHTML = ``
+    for(let i = 0; i < varer.length; i++){
+        
+        console.log(varer[i])
+        let optionEl = document.createElement("option")
+        optionEl.value = varer[i].innerHTML
+        optionEl.innerHTML = varer[i].innerHTML
+        vareListeInput.appendChild(optionEl)
+    }
+
+    
+
+
+}
+
+
+function printVarer(doc){
+    let divEl = document.createElement("div");
+    divEl.className = "listediv"
+    let divEl2 = document.createElement("div");
+    divEl2.className = "vare"
+    divEl2.dataset.id = doc.id
+    divEl2.innerHTML = `${doc.data().vare}, pris: ${doc.data().pris}`
+    
+    divEl.appendChild(divEl2)
+    listEl.appendChild(divEl)
+    getVarer()
+}
+
+
+db.collection('minButikk').get().then((snapshot)=> {
+    let docs = snapshot.docs;
+    for(let i=0; i<docs.length; i++){
+        printVarer(docs[i])
+    }
+
+})
+
+
+oppdaterButtonInput.addEventListener("click", function(){
+    console.log("TEST")
+    for(let i=0; i<varer.length; i++){
+        if(varer[i].innerHTML == vareListeInput.value 
+            && oppdaterPrisInput.value > 0 
+            && oppdaterNavnInput.value != ""){
+            varer[i].innerHTML = `${oppdaterNavnInput.value}, pris: ${oppdaterPrisInput.value}`
+        }
+        else{
+            // ERROR FEEDBACK
+            console.log("mangler input")
+            return
+        }
+    }
+})
+
+
+leggtilButtonInput.addEventListener("click", function (){
+    if(vareInput.value != "" && prisInput.value > 0){
+        let divEl = document.createElement("div");
+        divEl.className = "listediv"
+        let divEl2 = document.createElement("div");
+        divEl2.className = "vare"
+        divEl2.innerHTML = `${vareInput.value}, pris: ${prisInput.value}`
+
+        
+        let varerText = []
+        for(let i=0; i< varer.length; i++){
+            varerText.push(varer[i].innerHTML)
+        }
+        if(varerText.includes(divEl2.innerHTML)){
+            // ERROR FEEDBACK
+            console.log("allerede en vare")
+            return
+        }
+        else{
+            divEl.appendChild(divEl2)
+            listEl.appendChild(divEl)
+            getVarer()
+        }
+    }
+    else{
+        // ERROR FEEDBACK
+        console.log("mangler input")
+        return
+    }
+})
+
+
+    </script>
+</body>
+</html>

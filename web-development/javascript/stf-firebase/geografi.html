@@ -4,22 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Geografi</title>
+    <style>
+        div{
+            border:0px solid red;
+        }
+        #main{
+            height:100%;
+            width:100%;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+        .verdensdel-navn, .hovedstat-navn, .populasjon, .areal{
+            display:none;
+        }
+        .land-navn{
+            cursor: pointer;
+            border:4px solid black;
+            user-select: none;  
+        } 
+        button{
+            border:1px solid black;
+            background-color:lightgreen;
+            font-size:100%;
+            font-weight: bold;
+            margin-top:2%;
+            width:100%;
+        }
+        .slett-button{
+            background-color: rgb(255, 96, 96);
+            display:none;
+        }
+        #inputs{
+            max-width:30vw;
+            float:left;
+        }
+        .land{
+            width:30vw;
+        }
+        #info{
+            padding-left:10vw;
+            float:left;
+        }
+        input, select{
+            font-size:medium;
+        }
+        label{
+            font-size:larger;
+        }
+    </style>
+    
 </head>
 <body>
     
     <div id="main">
         <div id="inputs">
-            <label for="land-navn-input">Navn på land: </label>
+            <label for="land-navn-input">Navn på land: </label><br>
             <input type="text" id="land-navn-input"><br>
-            <label for="hovedstat-navn-input">Navn på hovedstat: </label>
+            <label for="hovedstat-navn-input">Navn på hovedstat: </label><br>
             <input type="text" id="hovedstat-navn-input"><br>
-            <label for="verdensdel-navn-input">Navn på verdensdel: </label>
-            <input type="text" id="verdensdel-navn-input"><br>
-            <label for="populasjon-input">Populasjon: </label>
-            <input type="number" id="populasjon-input"><br>
-            <label for="areal-input">Areal: </label>
-            <input type="number" id="areal-input"><br>
+            
+            <label for="verdensdel-navn-input">Navn på verdensdel: </label><br>
+            <select type="text" id="verdensdel-navn-input">
+                <option value="Asia">Asia</option>
+                <option value="Afrika">Afrika</option>
+                <option value="Antarktika">Antarktika</option>
+                <option value="Europa">Europa</option>
+                <option value="NordAmerika">Nord-Amerika</option>
+                <option value="SørAmerika">Sør-Amerika</option>
+                <option value="Oseania">Oseania</option>
+            </select><br>
+            
+            <label for="populasjon-input">Populasjon: </label><br>
+            <input type="number" min=0 id="populasjon-input"><br>
+            <label for="areal-input">Areal: </label><br>
+            <input type="number" min=0 id="areal-input"><br>
             <button id="leggtil">legg til</button>            
         </div>
         <div id="info">
@@ -40,41 +98,77 @@
 </script>
 <script>
 
-let inputsEl    = document.querySelector("#inputs")
-let infoEl      = document.querySelector("#info")
-let leggtilInput = document.querySelector("#leggtil")
+let inputsEl        = document.querySelector("#inputs"),
+infoEl              = document.querySelector("#info"),
 
-function createCountry(parent,db){
+leggtilInput        = document.querySelector("#leggtil"),
+landNavnInput       = document.querySelector("#land-navn-input"),
+hovedstatNavnInput  = document.querySelector("#hovedstat-navn-input"),
+verdensdelNavnInput = document.querySelector("#verdensdel-navn-input"),
+populasjonInput     = document.querySelector("#populasjon-input"),
+arealInput          = document.querySelector("#areal-input")
+
+
+
+
+function createCountry(parent,dbDoc){
     ch1 = document.createElement(`h1`)
-    ch1.setAttribute(`data-id`,db.id)
+    ch1.setAttribute(`data-id`,dbDoc.id)
+    ch1.setAttribute(`data-counter`,1)
     ch1.className = `land-navn`
-    ch1.innerHTML = `Land: ${db.data().navn}`
+    ch1.innerHTML = `${dbDoc.data().navn}`
+    
+    ch1.addEventListener("click", function() {
+        let infoEls = document.querySelectorAll(`p[data-id='${dbDoc.id}'], .slett-button[data-id='${dbDoc.id}']`)
+        if(ch1.dataset.counter%2==0){
+            for(let i = 0; i < infoEls.length; i++) {
+                infoEls[i].style.display = "none"
+            }            
+        }
+        else{
+            for(let i = 0; i < infoEls.length; i++) {
+                infoEls[i].style.display = "block"
+            }    
+        }
+        console.log(ch1.dataset.counter, dbDoc.id)
+        ch1.setAttribute(`data-counter`,Number(ch1.dataset.counter) + 1)
+
+    })
     parent.appendChild(ch1)
 
     ch2 = document.createElement(`p`)
-    ch2.setAttribute(`data-id`,db.id)
+    ch2.setAttribute(`data-id`,dbDoc.id)
     ch2.className = `verdensdel-navn`
-    ch2.innerHTML = `Verdensdel: ${db.data().verdensdel}`
+    ch2.innerHTML = `Verdensdel: ${dbDoc.data().verdensdel}`
     parent.appendChild(ch2)
 
     ch3 = document.createElement(`p`)
-    ch3.setAttribute(`data-id`,db.id)
+    ch3.setAttribute(`data-id`,dbDoc.id)
     ch3.className = `hovedstat-navn`
-    ch3.innerHTML = `Hovedstat: ${db.data().hovedstat}`
+    ch3.innerHTML = `Hovedstat: ${dbDoc.data().hovedstat}`
     parent.appendChild(ch3)
 
     ch4 = document.createElement(`p`)
-    ch4.setAttribute(`data-id`,db.id)
+    ch4.setAttribute(`data-id`,dbDoc.id)
     ch4.className = `populasjon`
-    ch4.innerHTML = `Populasjon: ${db.data().populasjon}`
+    ch4.innerHTML = `Populasjon: ${dbDoc.data().populasjon}`
     parent.appendChild(ch4)
 
     ch5 = document.createElement(`p`)
-    ch5.setAttribute(`data-id`,db.id)
+    ch5.setAttribute(`data-id`,dbDoc.id)
     ch5.className = `areal`
-    ch5.innerHTML = `Areal: ${db.data().areal} Km^2`
+    ch5.innerHTML = `Areal: ${dbDoc.data().areal} Km^2`
     parent.appendChild(ch5)
 
+    ch6 = document.createElement(`button`)
+    ch6.setAttribute(`data-id`,dbDoc.id)
+    ch6.innerHTML = `slett land`
+    ch6.className = `slett-button`
+    ch6.addEventListener(`click`,function(e){
+        db.collection(`geografi`).doc(e.target.getAttribute(`data-id`)).delete()
+    })
+    parent.appendChild(ch6)
+    
 }
 
 const firebaseConfig = {
@@ -113,8 +207,18 @@ function update(){
 
 leggtilInput.addEventListener(`click`,function(){
     if(
-        
-    )
+        landNavnInput.value != `` &&
+        hovedstatNavnInput.value != `` &&
+        populasjonInput.value != 0 &&
+        arealInput.value != 0 
+    ) db.collection(`geografi`).add({
+        navn:landNavnInput.value,
+        hovedstat:hovedstatNavnInput.value,
+        populasjon:populasjonInput.value,
+        areal:arealInput.value,
+        verdensdel:verdensdelNavnInput.value
+    }),leggtilInput.innerHTML = `legg til`, leggtilInput.style.backgroundColor= "lightgreen" 
+    else leggtilInput.innerHTML = `mangler input!`, leggtilInput.style.backgroundColor= "red"
 })
 </script>
 </body>

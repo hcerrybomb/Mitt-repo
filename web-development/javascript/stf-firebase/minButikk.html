@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>minButikk</title>
 
     <style>
         body {
@@ -86,165 +86,186 @@
     <div id="hoved">
 
         <h1>Legg til vare:</h1>
+
         <label for="vare-input">Legg til vare:</label>
         <input type="text" id="vare-input">
+
         <label for="pris-input">Legg til pris:</label>
         <input type="number" id="pris-input">
+
+        <p id="legg-til-error"></p>
 
         <button id="legg-til-input" class="ok">Legg til</button>
 
         <br><br><br>
 
+
+
         <h1>Oppdater vare:</h1>
+
         <label for="vareliste-input">Velg vare</label>
-        <select name="" id="vareliste-input">
-            
-        </select>
+        <select name="" id="vareliste-input"></select>
+
         <label for="oppdater-pris-input">Ny pris:</label>
         <input type="number" id="oppdater-pris-input">
+
         <label for="oppdater-navn-input">Nytt navn:</label>
         <input type="text" id="oppdater-navn-input">
+
+        <p id="oppdater-error"></p>
 
         <button id="oppdater-input" class="ok">Oppdater</button>
 
         <br><br><br>
 
+
+
         <h1>Vareliste</h1>
         <ul id="liste"></ul>
     </div>
 
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+<!-- 
+  ?TODO: Add SDKs for Firebase products that you want to use
+  ?https://firebase.google.com/docs/web/setup#available-libraries
+-->
 
-
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js">
-    </script>
-     
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries
-    -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js">
-    </script>
-    <script>
+<script>
 const firebaseConfig = {
-  apiKey: "AIzaSyD21mkgAuNlPrFSIGYyfzrD7gHdTkruUMI",
-  authDomain: "huskeliste-da135.firebaseapp.com",
-  projectId: "huskeliste-da135",
-  storageBucket: "huskeliste-da135.appspot.com",
-  messagingSenderId: "968217777891",
-  appId: "1:968217777891:web:df476dc35186ccadde17d6",
-  measurementId: "G-ELDY4550R0"
+  apiKey:             "AIzaSyD21mkgAuNlPrFSIGYyfzrD7gHdTkruUMI",
+  authDomain:         "huskeliste-da135.firebaseapp.com",
+  projectId:          "huskeliste-da135",
+  storageBucket:      "huskeliste-da135.appspot.com",
+  messagingSenderId:  "968217777891",
+  appId:              "1:968217777891:web:df476dc35186ccadde17d6",
+  measurementId:      "G-ELDY4550R0"
 };
+
 firebase.initializeApp(firebaseConfig);
 
-let db = firebase.firestore();
+let db                = firebase.firestore(),
+listEl                = document.querySelector("ul"),
 
-let listEl = document.querySelector("ul")
+//LEGG TIL
+vareInput             = document.querySelector("#vare-input"),
+prisInput             = document.querySelector("#pris-input"),
+leggtilButtonInput    = document.querySelector("#legg-til-input"),
+leggtilErrorEl        = document.querySelector("#legg-til-error"),
+//OPPDATER
+vareListeInput        = document.querySelector("#vareliste-input"),
+oppdaterNavnInput     = document.querySelector("#oppdater-navn-input"),
+oppdaterPrisInput     = document.querySelector("#oppdater-pris-input"),
+oppdaterButtonInput   = document.querySelector("#oppdater-input"),
+oppdaterErrorEl       = document.querySelector("#oppdater-error")
 
-
-let vareInput = document.querySelector("#vare-input")
-let prisInput = document.querySelector("#pris-input")
-let leggtilButtonInput = document.querySelector("#legg-til-input")
-
-
-let vareListeInput = document.querySelector("#vareliste-input")
-
-let oppdaterNavnInput = document.querySelector("#oppdater-navn-input")
-let oppdaterPrisInput = document.querySelector("#oppdater-pris-input")
-let oppdaterButtonInput = document.querySelector("#oppdater-input")
-
-
-let varer
+let dbDocs, divEl, divEl2, slettKnappEl, optionEl
 
 
-function getVarer(){
-    varer = document.querySelectorAll(".vare")
-    vareListeInput.innerHTML = ``
-    for(let i = 0; i < varer.length; i++){
-        
-        console.log(varer[i])
-        let optionEl = document.createElement("option")
-        optionEl.value = varer[i].innerHTML
-        optionEl.innerHTML = varer[i].innerHTML
-        vareListeInput.appendChild(optionEl)
-    }
+//<!--* snapshot = hele databasen / projektet i firestore databasen
 
-    
+//<!--* I .then PROMISE : PARAM FOR ARROW FUNCTION IN PARANTHESIS
+
+//<!--* ELLERS FOR .onSnapshot -  : NO PARENTHETHIS FOR ARROW FUNCTION PARAM
+
+  //<!--?  db.collection('db name').doc(string id of doc).get().then(doc => {function here, doc.data().propertyName, })
+
+  //<!--?  db.collection('db name').doc(string id of doc).update({propertyName: new value})
+
+  //<!--?  db.collection('db name').onSnapshot(snapshot => { gjøres hver DB opddatering})
+
+  //<!--?  db.collection('db name').get().then((snapshot)=>{function here, alle db dokumenter i en array = snapshot.docs})
+
+  //<!--?  db.collection('db name').add({propertyName:value, propertyName:value})
+
+  //<!--?  db.collection('db name').doc(string id of doc).delete();-->
 
 
+
+oppdater()
+
+db.collection(`minButikk`).onSnapshot(snapshot => {
+  oppdater()
+})
+
+function oppdater(){
+  db.collection(`minButikk`)
+  .orderBy(`pris`,`desc`)
+  .orderBy(`vare`)
+  .get().then((snapshot)=> {
+    dbDocs = snapshot.docs;
+    printVarer(dbDocs)
+  })
 }
 
-
-function printVarer(doc){
-    let divEl = document.createElement("div");
-    divEl.className = "listediv"
-    let divEl2 = document.createElement("div");
-    divEl2.className = "vare"
-    divEl2.dataset.id = doc.id
-    divEl2.innerHTML = `${doc.data().vare}, pris: ${doc.data().pris}`
-    
-    divEl.appendChild(divEl2)
-    listEl.appendChild(divEl)
-    getVarer()
+function printVarer(dbDocs){
+  listEl.innerHTML = ``
+  for(var i = 0; i < dbDocs.length; i++){
+    if(dbDocs[i].data().pris > 20){
+      divEl = document.createElement(`div`);
+      divEl.className = `listediv`
+      divEl2 = document.createElement(`div`);
+      divEl2.className = `vare`
+      divEl2.setAttribute(`data-id`, dbDocs[i].id)
+      divEl2.innerHTML = `Vare: ${dbDocs[i].data().vare}, pris: ${dbDocs[i].data().pris}`
+      divEl.appendChild(divEl2)
+      slettKnappEl = document.createElement(`button`);
+      slettKnappEl.setAttribute(`class`, `avbryt`);
+      slettKnappEl.innerHTML = `Slett`;
+      slettKnappEl.setAttribute(`data-id`, dbDocs[i].id);
+      slettKnappEl.addEventListener(`click`, function (e){
+        db.collection(`minButikk`).doc(e.target.getAttribute(`data-id`)).delete();
+      });
+      divEl.appendChild(slettKnappEl);
+      listEl.appendChild(divEl)      
+    }
+  }
+  createOptionsVarer(dbDocs)
 }
 
-
-db.collection('minButikk').get().then((snapshot)=> {
-    let docs = snapshot.docs;
-    for(let i=0; i<docs.length; i++){
-        printVarer(docs[i])
+function createOptionsVarer(dbDocs){
+  vareListeInput.innerHTML = ``
+  for(let i = 0; i < dbDocs.length; i++){
+    if(dbDocs[i].data().pris > 20){
+      optionEl = document.createElement(`option`)
+      optionEl.value = dbDocs[i].id
+      optionEl.innerHTML = `Vare: ${dbDocs[i].data().vare}, pris: ${dbDocs[i].data().pris}`
+      vareListeInput.appendChild(optionEl)
     }
+  }
+}
 
+oppdaterButtonInput.addEventListener(`click`, function(){
+  if(oppdaterPrisInput.value > 0 && oppdaterNavnInput.value != ``){
+    oppdaterErrorEl.innerHTML = ``
+    db.collection(`minButikk`).doc(vareListeInput.value).update(
+      {
+        vare: oppdaterNavnInput.value,
+        pris: Number(oppdaterPrisInput.value)
+      }
+    )
+  }
+  else{
+    oppdaterErrorEl.innerHTML = `Manglende/ugyldig input`
+  }
+})
+
+leggtilButtonInput.addEventListener(`click`, function (){
+  if(vareInput.value != `` && prisInput.value > 0){
+    leggtilErrorEl.innerHTML = ``
+    db.collection(`minButikk`).add(
+      {
+        pris:Number(prisInput.value),
+        vare:vareInput.value
+      }
+    )
+  }
+  else{
+    leggtilErrorEl.innerHTML = `Manglende/ugyldig input`
+  }
 })
 
 
-oppdaterButtonInput.addEventListener("click", function(){
-    console.log("TEST")
-    for(let i=0; i<varer.length; i++){
-        if(varer[i].innerHTML == vareListeInput.value 
-            && oppdaterPrisInput.value > 0 
-            && oppdaterNavnInput.value != ""){
-            varer[i].innerHTML = `${oppdaterNavnInput.value}, pris: ${oppdaterPrisInput.value}`
-        }
-        else{
-            // ERROR FEEDBACK
-            console.log("mangler input")
-            return
-        }
-    }
-})
-
-
-leggtilButtonInput.addEventListener("click", function (){
-    if(vareInput.value != "" && prisInput.value > 0){
-        let divEl = document.createElement("div");
-        divEl.className = "listediv"
-        let divEl2 = document.createElement("div");
-        divEl2.className = "vare"
-        divEl2.innerHTML = `${vareInput.value}, pris: ${prisInput.value}`
-
-        
-        let varerText = []
-        for(let i=0; i< varer.length; i++){
-            varerText.push(varer[i].innerHTML)
-        }
-        if(varerText.includes(divEl2.innerHTML)){
-            // ERROR FEEDBACK
-            console.log("allerede en vare")
-            return
-        }
-        else{
-            divEl.appendChild(divEl2)
-            listEl.appendChild(divEl)
-            getVarer()
-        }
-    }
-    else{
-        // ERROR FEEDBACK
-        console.log("mangler input")
-        return
-    }
-})
-
-
-    </script>
+</script>
 </body>
 </html>

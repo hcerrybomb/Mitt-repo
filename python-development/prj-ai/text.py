@@ -3,12 +3,12 @@ import openai
 
 openai.api_key = "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"
 
-prompt = "collect all the information you can find on William Skaugvolldal Strzelecki from Oslo, Norway and write it"
+prompt = ""
 
 response = openai.Completion.create(
     engine = 'text-davinci-002',
     prompt = prompt,
-    temperature = 0,
+    temperature = 0.5,
     max_tokens = 2048,
     top_p = 1,
     frequency_penalty = 0,
