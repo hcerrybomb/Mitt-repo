@@ -1,17 +1,20 @@
-from http import client
 import os
 import json
-from turtle import dot
-import discord
+from pydoc import describe
+import discord #discord.py-message-components
 import audioread
 from pathlib import Path
-from dotenv import load_dotenv
-from discord.ext import commands, tasks
-from discord import Button, ButtonStyle
+from dotenv import load_dotenv #python-dotenv
+from discord.ext import commands, tasks 
+from discord import Button, ButtonStyle, app_commands
 from asyncio import sleep
 
-dotenv_path  = Path('C:/Users/Gaming_Dator_VII/Desktop/.env-files/nato-token.env')
-#dotenv_path = Path('C:/Users/wista002/Desktop/.env-files/nato-token.env')
+#dotenv_path  = Path('C:/Users/Gaming_Dator_VII/Desktop/.env-files/nato-token.env')
+dotenv_path = Path('C:/Users/wista002/Desktop/.env-files/nato-token.env')
+
+#mp3path = r"S:\Random-media\cockroach.mp3"
+mp3path = r"C:\Users\wista002\Downloads\siren.mp3"
+
 
 load_dotenv(dotenv_path=dotenv_path)
 
@@ -20,12 +23,11 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 client = commands.Bot(command_prefix=";")
 
 
-
 @client.event
 async def on_ready():
     print(f'{client.user} connected !')
     embed = discord.Embed(
-        title="Next wipe",
+        title="Next wipe!",
         url="", 
         description="Information regarding the upcoming NATO wipe!"
         +"\n\n\n**Server:**\nRustoria EU Medium"
@@ -39,6 +41,7 @@ async def on_ready():
     
 
     wipeChannel = client.get_channel(968442631203999774)
+    await wipeChannel.purge()
     await wipeChannel.send(embed=embed)
 
 
@@ -57,6 +60,7 @@ async def on_ready():
 
 
     alarmChannel = client.get_channel(968467707202785312)
+    await alarmChannel.purge()
     await alarmChannel.send(embed=embed,components=[[
         Button(label="Activate alarm",custom_id="cus1", style=ButtonStyle.red)
     ]])
@@ -77,6 +81,7 @@ async def on_ready():
 
 
     namesChannel = client.get_channel(968443844607754250)
+    await namesChannel.purge()
     await namesChannel.send(embed=embed)
 
 @client.event
@@ -85,11 +90,11 @@ async def on_raw_button_click(interaction: discord.Interaction, button):
     await interaction.respond('Alarm activated! This message will now delete', delete_after=10)
     alarmVoiceChannel = client.get_channel(968467857543426058)
     
-    path = r"S:\Random-media\cockroach.mp3"
+
+    
     vc = await alarmVoiceChannel.connect()
     vc.play(discord.FFmpegPCMAudio(executable="C:/FFmpeg/bin/ffmpeg.exe",source = path))
-    with audioread.audio_open(path) as f:
-        #Start Playing
+    with audioread.audio_open(mp3path) as f:
         await sleep(f.duration)
     await vc.disconnect()
 
