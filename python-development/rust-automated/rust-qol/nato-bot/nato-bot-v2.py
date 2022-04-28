@@ -3,19 +3,22 @@ import os
 from dotenv import load_dotenv #python-dotenv
 from pathlib import Path
 
+import discord
 
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-cred = credentials.Certificate(Path('C:/Users/Gaming_Dator_VII/Desktop/Mitt-repo/python-development/rust-automated/rust-qol/nato-bot/serviceAccountKey.json'))
+#cred = credentials.Certificate(Path('C:/Users/Gaming_Dator_VII/Desktop/Mitt-repo/python-development/rust-automated/rust-qol/nato-bot/serviceAccountKey.json'))
+cred = credentials.Certificate(Path('C:/Users/wista002/Desktop/Mitt-repo/python-development/rust-automated/rust-qol/nato-bot/serviceAccountKey.json'))
+
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 collection = db.collection("nato-db")
 
 
-dotenv_path  = Path('C:/Users/Gaming_Dator_VII/Desktop/.env-files/nato-token.env')
-#dotenv_path = Path('C:/Users/wista002/Desktop/.env-files/nato-token.env')
+#dotenv_path  = Path('C:/Users/Gaming_Dator_VII/Desktop/.env-files/nato-token.env')
+dotenv_path = Path('C:/Users/wista002/Desktop/.env-files/nato-token.env')
 
 load_dotenv(dotenv_path=dotenv_path)
 
@@ -23,6 +26,10 @@ load_dotenv(dotenv_path=dotenv_path)
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 client = interactions.Client(token = TOKEN)
+
+
+
+
 
 
 @client.command(
@@ -55,7 +62,11 @@ async def my_first_command(ctx: interactions.CommandContext,
     foundGroup = False
     DBdocs = collection.get()
     for i in range(len(DBdocs)):
-        if grid_or_group == DBdocs[i].to_dict()['name']:
+        print(DBdocs[i].to_dict())
+        prox_dict = DBdocs[i].to_dict()
+        print(prox_dict)
+        print(prox_dict["name"])
+        if grid_or_group == prox_dict['name']:
 
             updated_array = DBdocs[i].to_dict()['data'] 
             updated_array.append({
@@ -76,20 +87,31 @@ async def my_first_command(ctx: interactions.CommandContext,
             ]
         }
         )
+    all_embeds = []
         
-    embed = interactions.Embed(
-        title=f"Group: {True}",
-        url="", 
-        description="\n\n**Name here**\nSteam:https://steamcommunity.com/id/SiegeMann/"
-        +"\n\n**Name here**\nSteam:https://steamcommunity.com/id/SiegeMann/"
-        +"\n\n**Name here**\nSteam:https://steamcommunity.com/id/SiegeMann/"
-        +"\n\n**Name here**\nSteam:https://steamcommunity.com/id/SiegeMann/",
-        color=0xFF5733,
-
+    
+    for i in range(len(DBdocs)):
+        group_name = DBdocs[i].to_dict()['name']
+        names = DBdocs[i].to_dict()['data']
+        content = ""
+        for j in range(len(names)):
+            player_name = names[j]['playername']
+            steam_link = names[j]['steamlink']
+            content += f"\n\n**{player_name}**\n{steam_link}"
+        embed = interactions.Embed(
+            title=f"Group: {group_name}",
+            
+            description=content,
+            color=0xFF5733,
         )
-    embed.set_thumbnail(url="https://i.imgur.com/eN4wJfL.png")
-    await ctx.send(embed= embed)
+        embed.set_thumbnail(url="https://i.imgur.com/eN4wJfL.png")
+        all_embeds.append(embed)
+        
 
+        
+
+    await ctx.purge()
+    await ctx.send(embeds=all_embeds)
 
 
 client.start()
