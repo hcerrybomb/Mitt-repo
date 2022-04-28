@@ -7,9 +7,10 @@ import discord
 
 import firebase_admin
 from firebase_admin import credentials, firestore
+from numpy import delete
 
-#cred = credentials.Certificate(Path('C:/Users/Gaming_Dator_VII/Desktop/Mitt-repo/python-development/rust-automated/rust-qol/nato-bot/serviceAccountKey.json'))
-cred = credentials.Certificate(Path('C:/Users/wista002/Desktop/Mitt-repo/python-development/rust-automated/rust-qol/nato-bot/serviceAccountKey.json'))
+cred = credentials.Certificate(Path('C:/Users/Gaming_Dator_VII/Desktop/Mitt-repo/python-development/rust-automated/rust-qol/nato-bot/serviceAccountKey.json'))
+#cred = credentials.Certificate(Path('C:/Users/wista002/Desktop/Mitt-repo/python-development/rust-automated/rust-qol/nato-bot/serviceAccountKey.json'))
 
 firebase_admin.initialize_app(cred)
 
@@ -17,8 +18,8 @@ db = firestore.client()
 collection = db.collection("nato-db")
 
 
-#dotenv_path  = Path('C:/Users/Gaming_Dator_VII/Desktop/.env-files/nato-token.env')
-dotenv_path = Path('C:/Users/wista002/Desktop/.env-files/nato-token.env')
+dotenv_path  = Path('C:/Users/Gaming_Dator_VII/Desktop/.env-files/nato-token.env')
+#dotenv_path = Path('C:/Users/wista002/Desktop/.env-files/nato-token.env')
 
 load_dotenv(dotenv_path=dotenv_path)
 
@@ -26,8 +27,6 @@ load_dotenv(dotenv_path=dotenv_path)
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 client = interactions.Client(token = TOKEN)
-
-
 
 
 
@@ -57,8 +56,11 @@ client = interactions.Client(token = TOKEN)
         )
     ]
 )
-async def my_first_command(ctx: interactions.CommandContext, 
-    grid_or_group: str, player_name: str, steam_link: str):
+async def add_player(ctx: interactions.CommandContext, 
+    grid_or_group: str, player_name: str, steam_link: str = "False"):
+    
+    print(steam_link)
+
     foundGroup = False
     DBdocs = collection.get()
     for i in range(len(DBdocs)):
@@ -68,11 +70,18 @@ async def my_first_command(ctx: interactions.CommandContext,
         print(prox_dict["name"])
         if grid_or_group == prox_dict['name']:
 
-            updated_array = DBdocs[i].to_dict()['data'] 
-            updated_array.append({
-                'playername':player_name,
-                'steamlink':steam_link
-            })
+            updated_array = DBdocs[i].to_dict()['data']
+            if steam_link =="False":
+                updated_array.append({
+                    'playername':player_name,
+                    'steamlink':""
+                    
+                })
+            else:
+                updated_array.append({
+                    'playername':player_name,
+                    'steamlink':steam_link
+                })
             collection.document(DBdocs[i].id).update({
                 'data':updated_array
             })
@@ -87,9 +96,26 @@ async def my_first_command(ctx: interactions.CommandContext,
             ]
         }
         )
-    all_embeds = []
-        
-    
+    #all_embeds = []
+    DBdocs = collection.get()
+    await ctx.get_channel()
+    await ctx.channel.purge(100, bulk=True)
+    await ctx.send("loading database . . .  you can dismiss this message",ephemeral=True)
+    thumbnail = interactions.EmbedImageStruct(url="https://i.imgur.com/eN4wJfL.png")._json
+    descSTR = "\n**Commands:**\n\n*/add_player*\n**grid_or_group:**  <grid or group name>\n**player_name:**  <player name>\n**steam_link: (optional)**  <link to the players steam account>\n\nsetting **player_name** to the same name as an already existing group will add that player to that group, putting a new group name will create a new group.\n\n\n*/remove_player* \n**group_name:**  <grid or group name>\n**player_index:**  <number index of the player you wish to remove from the database>"
+    embed = interactions.Embed(
+        title=f"#names info!",
+        thumbnail=thumbnail,
+        description=descSTR,
+        color=0xFF5733,
+    )
+    await ctx.channel.send(embeds=embed)
+    thumbnail = interactions.EmbedImageStruct(url="https://i.imgur.com/eN4wJfL.png")._json
+    embed = interactions.Embed(
+        title=f"GROUPS:",
+        color=0xFF5733,
+    )
+    await ctx.channel.send(embeds=embed)
     for i in range(len(DBdocs)):
         group_name = DBdocs[i].to_dict()['name']
         names = DBdocs[i].to_dict()['data']
@@ -97,21 +123,20 @@ async def my_first_command(ctx: interactions.CommandContext,
         for j in range(len(names)):
             player_name = names[j]['playername']
             steam_link = names[j]['steamlink']
-            content += f"\n\n**{player_name}**\n{steam_link}"
+            content += f"\n\n**{player_name}**     (index: {j})\n{steam_link}"
+
+        thumbnail = interactions.EmbedImageStruct(url="https://i.imgur.com/eN4wJfL.png")._json
         embed = interactions.Embed(
             title=f"Group: {group_name}",
-            
+            thumbnail=thumbnail,
             description=content,
             color=0xFF5733,
         )
-        embed.set_thumbnail(url="https://i.imgur.com/eN4wJfL.png")
-        all_embeds.append(embed)
+        #all_embeds.append(embed)
+        
+        await ctx.channel.send(embeds=embed)
         
 
-        
-
-    await ctx.purge()
-    await ctx.send(embeds=all_embeds)
 
 
 client.start()
