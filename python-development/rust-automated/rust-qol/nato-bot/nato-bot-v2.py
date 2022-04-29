@@ -139,7 +139,7 @@ async def add_player(ctx: interactions.CommandContext,
         )
 
         init_sent = False
-        count = 0
+        
         for j in range(4, len(names)+4):
             index = j -4
             player_name = names[index]['playername']
