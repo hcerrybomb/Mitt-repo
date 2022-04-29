@@ -7,10 +7,10 @@ import discord
 
 import firebase_admin
 from firebase_admin import credentials, firestore
-from numpy import delete
 
-cred = credentials.Certificate(Path('C:/Users/Gaming_Dator_VII/Desktop/Mitt-repo/python-development/rust-automated/rust-qol/nato-bot/serviceAccountKey.json'))
-#cred = credentials.Certificate(Path('C:/Users/wista002/Desktop/Mitt-repo/python-development/rust-automated/rust-qol/nato-bot/serviceAccountKey.json'))
+
+#cred = credentials.Certificate(Path('C:/Users/Gaming_Dator_VII/Desktop/Mitt-repo/python-development/rust-automated/rust-qol/nato-bot/serviceAccountKey.json'))
+cred = credentials.Certificate(Path('C:/Users/wista002/Desktop/Mitt-repo/python-development/rust-automated/rust-qol/nato-bot/serviceAccountKey.json'))
 
 firebase_admin.initialize_app(cred)
 
@@ -18,8 +18,8 @@ db = firestore.client()
 collection = db.collection("nato-db")
 
 
-dotenv_path  = Path('C:/Users/Gaming_Dator_VII/Desktop/.env-files/nato-token.env')
-#dotenv_path = Path('C:/Users/wista002/Desktop/.env-files/nato-token.env')
+#dotenv_path  = Path('C:/Users/Gaming_Dator_VII/Desktop/.env-files/nato-token.env')
+dotenv_path = Path('C:/Users/wista002/Desktop/.env-files/nato-token.env')
 
 load_dotenv(dotenv_path=dotenv_path)
 
@@ -112,29 +112,118 @@ async def add_player(ctx: interactions.CommandContext,
     await ctx.channel.send(embeds=embed)
     thumbnail = interactions.EmbedImageStruct(url="https://i.imgur.com/eN4wJfL.png")._json
     embed = interactions.Embed(
-        title=f"GROUPS:",
+        title=f"Groups: ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** **  ** ** v",
         color=0xFF5733,
     )
     await ctx.channel.send(embeds=embed)
     for i in range(len(DBdocs)):
+        
         group_name = DBdocs[i].to_dict()['name']
         names = DBdocs[i].to_dict()['data']
-        content = ""
-        for j in range(len(names)):
-            player_name = names[j]['playername']
-            steam_link = names[j]['steamlink']
-            content += f"\n\n**{player_name}**     (index: {j})\n{steam_link}"
-
-        thumbnail = interactions.EmbedImageStruct(url="https://i.imgur.com/eN4wJfL.png")._json
         embed = interactions.Embed(
             title=f"Group: {group_name}",
-            thumbnail=thumbnail,
-            description=content,
             color=0xFF5733,
         )
-        #all_embeds.append(embed)
-        
         await ctx.channel.send(embeds=embed)
+#        content = ""
+        #for j in range(len(names)):
+        #    player_name = names[j]['playername']
+        #    steam_link = names[j]['steamlink']
+        #    content += f"\n\n**{player_name}**     (index: {j})\n{steam_link}"
+
+        thumbnail = interactions.EmbedImageStruct(url="https://i.imgur.com/eN4wJfL.png")._json
+        init_embed = discord.Embed(
+            title=f"Group: {group_name}",
+            thumbnail=thumbnail,
+            color=0xFF5733,
+        )
+
+        init_sent = False
+        count = 0
+        for j in range(4, len(names)+4):
+            index = j -4
+            player_name = names[index]['playername']
+            steam_link = names[index]['steamlink']   
+            if j % 4 == 0:
+                embed = discord.Embed(
+                    title="\u200b",
+                    color=0xFF5733
+                )
+                if j > 4:
+                    await ctx.channel.send(embeds = interactions.Embed(**embed.to_dict()))
+            embed.add_field(name="\u200b",value="** **",inline=False)
+            embed.add_field(name=f"{player_name}", value=f"{steam_link}", inline=True)
+            embed.add_field(name=f"index:  {j}", value=f"group name: {group_name}", inline=True)
+                  
+            
+        if False:
+            if len(names) <= 6:
+                for j in range(len(names)):
+                    player_name = names[j]['playername']
+                    steam_link = names[j]['steamlink']
+                    init_embed.add_field(name=f"{player_name}", value=f"{steam_link}", inline=True)
+                    
+                    init_embed.add_field(name=f"index:  {j}", value=f"group name: {group_name}", inline=True)
+                    init_embed.add_field(name="\u200b",value="** **",inline=False)                
+                await ctx.channel.send(embeds=interactions.Embed(**init_embed.to_dict()))
+            else:
+                for x in range(0,6):
+                    print("init name added")
+                    player_name = names[x]['playername']
+                    steam_link = names[x]['steamlink']
+                    init_embed.add_field(name=f"{player_name}", value=f"{steam_link}", inline=True)
+                    
+                    init_embed.add_field(name=f"index:  {x}", value=f"group name: {group_name}", inline=True)
+                    init_embed.add_field(name="\u200b",value="** **",inline=False)                
+                await ctx.channel.send(embeds=interactions.Embed(**init_embed.to_dict()))
+                print("init name sent")
+                names_left = len(names)-6 
+                
+                for j in range(6, len(names)):
+                    print("here: 1 going through names")
+                    player_name = names[j]['playername']
+                    steam_link = names[j]['steamlink']
+                    print(f"player: {player_name} link: {steam_link}")
+                    if j % 6 == 0:
+                        print("here: 2, embed made")
+                        embedx = discord.Embed(
+                            title="test",
+                            color=0xFF5733
+                        )
+                        if j > 6:
+                            print("here: 3, extra embed sent")
+                            print(embedx)
+                            await ctx.channel.send(embeds=interactions.Embed(**embedx.to_dict()))
+                            less_than12 = False
+                        else:
+                            less_than12 = True
+                            print("here:4 embed not sent ")
+                    embedx.add_field(name=f"{player_name}", value=f"{steam_link}", inline=True)
+                    embedx.add_field(name=f"index:  {x}", value=f"group name: {group_name}", inline=True)
+                    print("field added")
+                    print(embedx)
+                    embedx.add_field(name="\u200b",value="** **",inline=False)
+                if less_than12:
+                    await ctx.channel.send(embeds=interactions.Embed(**embedx.to_dict()))
+                
+                    
+                
+                
+            
+        
+        #for j in range(len(names)):
+        #    if j > 5:
+        #         
+        #    player_name = names[j]['playername']
+        #    steam_link = names[j]['steamlink']
+        #    init_embed.add_field(name=f"{player_name}", value=f"{steam_link}", inline=True)
+        #    
+        #    init_embed.add_field(name=f"index:  {j}", value=f"group name: {group_name}", inline=True)
+        #    embed.add_field(name="\u200b",value="** **",inline=False)
+        
+        
+        
+        #await ctx.channel.send(embeds=interactions.Embed(**embed.to_dict()))
         
 
 

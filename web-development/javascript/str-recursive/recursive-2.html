@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+// program to display fibonacci sequence using recursion
+function fibonacci(num) {
+    if(num < 2) {
+        return num;
+    }
+    else {
+        return fibonacci(num-1) + fibonacci(num - 2);
+    }
+}
+for(let i = 0; i<11; i++    ){
+    console.log(fibonacci(i))
+}
+
+
+let ord = "hertetreh"
+
+ord = ord.split("")
+
+function palindrom(ord){
+    if(ord.length > 1){
+        if(ord[0] == ord[ord.length-1] ) pal = true
+        else pal = false
+
+        ord.pop()
+        ord.shift()
+        //console.log(ord)     
+        palindrom(ord)   
+    }
+    else{
+        console.log(pal)
+        return pal
+    }
+}
+
+console.log(palindrom(ord))
+let test = "abd"
+console.log(test.length)
+
+uniq = []
+
+function anagram(ana, str){
+    if (str === '') uniq.push(ana)
+    
+    for(let i=0; i<str.length; i++){
+        anagram(ana + str[i]/* */,   str.slice(0, i) + str.slice(i + 1))   }}
+
+anagram("","abdc")
+
+console.log(uniq)
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+    background-color: darkslategray;
+}
+
+div {
+    border: 2px solid lightcoral;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+    </style>
+</head>
+<body>
+
+
+
+<script>
+let bodyEl = document.querySelector("body")
+
+tegnFirkant(10,10,300);
+
+function tegnFirkant(x, y, b){
+    let firkantEl = document.createElement("div")
+    firkantEl.style.left = x + "px"
+    firkantEl.style.top = y + "px"
+    firkantEl.style.width = b + "px"
+    firkantEl.style.height = b + "px"
+    bodyEl.appendChild(firkantEl)
+
+    if (b > 2){
+        tegnFirkant(x       , y + b , b*0.5)
+        tegnfirkant(x + b   , y     , b*0.5)
+    }
+}
+</script>
+</body>
+</html>
