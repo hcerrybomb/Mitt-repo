@@ -29,6 +29,15 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 client = interactions.Client(token = TOKEN)
 
 
+#make command @Client.event 3
+#async def change_group_name:
+#   for i in range(len(DBdocs)):
+#       find group name with old_name
+#       copy that group with new name   
+#       delete old_name group, add new name group       
+
+
+
 
 
 @client.command(

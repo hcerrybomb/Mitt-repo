@@ -38,6 +38,29 @@ gjennomsnitt = sum / opg1.length
 console.log("1)  ",sum,gjennomsnitt)
 
 
+
+let server = {
+
+    navn: String,
+    
+    data: {
+    
+        status: Boolean,
+    
+        uptime: String, 
+    
+        modded: Boolean, 
+    
+        population: Integer, 
+    
+        ip: String, 
+    
+        rank: integer
+    
+        }
+    
+    }
+
 //!     OPPGAVE 1.1
 
 const navn = ["Mari","Benjamin","Tiril","Joakim","Andrea","Anders"]
