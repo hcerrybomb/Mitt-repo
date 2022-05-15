@@ -1,11 +1,9 @@
 import os 
 import openai
 
-openai.api_key = "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"
+openai.api_key = "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"
 
-prompt = "As the A+ student you are,`\
-    write an essay about the following topic:\
-    what use cases are there for artificial intelligence"
+prompt = "create an outline for a research paper on the threats of artificial intelligence"
 
 response = openai.Completion.create(
     engine = 'text-davinci-002',
@@ -16,5 +14,4 @@ response = openai.Completion.create(
     frequency_penalty = 0,
     presence_penalty = 0
 )
-
 print(response['choices'][0]['text'])

@@ -1,0 +1,47 @@
+{
+    "content": "Bot Name",
+    "embeds": [
+    {
+      "type": "rich",
+      "title": "Rules",
+      "description": "By reacting to this embed you agree to all the following rules below: \n** **\n ",
+      
+      "fields": [
+        {
+          "name": "** **\n\nDiscord Rules:",
+          "value": "** **\n**#1** Don't be toxic.\n\n**#2** Use the channels for their intended purpose.\n\n**#3** When joining a voice channel, listen first if there's things going on so you dont disturb comms.\n\n**#4** Dont ping spam people / @everyone for no reason. \n\n** **\n** **"
+        },
+        {
+          "name": "General rules:",
+          "value": "** **\n**#1** Don't ***overly*** shittalk in the global chat (especially if you have the [NATO] tag) as it affects your teammates reputation aswell. \n\n**#2** If you feel yourself tilting too much to control yourself just turn of global chat. \n\n**#3** Don't unnecessarily agitate enemies that could as it can come back to bite the entire group, I.E. don't doorcamp neighbors into a doorcamping war without agreeing with the rest of us first. \n\n**#4** In pvp, remember that you're apart of a team and act accordingly, I.E. don't make solo plays as if you're AloneInTokyo for your UKN highlight reel ***without calling it out to the rest of the group.***\n\n**#5** Don't waste the ***group's*** resources (especially early-game) I.E. don't bring 200 cloth as meds in the snow or crash the group's only minicopter."
+        },
+        {
+            "name":"** **",
+            "value":"\n**#6** If you're unsure of whether or not you're doing something you shouldn't be, either don't do it or ***ask someone*** else for else.\n\n**#7** Don't take any BP's before you're sure that all other necessary BP's for the group are taken and/or the group doesn't need scrap for other purposes. \n\n**#8** <@478612129415561226> is not allowed to talk in global, if you see him do it kill him. \n\n** **\n** **"
+        },
+        {
+          "name": "Storage rules:",
+          "value": "** **\n**#1** Only take gear from either public lockers (I.E. lockers not in or near bedrooms) or boxes. \n\n**#2** When depositing ***place your items in the right boxes*** and if you don't know where to deposit items simply put them in a depo box. \n\n**#3** Every person will have a bedroom with storage, if you put items in depo boxes ***they will be sorted***, depo boxes are not meant to store your personal gear for long periods."
+        },
+        {
+            "name":"** **",
+            "value":"\n**#4** When taking items from public use boxes you should follow common sense, for example:\n\n- Do not take large fractions of the group's cloth out to roam if \nwe live in the snow and are still in early game.\n\n-  Do not take the groups most valuable guns to your own \nbedroom without an explicit agreement.\n\n- Do not take all the groups clothes and kits to your own bedroom.  \n\n- Do not take ammo from the designated ammo boxes without leaving some for others. There should always be some extra ammo in the ammo boxes. ***If there isn't sufficient resources let people know***\n\n- Do not craft an extensive number of meds for yourself if we do not have the materials to support it. "
+            
+        },
+        {
+            "name":"** **\n** **",
+            "value":"\n\n\n\n\n\n**#5** Taking items or kits from other peoples bedrooms is of course not allowed, except for some extremely specific use cases such as: \n\n- In raid defences if you know the person you are borrowing the kit from is not also defending, or the person has given you explicit permission to take from their bedroom.  \n\n- When trying to take or tag the attack helicopter. If the person you are borrowing from is also online, then you should ask for explicit permission to use their kit for this. \n\n- If there is an enemy or multiple enemies outside the base that are visible from the roof. \n\n\n"
+        },
+        {
+            "name":"** **\n** **",
+            "value":"\n\n\n\n\n\n**#6** When borrowing items or kits from a persons bedroom you **must** return the items you borrow. If you lost said items, or there are not sufficient materials in the base to craft said items, you are in debt to the person you borrowed from and should subsequently give back what you owe to that persons bedroom as soon as you get it. \n\n**#7** The kits and gears ***you*** get from roams/pvp are firstly yours, but you're highly encouraged to contribute to the rest of the group and you should not hog gear for yourself. \n\n**#8** If you need something crafted or repaired let ***the person with the necessary BP's*** know, don't bother the people that can't help you. \n"
+        }
+      ],
+      "thumbnail": {
+        "url": "https://i.imgur.com/eN4wJfL.png",
+        "height": 0,
+        "width": 0
+      }
+    }
+  ]
+}
