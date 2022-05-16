@@ -21,7 +21,7 @@ html, body{
 
 div > div, div > a, a > div{
     box-sizing: border-box;
-    border:  1px solid red;
+    border:  0px solid red;
 }
 body{
     
@@ -42,7 +42,7 @@ body{
     position: absolute;
     margin:0;
     width:100vw;
-    height:8vh;
+    height:10vh;
     
     display:flex;
     align-items: center;
@@ -87,6 +87,7 @@ body{
 .header-item{
     box-sizing: border-box;
     color:#faebd7;
+    height:10vh;
     padding:3vh 1.5vw 3vh 1.5vw;
     margin:0% 0% 0% 0%;
     text-decoration: none;

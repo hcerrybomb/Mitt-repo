@@ -3,6 +3,9 @@ import { logEvent, logTest } from "./utils/logging.js"
 
 let useApi = false
 
+
+let serverElements = []
+
 let db, collectionName = `servers`, dbDocs
 
 const firebaseConfig = {
@@ -40,6 +43,32 @@ db.collection(collectionName).onSnapshot(snapshot => {
     update()
 })
 
+
+
+
+
+
+
+
+
+
+
+function makeServerElements(docs, array){
+    array = []
+    let serverContainerEl = document.createElement("div")
+    serverContainerEl.className = "server-container"
+
+    let serverTitleEl  = document.createElement("div")
+    serverTitleEl.className = "server-title"
+    serverContainerEl.appendChild(serverTitleEl)
+
+    let serverDescriptionEl = document.createElement("div")
+    serverDescriptionEl.className = "description"
+
+
+
+
+}
 
 
 
