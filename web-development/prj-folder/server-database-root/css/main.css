@@ -3,10 +3,6 @@
     src: url("../fonts/blinker-extralight.ttf") format("truetype")
 }
 
-div{
-    
-    border:  0px solid red;
-}
 
 html, body{
 
@@ -42,7 +38,7 @@ body{
     position: absolute;
     margin:0;
     width:100vw;
-    height:10vh;
+    height:8vh;
     
     display:flex;
     align-items: center;
@@ -87,10 +83,12 @@ body{
 .header-item{
     box-sizing: border-box;
     color:#faebd7;
-    height:10vh;
-    padding:3vh 1.5vw 3vh 1.5vw;
+    height:8vh;
+    padding:0 1.5vw 0 1.5vw;
     margin:0% 0% 0% 0%;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 
 }
 .header-item:hover{
@@ -100,3 +98,32 @@ body{
 }
 
 
+#footer-container{
+    box-sizing: border-box;
+    
+
+    height:7vh;
+    width:100vw;
+
+    position: absolute;
+    top:93vh;
+    background-color:rgba(0, 0, 0, 0.257);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    
+
+}
+.footer-item{
+    color:#faebd7;
+    font-family: link;
+    height:100%;
+    display:flex;
+    align-items: center;
+    padding:0 1% 0 1%;
+}
+
+.footer-item:hover{
+    background-color:rgba(0, 0, 0, 0.280);
+}
