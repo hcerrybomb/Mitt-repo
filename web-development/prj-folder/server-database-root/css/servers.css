@@ -4,10 +4,10 @@
 }
 
 div > div, div > a, a > div, div > label, label>button,
-div > table, table > tr, tr > td
+div > table, table > tr, tr > td, tr > th, th > div, td > div
 {
     box-sizing: border-box;
-    border:  0px solid lightblue;
+    border:  1px solid lightblue;
 }
 a{
     text-decoration: none;
@@ -448,6 +448,7 @@ body{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 140%;
+    
     margin-left:0.5%;
     cursor:pointer;
     text-align: center;
@@ -795,13 +796,123 @@ body{
     padding-left:0.5%;
     border-left: 2px solid #ff4d4dd7;
 }
+#main-table{
+    width:88%;
+    border-collapse: collapse;
+    /*border:1px solid rgba(46, 240, 204, 0.6);*/
+}
+#title-row{
+    font-weight: bolder;
+    background-color:rgba(0, 0, 0, 0.280);    
+}
+
+.title-cell{
+    border: 1px solid rgba(46, 240, 204, 0.377);
+    padding-left:0.25vw;
+    padding-right:0.25vw;
+}
+
+#rank-cell{
+    padding-left:1.00vw;
+    padding-right:1.00vw;
+}
 
 
+.data-row{
+    
+}
+.data-row:nth-child(odd){
+    background-color:rgba(0, 0, 0, 0.280)
+}
+.data-cell{
+    max-width: 20%;
+    overflow:hidden;
+    border: 1px solid rgba(93, 211, 189, 0.377);
+    padding-left: 0%;
+    text-align: center;  
+}
 
+.cell-text-input[type="text" i], .cell-text-input:focus-visible{padding:0 0 0 0;outline:none;}
+.cell-text-input{
+    font-family: link;
+    font-size: medium;
+    font-weight:normal;
+    color:#faebd7;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0px;
+    border-style: none;
+    border-color:rgba(0, 0, 0, 0);
+    border-image:none;
 
+    
+    
+    display:inline-block;
+    border-bottom: 2px solid #faebd7;
 
+}
+.cell-number-input[type="number" i], .cell-number-input:focus-visible{padding:0 0 0 0;outline:none;}
+.cell-number-input{
+    
 
+    font-family: link;
+    font-size: medium;
+    font-weight:normal;
+    color:#faebd7;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0px;
+    border-style: none;
+    border-color:rgba(0, 0, 0, 0);
+    border-image:none;
+    width:fit-content;
+    width:100%;
 
+    
+    border-bottom: 2px solid #faebd7;
+    
+    display:inline-block;
+    
+}
+.cell-select-input:focus-visible{outline:none;}
+.cell-select-input{
+    font-family: link;
+    font-size: medium;
+    font-weight:normal;
+    color:#faebd7;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0px;
+    border-style: none;
+    border-color:rgba(0, 0, 0, 0);
+    border-image:none;
+}
+.cell-option-input:focus-visible{outline:none;}
+.cell-option-input{
+    border-style: none;
+    border-width: 0px;
+    border-image:none;
+    border-color:red;
+    font-weight: bolder;
+    color:black;
+        
+}
+
+.cell-rank-input{
+    
+    width:4vw;    
+}
+.cell-pop-input{
+    
+    width:4vw;
+}
+.cell-uptime-input{
+    
+    width:4vw;
+}
+.cell-host-input{
+    width:6vw;
+}
+.cell-ip-input{
+    width:55%;
+}
 
 
 

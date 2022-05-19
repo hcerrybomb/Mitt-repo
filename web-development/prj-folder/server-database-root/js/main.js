@@ -3,7 +3,7 @@ import { logEvent, logTest } from "./utils/logging.js"
 
 let useApi = false
 
-let listView = false
+let listView = true
 
 let validAdd = false
 
@@ -170,7 +170,7 @@ function printServers(official, online, rank, pop, docs){
 
 
 
-    if(listView){
+    if(!listView){
 
         
         viewLabel.innerHTML = `TABLE VIEW&nbsp&nbsp(FIELDS EDITOR)
