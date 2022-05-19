@@ -3,6 +3,8 @@ import { logEvent, logTest } from "./utils/logging.js"
 
 let useApi = false
 
+let listView = false
+
 let validAdd = false
 
 let 
@@ -135,283 +137,356 @@ popButton.addEventListener("click",function(){
 
 
 
+let viewButton = document.getElementById("view-button")
+let viewLabel = document.getElementById("view-label")
+viewButton.addEventListener("click", function(){
+    console.log("CHANGE VIEW PRESSED")
+    if(listView){
+        listView = false
+    }
+    else{
+        listView = true
+    }
+    console.log("VIEW LIST IS NOW ", listView)
+
+    update(orderBy, way)
+})
+
+
+
+
 
 function printServers(official, online, rank, pop, docs){
     logEvent(`\nShow only Official:${official},   \nShow only Online:${online},   \nSort by Rank:${rank},   \nSort by Pop:${pop}`)
 
 
-    let addOnlineChecked = false, addOfficialChecked = false
-
-
-    feedEl.innerHTML = ""
-
-    feedEl.innerHTML = feedEl.innerHTML + `
-<div id="add-container">
-    <div class="server-title" id="add-server-title">
-        <input type="text" placeholder="ADD SERVER" id="add-name-input">
-        <label class="add-label">ADD
-            <button class="add-button" id="add-server-button">
-
-            </button>
-        </label>                            
-    </div>
-    <br>
-    <div class="description">
-        <div class="rank">
-            <div class="column">RANK:</div>
-            <div class="rank-content">
-                <input id="rank-input" type="number" max="999" placeholder="000">
-            </div>
-        </div>  
-        <div class="population">
-            <div class="column">POPULATION:</div>
-            <div class="population-content">
-                <input id="population-input" type="number"  max="999" placeholder="000">
-            </div>
-        </div>
-        <div class="ip">
-            <div class="column">IP ADDRESS:</div>
-            <div class="ip-content">
-                <input id="ip-input" type="text" placeholder="000.000.000.000:00000">
-            </div>
-        </div>
-        <div class="status">
-            <div class="column">ONLINE:</div>
-            <div class="status-content" id="add-online-container">
-                <label id="add-online-label">
-                    <button id="add-online-button">
-
-                    </button>
-                </label>
-            </div>
-        </div>
-        <div class="official">
-            <div class="column">OFFICIAL:</div>
-            <div class="official-content" id="add-official-container">
-                <label id="add-official-label">
-                    <button id="add-official-button">
-
-                    </button>
-                </label>
-            </div>
-        </div>  
-        <div class="uptime">
-            <div class="column">UPTIME:</div>
-            <div class="uptime-content">
-                <input id="uptime-input" type="number" max="100" placeholder="00">% last 30 days
-            </div>
-        </div>
-    </div>
-    <br><br><br><br>
-</div>
-    `
 
 
 
 
-    let buttonIds = []
-    for (let i = 0; i < docs.length; i++){
-        
 
-        let statusBool = docs[i].data().data.status
-        if(online && !statusBool)continue
-        statusBool ? statusBool = "online": statusBool = "offline"
 
-        let moddedBool = docs[i].data().data.modded
-        if(official && moddedBool)continue
-        moddedBool ? moddedBool = "no" : moddedBool = "yes"
+
+
+
+
+    if(listView){
 
         
-        
+        viewLabel.innerHTML = `TABLE VIEW&nbsp&nbsp(FIELDS EDITOR)
+        <button id="view-button">
 
-        let serverId = docs[i].id
-        let serverTitle = docs[i].data().name
-        let rankNumber = docs[i].data().rank
-        let popNumber = docs[i].data().population
-        let ipString = docs[i].data().data.ip
-
-
-
-        let uptimeNumber = docs[i].data().data.uptime
-
-        feedEl.innerHTML = feedEl.innerHTML + `
-    <div class="server-container">
-        <div class="server-title">${serverTitle}
-            <label class="delete-label">DELETE
-                <button class="delete-button" id='${serverId}'>
-
-                </button>
-            </label>                             
-        </div>
-        <br>
-        <div class="description">
-            <div class="rank">
-                <div class="column">RANK:</div>
-                <div class="rank-content">#${rankNumber}</div>
-            </div>  
-            <div class="population">
-                <div class="column">POPULATION:</div>
-                <div class="population-content">${popNumber}</div>
-            </div>
-            <div class="ip">
-                <div class="column">IP ADDRESS:</div>
-                <div class="ip-content">${ipString}</div>
-            </div>
-            <div class="status">
-                <div class="column">STATUS:</div>
-                <div class="status-content">${statusBool}</div>
-            </div>
-            <div class="official">
-                <div class="column">OFFICIAL:</div>
-                <div class="official-content">${moddedBool}</div>
-            </div>  
-            <div class="uptime">
-                <div class="column">UPTIME:</div>
-                <div class="uptime-content">${uptimeNumber}% last 30 days</div>
-            </div>
-        </div>
-        <br><br><br><br>
-    </div>`
-
-    buttonIds.push(serverId)
-    }
-
-    for (let j = 0; j < buttonIds.length; j++){
-        document.getElementById(buttonIds[j]).addEventListener("click", function(e){
-            console.log("BUTTON PRESSED", e.target.id)
-            db.collection(collectionName).doc(e.target.id).delete();
+        </button>       
+        `
+        document.getElementById("view-button").addEventListener("click",function(){
+            listView = false
             update(orderBy, way)
         })
-    }
 
 
 
+        let addOnlineChecked = false, addOfficialChecked = false
 
 
-    document.getElementById('add-online-button').addEventListener("click", function(e){
-        console.log("ADD ONLINE TICKED")
-        if(addOnlineChecked){
-            addOnlineChecked = false
-            e.target.style.backgroundImage = "none"
-        }
-        else{
-            addOnlineChecked = true
-            e.target.style.backgroundImage = "linear-gradient(to right, rgba(46, 240, 204, 0.5), rgba(46, 240, 204, 0.9))"
-        }
-        console.log("ADD ONLINE IS NOW:",addOnlineChecked)
-    })
-    document.getElementById('add-official-button').addEventListener("click",function(e){
-        console.log("ADD OFFICIAL TICKED")
-        if(addOfficialChecked){
-            addOfficialChecked = false
-            e.target.style.backgroundImage = "none"
-        }
-        else{
-            addOfficialChecked = true
-            e.target.style.backgroundImage = "linear-gradient(to right, rgba(46, 240, 204, 0.5), rgba(46, 240, 204, 0.9))"
-        }
-        console.log("ADD OFFICIAL IS NOW:",addOfficialChecked)
-    })
+        feedEl.innerHTML = ""
 
-    
-    document.getElementById('add-server-button').addEventListener("click",function(){
+        feedEl.innerHTML = feedEl.innerHTML + `
+        <div id="add-container">
+            <div class="server-title" id="add-server-title">
+                <input type="text" placeholder="ADD SERVER" id="add-name-input">
+                <label class="add-label">ADD
+                    <button class="add-button" id="add-server-button">
+
+                    </button>
+                </label>                            
+            </div>
+            <br>
+            <div class="description">
+                <div class="rank">
+                    <div class="column">RANK:</div>
+                    <div class="rank-content">
+                        <input id="rank-input" type="number" max="999" placeholder="000">
+                    </div>
+                </div>  
+                <div class="population">
+                    <div class="column">POPULATION:</div>
+                    <div class="population-content">
+                        <input id="population-input" type="number"  max="999" placeholder="000">
+                    </div>
+                </div>
+                <div class="ip">
+                    <div class="column">IP ADDRESS:</div>
+                    <div class="ip-content">
+                        <input id="ip-input" type="text" placeholder="000.000.000.000:00000">
+                    </div>
+                </div>
+                <div class="status">
+                    <div class="column">ONLINE:</div>
+                    <div class="status-content" id="add-online-container">
+                        <label id="add-online-label">
+                            <button id="add-online-button">
+
+                            </button>
+                        </label>
+                    </div>
+                </div>
+                <div class="official">
+                    <div class="column">OFFICIAL:</div>
+                    <div class="official-content" id="add-official-container">
+                        <label id="add-official-label">
+                            <button id="add-official-button">
+
+                            </button>
+                        </label>
+                    </div>
+                </div>  
+                <div class="uptime">
+                    <div class="column">UPTIME:</div>
+                    <div class="uptime-content">
+                        <input id="uptime-input" type="number" max="100" placeholder="00">% last 30 days
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br>
+        </div>`
         
-
-        let addServerTitleEl = document.getElementById("add-server-title")
-        let invalidInputEl = document.createElement("label")
-        invalidInputEl.className = "invalid-label"
-        invalidInputEl.setAttribute('id', 'invalid-label') 
-        invalidInputEl.innerHTML = "INVALID INPUT&nbsp&nbsp:&nbsp&nbspCHECK FOR MISSING OR WRONGLY FORMATTED INPUTS"
-        console.log("ADD PRESSED")
-
-        let serverTitleInput = document.getElementById("add-name-input")
-
-        let rankInput = document.getElementById("rank-input")
-        
-        let popInput = document.getElementById("population-input")
-        
-        let ipInput = document.getElementById("ip-input")
-
-        let str = ipInput.value
-        let docId = ipInput.value
-        str = str.substring(str.length - 6)
-
-        let uptimeInput = document.getElementById("uptime-input")
-
-        docId = docId.replace(/[^a-zA-Z0-9]/g, '')
-
-        for(let n = 0; n < buttonIds.length; n++){
-            if(docId.toLowerCase() == buttonIds[n].toLowerCase()){
-                validAdd = false
-
-                
-            }
-        }
-
-        if(serverTitleInput.value == ""){
-            validAdd = false
-        }
-
-        else if(rankInput.value < 0 || rankInput.value > 999){
-            validAdd = false
-        }
-
-
-        else if(popInput.value < 0 || popInput.value > 999){
-            validAdd = false
-        }
-
-
-        else if(str.charAt(0) !== ":"){
-            validAdd = false
-        }
-        else if(str.substring(str.length - 5).match(/^[0-9]+$/) == null){
-            validAdd = false
-        }
-
-
-        else if(uptimeInput.value < 0 || uptimeInput.value > 100){
-            validAdd = false
-        }
-        else{
-            validAdd = true
-        }
-        
-
-
-
-
-        if(validAdd){
-            try{
-                document.getElementById("invalid-label").remove()  
-            }
-            catch{
-                logEvent("NO LABEL TO REMVE")
-            }
-           //TODO SUBMIT THE WHOLE SERVER OBJECT
-
+        let buttonIds = []
+        let ranks = []
+        for (let i = 0; i < docs.length; i++){
             
 
+            let statusBool = docs[i].data().data.status
+            if(online && !statusBool)continue
+            statusBool ? statusBool = "online": statusBool = "offline"
 
-            db.collection(collectionName).add(
+            let moddedBool = docs[i].data().data.modded
+            if(official && moddedBool)continue
+            moddedBool ? moddedBool = "no" : moddedBool = "yes"
+
+            
+            
+
+            let serverId = docs[i].id
+            let serverTitle = docs[i].data().name
+            let rankNumber = docs[i].data().rank
+            let popNumber = docs[i].data().population
+            let ipString = docs[i].data().data.ip
 
 
 
-            )
+            let uptimeNumber = docs[i].data().data.uptime
 
+            feedEl.innerHTML = feedEl.innerHTML + `
+            <div class="server-container">
+                <div class="server-title">${serverTitle}
+                    <label class="delete-label">DELETE
+                        <button class="delete-button" id='${serverId}'>
+
+                        </button>
+                    </label>                             
+                </div>
+                <br>
+                <div class="description">
+                    <div class="rank">
+                        <div class="column">RANK:</div>
+                        <div class="rank-content">#${rankNumber}</div>
+                    </div>  
+                    <div class="population">
+                        <div class="column">POPULATION:</div>
+                        <div class="population-content">${popNumber}</div>
+                    </div>
+                    <div class="ip">
+                        <div class="column">IP ADDRESS:</div>
+                        <div class="ip-content">${ipString}</div>
+                    </div>
+                    <div class="status">
+                        <div class="column">STATUS:</div>
+                        <div class="status-content">${statusBool}</div>
+                    </div>
+                    <div class="official">
+                        <div class="column">OFFICIAL:</div>
+                        <div class="official-content">${moddedBool}</div>
+                    </div>  
+                    <div class="uptime">
+                        <div class="column">UPTIME:</div>
+                        <div class="uptime-content">${uptimeNumber}% last 30 days</div>
+                    </div>
+                </div>
+                <br><br><br><br>
+            </div>`
+
+            buttonIds.push(serverId)
+            ranks.push(rankNumber)
         }
-        else{
-            try{
-                document.getElementById("invalid-label").remove()  
-            }
-            catch{
-                logEvent("NO LABEL TO REMVE")
-            }
-            addServerTitleEl.appendChild(invalidInputEl)
-        }
-    })
 
+        for (let j = 0; j < buttonIds.length; j++){
+            document.getElementById(buttonIds[j]).addEventListener("click", function(e){
+                console.log("BUTTON PRESSED", e.target.id)
+                db.collection(collectionName).doc(e.target.id).delete();
+                update(orderBy, way)
+            })
+        }
+
+
+
+
+
+        document.getElementById('add-online-button').addEventListener("click", function(e){
+            console.log("ADD ONLINE TICKED")
+            if(addOnlineChecked){
+                addOnlineChecked = false
+                e.target.style.backgroundImage = "none"
+            }
+            else{
+                addOnlineChecked = true
+                e.target.style.backgroundImage = "linear-gradient(to right, rgba(46, 240, 204, 0.5), rgba(46, 240, 204, 0.9))"
+            }
+            console.log("ADD ONLINE IS NOW:",addOnlineChecked)
+        })
+        document.getElementById('add-official-button').addEventListener("click",function(e){
+            console.log("ADD OFFICIAL TICKED")
+            if(addOfficialChecked){
+                addOfficialChecked = false
+                e.target.style.backgroundImage = "none"
+            }
+            else{
+                addOfficialChecked = true
+                e.target.style.backgroundImage = "linear-gradient(to right, rgba(46, 240, 204, 0.5), rgba(46, 240, 204, 0.9))"
+            }
+            console.log("ADD OFFICIAL IS NOW:",addOfficialChecked)
+        })
+
+        
+        document.getElementById('add-server-button').addEventListener("click",function(){
+            
+            validAdd = true
+
+            let errorMessage = "INVALID INPUT"
+            let addServerTitleEl = document.getElementById("add-server-title")
+            let invalidInputEl = document.createElement("label")
+            invalidInputEl.className = "invalid-label"
+            invalidInputEl.setAttribute('id', 'invalid-label') 
+            
+            console.log("ADD PRESSED")
+
+            let serverTitleInput = document.getElementById("add-name-input")
+
+            let rankInput = document.getElementById("rank-input")
+
+            if(ranks.includes(rankInput.value)){
+                validAdd = false
+                errorMessage = "RANK ALREADY USED" 
+            }
+            
+            let popInput = document.getElementById("population-input")
+            
+            let ipInput = document.getElementById("ip-input")
+
+            let str = ipInput.value
+            let docId = ipInput.value
+            str = str.substring(str.length - 6)
+
+            let uptimeInput = document.getElementById("uptime-input")
+
+            docId = docId.replace(/[^a-zA-Z0-9]/g, '')
+
+            for(let n = 0; n < buttonIds.length; n++){
+                if(docId.toLowerCase() == buttonIds[n].toLowerCase()){
+                    validAdd = false
+                    errorMessage = "IP / SERVER ALREADY IN LIST"
+                    
+                }
+            }
+            if(serverTitleInput.value == "" || serverTitleInput.value == ""){
+                validAdd = false
+                errorMessage = "SERVER NAME INVALID"            
+            }
+            if(rankInput.value < 0 || rankInput.value > 999 || rankInput.value == ""){
+                validAdd = false
+                errorMessage = "RANK OUT OF RANGE (MUST BE > 0 and < 999)" 
+            }
+            if(popInput.value < 0 || popInput.value > 999 || popInput.value == ""){
+                validAdd = false
+                errorMessage = "POPULATION OUT OF RANGE (MUST BE >= 0 and < 999)" 
+            }
+            if(ipInput.value == ""){
+                validAdd = false
+                errorMessage = "INVALID IP ADDRESS"             
+            }
+            if(str.substring(str.length - 5).match(/^[0-9]+$/) == null){
+                validAdd = false
+                errorMessage = "INVALID IP PORT" 
+            }
+            if(str.charAt(0) !== ":"){
+                validAdd = false
+                errorMessage = "INVALID IP ADDRESS FORMAT" 
+            }
+            if(uptimeInput.value < 0 || uptimeInput.value > 100 || uptimeInput.value == ""){
+                console.log("INFALID UPTIME")
+                validAdd = false
+                errorMessage = "UPTIME OUT OF RANGE (MUST BE >=0 and < 999)"
+            }
+
+
+
+            if(validAdd){
+                try{
+                    document.getElementById("invalid-label").remove()  
+                }
+                catch{
+                    logEvent("NO LABEL TO REMVE")
+                }
+                db.collection(collectionName).doc(docId).set(
+                    {
+                        data:{
+                            ip: ipInput.value,
+                            modded: addOfficialChecked,
+                            status: addOnlineChecked,
+                            uptime: Number(uptimeInput.value)
+                        },
+                        name:serverTitleInput.value,
+                        population: Number(popInput.value),
+                        rank:Number(rankInput.value)
+                    }
+                )
+                update(orderBy, way)
+            }
+
+            else{
+                try{
+                    document.getElementById("invalid-label").remove()  
+                }
+                catch{
+                    logEvent("NO LABEL TO REMVE")
+                }
+                invalidInputEl.innerHTML = `INVALID INPUT&nbsp&nbsp:&nbsp&nbsp${errorMessage}`
+                addServerTitleEl.appendChild(invalidInputEl)
+            }
+        })        
+    }
+    
+
+
+    else{
+        viewLabel.innerHTML = `LIST VIEW&nbsp&nbsp
+        <button id="view-button">
+
+        </button>       
+        `
+        document.getElementById("view-button").addEventListener("click",function(){
+            listView = true
+            update(orderBy, way)
+        })
+
+
+
+
+
+
+    }
 }
+
+
 //TODO STYLE INPUTS AND ADD LISTENER FOR ADD BUTTON THAT CHECKS THAT EVERY REQUIREMENT IS MET
 
 //TODO ADD EDIT BUTTON FOR EACH INDIVIDUAL FIELD IN EACH SERVER

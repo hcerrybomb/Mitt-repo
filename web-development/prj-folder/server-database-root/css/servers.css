@@ -3,7 +3,9 @@
     src: url("../fonts/blinker-extralight.ttf") format("truetype")
 }
 
-div > div, div > a, a > div, div > label, label>button{
+div > div, div > a, a > div, div > label, label>button,
+div > table, table > tr, tr > td
+{
     box-sizing: border-box;
     border:  0px solid lightblue;
 }
@@ -414,6 +416,11 @@ body{
     
 }
 
+#view-container{
+    width:fit-content;
+}
+
+
 #feed{
     box-sizing: border-box;
     margin:2% 0% 2% 2%;
@@ -423,8 +430,40 @@ body{
     font-family: link;
     color:#faebd7;
     line-height: 170%;
-    
+}
 
+#view-container{
+    position: absolute;
+    top:4%;
+    right:2%;
+    box-sizing: border-box;
+    
+    z-index: 998;
+}
+#view-label{
+    font-family: link;
+    font-weight: bolder;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgba(46, 240, 204, 0.8)),color-stop(0.72, rgba(46, 240, 204, 0.6)), color-stop(0.86, rgba(46, 240, 204, 0.4)));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 140%;
+    margin-left:0.5%;
+    cursor:pointer;
+    text-align: center;
+    
+    max-width:fit-content;
+    z-index: 999;
+    border-bottom:-webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgba(46, 240, 204, 0.8)),color-stop(0.72, rgba(46, 240, 204, 0.6)), color-stop(0.86, rgba(46, 240, 204, 0.4)));
+    
+}
+#view-button{
+    cursor:pointer;
+    height:0%;
+    width:0%;
+    opacity: 0;
+    
+    float:left;
 }
 
 .server-container{
@@ -756,6 +795,9 @@ body{
     padding-left:0.5%;
     border-left: 2px solid #ff4d4dd7;
 }
+
+
+
 
 
 
