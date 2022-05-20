@@ -929,11 +929,31 @@ th {
     font-family: link;
     cursor:pointer;
     height:100%;
-    width:45%;
+    width:55%;
     border: none;
     background-color: rgba(0, 255, 0, 0);
     word-spacing: none;
 }
+
+.invalid-table-label{
+    font-family: link;
+    color: #ff4d4dd7;
+    border-left: 2px solid #ff4d4dd7;
+    padding-left:1%;
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #add-server-table-label{
@@ -969,7 +989,7 @@ th {
 
 
 .data-row{
-    height:3.5vh;
+    height:5.5vh;
 }
 .data-row-odd{
     background-color:rgba(0, 0, 0, 0.180)

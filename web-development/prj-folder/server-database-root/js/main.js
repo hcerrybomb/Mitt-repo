@@ -199,7 +199,16 @@ function printServers(official, online, rank, pop, docs){
     let idAddressInput
     let idHostInput
 
+    let idModdedBool
+    let idStatusBool
 
+    let idHostValue
+    let idAddressValue
+
+    let idFullIp
+    let idDocId
+
+    let invalidAddCell
 
     if(listView){
 
@@ -551,8 +560,8 @@ function printServers(official, online, rank, pop, docs){
                         <input type="text" id="table-add-address" class="cell-text-input cell-ip-input" placeholder="ADDRESS">
                         <b>&nbsp:&nbsp&nbsp</b><input type="number" id="table-add-host" class="cell-number-input cell-host-input" placeholder="00000" min="0" max="99999">
                     </td>
-                    <td class="data-cell">
-                        N / A 
+                    <td class="data-cell" id="invalid-add-cell">
+                        
                     </td>
                     <td class="data-cell add-edit-cell">
                         <button id="add-server-table-button">
@@ -652,9 +661,7 @@ function printServers(official, online, rank, pop, docs){
                         ${serverId}
                     </td>
                     <td class="data-cell add-edit-cell">
-                        <button class="add-edit-button">
-                            <label class="add-edit-label">SUBMIT EDIT</label>
-                        </button>
+
                         <button class="delete-edit-button" >
                             <label class="delete-edit-label" id='del-${serverId}'>DELETE</label>
                         </button>
@@ -693,7 +700,13 @@ function printServers(official, online, rank, pop, docs){
             validAdd = true
             errorMessage = "INVALID INPUT"
 
-            
+            invalidAddCell = document.getElementById("invalid-add-cell")
+            invalidInputEl = document.createElement("label")
+            invalidInputEl.className = "invalid-table-label"
+            invalidInputEl.setAttribute('id', 'invalid-label') 
+
+
+
             serverTitleInput = document.getElementById("table-add-server-title")
 
             rankInput = document.getElementById("table-add-rank")
@@ -758,6 +771,15 @@ function printServers(official, online, rank, pop, docs){
             if(validAdd){
                 //! REMOVE POSSIBLE INVALID LABEL
                 
+                try{
+                    document.getElementById("invalid-label").remove() 
+                }
+                catch{
+                    logEvent("NO LABEL TO REMVE")
+                }
+
+
+
                 console.log("tableModdedBool",tableModdedBool)
                 console.log("tableStatusBool",tableStatusBool)
                 db.collection(collectionName).doc(docId).set(
@@ -776,43 +798,260 @@ function printServers(official, online, rank, pop, docs){
                 update(orderBy, way)
             }
             else{
-                console.log(errorMessage)
+                try{
+                    document.getElementById("invalid-label").remove()  
+                }
+                catch{
+                    logEvent("NO LABEL TO REMVE")
+                }
+                invalidInputEl.innerHTML = `INVALID INPUT&nbsp&nbsp:&nbsp&nbsp${errorMessage}`
+                invalidAddCell.appendChild(invalidInputEl)
             }
         })
 
         for(let o = 0; o < buttonIds.length; o++){
+
+
+
             idTitleInput  =  document.getElementById(`title-input-${buttonIds[o]}`) 
             idTitleInput.addEventListener("change",function(e){
-                console.log(e.target.getAttribute(`data-id`))
                 
+                console.log(e.target.getAttribute(`data-id`))
+                console.log(e.target.value)
+
+                validAdd = true
+
+                if(e.target.value == ""){
+                    validAdd = false
+                    errorMessage = "SERVER NAME INVALID"
+                }
+                if(validAdd){
+                    
+                    db.collection(collectionName).doc(e.target.getAttribute(`data-id`)).update(
+                        {
+                            name:e.target.value
+                        }
+                    )
+                    update(orderBy, way)                     
+                }
+                else{
+                    e.target.style.color = "#ff4d4dd7"
+                    
+                        e.target.style.borderBottom = "2px solid #ff4d4dd7"
+                        update(orderBy, way)
+                    
+                } 
+              
             })
+
+
+
             idRankInput  =  document.getElementById(`rank-input-${buttonIds[o]}`) 
             idRankInput.addEventListener("change",function(e){
-                
+
+                console.log(e.target.getAttribute(`data-id`))
+                console.log(e.target.value)
+
+                validAdd = true
+
+                if(ranks.includes(Number(e.target.value))){
+                    validAdd = false
+                    errorMessage = "RANK ALREADY IN USE"
+                }
+                if(validAdd){
+                    
+                    db.collection(collectionName).doc(e.target.getAttribute(`data-id`)).update(
+                        {
+                            rank:Number(e.target.value)
+                        }
+                    )
+                    update(orderBy, way)
+                }
+                else{
+                    e.target.style.color = "#ff4d4dd7"
+                    
+                        e.target.style.borderBottom = "2px solid #ff4d4dd7"
+                        update(orderBy, way)
+                    
+                } 
             })
+
+
+
             idPopInput  =  document.getElementById(`pop-input-${buttonIds[o]}`) 
             idPopInput.addEventListener("change",function(e){
-                
+                console.log(e.target.getAttribute(`data-id`))
+                console.log(e.target.value)
+
+                validAdd = true
+
+                if(e.target.value < 0 || e.target.value > 999 || e.target.value ==""){
+                    validAdd = false
+                    errorMessage = "RANK OUT OF RANGE (MUST BE > 0 and < 999)" 
+                }                
+                if(validAdd){
+                    
+                    db.collection(collectionName).doc(e.target.getAttribute(`data-id`)).update(
+                        {
+                            population:Number(e.target.value)
+                        }
+                    )
+                    update(orderBy, way)                     
+                }
+                else{
+                    e.target.style.color = "#ff4d4dd7"
+                    
+                        e.target.style.borderBottom = "2px solid #ff4d4dd7"
+                        update(orderBy, way)
+                    
+                } 
+
+ 
             })
+
+
+
             idOfficialInput  =  document.getElementById(`official-input-${buttonIds[o]}`) 
             idOfficialInput.addEventListener("change",function(e){
-                
+                console.log(e.target.getAttribute(`data-id`))
+                console.log(e.target.value)
+                e.target.value == "true" ? idModdedBool = false : idModdedBool = true
+                e.target.style.color = "red"
+                db.collection(collectionName).doc(e.target.getAttribute(`data-id`)).update(
+                    {
+                        "data.modded":idModdedBool
+                    }
+                )
+                update(orderBy, way)
             })
+
+
+
             idStatusInput  =  document.getElementById(`status-input-${buttonIds[o]}`) 
             idStatusInput.addEventListener("change",function(e){
-                
+                console.log(e.target.getAttribute(`data-id`))
+                console.log(e.target.value)
+                e.target.value == "online" ? tableStatusBool = true : tableStatusBool = false
+                e.target.style.color = "red"
+                db.collection(collectionName).doc(e.target.getAttribute(`data-id`)).update(
+                    {
+                        "data.status":idStatusBool
+                    }
+                )
+                update(orderBy, way)
             })
+
+
+
             idUptimeInput  =  document.getElementById(`uptime-input-${buttonIds[o]}`) 
             idUptimeInput.addEventListener("change",function(e){
-                
+                console.log(e.target.getAttribute(`data-id`))
+                console.log(e.target.value)
+
+                validAdd = true
+
+                if(e.target.value < 0 || e.target.value > 100 || e.target.value == ""){
+                    validAdd = false
+                    errorMessage = "UPTIME % OUT OF RANGE (MUST BE >=0 and < 100)"
+                }
+                if(validAdd){
+                    
+                    db.collection(collectionName).doc(e.target.getAttribute(`data-id`)).update(
+                        {
+                            "data.uptime":Number(e.target.value)
+                        }
+                    )
+                    update(orderBy, way)                 
+                }
+                else{
+                    e.target.style.color = "#ff4d4dd7"
+                    
+                        e.target.style.borderBottom = "2px solid #ff4d4dd7"
+                        update(orderBy, way)
+                    
+                } 
+
             })
+
+
+
             idAddressInput  =  document.getElementById(`address-input-${buttonIds[o]}`) 
             idAddressInput.addEventListener("change",function(e){
-                
+                idHostValue = document.getElementById(`host-input-${buttonIds[o]}`).value
+                validAdd = true
+
+
+                if(e.target.value == ""){
+                    validAdd = false
+                    errorMessage = "INVALID IP ADDRESS"
+                }
+                idFullIp = e.target.value+":"+idHostValue
+                idDocId = idFullIp.replace(/[^a-zA-Z0-9]/g, '')
+
+                for(let k = 0; k < buttonIds.length; k++){
+                    if(idDocId.toLowerCase() == buttonIds[k].toLowerCase()){
+                        validAdd = false
+                        errorMessage = "IP / SERVER ALREADY EXISTS"
+                    }
+                }
+
+                if(validAdd){
+                    
+                    db.collection(collectionName).doc(e.target.getAttribute(`data-id`)).update(
+                        {
+                            "data.ip":idFullIp
+                        }
+                    )
+                    update(orderBy, way)                    
+                }
+                else{
+                    e.target.style.color = "#ff4d4dd7"
+                    
+                        e.target.style.borderBottom = "2px solid #ff4d4dd7"
+                        update(orderBy, way)
+                    
+                } 
+
             })
+
+
+
             idHostInput  =  document.getElementById(`host-input-${buttonIds[o]}`) 
             idHostInput.addEventListener("change",function(e){
+                idAddressValue = document.getElementById(`address-input-${buttonIds[o]}`).value
+                validAdd = true
                 
+                if(e.target.value < 0 || e.target.value > 99999 || e.target.value == ""){
+                    validAdd = false
+                    errorMessage = "INVALID IP PORT"
+                }
+                idFullIp = idAddressValue+":"+e.target.value
+                idDocId = idFullIp.replace(/[^a-zA-Z0-9]/g, '')
+                
+                for(let k = 0; k < buttonIds.length; k++){
+                    if(idDocId.toLowerCase() == buttonIds[k].toLowerCase()){
+                        validAdd = false
+                        errorMessage = "IP / SERVER ALREADY EXISTS"
+                    }
+                }
+
+                if(validAdd){
+                    
+                    db.collection(collectionName).doc(e.target.getAttribute(`data-id`)).update(
+                        {
+                            "data.ip":idFullIp
+                        }
+                    )
+                    update(orderBy, way)                    
+                }
+                else{
+                    e.target.style.color = "#ff4d4dd7"
+                    
+                        e.target.style.borderBottom = "2px solid #ff4d4dd7"
+                        update(orderBy, way)
+                    
+                } 
+               
             })
 
 
