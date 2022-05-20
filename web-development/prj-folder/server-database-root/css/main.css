@@ -98,6 +98,44 @@ body{
 }
 
 
+#title-container{
+    position: absolute;
+    top:8vh;
+    width:100vw;
+    height:85vh;
+}
+#main-title{
+    font-family: link;
+    color:#faebd7;
+    font-size: 350%;
+    position:absolute;
+    top:0;
+    width:100vw;
+    height:42.5vh;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    
+}
+#sub-title{
+    font-family: link;
+    color:#c5baaa;
+    font-size: 150%;
+    position:absolute;
+    bottom:0;
+    width:100vw;
+    height:42.5vh;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+}
+
+
+
+
+
+
+
 #footer-container{
     box-sizing: border-box;
     

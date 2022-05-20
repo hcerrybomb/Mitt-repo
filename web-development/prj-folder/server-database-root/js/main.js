@@ -1,22 +1,85 @@
 import { updateApiDatabase } from "./utils/load-battlemetrics.js"
 import { logEvent, logTest } from "./utils/logging.js"
 
+
 let useApi = false
-
 let listView = false
-
 let validAdd = false
 
-let 
-officialChecked = false,  
-onlineChecked = false,  
-rankChecked = true,  
-popChecked = false
+
+let officialChecked = false 
+let onlineChecked = false
+let rankChecked = true
+let popChecked = false
+
 
 let feedEl = document.getElementById("feed")
+let officialButton
+let onlineButton
+let rankButton
+let popButton
+let viewLabel
+let buttonIds
+let ranks
+let statusBool
+let moddedBool
+let serverId
+let serverTitle
+let rankNumber
+let popNumber
+let ipString
+let uptimeNumber
+let statusTopOption
+let statusBottomOption
+let moddedTopOption
+let moddedBottomOption
+let hostNumber
+let addressString
+let delButtonId
+let delDocId
+let errorMessage
+let addServerTitleEl
+let invalidInputEl
+let serverTitleInput
+let rankInput
+let popInput
+let ipInput
+let str
+let docId
+let uptimeInput
+let hostInput
+let addressInput
+let addOnlineChecked
+let addOfficialChecked
+let tableStatusInput
+let tableOfficialInput
+let tableModdedBool
+let tableStatusBool
+let idTitleInput
+let idRankInput
+let idPopInput
+let idOfficialInput
+let idStatusInput
+let idUptimeInput
+let idAddressInput
+let idHostInput
+let idModdedBool
+let idStatusBool
+let idHostValue
+let idAddressValue
+let idFullIp
+let idDocId
+let invalidAddCell
+let ipSplit
+let rowClass
+let oddVar
 
-let db, collectionName = `servers`, orderBy = `rank`, way=`asc`, dbDocs
 
+let db 
+let collectionName = `servers`
+let orderBy = `rank`
+let way=`asc`
+let dbDocs
 const firebaseConfig = {
     apiKey: "AIzaSyAAR_0o6XXCf66RK8ck2cnjJTO3SKJqy1g",
     authDomain: "rust-server-db.firebaseapp.com",
@@ -24,13 +87,12 @@ const firebaseConfig = {
     storageBucket: "rust-server-db.appspot.com",
     messagingSenderId: "1026127148712",
     appId: "1:1026127148712:web:4a54c73bae6420d929349d"
-  };
-
+}
 firebase.initializeApp(firebaseConfig);
-logEvent("app init")
+
 
 db = firebase.firestore();
-logEvent("firestore init")
+
 
 if(useApi){
     updateApiDatabase()
@@ -54,7 +116,7 @@ db.collection(collectionName).onSnapshot(snapshot => {
 
 
 
-let officialButton = document.getElementById("official-button-input")
+officialButton = document.getElementById("official-button-input")
 officialButton.addEventListener("click",function(){
     if(officialChecked){
         officialChecked = false
@@ -70,7 +132,7 @@ officialButton.addEventListener("click",function(){
 })
 
 
-let onlineButton = document.getElementById("online-button-input")
+onlineButton = document.getElementById("online-button-input")
 onlineButton.addEventListener("click",function(){
     if(onlineChecked){
         onlineChecked = false
@@ -87,7 +149,7 @@ onlineButton.addEventListener("click",function(){
 })
 
 
-let rankButton = document.getElementById("rank-button-input")
+rankButton = document.getElementById("rank-button-input")
 rankButton.addEventListener("click", function(){
     if(rankChecked){
         rankChecked = true
@@ -112,7 +174,7 @@ rankButton.addEventListener("click", function(){
 
 
 
-let popButton = document.getElementById("pop-button-input")
+popButton = document.getElementById("pop-button-input")
 popButton.addEventListener("click",function(){
     if(rankChecked){
         rankChecked = false
@@ -137,97 +199,22 @@ popButton.addEventListener("click",function(){
 
 
 
-let viewLabel = document.getElementById("view-label")
+viewLabel = document.getElementById("view-label")
 
 
 function printServers(official, online, rank, pop, docs){
     logEvent(`\nShow only Official:${official},   \nShow only Online:${online},   \nSort by Rank:${rank},   \nSort by Pop:${pop}`)
 
-
-    let buttonIds = []
-    let ranks = []
-    let statusBool
-    let moddedBool
-
-    let serverId
-    let serverTitle
-    let rankNumber
-    let popNumber
-    let ipString
-
-    let uptimeNumber
-
-    let statusTopOption, statusBottomOption
-    let moddedTopOption, moddedBottomOption
-
-    let hostNumber
-    let addressString
-
-    let delButtonId
-    let delDocId
-
-    let errorMessage
-    let addServerTitleEl
-    let invalidInputEl
-    let serverTitleInput
-    let rankInput
-    let popInput
-    let ipInput
-    let str
-    let docId
-    let uptimeInput
-
-    let hostInput
-    let addressInput
-
-    let addOnlineChecked
-    let addOfficialChecked
-
-    let tableStatusInput
-    let tableOfficialInput
-
-    let tableModdedBool
-    let tableStatusBool
-
-
-    let idTitleInput
-    let idRankInput
-    let idPopInput
-    let idOfficialInput
-    let idStatusInput
-    let idUptimeInput
-    let idAddressInput
-    let idHostInput
-
-    let idModdedBool
-    let idStatusBool
-
-    let idHostValue
-    let idAddressValue
-
-    let idFullIp
-    let idDocId
-
-    let invalidAddCell
-
     if(listView){
-
-    
-
-
 
         addOnlineChecked = false, 
         addOfficialChecked = false
-
-
-        feedEl.innerHTML = `
-        `
-
-        feedEl.innerHTML = feedEl.innerHTML + `
+        feedEl.innerHTML = ``
+        
+        feedEl.innerHTML += `
         <div id="table-view-container">
             <label id="table-view-label">FIELD&nbspEDITOR&nbsp&nbsp(TABLE&nbspVIEW)
                 <button id="table-view-button">
-
                 </button>
             </label>
         </div>
@@ -236,7 +223,6 @@ function printServers(official, online, rank, pop, docs){
                 <input type="text" placeholder="ADD SERVER" id="add-name-input">
                 <label class="add-label">ADD
                     <button class="add-button" id="add-server-button">
-
                     </button>
                 </label>                            
             </div>
@@ -245,19 +231,19 @@ function printServers(official, online, rank, pop, docs){
                 <div class="rank">
                     <div class="column">RANK:</div>
                     <div class="rank-content">
-                        <input id="rank-input" type="number" max="999" placeholder="000">
+                        <input id="rank-input" type="number" max="999" placeholder="0">
                     </div>
                 </div>  
                 <div class="population">
                     <div class="column">POPULATION:</div>
                     <div class="population-content">
-                        <input id="population-input" type="number"  max="999" placeholder="000">
+                        <input id="population-input" type="number"  max="999" placeholder="0">
                     </div>
                 </div>
                 <div class="ip">
                     <div class="column">IP ADDRESS:</div>
                     <div class="ip-content">
-                        <input id="ip-input" type="text" placeholder="000.000.000.000:00000">
+                        <input id="ip-input" type="text" placeholder="ip.address : 00000">
                     </div>
                 </div>
                 <div class="status">
@@ -265,7 +251,6 @@ function printServers(official, online, rank, pop, docs){
                     <div class="status-content" id="add-online-container">
                         <label id="add-online-label">
                             <button id="add-online-button">
-
                             </button>
                         </label>
                     </div>
@@ -283,7 +268,7 @@ function printServers(official, online, rank, pop, docs){
                 <div class="uptime">
                     <div class="column">UPTIME:</div>
                     <div class="uptime-content">
-                        <input id="uptime-input" type="number" max="100" placeholder="000">% last 30 days
+                        <input id="uptime-input" type="number" max="100" placeholder="0">% last 30 days
                     </div>
                 </div>
             </div>
@@ -292,19 +277,23 @@ function printServers(official, online, rank, pop, docs){
         
         buttonIds = []
         ranks = []
-        for (let i = 0; i < docs.length; i++){
-            
+
+
+        for(let i = 0; i < docs.length; i++){
 
             statusBool = docs[i].data().data.status
-            if(online && !statusBool)continue
+
+            if(online && !statusBool){continue}
+
             statusBool ? statusBool = "online": statusBool = "offline"
 
+
             moddedBool = docs[i].data().data.modded
-            if(official && moddedBool)continue
+
+            if(official && moddedBool){continue}
+
             moddedBool ? moddedBool = "no" : moddedBool = "yes"
 
-            
-            
 
             serverId    = docs[i].id
             serverTitle = docs[i].data().name
@@ -313,7 +302,7 @@ function printServers(official, online, rank, pop, docs){
             ipString    = docs[i].data().data.ip
             uptimeNumber = docs[i].data().data.uptime
 
-            feedEl.innerHTML = feedEl.innerHTML + `
+            feedEl.innerHTML += `
             <div class="server-container">
                 <div class="server-title">${serverTitle}
                     <label class="delete-label">DELETE
@@ -352,72 +341,83 @@ function printServers(official, online, rank, pop, docs){
                 <br><br><br><br>
             </div>`
 
+
             buttonIds.push(serverId)
             ranks.push(rankNumber)
         }
 
-        for (let j = 0; j < buttonIds.length; j++){
+
+        for(let j = 0; j < buttonIds.length; j++){
+
             document.getElementById(buttonIds[j]).addEventListener("click", function(e){
-                console.log("BUTTON PRESSED", e.target.id)
-                db.collection(collectionName).doc(e.target.id).delete();
+
+                db.collection(collectionName).doc(e.target.id).delete()
                 update(orderBy, way)
             })
         }
 
 
         document.getElementById('table-view-button').addEventListener("click",function(){
+
             listView = false
             update(orderBy, way)
         })
 
 
         document.getElementById('add-online-button').addEventListener("click", function(e){
-            console.log("ADD ONLINE TICKED")
+
             if(addOnlineChecked){
                 addOnlineChecked = false
                 e.target.style.backgroundImage = "none"
             }
+
+
             else{
                 addOnlineChecked = true
                 e.target.style.backgroundImage = "linear-gradient(to right, rgba(46, 240, 204, 0.5), rgba(46, 240, 204, 0.9))"
             }
-            console.log("ADD ONLINE IS NOW:",addOnlineChecked)
         })
+
+
         document.getElementById('add-official-button').addEventListener("click",function(e){
-            console.log("ADD OFFICIAL TICKED")
+
             if(addOfficialChecked){
                 addOfficialChecked = false
                 e.target.style.backgroundImage = "none"
             }
+
+            
             else{
                 addOfficialChecked = true
                 e.target.style.backgroundImage = "linear-gradient(to right, rgba(46, 240, 204, 0.5), rgba(46, 240, 204, 0.9))"
             }
-            console.log("ADD OFFICIAL IS NOW:",addOfficialChecked)
         })
 
         
         document.getElementById('add-server-button').addEventListener("click",function(){
-            
+
             validAdd = true
 
             errorMessage = "INVALID INPUT"
+
             addServerTitleEl = document.getElementById("add-server-title")
+
             invalidInputEl = document.createElement("label")
             invalidInputEl.className = "invalid-label"
             invalidInputEl.setAttribute('id', 'invalid-label') 
-            
-            console.log("ADD PRESSED")
 
             serverTitleInput = document.getElementById("add-name-input")
 
             rankInput = document.getElementById("rank-input")
 
-            if(ranks.includes(rankInput.value)){
+
+            if(ranks.includes(Number(rankInput.value))){
+
                 validAdd = false
                 errorMessage = "RANK ALREADY USED" 
             }
             
+
             popInput = document.getElementById("population-input")
             
             ipInput = document.getElementById("ip-input")
@@ -430,43 +430,64 @@ function printServers(official, online, rank, pop, docs){
 
             docId = docId.replace(/[^a-zA-Z0-9]/g, '')
 
+
             for(let n = 0; n < buttonIds.length; n++){
+
                 if(docId.toLowerCase() == buttonIds[n].toLowerCase()){
+
                     validAdd = false
                     errorMessage = "IP / SERVER ALREADY IN LIST"
-                    
                 }
             }
+
+
             if(serverTitleInput.value == ""){
+
                 validAdd = false
                 errorMessage = "SERVER NAME INVALID"            
             }
-            if(rankInput.value < 0 || rankInput.value > 999 || rankInput.value == ""){
+
+
+            if(rankInput.value=="0" || rankInput.value < 1 || rankInput.value > 999 || rankInput.value == ""){
+
                 validAdd = false
-                errorMessage = "RANK OUT OF RANGE (MUST BE > 0 and < 999)" 
+                errorMessage = "RANK OUT OF RANGE (MUST BE > 1 and < 999)" 
             }
+
+
             if(popInput.value < 0 || popInput.value > 999 || popInput.value == ""){
+
                 validAdd = false
                 errorMessage = "POPULATION OUT OF RANGE (MUST BE >= 0 and < 999)" 
             }
+
+
             if(ipInput.value == ""){
+
                 validAdd = false
                 errorMessage = "INVALID IP ADDRESS"             
             }
+
+
             if(str.substring(str.length - 5).match(/^[0-9]+$/) == null){
+
                 validAdd = false
                 errorMessage = "INVALID IP PORT" 
             }
+
+
             if(str.charAt(0) !== ":"){
+
                 validAdd = false
                 errorMessage = "INVALID IP ADDRESS FORMAT" 
             }
+
+
             if(uptimeInput.value < 0 || uptimeInput.value > 100 || uptimeInput.value == ""){
-                console.log("INFALID UPTIME")
+
                 validAdd = false
                 errorMessage = "UPTIME % OUT OF RANGE (MUST BE >=0 and < 100)"
             }
-
 
 
             if(validAdd){
@@ -508,7 +529,8 @@ function printServers(official, online, rank, pop, docs){
 
 
     else{
-
+        buttonIds = []
+        ranks = []
         feedEl.innerHTML = `
         `
 
@@ -524,6 +546,19 @@ function printServers(official, online, rank, pop, docs){
                     <th class="title-cell" id="ip-cell">IP ADDRESS</th>
                     <th class="title-cell" id="id-cell">IDENTIFIER</th>
                     <th class="title-cell add-edit-header-cell"  id="button-cell">
+
+                    </th>
+                </tr>
+                <tr id="info-row">
+                    <th class="info-cell"></th>
+                    <th class="info-cell">* max : 999</th>
+                    <th class="info-cell">* max : 999</th>
+                    <th class="info-cell"></th>
+                    <th class="info-cell"></th>
+                    <th class="info-cell">* max : 100%</th>
+                    <th class="info-cell">* port must be 5 numbers</th>
+                    <th class="info-cell"></th>
+                    <th class="info-cell add-edit-header-cell"  id="button-cell">
                         <button id="view-button">
                             <label id="view-label">
                             &nbsp&nbsp&nbspBACK&nbspTO&nbspLIST&nbspVIEW
@@ -536,10 +571,10 @@ function printServers(official, online, rank, pop, docs){
                         <input type="text" id="table-add-server-title" class="cell-text-input name-cell-label" placeholder="SERVER NAME">
                     </td>
                     <td class="data-cell">
-                        #<input type="number" id="table-add-rank" class="cell-number-input cell-rank-input" placeholder="000" min="0" max="999">
+                        #<input type="number" id="table-add-rank" class="cell-number-input cell-rank-input" placeholder="0" min="1" max="999">
                     </td>
                     <td class="data-cell">
-                        <input type="number" id="table-add-pop" class="cell-number-input cell-pop-input" placeholder="000" min="0" max="999">
+                        <input type="number" id="table-add-pop" class="cell-number-input cell-pop-input" placeholder="0" min="0" max="999">
                     </td>
                     <td class="data-cell">
                         <select id="table-add-official" class="cell-select-input">
@@ -554,7 +589,7 @@ function printServers(official, online, rank, pop, docs){
                         </select>
                     </td>
                     <td class="data-cell">
-                        <input type="number" id="table-add-uptime" class="cell-number-input cell-uptime-input" placeholder="000" min="0" max="100">
+                        <input type="number" id="table-add-uptime" class="cell-number-input cell-uptime-input" placeholder="0" min="0" max="100">%
                     </td>
                     <td class="data-cell">
                         <input type="text" id="table-add-address" class="cell-text-input cell-ip-input" placeholder="ADDRESS">
@@ -577,10 +612,11 @@ function printServers(official, online, rank, pop, docs){
 
 
 
-        buttonIds = []
-        ranks = []
+
 
         let tableEl = document.getElementById("main-table")
+
+        oddVar = -1
 
         for (let i = 0; i < docs.length; i++){
 
@@ -610,7 +646,7 @@ function printServers(official, online, rank, pop, docs){
             
 
             
-            
+            oddVar++
 
             serverId    = docs[i].id
             serverTitle = docs[i].data().name
@@ -619,13 +655,13 @@ function printServers(official, online, rank, pop, docs){
             ipString    = docs[i].data().data.ip
             uptimeNumber = docs[i].data().data.uptime
             
-            let ipSplit = ipString.split(":")
+            ipSplit = ipString.split(":")
             //console.log(ipSplit)
             hostNumber = ipSplit[ipSplit.length - 1]
             addressString = ipSplit[ipSplit.length - 2]
 
-            let rowClass = "data-row"
-            if(i%2==0){rowClass = "data-row data-row-odd"}
+            rowClass = "data-row"
+            if(oddVar%2==0){rowClass = "data-row data-row-odd"}
 
             tableEl.innerHTML = tableEl.innerHTML + `
                 <tr class='${rowClass}'>
@@ -633,7 +669,7 @@ function printServers(official, online, rank, pop, docs){
                         <input type="text" id='title-input-${serverId}' data-id='${serverId}' class="cell-text-input name-cell-label" value='${serverTitle}'>
                     </td>
                     <td class="data-cell">
-                        #<input type="number" id='rank-input-${serverId}' data-id='${serverId}' class="cell-number-input cell-rank-input" value='${rankNumber}' min="0" max="999">
+                        #<input type="number" id='rank-input-${serverId}' data-id='${serverId}' class="cell-number-input cell-rank-input" value='${rankNumber}' min="1" max="999">
                     </td>
                     <td class="data-cell">
                         <input type="number" id='pop-input-${serverId}' data-id='${serverId}' class="cell-number-input cell-pop-input" value='${popNumber}' min="0" max="999">
@@ -710,8 +746,8 @@ function printServers(official, online, rank, pop, docs){
             serverTitleInput = document.getElementById("table-add-server-title")
 
             rankInput = document.getElementById("table-add-rank")
-
-            if(ranks.includes(rankInput.value)){
+            console.log("HERE HERE HERE",rankInput.value)
+            if(ranks.includes(Number(rankInput.value))){
                 validAdd = false
                 errorMessage = "RANK ALREADY IN USE"
             }
@@ -740,7 +776,7 @@ function printServers(official, online, rank, pop, docs){
             for(let n = 0; n < buttonIds.length; n++){
                 if(docId.toLowerCase() == buttonIds[n].toLowerCase()){
                     validAdd = false
-                    errorMessage = "IP / SERVER ALREADY EXISTS"
+                    errorMessage = "SERVER ALREADY EXISTS"
                 }
             }
 
@@ -748,13 +784,13 @@ function printServers(official, online, rank, pop, docs){
                 validAdd = false
                 errorMessage = "SERVER NAME INVALID"
             }
-            if(rankInput.value < 0 || rankInput.value > 999 || rankInput.value ==""){
+            if(rankInput.value=="0" || rankInput.value < 1 || rankInput.value > 999 || rankInput.value ==""){
                 validAdd = false
-                errorMessage = "RANK OUT OF RANGE (MUST BE > 0 and < 999)" 
+                errorMessage = "RANK OUT OF RANGE" 
             }
             if(popInput.value < 0 || popInput.value > 999 || popInput.value == ""){
                 validAdd = false
-                errorMessage = "POPULATION OUT OF RANGE (MUST BE >= 0 and < 999)" 
+                errorMessage = "POP OUT OF RANGE" 
             }
             if(addressInput.value == ""){
                 validAdd = false
@@ -766,7 +802,7 @@ function printServers(official, online, rank, pop, docs){
             }
             if(uptimeInput.value < 0 || uptimeInput.value > 100 || uptimeInput.value == ""){
                 validAdd = false
-                errorMessage = "UPTIME % OUT OF RANGE (MUST BE >=0 and < 100)"
+                errorMessage = "UPTIME % OUT OF RANGE"
             }
             if(validAdd){
                 //! REMOVE POSSIBLE INVALID LABEL
@@ -858,6 +894,10 @@ function printServers(official, online, rank, pop, docs){
                     validAdd = false
                     errorMessage = "RANK ALREADY IN USE"
                 }
+                if(e.target.value=="0" || e.target.value < 1 || e.target.value > 999 || e.target.value ==""){
+                    validAdd = false
+                    errorMessage = "RANK OUT OF RANGE (MUST BE > 1 and < 999)" 
+                }    
                 if(validAdd){
                     
                     db.collection(collectionName).doc(e.target.getAttribute(`data-id`)).update(
@@ -885,9 +925,9 @@ function printServers(official, online, rank, pop, docs){
 
                 validAdd = true
 
-                if(e.target.value < 0 || e.target.value > 999 || e.target.value ==""){
+                if(e.target.value=="0" || e.target.value < 1 || e.target.value > 999 || e.target.value ==""){
                     validAdd = false
-                    errorMessage = "RANK OUT OF RANGE (MUST BE > 0 and < 999)" 
+                    errorMessage = "POP OUT OF RANGE (MUST BE > 1 and < 999)" 
                 }                
                 if(validAdd){
                     
@@ -1009,11 +1049,8 @@ function printServers(official, online, rank, pop, docs){
                     
                         e.target.style.borderBottom = "2px solid #ff4d4dd7"
                         update(orderBy, way)
-                    
                 } 
-
             })
-
 
 
             idHostInput  =  document.getElementById(`host-input-${buttonIds[o]}`) 
@@ -1051,16 +1088,8 @@ function printServers(official, online, rank, pop, docs){
                         update(orderBy, way)
                     
                 } 
-               
             })
-
-
         }
-
-
-        //TODO ADD LISTENERS / SUPPORT FOR EACH EDIT FIELD, SUBMIT BUTTON, AND SERVER ADD BUTTONS ON TABLE VIEW
-
-        //TODO ADD ID TO SPECIFIC INPUT FIELDS TO FETCH IN EDIT SERVER LISTENER
 
         document.getElementById("view-button").addEventListener("click",function(){
             listView = true
@@ -1068,18 +1097,6 @@ function printServers(official, online, rank, pop, docs){
         })
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 export { logEvent, logTest}

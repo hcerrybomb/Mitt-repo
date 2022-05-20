@@ -805,35 +805,45 @@ body{
 
 
 
-
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    text-align: -internal-center;
+    font-weight: 100;
+}
 #main-table{
     width:100%;
     border-collapse: collapse;
     /*border:1px solid rgba(46, 240, 204, 0.6);*/
 }
 #title-row{
-    font-weight: 200;
+
     background-color:rgba(0, 0, 0, 0.280);
     height:5vh;    
 }
 
-th {
-    display: table-cell;
-    vertical-align: inherit;
-    font-weight: 200;
-    text-align: -internal-center;
-}
+
 
 .title-cell{
     border: 0px solid rgba(46, 240, 204, 0.377);
     padding-left:0.25vw;
     padding-right:0.25vw;
+    font-weight: bolder;
 }
-
 #rank-cell{
     padding-left:1.00vw;
     padding-right:1.00vw;
 }
+
+#info-row{
+    background-color:rgba(0, 0, 0, 0.280);
+    height:5vh;
+    
+}
+.info-cell{
+    font-weight: 100;
+}
+
 
 
 
@@ -1080,6 +1090,7 @@ th {
 }
 .cell-host-input{
     width:6vw;
+    
 }
 .cell-ip-input{
     width:55%;
@@ -1100,7 +1111,16 @@ input:focus , label:focus{
 }
 
 
-
+#table-add-server-title,
+#table-add-rank,
+#table-add-pop,
+#table-add-uptime,
+#table-add-address,
+#table-add-host
+{
+    font-size: 120%;
+    border-bottom: 2px solid #faebd7b0;
+}
 
 
 
