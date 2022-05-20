@@ -137,60 +137,56 @@ popButton.addEventListener("click",function(){
 
 
 
-let viewButton = document.getElementById("view-button")
 let viewLabel = document.getElementById("view-label")
-viewButton.addEventListener("click", function(){
-    console.log("CHANGE VIEW PRESSED")
-    if(listView){
-        listView = false
-    }
-    else{
-        listView = true
-    }
-    console.log("VIEW LIST IS NOW ", listView)
-
-    update(orderBy, way)
-})
-
-
-
 
 
 function printServers(official, online, rank, pop, docs){
     logEvent(`\nShow only Official:${official},   \nShow only Online:${online},   \nSort by Rank:${rank},   \nSort by Pop:${pop}`)
 
 
+    let buttonIds = []
+    let ranks = []
+    let statusBool
+    let moddedBool
+
+    let serverId
+    let serverTitle
+    let rankNumber
+    let popNumber
+    let ipString
+
+    let uptimeNumber
+
+    let statusTopOption, statusBottomOption
+    let moddedTopOption, moddedBottomOption
+
+    let hostNumber
+    let addressString
+
+    let delButtonId
+    let delDocId
 
 
+    if(listView){
 
-
-
-
-
-
-
-
-    if(!listView){
-
-        
-        viewLabel.innerHTML = `TABLE VIEW&nbsp&nbsp(FIELDS EDITOR)
-        <button id="view-button">
-
-        </button>       
-        `
-        document.getElementById("view-button").addEventListener("click",function(){
-            listView = false
-            update(orderBy, way)
-        })
+    
 
 
 
         let addOnlineChecked = false, addOfficialChecked = false
 
 
-        feedEl.innerHTML = ""
+        feedEl.innerHTML = `
+        `
 
         feedEl.innerHTML = feedEl.innerHTML + `
+        <div id="table-view-container">
+            <label id="table-view-label">FIELD&nbspEDITOR&nbsp&nbsp(TABLE&nbspVIEW)
+                <button id="table-view-button">
+
+                </button>
+            </label>
+        </div>
         <div id="add-container">
             <div class="server-title" id="add-server-title">
                 <input type="text" placeholder="ADD SERVER" id="add-name-input">
@@ -243,38 +239,35 @@ function printServers(official, online, rank, pop, docs){
                 <div class="uptime">
                     <div class="column">UPTIME:</div>
                     <div class="uptime-content">
-                        <input id="uptime-input" type="number" max="100" placeholder="00">% last 30 days
+                        <input id="uptime-input" type="number" max="100" placeholder="000">% last 30 days
                     </div>
                 </div>
             </div>
             <br><br><br><br>
         </div>`
         
-        let buttonIds = []
-        let ranks = []
+        buttonIds = []
+        ranks = []
         for (let i = 0; i < docs.length; i++){
             
 
-            let statusBool = docs[i].data().data.status
+            statusBool = docs[i].data().data.status
             if(online && !statusBool)continue
             statusBool ? statusBool = "online": statusBool = "offline"
 
-            let moddedBool = docs[i].data().data.modded
+            moddedBool = docs[i].data().data.modded
             if(official && moddedBool)continue
             moddedBool ? moddedBool = "no" : moddedBool = "yes"
 
             
             
 
-            let serverId = docs[i].id
-            let serverTitle = docs[i].data().name
-            let rankNumber = docs[i].data().rank
-            let popNumber = docs[i].data().population
-            let ipString = docs[i].data().data.ip
-
-
-
-            let uptimeNumber = docs[i].data().data.uptime
+            serverId    = docs[i].id
+            serverTitle = docs[i].data().name
+            rankNumber  = docs[i].data().rank
+            popNumber   = docs[i].data().population
+            ipString    = docs[i].data().data.ip
+            uptimeNumber = docs[i].data().data.uptime
 
             feedEl.innerHTML = feedEl.innerHTML + `
             <div class="server-container">
@@ -328,7 +321,10 @@ function printServers(official, online, rank, pop, docs){
         }
 
 
-
+        document.getElementById('table-view-button').addEventListener("click",function(){
+            listView = false
+            update(orderBy, way)
+        })
 
 
         document.getElementById('add-online-button').addEventListener("click", function(e){
@@ -468,11 +464,200 @@ function printServers(official, online, rank, pop, docs){
 
 
     else{
-        viewLabel.innerHTML = `LIST VIEW&nbsp&nbsp
-        <button id="view-button">
 
-        </button>       
+        feedEl.innerHTML = `
         `
+
+        feedEl.innerHTML = feedEl.innerHTML + `
+            <table id="main-table">
+                <tr id="title-row">
+                    <th class="title-cell" id="name-cell">NAME</th>
+                    <th class="title-cell" id="rank-cell">RANK</th>
+                    <th class="title-cell" id="pop-cell">POP</th>
+                    <th class="title-cell" id="modded-cell">OFFICIAL</th>
+                    <th class="title-cell" id="status-cell">STATUS</th>
+                    <th class="title-cell" id="uptime-cell">UTPIME</th>
+                    <th class="title-cell" id="ip-cell">IP ADDRESS</th>
+                    <th class="title-cell" id="id-cell">IDENTIFIER</th>
+                    <th class="title-cell add-edit-header-cell"  id="button-cell">
+                        <button id="view-button">
+                            <label id="view-label">
+                            &nbsp&nbsp&nbspBACK&nbspTO&nbspLIST&nbspVIEW
+                            </label>
+                        </button>
+                    </th>
+                </tr>
+                <tr class="data-row input-row">
+                    <td class="data-cell">
+                        <input type="text" class="cell-text-input name-cell-label" placeholder="SERVER NAME">
+                    </td>
+                    <td class="data-cell">
+                        #<input type="number" class="cell-number-input cell-rank-input" placeholder="000" min="0" max="999">
+                    </td>
+                    <td class="data-cell">
+                        <input type="number" class="cell-number-input cell-pop-input" placeholder="000" min="0" max="999">
+                    </td>
+                    <td class="data-cell">
+                        <select class="cell-select-input">
+                            <option value='true' class="cell-option-input">true</option>
+                            <option value='false' class="cell-option-input">false</option>
+                        </select>
+                    </td>
+                    <td class="data-cell">
+                        <select class="cell-select-input">
+                            <option value='online' class="cell-option-input">online</option>
+                            <option value='offline' class="cell-option-input">offline</option>
+                        </select>
+                    </td>
+                    <td class="data-cell">
+                        <input type="number" class="cell-number-input cell-uptime-input" placeholder="000" min="0" max="999">
+                    </td>
+                    <td class="data-cell">
+                        <input type="text" class="cell-text-input cell-ip-input" placeholder="ADDRESS">
+                        <b>&nbsp:&nbsp&nbsp</b><input type="number" class="cell-number-input cell-host-input" placeholder="00000" min="0" max="99999">
+                    </td>
+                    <td class="data-cell">
+                        N / A 
+                    </td>
+                    <td class="data-cell add-edit-cell">
+                        <button id="add-server-table-button">
+                            <label id="add-server-table-label">ADD SERVER</label>
+                        </button>
+                    </td>         
+                </tr> 
+
+
+            </table>
+        `
+
+
+
+
+        buttonIds = []
+        ranks = []
+
+        let tableEl = document.getElementById("main-table")
+
+        for (let i = 0; i < docs.length; i++){
+
+
+            statusBool = docs[i].data().data.status
+            if(online && !statusBool)continue
+            if(statusBool){
+                statusTopOption = "online"
+                statusBottomOption ="offline"
+            }
+            else{
+                statusTopOption = "offline"
+                statusBottomOption ="online"
+            }
+            
+
+            moddedBool = docs[i].data().data.modded
+            if(official && moddedBool)continue
+            if(moddedBool){
+                moddedTopOption = "false"
+                moddedBottomOption = "true"
+            }
+            else{
+                moddedTopOption = "true"
+                moddedBottomOption = "false"
+            }
+            
+
+            
+            
+
+            serverId    = docs[i].id
+            serverTitle = docs[i].data().name
+            rankNumber  = docs[i].data().rank
+            popNumber   = docs[i].data().population
+            ipString    = docs[i].data().data.ip
+            uptimeNumber = docs[i].data().data.uptime
+            
+            let ipSplit = ipString.split(":")
+            console.log(ipSplit)
+            hostNumber = ipSplit[ipSplit.length - 1]
+            addressString = ipSplit[ipSplit.length - 2]
+
+
+
+            tableEl.innerHTML = tableEl.innerHTML + `
+                <tr class="data-row">
+                    <td class="data-cell">
+                        <input type="text" class="cell-text-input name-cell-label" value='${serverTitle}'>
+                    </td>
+                    <td class="data-cell">
+                        #<input type="number" class="cell-number-input cell-rank-input" value='${rankNumber}' min="0" max="999">
+                    </td>
+                    <td class="data-cell">
+                        <input type="number" class="cell-number-input cell-pop-input" value='${popNumber}' min="0" max="999">
+                    </td>
+                    <td class="data-cell">
+                        <select class="cell-select-input">
+                            <option value='${moddedTopOption}' class="cell-option-input">${moddedTopOption}</option>
+                            <option value='${moddedBottomOption}' class="cell-option-input">${moddedBottomOption}</option>
+                        </select>
+                    </td>
+                    <td class="data-cell">
+                        <select class="cell-select-input">
+                            <option value='${statusTopOption}' class="cell-option-input">${statusTopOption}</option>
+                            <option value='${statusBottomOption}' class="cell-option-input">${statusBottomOption}</option>
+                        </select>
+                    </td>
+                    <td class="data-cell">
+                        <input type="number" class="cell-number-input cell-uptime-input" value='${uptimeNumber}' min="0" max="999">
+                    </td>
+                    <td class="data-cell">
+                        <input type="text" class="cell-text-input cell-ip-input" value='${addressString}'>
+                        <b>&nbsp:&nbsp&nbsp</b><input type="number" class="cell-number-input cell-host-input" value='${hostNumber}' min="0" max="99999">
+                    </td>
+                    <td class="data-cell id-cell">
+                        ${serverId}
+                    </td>
+                    <td class="data-cell add-edit-cell">
+                        <button class="add-edit-button">
+                            <label class="add-edit-label">SUBMIT EDIT</label>
+                        </button>
+                        <button class="delete-edit-button" >
+                            <label class="delete-edit-label" id='del-${serverId}'>DELETE</label>
+                        </button>
+                    </td>         
+                </tr>
+            `
+            buttonIds.push(serverId)
+            ranks.push(rankNumber)
+
+        }
+
+
+
+
+
+
+
+
+
+
+        delButtonId = ""
+        delDocId = ""
+
+        for (let j = 0; j < buttonIds.length; j++){
+            delButtonId = `del-${buttonIds[j]}`
+            document.getElementById(delButtonId).addEventListener("click",function(e){
+                delDocId = e.target.id
+                delDocId = delDocId.substring(4)
+                db.collection(collectionName).doc(delDocId).delete();
+                update(orderBy, way)
+            })
+        }
+
+
+
+        //TODO ADD LISTENERS / SUPPORT FOR EACH EDIT FIELD, SUBMIT BUTTON, AND SERVER ADD BUTTONS ON TABLE VIEW
+
+        //TODO ADD ID TO SPECIFIC INPUT FIELDS TO FETCH IN EDIT SERVER LISTENER
+
         document.getElementById("view-button").addEventListener("click",function(){
             listView = true
             update(orderBy, way)
