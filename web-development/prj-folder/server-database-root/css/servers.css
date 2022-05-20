@@ -1102,6 +1102,10 @@ th {
 }
 .name-cell-label{
     width:93%;
+    font-weight: bolder;
+}
+.name-cell-label:hover, .name-cell-label:focus{
+    font-weight: normal;
 }
 .input-row{
     height:6.5vh;
