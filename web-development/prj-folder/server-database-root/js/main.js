@@ -3,7 +3,7 @@ import { logEvent, logTest } from "./utils/logging.js"
 
 let useApi = false
 
-let listView = true
+let listView = false
 
 let validAdd = false
 
@@ -166,6 +166,40 @@ function printServers(official, online, rank, pop, docs){
     let delButtonId
     let delDocId
 
+    let errorMessage
+    let addServerTitleEl
+    let invalidInputEl
+    let serverTitleInput
+    let rankInput
+    let popInput
+    let ipInput
+    let str
+    let docId
+    let uptimeInput
+
+    let hostInput
+    let addressInput
+
+    let addOnlineChecked
+    let addOfficialChecked
+
+    let tableStatusInput
+    let tableOfficialInput
+
+    let tableModdedBool
+    let tableStatusBool
+
+
+    let idTitleInput
+    let idRankInput
+    let idPopInput
+    let idOfficialInput
+    let idStatusInput
+    let idUptimeInput
+    let idAddressInput
+    let idHostInput
+
+
 
     if(listView){
 
@@ -173,7 +207,8 @@ function printServers(official, online, rank, pop, docs){
 
 
 
-        let addOnlineChecked = false, addOfficialChecked = false
+        addOnlineChecked = false, 
+        addOfficialChecked = false
 
 
         feedEl.innerHTML = `
@@ -357,32 +392,32 @@ function printServers(official, online, rank, pop, docs){
             
             validAdd = true
 
-            let errorMessage = "INVALID INPUT"
-            let addServerTitleEl = document.getElementById("add-server-title")
-            let invalidInputEl = document.createElement("label")
+            errorMessage = "INVALID INPUT"
+            addServerTitleEl = document.getElementById("add-server-title")
+            invalidInputEl = document.createElement("label")
             invalidInputEl.className = "invalid-label"
             invalidInputEl.setAttribute('id', 'invalid-label') 
             
             console.log("ADD PRESSED")
 
-            let serverTitleInput = document.getElementById("add-name-input")
+            serverTitleInput = document.getElementById("add-name-input")
 
-            let rankInput = document.getElementById("rank-input")
+            rankInput = document.getElementById("rank-input")
 
             if(ranks.includes(rankInput.value)){
                 validAdd = false
                 errorMessage = "RANK ALREADY USED" 
             }
             
-            let popInput = document.getElementById("population-input")
+            popInput = document.getElementById("population-input")
             
-            let ipInput = document.getElementById("ip-input")
+            ipInput = document.getElementById("ip-input")
 
-            let str = ipInput.value
-            let docId = ipInput.value
+            str = ipInput.value
+            docId = ipInput.value
             str = str.substring(str.length - 6)
 
-            let uptimeInput = document.getElementById("uptime-input")
+            uptimeInput = document.getElementById("uptime-input")
 
             docId = docId.replace(/[^a-zA-Z0-9]/g, '')
 
@@ -393,7 +428,7 @@ function printServers(official, online, rank, pop, docs){
                     
                 }
             }
-            if(serverTitleInput.value == "" || serverTitleInput.value == ""){
+            if(serverTitleInput.value == ""){
                 validAdd = false
                 errorMessage = "SERVER NAME INVALID"            
             }
@@ -420,7 +455,7 @@ function printServers(official, online, rank, pop, docs){
             if(uptimeInput.value < 0 || uptimeInput.value > 100 || uptimeInput.value == ""){
                 console.log("INFALID UPTIME")
                 validAdd = false
-                errorMessage = "UPTIME OUT OF RANGE (MUST BE >=0 and < 999)"
+                errorMessage = "UPTIME % OUT OF RANGE (MUST BE >=0 and < 100)"
             }
 
 
@@ -489,32 +524,32 @@ function printServers(official, online, rank, pop, docs){
                 </tr>
                 <tr class="data-row input-row">
                     <td class="data-cell">
-                        <input type="text" class="cell-text-input name-cell-label" placeholder="SERVER NAME">
+                        <input type="text" id="table-add-server-title" class="cell-text-input name-cell-label" placeholder="SERVER NAME">
                     </td>
                     <td class="data-cell">
-                        #<input type="number" class="cell-number-input cell-rank-input" placeholder="000" min="0" max="999">
+                        #<input type="number" id="table-add-rank" class="cell-number-input cell-rank-input" placeholder="000" min="0" max="999">
                     </td>
                     <td class="data-cell">
-                        <input type="number" class="cell-number-input cell-pop-input" placeholder="000" min="0" max="999">
+                        <input type="number" id="table-add-pop" class="cell-number-input cell-pop-input" placeholder="000" min="0" max="999">
                     </td>
                     <td class="data-cell">
-                        <select class="cell-select-input">
+                        <select id="table-add-official" class="cell-select-input">
                             <option value='true' class="cell-option-input">true</option>
                             <option value='false' class="cell-option-input">false</option>
                         </select>
                     </td>
                     <td class="data-cell">
-                        <select class="cell-select-input">
-                            <option value='online' class="cell-option-input">online</option>
-                            <option value='offline' class="cell-option-input">offline</option>
+                        <select id="table-add-status" class="cell-select-input">
+                            <option value="online" class="cell-option-input">online</option>
+                            <option value="offline" class="cell-option-input">offline</option>
                         </select>
                     </td>
                     <td class="data-cell">
-                        <input type="number" class="cell-number-input cell-uptime-input" placeholder="000" min="0" max="999">
+                        <input type="number" id="table-add-uptime" class="cell-number-input cell-uptime-input" placeholder="000" min="0" max="100">
                     </td>
                     <td class="data-cell">
-                        <input type="text" class="cell-text-input cell-ip-input" placeholder="ADDRESS">
-                        <b>&nbsp:&nbsp&nbsp</b><input type="number" class="cell-number-input cell-host-input" placeholder="00000" min="0" max="99999">
+                        <input type="text" id="table-add-address" class="cell-text-input cell-ip-input" placeholder="ADDRESS">
+                        <b>&nbsp:&nbsp&nbsp</b><input type="number" id="table-add-host" class="cell-number-input cell-host-input" placeholder="00000" min="0" max="99999">
                     </td>
                     <td class="data-cell">
                         N / A 
@@ -576,41 +611,42 @@ function printServers(official, online, rank, pop, docs){
             uptimeNumber = docs[i].data().data.uptime
             
             let ipSplit = ipString.split(":")
-            console.log(ipSplit)
+            //console.log(ipSplit)
             hostNumber = ipSplit[ipSplit.length - 1]
             addressString = ipSplit[ipSplit.length - 2]
 
-
+            let rowClass = "data-row"
+            if(i%2==0){rowClass = "data-row data-row-odd"}
 
             tableEl.innerHTML = tableEl.innerHTML + `
-                <tr class="data-row">
+                <tr class='${rowClass}'>
                     <td class="data-cell">
-                        <input type="text" class="cell-text-input name-cell-label" value='${serverTitle}'>
+                        <input type="text" id='title-input-${serverId}' data-id='${serverId}' class="cell-text-input name-cell-label" value='${serverTitle}'>
                     </td>
                     <td class="data-cell">
-                        #<input type="number" class="cell-number-input cell-rank-input" value='${rankNumber}' min="0" max="999">
+                        #<input type="number" id='rank-input-${serverId}' data-id='${serverId}' class="cell-number-input cell-rank-input" value='${rankNumber}' min="0" max="999">
                     </td>
                     <td class="data-cell">
-                        <input type="number" class="cell-number-input cell-pop-input" value='${popNumber}' min="0" max="999">
+                        <input type="number" id='pop-input-${serverId}' data-id='${serverId}' class="cell-number-input cell-pop-input" value='${popNumber}' min="0" max="999">
                     </td>
                     <td class="data-cell">
-                        <select class="cell-select-input">
+                        <select id='official-input-${serverId}' data-id='${serverId}' class="cell-select-input">
                             <option value='${moddedTopOption}' class="cell-option-input">${moddedTopOption}</option>
                             <option value='${moddedBottomOption}' class="cell-option-input">${moddedBottomOption}</option>
                         </select>
                     </td>
                     <td class="data-cell">
-                        <select class="cell-select-input">
+                        <select id='status-input-${serverId}' data-id='${serverId}' class="cell-select-input">
                             <option value='${statusTopOption}' class="cell-option-input">${statusTopOption}</option>
                             <option value='${statusBottomOption}' class="cell-option-input">${statusBottomOption}</option>
                         </select>
                     </td>
                     <td class="data-cell">
-                        <input type="number" class="cell-number-input cell-uptime-input" value='${uptimeNumber}' min="0" max="999">
+                        <input type="number" id='uptime-input-${serverId}' data-id='${serverId}' class="cell-number-input cell-uptime-input" value='${uptimeNumber}' min="0" max="999">
                     </td>
                     <td class="data-cell">
-                        <input type="text" class="cell-text-input cell-ip-input" value='${addressString}'>
-                        <b>&nbsp:&nbsp&nbsp</b><input type="number" class="cell-number-input cell-host-input" value='${hostNumber}' min="0" max="99999">
+                        <input type="text" id='address-input-${serverId}' data-id='${serverId}' class="cell-text-input cell-ip-input" value='${addressString}'>
+                        <b>&nbsp:&nbsp&nbsp</b><input type="number" id='host-input-${serverId}' data-id='${serverId}' class="cell-number-input cell-host-input" value='${hostNumber}' min="0" max="99999">
                     </td>
                     <td class="data-cell id-cell">
                         ${serverId}
@@ -653,6 +689,135 @@ function printServers(official, online, rank, pop, docs){
         }
 
 
+        document.getElementById("add-server-table-button").addEventListener("click", function(){
+            validAdd = true
+            errorMessage = "INVALID INPUT"
+
+            
+            serverTitleInput = document.getElementById("table-add-server-title")
+
+            rankInput = document.getElementById("table-add-rank")
+
+            if(ranks.includes(rankInput.value)){
+                validAdd = false
+                errorMessage = "RANK ALREADY IN USE"
+            }
+            
+            popInput = document.getElementById("table-add-pop")
+            
+
+            tableOfficialInput = document.getElementById("table-add-official")
+            console.log("tableOfficialInput.value:::",tableOfficialInput.value)
+            tableOfficialInput.value == "true" ? tableModdedBool = false : tableModdedBool = true
+            console.log("tableModdedBool:::",tableModdedBool)
+
+            tableStatusInput = document.getElementById("table-add-status")
+            console.log("tableStatusInput.value",tableStatusInput.value)
+            tableStatusInput.value == "online" ? tableStatusBool = true : tableStatusBool = false
+            console.log("tableStatusBool:::",tableStatusBool)
+
+            addressInput = document.getElementById("table-add-address")
+            hostInput = document.getElementById("table-add-host")
+
+            str = addressInput.value + ':' + hostInput.value
+            docId = str
+            docId = docId.replace(/[^a-zA-Z0-9]/g, '')
+            uptimeInput = document.getElementById("table-add-uptime")
+
+            for(let n = 0; n < buttonIds.length; n++){
+                if(docId.toLowerCase() == buttonIds[n].toLowerCase()){
+                    validAdd = false
+                    errorMessage = "IP / SERVER ALREADY EXISTS"
+                }
+            }
+
+            if(serverTitleInput.value == ""){
+                validAdd = false
+                errorMessage = "SERVER NAME INVALID"
+            }
+            if(rankInput.value < 0 || rankInput.value > 999 || rankInput.value ==""){
+                validAdd = false
+                errorMessage = "RANK OUT OF RANGE (MUST BE > 0 and < 999)" 
+            }
+            if(popInput.value < 0 || popInput.value > 999 || popInput.value == ""){
+                validAdd = false
+                errorMessage = "POPULATION OUT OF RANGE (MUST BE >= 0 and < 999)" 
+            }
+            if(addressInput.value == ""){
+                validAdd = false
+                errorMessage = "INVALID IP ADDRESS"
+            }
+            if(hostInput.value < 0 || hostInput.value > 99999 || hostInput.value == ""){
+                validAdd = false
+                errorMessage = "INVALID IP PORT"
+            }
+            if(uptimeInput.value < 0 || uptimeInput.value > 100 || uptimeInput.value == ""){
+                validAdd = false
+                errorMessage = "UPTIME % OUT OF RANGE (MUST BE >=0 and < 100)"
+            }
+            if(validAdd){
+                //! REMOVE POSSIBLE INVALID LABEL
+                
+                console.log("tableModdedBool",tableModdedBool)
+                console.log("tableStatusBool",tableStatusBool)
+                db.collection(collectionName).doc(docId).set(
+                    {
+                        data:{
+                            ip:str,
+                            modded: tableModdedBool, 
+                            status: tableStatusBool,
+                            uptime: Number(uptimeInput.value)
+                        },
+                        name:serverTitleInput.value,
+                        population: Number(popInput.value),
+                        rank:Number(rankInput.value)
+                    }
+                )
+                update(orderBy, way)
+            }
+            else{
+                console.log(errorMessage)
+            }
+        })
+
+        for(let o = 0; o < buttonIds.length; o++){
+            idTitleInput  =  document.getElementById(`title-input-${buttonIds[o]}`) 
+            idTitleInput.addEventListener("change",function(e){
+                console.log(e.target.getAttribute(`data-id`))
+                
+            })
+            idRankInput  =  document.getElementById(`rank-input-${buttonIds[o]}`) 
+            idRankInput.addEventListener("change",function(e){
+                
+            })
+            idPopInput  =  document.getElementById(`pop-input-${buttonIds[o]}`) 
+            idPopInput.addEventListener("change",function(e){
+                
+            })
+            idOfficialInput  =  document.getElementById(`official-input-${buttonIds[o]}`) 
+            idOfficialInput.addEventListener("change",function(e){
+                
+            })
+            idStatusInput  =  document.getElementById(`status-input-${buttonIds[o]}`) 
+            idStatusInput.addEventListener("change",function(e){
+                
+            })
+            idUptimeInput  =  document.getElementById(`uptime-input-${buttonIds[o]}`) 
+            idUptimeInput.addEventListener("change",function(e){
+                
+            })
+            idAddressInput  =  document.getElementById(`address-input-${buttonIds[o]}`) 
+            idAddressInput.addEventListener("change",function(e){
+                
+            })
+            idHostInput  =  document.getElementById(`host-input-${buttonIds[o]}`) 
+            idHostInput.addEventListener("change",function(e){
+                
+            })
+
+
+        }
+
 
         //TODO ADD LISTENERS / SUPPORT FOR EACH EDIT FIELD, SUBMIT BUTTON, AND SERVER ADD BUTTONS ON TABLE VIEW
 
@@ -662,19 +827,11 @@ function printServers(official, online, rank, pop, docs){
             listView = true
             update(orderBy, way)
         })
-
-
-
-
-
-
     }
 }
 
 
-//TODO STYLE INPUTS AND ADD LISTENER FOR ADD BUTTON THAT CHECKS THAT EVERY REQUIREMENT IS MET
 
-//TODO ADD EDIT BUTTON FOR EACH INDIVIDUAL FIELD IN EACH SERVER
 
 
 

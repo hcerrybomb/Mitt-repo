@@ -420,6 +420,7 @@ body{
 
 
 #feed{
+    /*caret-color: rgba(0,0,0,0);*/
     box-sizing: border-box;
     margin:2% 0% 2% 2%;
     min-height: 30%;
@@ -971,7 +972,7 @@ th {
     height:3.5vh;
 }
 .data-row-odd{
-    background-color:rgba(0, 0, 0, 0.280)
+    background-color:rgba(0, 0, 0, 0.180)
 }
 .data-cell{
     max-width: 20%;
