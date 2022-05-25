@@ -94,7 +94,7 @@ async def printPoll(ctx):
     embed.set_thumbnail(url="https://i.imgur.com/eN4wJfL.png")
 
     await pollChannel.send(embed=embed)
-    await pollChannel.send("https://strawpoll.com/polls/YVyP2a7E3gN")
+    await pollChannel.send("https://strawpoll.com/polls/e6Z2e1BkMgN")
 
 @client.event
 async def on_ready():
@@ -110,7 +110,7 @@ async def on_ready():
     embed.set_thumbnail(url="https://i.imgur.com/eN4wJfL.png")
     await pollChannel.purge()
     await pollChannel.send(embed=embed)
-    await pollChannel.send("https://strawpoll.com/polls/YVyP2a7E3gN")
+    await pollChannel.send("https://strawpoll.com/polls/e6Z2e1BkMgN")
 
 
 
@@ -119,8 +119,8 @@ async def on_ready():
         title="Next wipe!",
         url="", 
         description="Information regarding the upcoming NATO wipe!"
-        +"\n\n\n**When:**\nForced wipe 5/5/2022 @ 20:00 CEST"
-        +"\n\n**Server:**\nRustoria EU Medium"
+        +"\n\n\n**When:**\nForced wipe 2/6/2022 @ 20:00 CEST"
+        +"\n\n**Server:**\nRustoria EU Medium (?)"
         +"\n\n**Battlemetrics:**\nhttps://www.battlemetrics.com/servers/rust/9594569"
         +"\n\n**Wipes:**\nBi-Weekly on Thursdays @ 3PM UK / 4PM CEST"
         +"\n\n**Connect:**\nconnect 208.103.169.220:28015\n\n",
