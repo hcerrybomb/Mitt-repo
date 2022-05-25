@@ -1,35 +1,5 @@
-//import { updateApiDatabase } from "./utils/load-battlemetrics.js"
-let start = Date.now();
-let duration
-let eventCount = 0, testCount = 0
+let useApi = true
 
-
-
-
-
-function logEvent(str){
-
-    duration = Date.now() - start
-    console.log(`%cEvent:`,`color:rgb(0, 140, 255); font-weight:bolder; font-size:16px;`,`[${eventCount}] | ${str} `)
-    console.log(`%cScope:`,`color:rgb(120, 190, 248);font-weight:bold;`,`${duration}ms\n\n`)
-    eventCount++
-    start = Date.now();
-}
-
-function logTest(str){
-
-    duration = Date.now() - start
-    console.log(`%cTest: `,`color:rgb(124, 255, 36); font-weight:bolder; font-size:16px;`,`[${testCount}] | ${str} `)
-    console.log(`%cScope:`,`color:rgb(165, 245, 112);font-weight:bold;`,`${duration}ms\n\n`)
-    testCount++
-    start = Date.now();
-}
-function updateApiDatabase(){
-    logTest("reach?")
-    logEvent("api server init")
-}
-
-let useApi = false
 let listView = false
 let validAdd = false
 
@@ -102,6 +72,17 @@ let rowClass
 let oddVar
 
 
+let searchInput
+let searchInputText
+let searchQuerys
+let searchQueryText
+
+
+
+
+
+
+
 let db 
 let collectionName = `servers`
 let orderBy = `rank`
@@ -116,6 +97,7 @@ const firebaseConfig = {
     appId: "1:1026127148712:web:4a54c73bae6420d929349d"
 }
 firebase.initializeApp(firebaseConfig);
+dbEvent("app init")
 
 
 db = firebase.firestore();
@@ -123,24 +105,49 @@ db = firebase.firestore();
 
 if(useApi){
     updateApiDatabase()
-    collectionName = `server-api`
-    logEvent("api database updated + loaded")
-
+    //collectionName = `server-api`
+    
 }
 
 function update(order, way){
+    dbEvent("updating. . .")
     db.collection(collectionName).orderBy(order, way).get().then((snapshot)=> {
         dbDocs = snapshot.docs;
         printServers(officialChecked, onlineChecked, rankChecked, popChecked, dbDocs)
+        dbEvent("updated")
     })
+    
 }
 update(orderBy, way)
 
 
 db.collection(collectionName).onSnapshot(snapshot => {
+    dbEvent("snapshot")
     update(orderBy, way)
 })
 
+
+
+document.getElementById("searchbar").addEventListener("keyup",function(){
+    searchInput = document.getElementById("searchbar")
+    searchInputText = searchInput.value.toLowerCase()
+    searchQuerys = document.querySelectorAll(".search-filter")
+    oddVar = -1
+    for(let i = 0; i < searchQuerys.length; i++){
+        searchQueryText = searchQuerys[i].children
+        searchQueryText = searchQueryText[0]
+        searchQueryText = searchQueryText.children
+        searchQueryText = searchQueryText[0]
+        searchQueryText = searchQueryText.value
+        searchQueryText = searchQueryText.toLowerCase()
+        if(searchQueryText.indexOf(searchInputText) > -1){
+            oddVar++
+            oddVar%2==0  ? searchQuerys[i].className = "data-row data-row-odd search-filter" : searchQuerys[i].className = "data-row search-filter"
+            searchQuerys[i].style.display = ""
+        }
+        else{ searchQuerys[i].style.display = "none" }
+    }
+})
 
 
 officialButton = document.getElementById("official-button-input")
@@ -154,7 +161,7 @@ officialButton.addEventListener("click",function(){
         officialButton.style.backgroundImage = "linear-gradient(to right, rgba(46, 240, 204, 0.5), rgba(46, 240, 204, 0.9))"
     }
 
-    logEvent(`official being checked is now: ${officialChecked}`)
+    genEvent(`officialchecked:${officialChecked}`)
     update(orderBy, way)
 })
 
@@ -170,7 +177,7 @@ onlineButton.addEventListener("click",function(){
         onlineButton.style.backgroundImage = "linear-gradient(to right, rgba(46, 240, 204, 0.5), rgba(46, 240, 204, 0.9))"
     }
 
-    logEvent(`online being checked is now: ${onlineChecked}`)
+    genEvent(`onlinechecked:${onlineChecked}`)
     update(orderBy, way)
 
 })
@@ -193,7 +200,7 @@ rankButton.addEventListener("click", function(){
         orderBy = `rank`, way = `asc`
     }
 
-    logEvent(`rankbutton checked is now: ${rankChecked},  popbutton checked is now ${popChecked}`)
+    genEvent(`rankchecked:${rankChecked}, popchecked:${popChecked}`)
     update(orderBy, way)
 
 })
@@ -218,7 +225,7 @@ popButton.addEventListener("click",function(){
         orderBy = `population`, way=`desc`
     }
 
-    logEvent(`rankbutton checked is now: ${rankChecked},  popbutton checked is now ${popChecked}`)
+    genEvent(`rankchecked:${rankChecked}, popchecked:${popChecked}`)
     update(orderBy, way)
 
 })
@@ -230,8 +237,8 @@ viewLabel = document.getElementById("view-label")
 
 
 function printServers(official, online, rank, pop, docs){
-    logEvent(`\nShow only Official:${official},   \nShow only Online:${online},   \nSort by Rank:${rank},   \nSort by Pop:${pop}`)
-
+    
+    genEvent("printing. . . ")
     if(listView){
 
         addOnlineChecked = false, 
@@ -522,7 +529,7 @@ function printServers(official, online, rank, pop, docs){
                     document.getElementById("invalid-label").remove()  
                 }
                 catch{
-                    logEvent("NO LABEL TO REMVE")
+                    errEvent("no label to remove")
                 }
                 db.collection(collectionName).doc(docId).set(
                     {
@@ -541,11 +548,12 @@ function printServers(official, online, rank, pop, docs){
             }
 
             else{
+                errEvent(errorMessage)
                 try{
                     document.getElementById("invalid-label").remove()  
                 }
                 catch{
-                    logEvent("NO LABEL TO REMVE")
+                    errEvent("no label to remove")
                 }
                 invalidInputEl.innerHTML = `INVALID INPUT&nbsp&nbsp:&nbsp&nbsp${errorMessage}`
                 addServerTitleEl.appendChild(invalidInputEl)
@@ -691,9 +699,9 @@ function printServers(official, online, rank, pop, docs){
             if(oddVar%2==0){rowClass = "data-row data-row-odd"}
 
             tableEl.innerHTML = tableEl.innerHTML + `
-                <tr class='${rowClass}'>
+                <tr class='${rowClass} search-filter'>
                     <td class="data-cell">
-                        <input type="text" id='title-input-${serverId}' data-id='${serverId}' class="cell-text-input name-cell-label" value='${serverTitle}'>
+                        <input type="text" id='title-input-${serverId}' data-id='${serverId}' class="cell-text-input name-cell-label search-query" value='${serverTitle}'>
                     </td>
                     <td class="data-cell">
                         #<input type="number" id='rank-input-${serverId}' data-id='${serverId}' class="cell-number-input cell-rank-input" value='${rankNumber}' min="1" max="999">
@@ -838,7 +846,7 @@ function printServers(official, online, rank, pop, docs){
                     document.getElementById("invalid-label").remove() 
                 }
                 catch{
-                    logEvent("NO LABEL TO REMVE")
+                    errEvent("no label to remove")
                 }
 
 
@@ -861,11 +869,12 @@ function printServers(official, online, rank, pop, docs){
                 update(orderBy, way)
             }
             else{
+                errEvent(errorMessage)
                 try{
                     document.getElementById("invalid-label").remove()  
                 }
                 catch{
-                    logEvent("NO LABEL TO REMVE")
+                    errEvent("no label to remove")
                 }
                 invalidInputEl.innerHTML = `INVALID INPUT&nbsp&nbsp:&nbsp&nbsp${errorMessage}`
                 invalidAddCell.appendChild(invalidInputEl)
@@ -898,6 +907,7 @@ function printServers(official, online, rank, pop, docs){
                     update(orderBy, way)                     
                 }
                 else{
+                    errEvent(errorMessage)
                     e.target.style.color = "#ff4d4dd7"
                     
                         e.target.style.borderBottom = "2px solid #ff4d4dd7"
@@ -935,6 +945,7 @@ function printServers(official, online, rank, pop, docs){
                     update(orderBy, way)
                 }
                 else{
+                    errEvent(errorMessage)
                     e.target.style.color = "#ff4d4dd7"
                     
                         e.target.style.borderBottom = "2px solid #ff4d4dd7"
@@ -966,6 +977,7 @@ function printServers(official, online, rank, pop, docs){
                     update(orderBy, way)                     
                 }
                 else{
+                    errEvent(errorMessage)
                     e.target.style.color = "#ff4d4dd7"
                     
                         e.target.style.borderBottom = "2px solid #ff4d4dd7"
@@ -1031,6 +1043,7 @@ function printServers(official, online, rank, pop, docs){
                     update(orderBy, way)                 
                 }
                 else{
+                    errEvent(errorMessage)
                     e.target.style.color = "#ff4d4dd7"
                     
                         e.target.style.borderBottom = "2px solid #ff4d4dd7"
@@ -1072,6 +1085,7 @@ function printServers(official, online, rank, pop, docs){
                     update(orderBy, way)                    
                 }
                 else{
+                    errEvent(errorMessage)
                     e.target.style.color = "#ff4d4dd7"
                     
                         e.target.style.borderBottom = "2px solid #ff4d4dd7"
@@ -1109,6 +1123,7 @@ function printServers(official, online, rank, pop, docs){
                     update(orderBy, way)                    
                 }
                 else{
+                    errEvent(errorMessage)
                     e.target.style.color = "#ff4d4dd7"
                     
                         e.target.style.borderBottom = "2px solid #ff4d4dd7"
@@ -1123,4 +1138,5 @@ function printServers(official, online, rank, pop, docs){
             update(orderBy, way)
         })
     }
+    genEvent("printed")
 }

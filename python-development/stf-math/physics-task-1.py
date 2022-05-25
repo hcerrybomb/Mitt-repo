@@ -1,3 +1,4 @@
+#%%
 import matplotlib.pyplot as plt
 OpenFile = open("C:\\Users\\wista002\\Desktop\\babymasser.txt", "r")
 FileContent = OpenFile.read()
@@ -9,3 +10,4 @@ for i in range(0, len(FileContentList)):
     FileContentList[i] = int(FileContentList[i])
 print("antall babyer=", len(FileContentList),"\nmax er=", max(FileContentList), "\nmin er=", min(FileContentList), "\ngjennomsnitt=", sum(FileContentList) / len(FileContentList))
 plt.hist(FileContentList, bins=100)
+# %%

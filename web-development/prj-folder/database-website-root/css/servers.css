@@ -12,6 +12,9 @@ div > table, table > tr, tr > td, tr > th, th > div, td > div, label > button
 a{
     text-decoration: none;
 }
+test{
+    color:rgb(184, 31, 26);
+}
 
 
 html, body{
@@ -819,7 +822,7 @@ th {
 #title-row{
 
     background-color:rgba(0, 0, 0, 0.280);
-    height:5vh;    
+    height:9vh;    
 }
 
 
@@ -837,7 +840,7 @@ th {
 
 #info-row{
     background-color:rgba(0, 0, 0, 0.280);
-    height:5vh;
+    height:7vh;
     
 }
 .info-cell{
@@ -999,7 +1002,7 @@ th {
 
 
 .data-row{
-    height:5.5vh;
+    height:8.5vh;
 }
 .data-row-odd{
     background-color:rgba(0, 0, 0, 0.180)
@@ -1108,7 +1111,7 @@ th {
     font-weight: normal;
 }
 .input-row{
-    height:6.5vh;
+    height:9.5vh;
 }
 input:focus , label:focus{
     border-bottom: 2px solid rgba(46, 240, 204, 0.8);
@@ -1169,5 +1172,3 @@ input:focus , label:focus{
 .footer-item:hover{
     background-color:rgba(0, 0, 0, 0.280);
 }
-
-
