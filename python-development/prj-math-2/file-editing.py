@@ -1,3 +1,4 @@
+#%%
 from pylab import * 
 import numpy
 import time
