@@ -1,4 +1,5 @@
 #%%
+
 from pylab import *
 
 median = [40300, 41200, 42180, 43400, 45000]
@@ -14,8 +15,8 @@ xlabel("År")
 ylabel("Månedslønn (kr)")
 ylim(30000, 60000)
 
-#? programmet plotter statistikken for median, øvre og nedre verdier for mpnedslønnen i årene 2015-2019
-
+#? Oppgave 1: 
+#? Programmet plotter statistikken for median, øvre og nedre verdier for månedslønnen i årene 2015-2019
 
 
 økn_median = 100 * ((median[4] - median[0]) / median[0])
@@ -26,7 +27,7 @@ print("Økning av medianlønna:", round(økn_median, 1), "%")
 print("Økning for nedre kvartil:", round(økn_nedre, 1), "%")
 print("Økning for øvre kvartil:", round(økn_øvre, 1), "%")
 
-#? Programmet sier nå også økningen i prosent for alle verdiene av funksjonene som datasetter viser i intevallene
+#? Programmet printer nå også økning av median, nedre kvartil og øvre kvartil fra 2015-2019 i prosent
 
 
 
@@ -42,12 +43,17 @@ ylabel("Andel handlet i %")
 xlim(2003, 2020)
 ylim(0, 100)
 
-
 #? progammet plotter statistikken for andel jenter per år i et intervall mellom 2004 og 2020
 
+import statsmodels.api as sm 
+lowess = sm.nonparametric.lowess 
+
+glatt = lowess(andel_jenter, år, frac = 0.3, return_sorted=False) 
+#plot(år, glatt) 
 
 
-k = 2                             
+
+k = 4                             
 b = len(andel_jenter) - k
 glatt = [ ] 
 
@@ -76,7 +82,7 @@ plot(aar, temp)
 xlabel("År")
 ylabel("Temperatur")
 
-#? progammet plotter dataen fra .csv filen for temperaturen i et gitt år i intervallet 1950 og 2020
+#? progammet plotter dataen fra .csv filen for temperaturen i et gitt år i intervallet 1946 og 2020
 
 print(hopen)
 # %%
@@ -128,51 +134,43 @@ plot(år[k:len(temp)-k], glatt, "k")
 #%%
 from pylab import *
 import statsmodels.api as sm
-alna = loadtxt("alna.csv", 
-               delimiter=";",
-               skiprows = 1, 
-               usecols = (3,4))
+lowess = sm.nonparametric.lowess
+import numpy as np
+alna = loadtxt("alna.csv", delimiter=";",skiprows = 1, usecols = (3,4))
 
 temp= alna[:,0]
 vind = alna[:,1]
 måned = range(1,92)
 
 
+fig, (ax1, ax2) = subplots(2,1, sharey=False, constrained_layout=True)
+
+k = 7
+glatt = []
+
+for i in range(k,len(temp)-k):
+    print(mean(temp[(i-k):(i+k)]))
+    glatt.append(mean(temp[(i-k):(i+k)]))
+ax1.set_ylim(-11,23)
+ax1.grid()
+ax1.plot(måned, temp, "r")
+ax1.plot(måned[k:len(temp)-k], glatt, "b")
+ax1.set_title("Temperatur analyse pr. måned Alna 2007 - 2015")
+ax1.set_xlabel("Måneder")
+ax1.set_ylabel("Temperatur")
 
 
-figure, axis = subplots(2,2)
-
-
-axis[0, 0].plot(måned, temp, "r")
-axis[0, 0].set_title("EXAMPLE TEST")
-xlabel("Måneder 2007-2015")
-ylabel("Temperatur / Vind")
-
-#axis[0, 0].plot(måned, vind, "g")
-#axis[0, 0].xlabel("Måneder 2007-2015")
-#axis[0, 0].ylabel("Temperatur / Vind")
-
-k = 2
-glatt =[]
-
-for i in range(k,len(vind)-k):
-    glatt.append(mean(vind[(i-k):(i+k)]))
-
-
-axis[0, 1].plot(måned[k:len(vind)-k], glatt, "b")
-#axis[0, 1].xlabel("Måneder 2007-2015")
-#axis[0, 1].ylabel("Temperatur / Vind")
-
-axis[1, 0].plot(måned[k:len(vind)-k], glatt, "b")
-#axis[1, 0].xlabel("Måneder 2007-2015")
-#axis[1, 0].ylabel("Temperatur / Vind")
-
-axis[1, 1].plot(måned[k:len(vind)-k], glatt, "b")
-#axis[1, 1].xlabel("Måneder 2007-2015")
-#axis[1, 1].ylabel("Temperatur / Vind")
-
-#print(vind)
-#plot(måned,vind, "g")
-
+glatt_lowess = lowess(glatt, måned[k:len(temp)-k], frac = 0.2, return_sorted=False)
+x = np.array(måned[k:len(temp)-k][7:-1])
+y = np.array(glatt_lowess[7:-1])
+#ax2.plot(x,y, "o")
+m, b = np.polyfit(x,y,1)
+ax2.plot(x, m*x + b, linewidth=3)
+ax2.plot(måned[k:len(temp)-k], glatt_lowess, "r")
+ax2.set_ylim(4,9)
+ax2.set_title("Gjenomsnitt / trender")
+ax2.grid()
+ax2.set_xlabel("Måneder")
+ax2.set_ylabel("Temperatur")
 
 # %%
