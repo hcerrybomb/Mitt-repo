@@ -94,7 +94,7 @@ fi_torsk = torsk_fi[:-2,1]
 
 ax2.set_ylim(50000,230000)
 ax2.grid()
-ax1.plot(fi_aar, fi_torsk)
+ax2.plot(fi_aar, fi_torsk,c="red")
 
 
 
@@ -111,7 +111,7 @@ sf_torsk = torsk_sf[:-2,1]
 
 ax2.set_ylim(50000,230000)
 #ax2.grid()
-ax1.plot(sf_aar, sf_torsk)
+ax2.plot(sf_aar, sf_torsk, c="blue")
 
 
 
@@ -128,7 +128,7 @@ mr_torsk = torsk_mr[:-2,1]
 
 ax2.set_ylim(50000,230000)
 #ax2.grid()
-ax1.plot(mr_aar, mr_torsk)
+ax2.plot(mr_aar, mr_torsk, c="black")
 
 #%%
 from pylab import *
@@ -177,3 +177,5 @@ print(data[0:20,0])
 
 
 
+
+# %%
