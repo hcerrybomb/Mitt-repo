@@ -136,7 +136,7 @@ from pylab import *
 import statsmodels.api as sm
 lowess = sm.nonparametric.lowess
 import numpy as np
-alna = loadtxt("alna.csv", delimiter=";",skiprows = 1, usecols = (3,4))
+alna = loadtxt("C:\\Users\\wista002\\Desktop\\Mitt-repo\\python-development\\prj-dataset\\alna.csv", delimiter=";",skiprows = 1, usecols = (3,4))
 
 temp= alna[:,0]
 vind = alna[:,1]
@@ -158,6 +158,8 @@ ax1.plot(måned[k:len(temp)-k], glatt, "b")
 ax1.set_title("Temperatur analyse pr. måned Alna 2007 - 2015")
 ax1.set_xlabel("Måneder")
 ax1.set_ylabel("Temperatur")
+ax1.axvline(x=69,ymin=0.4,ymax=0.6, c="black")
+ax1.axvline(x=79, ymin=0.45,ymax=0.65, c="black")
 
 
 glatt_lowess = lowess(glatt, måned[k:len(temp)-k], frac = 0.2, return_sorted=False)
