@@ -1,4 +1,5 @@
 #%%
+#test
 from pylab import *
 
 inflasjon = loadtxt("inflasjon.csv", delimiter=";",skiprows = 1, usecols = (1,2))
