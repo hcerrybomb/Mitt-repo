@@ -104,9 +104,7 @@ db = firebase.firestore();
 
 
 if(useApi){
-    updateApiDatabase()
-    //collectionName = `server-api`
-    
+    collectionName = `bmservers`
 }
 
 function update(order, way){

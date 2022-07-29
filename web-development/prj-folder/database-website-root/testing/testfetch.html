@@ -7,16 +7,35 @@
     <title>Document</title>
 </head>
 <body>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
     <script>
 
+        let db 
+        let collectionName = `servers`
+        let orderBy = `rank`
+        let way=`asc`
+        let dbDocs
+        const firebaseConfig = {
+            apiKey: "AIzaSyAAR_0o6XXCf66RK8ck2cnjJTO3SKJqy1g",
+            authDomain: "rust-server-db.firebaseapp.com",
+            projectId: "rust-server-db",
+            storageBucket: "rust-server-db.appspot.com",
+            messagingSenderId: "1026127148712",
+            appId: "1:1026127148712:web:4a54c73bae6420d929349d"
+        }
+        firebase.initializeApp(firebaseConfig);
 
+
+
+        db = firebase.firestore();
 
         let dataObj = []
         let link="https://api.battlemetrics.com/servers?filter[game]=rust"
         const delay = ms => new Promise(res => setTimeout(res, ms));
 
         async function fetchData(){
-            for(let i = 0; i < 10; i++){
+            for(let i = 0; i < 100; i++){
                 // 60s between each 60. request
                 let response = await fetch(link)
                 if(response.status == 200){
@@ -54,8 +73,9 @@
         fetchData()
         let ipString
         let moddedBool
+        let status
         let docuId
-        let uptime = 0
+        let uptime = 100
         let name
         let pop
         let rank
@@ -64,13 +84,53 @@
         function loadToDb(){
             for(let i = 0; i < dataObj.length; i++){
                 docuId = dataObj[i].attributes.ip +""+ dataObj[i].attributes.port
-                console.log(docuId)  
+                docuId = docuId.replace(/[^a-zA-Z0-9]/g, '')
+                console.log(Number(docuId), typeof docuId)  
 
+                ipString = dataObj[i].attributes.ip + ":" + dataObj[i].attributes.port
+                console.log(ipString, typeof ipString)
+
+                moddedBool = dataObj[i].attributes.details.official ? false : true
+                console.log(moddedBool, typeof moddedBool)
+
+                status =  dataObj[i].attributes.status ? true : false
+                console.log(status, typeof status)
+
+                name = dataObj[i].attributes.name
+                console.log(name, typeof name)
+
+                pop = dataObj[i].attributes.players
+                console.log(pop, typeof pop)
+
+                rank = dataObj[i].attributes.rank
+                console.log(rank, typeof rank)
+
+
+                db.collection("bmservers").doc(docuId).set(
+                    {
+                        data:{
+                            ip:ipString,
+                            modded: moddedBool, 
+                            status: status,
+                            uptime: uptime
+                        },
+                        name:name,
+                        population: pop,
+                        rank:rank
+                    }
+                )
 
 
             }
         }
-        loadToDb()
+        
+        function delDocs(){
+            for(let i = 0; i < dataObj.length;i++){
+                docuId = dataObj[i].attributes.ip +""+ dataObj[i].attributes.port
+                docuId = docuId.replace(/[^a-zA-Z0-9]/g, '')
+                db.collection("bmservers").doc(docuId).delete()
+            }
+        }
 
         
 
