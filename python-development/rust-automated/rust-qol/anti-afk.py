@@ -2,7 +2,7 @@ from tkinter import E
 from pynput.keyboard import * 
 from time import time, ctime, sleep
 keyboard = Controller()
-x=0
+x=0 
 y=0
 while x<19:
     keyboard.press('5')
