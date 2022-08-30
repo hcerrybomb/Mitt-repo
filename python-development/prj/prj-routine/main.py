@@ -1,12 +1,5 @@
 from multiprocessing import Process
-import alarm_dir.test as a
-
+import alarm_dir.alarm as alarm
 
 if __name__ == "__main__":
-
-
-    
-
-
-    a.print_name()
-    print(f"test 4 {__name__}")
+    print("test")
