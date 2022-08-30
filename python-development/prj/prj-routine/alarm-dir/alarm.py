@@ -8,17 +8,19 @@ import subprocess
 import random
 import os
 from pathlib import Path
+import sys
 
 #"C:\\Users\\Gaming_Dator_VII\\Desktop\\Mitt-repo\\python-development\\prj-routine\\alarm python venv\\songs"
 
-dotenv_path = Path("C:\\Users\\wista002\\Desktop\\Mitt-repo\\python-development\\prj-routine\\alarm_dir\\env-files\\alarm.env")
-load_dotenv(dotenv_path=dotenv_path)
+
+path = sys.path[0]+'/env-files/alarm.env'
+
+load_dotenv(path)
 
 song_folder = os.getenv("SONG_PATH")
-print(song_folder)
 
 dir_list = os.listdir(song_folder)
-print(dir_list)
+
 
 
 def pick_song():
