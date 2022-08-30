@@ -3,9 +3,6 @@ from pylab import *
 
 import statsmodels.api as sm
 
-ramme, (rad1, rad2, rad3) = subplots(3)
-
-
 inflasjon = loadtxt("inflasjon.csv", delimiter=";",skiprows = 1, usecols = (1,2))
 
 infl_år = inflasjon[:,0]
@@ -27,15 +24,14 @@ for i in range(len(infl_år)):
    valuta_økning.append(grunnverdi)
    print(" ")
 
+figure() #lager ny figur (graf)
+plot(infl_år, valuta_økning, c="red")
 
-rad1.plot(infl_år, valuta_økning)
-rad.set_ylim()
+grid()
 
-rad1.grid()
+xlabel("År")
 
-rad1.set_xlabel("År")
-
-rad1.set_ylabel("valuta økning")
+ylabel("valuta økning")
 
 
 nedre = loadtxt("nedre.csv", delimiter=";",skiprows = 1, usecols = (1,2))
@@ -44,14 +40,14 @@ nedre_år =  nedre[:,0]
 
 nedre_tall = nedre[:,1]
 
+figure() #lager ny figur (graf)
+plot(nedre_år, nedre_tall, c="blue")
 
-rad2.plot(nedre_år, nedre_tall)
+grid()
 
-rad2.grid()
+xlabel("År")
 
-rad2.set_xlabel("År")
-
-rad2.set_ylabel("Verdi i euro")
+ylabel("Verdi i euro")
 
 
 dyrest = loadtxt("dyrest.csv", delimiter=";",skiprows = 1, usecols = (1,2))
@@ -60,16 +56,12 @@ dyreste_år =  dyrest[:,0]
 
 dyrest_tall = dyrest[:,1]
 
+figure() #lager ny figur (graf)
+plot(dyreste_år, dyrest_tall, c="orange")
 
-rad3.plot(dyreste_år, dyrest_tall)
+grid()
 
-rad3.grid()
+xlabel("År")
 
-rad3.set_xlabel("År")
+ylabel("Verdi i euro")
 
-rad3.set_ylabel("Verdi i euro")
-
-
-
-
-ramme.tight_layout()
