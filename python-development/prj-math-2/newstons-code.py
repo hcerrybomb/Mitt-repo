@@ -34,7 +34,7 @@ plot(x, dy, "r")
 xlabel("x") # Pynter på grafen her
 ylabel("y")
 grid()
-ylim(-7, 7)     #  <--- bør endres basert på hvilken funksjon du velger
+ylim(-3, 4)     #  <--- bør endres basert på hvilken funksjon du velger
 axhline(y=0, color="k")
 axvline(x=0, color="k")
 show()

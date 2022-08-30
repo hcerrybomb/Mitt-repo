@@ -239,8 +239,6 @@ async def add_player(ctx: interactions.CommandContext,
         player_embeds = []
         player_embeds.append(embedx)
         
-
-        
         for j in range(len(names)):
             time.sleep(0.1)
             player_name = names[j]['playername']
@@ -254,7 +252,7 @@ async def add_player(ctx: interactions.CommandContext,
         await ctx.channel.send(f"\u200b \n",embeds=player_embeds)   
 
             
-        if False:
+        if True:
             for j in range(4, len(names)+4):
                 index = j -4
                 player_name = names[index]['playername']

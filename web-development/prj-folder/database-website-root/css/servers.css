@@ -405,9 +405,12 @@ body{
     background-color:rgba(0, 0, 0, 0.257);
     overflow-x: hidden;
     overflow-y: auto;
-    
-
 }
+
+
+
+
+
 #feed-container::-webkit-scrollbar{
     width: 0.78vw;
 }
@@ -815,23 +818,29 @@ th {
     font-weight: 100;
 }
 #main-table{
+    position:relative;
     width:100%;
     border-collapse: collapse;
     /*border:1px solid rgba(46, 240, 204, 0.6);*/
 }
 #title-row{
-
+    height:9vh;
     background-color:rgba(0, 0, 0, 0.280);
-    height:9vh;    
 }
 
 
 
 .title-cell{
+
+    
     border: 0px solid rgba(46, 240, 204, 0.377);
     padding-left:0.25vw;
     padding-right:0.25vw;
     font-weight: bolder;
+}
+#button-cell-top{
+    position:sticky;
+    top:0;
 }
 #rank-cell{
     padding-left:1.00vw;

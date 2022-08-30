@@ -1,4 +1,4 @@
-let useApi = true
+let useApi = false
 
 let listView = false
 let validAdd = false
@@ -379,6 +379,7 @@ function printServers(official, online, rank, pop, docs){
         }
 
 
+
         for(let j = 0; j < buttonIds.length; j++){
 
             document.getElementById(buttonIds[j]).addEventListener("click", function(e){
@@ -578,8 +579,11 @@ function printServers(official, online, rank, pop, docs){
                     <th class="title-cell" id="uptime-cell">UTPIME</th>
                     <th class="title-cell" id="ip-cell">IP ADDRESS</th>
                     <th class="title-cell" id="id-cell">IDENTIFIER</th>
-                    <th class="title-cell add-edit-header-cell"  id="button-cell">
+                    <th class="title-cell add-edit-header-cell"  id="button-cell-top">
+                    
 
+
+                        
                     </th>
                 </tr>
                 <tr id="info-row">
@@ -741,6 +745,13 @@ function printServers(official, online, rank, pop, docs){
             ranks.push(rankNumber)
 
         }
+        tableEl.innerHTML = tableEl.innerHTML + `
+            <tr>
+                <div id="test123">
+                    hello hello, test test
+                </div>
+            </tr>
+        `
 
 
 

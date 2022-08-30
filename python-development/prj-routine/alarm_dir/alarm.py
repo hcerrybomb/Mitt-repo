@@ -1,19 +1,27 @@
 #PLAYS RANDOM SONG FROM MP3 FOLDER RIGHT AS SCRIPT RUNS
-
+from tracemalloc import start
+from dotenv import load_dotenv
 import  vlc
 import time
 from mutagen.mp3 import MP3
 import subprocess
 import random
 import os
+from pathlib import Path
 
+#"C:\\Users\\Gaming_Dator_VII\\Desktop\\Mitt-repo\\python-development\\prj-routine\\alarm python venv\\songs"
 
-song_folder = "C:\\Users\\Gaming_Dator_VII\\Desktop\\Mitt-repo\\python-development\\prj-routine\\alarm python venv\\songs"
+dotenv_path = Path("C:\\Users\\wista002\\Desktop\\Mitt-repo\\python-development\\prj-routine\\alarm_dir\\env-files\\alarm.env")
+load_dotenv(dotenv_path=dotenv_path)
+
+song_folder = os.getenv("SONG_PATH")
+print(song_folder)
+
 dir_list = os.listdir(song_folder)
+print(dir_list)
+
 
 def pick_song():
-
-
     pick_number = random.randint(0,len(dir_list))
     song_path = f'C:\\Users\\Gaming_Dator_VII\\Desktop\\Mitt-repo\\python-development\\prj-routine\\alarm python venv\\songs\\{dir_list[pick_number]}'
     dir_list.pop(pick_number)
@@ -23,18 +31,11 @@ def pick_song():
 def getProcessStatus(process_name):
 
     call = 'TASKLIST', '/FI', 'imagename eq %s' % process_name
-
     output = subprocess.check_output(call).decode()
-
     last_line = output.strip().split('\r\n')[-1]
-
     return last_line.lower().startswith(process_name.lower())
 
-
-while getProcessStatus('voicemeeterpro.exe') == False:
-    time.sleep(5)
-    print("voicemeeter not yet started, waiting")
-else:
+def start_alarm():
     while len(dir_list) != 0:
         time.sleep(3)
         print("voicemeeter started, playing mp3")
@@ -52,6 +53,12 @@ else:
         print(f"duration {length_in_secs}")
         p.stop()
         print("song over")
+if False:
+    if os.getenv('HAS_VOICEMEETER'):
+        while getProcessStatus('voicemeeterpro.exe') == False:
+            time.sleep(5)
+            print("voicemeeter not yet started, waiting")
+    start_alarm()
 
 
 

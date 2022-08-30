@@ -5,14 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #main{
+            height:300px;
+            border:1px solid red;
+        }
+    </style>
 </head>
 <body>
+
+    <div id="main">
+
+    </div>
+    <button id="nextpage">
+        next
+    </button>
+    <button id="prevpage">
+        prev
+    </button>
+
+
+
+
+
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
     <script>
 
         let db 
-        let collectionName = `servers`
+        let collectionName = `bmservers`
         let orderBy = `rank`
         let way=`asc`
         let dbDocs
@@ -35,7 +56,7 @@
         const delay = ms => new Promise(res => setTimeout(res, ms));
 
         async function fetchData(){
-            for(let i = 0; i < 100; i++){
+            for(let i = 0; i < 1; i++){
                 // 60s between each 60. request
                 let response = await fetch(link)
                 if(response.status == 200){
@@ -63,14 +84,12 @@
                     i = i - 1
                     console.log(`429 too many requests, waiting in 60 secs`)
                     await delay(60000)
-                    console.log(`429 too many requests, waited in 60 secs, retrying`)
+                    console.log(`429 too many requests, waited for 60 secs, retrying`)
                 }
                 
             }
-            console.log(dataObj)
-            
+            console.log(dataObj)   
         }
-        fetchData()
         let ipString
         let moddedBool
         let status
@@ -119,8 +138,6 @@
                         rank:rank
                     }
                 )
-
-
             }
         }
         
@@ -131,6 +148,11 @@
                 db.collection("bmservers").doc(docuId).delete()
             }
         }
+
+        let contentBox = document.getElementById("main")
+        //for(let i = 0; i > dataObj.length;i++){}
+
+        
 
         
 
