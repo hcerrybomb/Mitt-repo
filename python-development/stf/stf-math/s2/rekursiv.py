@@ -16,4 +16,4 @@ for i in range(20):
 x = 5 
 for i in range(20):
     print(f"{i+1} {x}")
-    x = 
+    x

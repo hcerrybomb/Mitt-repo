@@ -1,7 +1,7 @@
 #PLAYS RANDOM SONG FROM MP3 FOLDER RIGHT AS SCRIPT RUNS
 from tracemalloc import start
 from dotenv import load_dotenv
-import  vlc
+import vlc
 import time
 from mutagen.mp3 import MP3
 import subprocess
@@ -10,21 +10,61 @@ import os
 from pathlib import Path
 import sys
 import math as m
+if __name__ == "__main__":
+    current_dir = sys.path[0]
+    
+else:
+    current_dir = sys.path[0] + '\\alarm_dir'
 
 
+
+#progress bar yoinked from the internet
+def progress(count, total, song=''):
+    red='\033[01;31m'
+    gre='\033[02;32m'
+    yel='\033[00;33m'
+    blu='\033[01;34m'
+
+    
+    bar_len = 60
+    filled_len = int(round(bar_len * count / float(total)))
+    
+    percentage = round(100.0 * count / float(total), 1)
+    bar = '=' * filled_len + '-' * (bar_len - filled_len)
+
+    secs_done = count
+    mins_done = count // 60
+    spare_secs_done = secs_done % 60
+
+    secs = total
+    mins = secs // 60
+    spare_secs = secs % 60
+    
+    
+    if percentage <= 50:
+        col = red
+    elif percentage > 50 and percentage <= 80:
+        col = yel
+    elif percentage > 80 and percentage <= 99:
+        col = gre
+    else:
+        col = blu
+    
+    sys.stdout.write('\r{0} {1}:{2} {3} {4}:{5}  {6}'.format(col, mins_done, spare_secs_done, bar, mins, spare_secs, song))
+    
+    sys.stdout.flush()
 
 
 #ties it all in a bundle and runs it
 def run():
-    path = sys.path[0] + '\env-files\.env'
-    load_dotenv(path)
-
     global song_folder
-    song_folder = os.getenv("SONG_FOLDER")
+    song_folder = current_dir + '\songs'
+    print(song_folder)
 
     global songs_list
-    songs_list = os.listdir(song_folder)    
-    if os.getenv('HAS_VOICEMEETER'):
+    songs_list = os.listdir(song_folder)   
+    print(songs_list) 
+    if os.getenv('HAS_VOICEMEETER') == "True":
         while getProcessStatus('voicemeeterpro.exe') == False:
             time.sleep(5)
             print("voicemeeter not yet started, waiting")
@@ -32,11 +72,14 @@ def run():
 
 #function for picking a song, once picked its removed from songs_list (on each run)
 def pick_song():
-    pick_number = random.randint(0,len(songs_list))
+    pick_number = random.randint(0,len(songs_list)-1)
     song_path = f'{song_folder}\{songs_list[pick_number]}'
     print(f'{songs_list[pick_number]} picked!')
+    
+    song_name = songs_list[pick_number]
+    song_name = song_name[:-4]
     songs_list.pop(pick_number)
-    return song_path
+    return (song_path, song_name)
 
 
 # function for checking if a process exists, arg is the full process name.exe, in this case voicemeeter
@@ -49,27 +92,31 @@ def getProcessStatus(process_name):
 #function for starting the actual alarm, 3sec sleep for voicemeeter (if present in env file), 
 #picks song and plays then plays again till list empty
 def start_alarm():
+    print("\n\n\n")
     while len(songs_list) != 0:
         time.sleep(3)
-        song_path_final = pick_song()
+        song_path_final, song_name = pick_song()
         audio = MP3(song_path_final)
         audio_info = audio.info
         length_in_secs = int(audio_info.length)
-        length_minutes = m.floor(length_in_secs/60)
-        length_spare_secs = length_minutes * 60 - length_in_secs
+        length_minutes = length_in_secs // 60
+        length_spare_secs = length_in_secs % 60
         p = vlc.MediaPlayer(song_path_final)
-        print(f'playing now, duration: {length_minutes}mins and {length_spare_secs}secs (somethings wrong)')
+        print(f'playing now') 
+        
+        print(f'duration: {length_minutes}mins and {length_spare_secs}secs')
         p.play()
-        time.sleep(length_in_secs)
+        for i in range(length_in_secs): 
+            time.sleep(1)
+            progress(i+1, length_in_secs, song=song_name)
         p.stop()
-        print('song over!\n\n')
+        print('\033[00;37msong over!\n\n')
 
 
 
 #for testing the actual script
 if __name__ == "__main__":
     run()
-run()
 
 
 
