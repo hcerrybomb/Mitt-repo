@@ -54,7 +54,7 @@ sleep(0.5)
 print("\n Step 1:\tFor the program to be more accurate in timing you should have the", col.cya,
       "Game Overlay", col.res, "Activity setting", col.gre, "Enabled", col.res, "on discord")
 sleep(0.5)
-print("\n Step 2:\tIf your game is ALREADY open, make sure your screen mode is either borderless or windowed")
+print("\n Step 2:\tIf your game is ALREADY open, make sure your screen mode is either borderless or windowed, if you do not have your game open disregard this step")
 sleep(0.5)
 print("\n        \tTo do this > open your game > open your menu > click OPTIONS > click SCREEN > set the screen MODE to either Borderless or Windowd > click APPLY CHANGES")
 sleep(0.5)
@@ -62,7 +62,7 @@ screenModeInput = str(input("\n\n Is your screen mode correct? [Y/N] : "))
 sleep(0.5)
 while haveYou(screenModeInput) != True:
     if haveYou(screenModeInput) == False:
-        print("\n Ok, please turn the setting on and restart the program")
+        print("\n Ok, please turn the setting on and restart the script")
         sleep(0.5)
         print("\n Program closing")
         sleep(3)

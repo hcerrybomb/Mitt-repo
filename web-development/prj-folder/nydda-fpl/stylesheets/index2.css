@@ -1,0 +1,52 @@
+@font-face{
+    font-family: "link";
+    src: url("../fonts/blinker-extralight.ttf") format("truetype")
+}
+html{
+    margin:0;
+    padding:0;
+    width:100%;
+    box-sizing: border-box;
+    height:100%;
+}
+body{
+    background-color: white;
+    font-family: link;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+}
+div{
+    border:0px solid red;
+}
+
+#header{
+    box-sizing: border-box;
+    width:100%;
+    height:14vh;
+}
+#logo-container{
+
+    width:8vw;
+    height: 100%;
+    float: left;
+}
+#logo{
+    height:100%;
+
+}
+#navbar{
+    box-sizing: border-box;
+    margin-left:2vw;
+    width:90vw;
+    float: left;
+    background-color: #37003C;
+    height: 70%;
+    margin-top:2vh;
+    margin-bottom: 2vh;
+    
+}
+
+

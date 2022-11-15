@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/login.css">
+</head>
+<body>
+    <main>
+        <div id = "boks">
+            <div id = "login">
+                <h1>Login</h1>
+                <div id = "inputs">
+                    <div class="Brukernavn">
+                        <label >
+                            <div> Username </div>
+                        </label>
+                        <div class="input"><input id = "username"  type="text" placeholder="Username" required></div>
+                    </div>
+    
+                    <div class="passord">
+                        <label>
+                            <div> Password </div>
+                        </label>
+                        <div class="input">
+                            <input id ="password" type="password" placeholder="Password" required>
+                        
+                        </div>
+                        <span id = "eye" onclick="myFunction()">
+                            <i id = "hide1" class="bi bi-eye-slash-fill"></i>
+                            <i id = "hide2" class="bi bi-eye-fill"></i>
+                        </span>
+                    </div>
+                    <button id="loginbutton" onclick="login()">Login</button>
+                   <a id = "glemt" href="">   <p> Forgot username/password?</p>
+                   </a>
+                   
+                </div>
+                                    
+                <h3>Don't have a user? 
+                    <a href="signup.html">Sign up</a>
+                   <!-- <button onclick='document.location.href="signup.html"'>Sign Up<button>-->
+                </h3>
+            </div>
+        </div>
+       
+    </main>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+ 
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyDO2nmJ-Rx4eZh-x8gUmjbAQqFwUfk59wE",
+  authDomain: "nydda-fantasy-dtbase.firebaseapp.com",
+  projectId: "nydda-fantasy-dtbase",
+  storageBucket: "nydda-fantasy-dtbase.appspot.com",
+  messagingSenderId: "516798929727",
+  appId: "1:516798929727:web:56e0af73e1f010e573918a",
+  measurementId: "G-SPWWSD3QPW"
+};
+firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="login.js"></script>
+
+</body>
+</html>
