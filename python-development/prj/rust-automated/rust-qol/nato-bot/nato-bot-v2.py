@@ -9,7 +9,7 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 
-cred = credentials.Certificate(Path('C:/Users/Gaming_Dator_VII/Desktop/Mitt-repo/python-development/rust-automated/rust-qol/nato-bot/serviceAccountKey.json'))
+cred = credentials.Certificate(Path('C:/Users/Gaming_Dator_VII/Desktop/Mitt-repo/python-development/prj/rust-automated/rust-qol/nato-bot/serviceAccountKey.json'))
 #cred = credentials.Certificate(Path('C:/Users/wista002/Desktop/Mitt-repo/python-development/rust-automated/rust-qol/nato-bot/serviceAccountKey.json'))
 
 firebase_admin.initialize_app(cred)
@@ -216,7 +216,7 @@ async def add_player(ctx: interactions.CommandContext,
     await ctx.channel.purge(100, bulk=True)
     await ctx.send("loading database . . .  you can dismiss this message",ephemeral=True)
     thumbnail = interactions.EmbedImageStruct(url="https://i.imgur.com/eN4wJfL.png")._json
-    descSTR = "\n**Commands:**\n\n*/add_player*\n**grid_or_group:**  <grid or group name>\n**player_name:**  <player name>\n**steam_link: (optional)**  <link to the players steam account>\n\nsetting **player_name** to the same name as an already existing group will add that player to that group, putting a new group name will create a new group.\n\n\n*/remove_player* \n**group_name:**  <grid or group name>\n**player_index:**  <number index of the player you wish to remove from the database>"
+    descSTR = "\n**Commands:**\n\n*/add_player*\n**grid_or_group:**  <grid or group name>\n**player_name:**  <player name>\n**steam_link: (optional)**  <link to the players steam account>\n\nsetting **grid_or_group** to the same name as an already existing group will add that player to that group, putting a new group name will create a new group.\n\n\n*/remove_player* \n**group_name:**  <grid or group name>\n**player_index:**  <number index of the player you wish to remove from the database>"
     embed = interactions.Embed(
         title=f"#names info!",
         thumbnail=thumbnail,

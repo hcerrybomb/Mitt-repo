@@ -64,13 +64,26 @@ def run():
     global songs_list
     songs_list = os.listdir(song_folder)   
     print(songs_list) 
-    if os.getenv('HAS_VOICEMEETER') == "True":
-        while getProcessStatus('voicemeeterpro.exe') == False:
-            time.sleep(5)
-            print("voicemeeter not yet started, waiting")
-    start_alarm()
+
+
+    if getProcessStatus('voicemeeterpro.exe') == False:
+        print("starting voicemeeter")
+        os.startfile("C:\\Program Files (x86)\\VB\\Voicemeeter\\voicemeeterpro.exe")
+        time.sleep(5)
+        if getProcessStatus('voicemeeterpro.exe') == False:
+            print("voicemeeter failed to open, trying again")
+            while getProcessStatus('voicemeeterpro.exe') == False:
+                print("starting voicemeeter again")
+                os.startfile("C:\Program Files (x86)\VB\Voicemeeter\voicemeeterpro.exe")
+        start_alarm()
+    else:
+        print("voicemeeter already open")
+        time.sleep(3)
+        start_alarm()
+
 
 #function for picking a song, once picked its removed from songs_list (on each run)
+#c:\Users\Gaming_Dator_VII\Desktop\Mitt-repo\python-development\prj\prj-routine\env\.venv-routine\Scripts\python.exe c:\Users\Gaming_Dator_VII\Desktop\Mitt-repo\python-development\prj\prj-routine\alarm_dir\alarm.py
 def pick_song():
     pick_number = random.randint(0,len(songs_list)-1)
     song_path = f'{song_folder}\{songs_list[pick_number]}'
@@ -115,6 +128,7 @@ def start_alarm():
 
 
 #for testing the actual script
+#https://stackoverflow.com/questions/26286660/how-to-make-a-window-fullscreen-in-a-secondary-display-with-tkinter
 if __name__ == "__main__":
     run()
 

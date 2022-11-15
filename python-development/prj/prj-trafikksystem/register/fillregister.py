@@ -71,7 +71,7 @@ def fillRegister(amt:int):
         
 
 start = time.time()
-fillRegister(2000)
+fillRegister(100000)
 end = time.time()
 print(f"executoin time:{end - start}")
 

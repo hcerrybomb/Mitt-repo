@@ -36,12 +36,15 @@ def parse_embed_json(json_file):
         yield embed
 
 
-
-
+@client.event
+async def on_message(message,ctx):
+    if message.content =="!ip":
+        await ctx.send("```connect 208.103.169.220:28015\nsteam://connect/208.103.169.220:28015```")
 
 
 @client.event
 async def on_message(message):
+
     interactionChannel = client.get_channel(968800374343483392)
     rulesChannel = client.get_channel(968473733788495943)
     if message.content== ";;;turret-raid":
@@ -94,7 +97,7 @@ async def printPoll(ctx):
     embed.set_thumbnail(url="https://i.imgur.com/eN4wJfL.png")
 
     await pollChannel.send(embed=embed)
-    await pollChannel.send("https://strawpoll.com/polls/e6Z2e1BkMgN")
+    await pollChannel.send("https://strawpoll.com/polls/xVg7dV2kMZr")
 
 @client.event
 async def on_ready():
@@ -110,7 +113,7 @@ async def on_ready():
     embed.set_thumbnail(url="https://i.imgur.com/eN4wJfL.png")
     await pollChannel.purge()
     await pollChannel.send(embed=embed)
-    await pollChannel.send("https://strawpoll.com/polls/e6Z2e1BkMgN")
+    await pollChannel.send("https://strawpoll.com/polls/xVg7dV2kMZr")
 
 
 
@@ -119,10 +122,10 @@ async def on_ready():
         title="Next wipe!",
         url="", 
         description="Information regarding the upcoming NATO wipe!"
-        +"\n\n\n**When:**\nForced wipe 2/6/2022 @ 20:00 CEST"
-        +"\n\n**Server:**\nRustoria EU Medium (?)"
+        +"\n\n\n**When:**\nForced wipe 6/10/2022 @ 20:00 CEST"
+        +"\n\n**Server:**\nRustoria EU Medium!"
         +"\n\n**Battlemetrics:**\nhttps://www.battlemetrics.com/servers/rust/9594569"
-        +"\n\n**Wipes:**\nBi-Weekly on Thursdays @ 3PM UK / 4PM CEST"
+        +"\n\n**Wipes:**\n6/10/2022 @ 20:00 CEST, BIWEEKLY WIPES"
         +"\n\n**Connect:**\nconnect 208.103.169.220:28015\n\n",
         color=0xFF5733,
 
