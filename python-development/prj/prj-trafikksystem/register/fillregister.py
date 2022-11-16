@@ -29,7 +29,8 @@ class regBil:
         self.fuel = fuel
     def pPrintInfo(self):
         print(f"\n\nPlate:{self.id}\nBrand:{self.brand}\nModel:{self.model}\nOwner:{self.owner}\nFuel/El:{self.fuel}")
-
+    def passerPunkt():
+        
 
 
 current_dir = sys.path[0]
