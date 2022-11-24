@@ -65,11 +65,21 @@ class regBil:
         """
 
         print(f"\n\nPlate:{self.id}\nBrand:{self.brand}\nModel:{self.model}\nOwner:{self.owner}\nFuel/El:{self.fuel}")
+<<<<<<< HEAD
+=======
 
+>>>>>>> f42b29aeb05c83b3011c908b92c8b4273d554dd8
 
 class register():
     """
     Class for instantiating the register of cars to be used in the simulator.
+
+<<<<<<< HEAD
+class register():
+    """
+    Class for instantiating the register of cars to be used in the simulator.
+=======
+>>>>>>> f42b29aeb05c83b3011c908b92c8b4273d554dd8
     <targetFile> is the target path for the .json file that will become the register of cars.
     <sourceFile> is the source path for the .csv models file filled with car models.
     """
@@ -86,6 +96,10 @@ class register():
         """
         Function that makes a python dict object filled with randomized car objects-
         that are sent to the .json register. 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f42b29aeb05c83b3011c908b92c8b4273d554dd8
         <amt> is the amount of car objects to be created and sent to the register.
         """
 
@@ -118,4 +132,8 @@ if __name__ == "__main__":
                                                 # * 100k objects, apprx 5 min run time
         sourceFile=current_dir + "\\models.csv",
     )
+<<<<<<< HEAD
     reg.fillRegister(1000)
+=======
+    reg.fillRegister(1000)
+>>>>>>> f42b29aeb05c83b3011c908b92c8b4273d554dd8
