@@ -33,7 +33,7 @@ def see_help_sim():
     """
     valid = False
     while valid == False:
-        seeHelp = str(input("\nSee help for fillregister.py? [y/n] : " ))
+        seeHelp = str(input("\nSee help for simulator.py? [y/n] : " ))
         if seeHelp == "y" or seeHelp == "Y":
             help(SimBil)
             help(Simulator)
@@ -146,7 +146,7 @@ class Simulator():
                         time.sleep(0.2)
                 load_str = threading.Thread(target=loading_str)
                 load_str.start()
-                json.dump(data, dataFile)
+                json.dump(data, dataFile, indent=1)
                 dumped = True
                 
                 print(f"\r.json file updated {carCount} total car passings tracked and registered")
@@ -164,4 +164,3 @@ if __name__ == "__main__":
         sourceFile = current_dir[:len(current_dir)-len("simulator")] + "\\register\\register.json"
     )
     simulator.simulate()
-
