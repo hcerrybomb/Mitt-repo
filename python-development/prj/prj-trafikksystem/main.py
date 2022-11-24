@@ -1,42 +1,28 @@
-import json
-import time
-import random
+import time 
+import sys 
+import ijson
+from trackdata.simulator import months
 
-months = [
-    ["Jan",31],
-    ["Feb",28],
-    ["Mar",31],
-    ["Apr",30],
-    ["May",31],
-    ["Jun",30],
-    ["Jul",31],
-    ["Aug",31],
-    ["Sep",30],
-    ["Oct",31],
-    ["Nov",30],
-    ["Dec",31]
-]
-
-class Camera:
-    
+current_dir = sys.path[0]
 
 
-def sendCar():
-
-def simulateCars(yrs:int=1):
-    for i in range(yrs):
-        for i in range(len(months)):
-            for j in range(months[i][1]):
-                for k in range(24):
-                    print(f"it is now {months[i][0]}, {j+1}. hr:{k}:00 - {k+1}:00")
+date_frequency = set()
 
 
-simulateCars()
+with open(f"{current_dir}\\trackdata\\data.json", "rb") as f:
+    print("test")
+    for data in ijson.items(f, "data"):
+        print(len(data))
+        for year in range(len(data)):
+            for month in range(len(months)):
+                for day in range(months[month][1]):
+                    for i in range(24):
+                        for j in range(3):
+                            print(len(data[f"{month}"][f"{day}"][i][j]))
+                            date_frequency.add(len(data[f"{month}"][f"{day}"][i][j]))
 
-if __name__ == "__main__":
-    print("done")
 
-# ? for i in range months
-# ? for i in range days
-# ? for i in range hours 
-# ? pass X random int of cars, go t next hour, repeat
+
+
+print(type(date_frequency))
+print(date_frequency)
