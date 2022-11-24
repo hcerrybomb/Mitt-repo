@@ -8,23 +8,24 @@ import csv
 import names
 import json
 
-def see_help_ask():
+
+def see_help_reg():
     """
     Simple function that asks the user if they would like to see help for the classes-
     of fillregister.py
     """
     valid = False
     while valid == False:
-        seeHelp = str(input("See help for fillregister.py? [y/n] : " ))
+        seeHelp = str(input("\nSee help for fillregister.py? [y/n] : " ))
         if seeHelp == "y" or seeHelp == "Y":
-            help(regBil)
-            help(register)
+            help(RegBil)
+            help(Register)
             valid = True
         elif seeHelp == "n" or seeHelp == "N":
-            print("Continuing program")
+            print("\nContinuing program\n")
             valid = True
         else:
-            print("Invalid input")
+            print("\nInvalid input")
 
 
 def gen_number_plate():
@@ -38,7 +39,7 @@ def gen_number_plate():
     return f'{letters}-{numbers}'
 
 
-class regBil:
+class RegBil:
     """
     Class for car objects that are sent to the register of cars.
     <id> is the number plate, <fuel> is either "electric", "gasoline", or "diesel".
@@ -59,7 +60,8 @@ class regBil:
         self.model = model
         self.owner = owner
         self.fuel = fuel
-    def pPrintInfo(self):
+
+    def printInfo(self):
         """
         Prints f string of all variables of object.
         """
@@ -67,7 +69,7 @@ class regBil:
         print(f"\n\nPlate:{self.id}\nBrand:{self.brand}\nModel:{self.model}\nOwner:{self.owner}\nFuel/El:{self.fuel}")
 
 
-class register():
+class Register():
     """
     Class for instantiating the register of cars to be used in the simulator.
     <targetFile> is the target path for the .json file that will become the register of cars.
@@ -104,18 +106,18 @@ class register():
         with open(self.targetFile, 'w') as file:
             for i in range(amt):
                 build = models[random.randint(0,len(models)-1)]
-                car = regBil(gen_number_plate(),build[0],build[1],names.get_full_name(),build[2])
+                car = RegBil(gen_number_plate(),build[0],build[1],names.get_full_name(),build[2])
                 data['register'].append(car.__dict__)
             json.dump(data, file, indent=4)
 
 
-see_help_ask()
+see_help_reg()
 if __name__ == "__main__":
     current_dir = sys.path[0]
-    reg = register(
-        targetFile=current_dir + "\\test.json", # * you can test the program in test.json
-                                                # * register.json is already filled with 
-                                                # * 100k objects, apprx 5 min run time
-        sourceFile=current_dir + "\\models.csv",
+    reg = Register(
+        targetFile = current_dir + "\\test.json",   # * you can test the program in test.json-
+                                                    # * register.json is already filled with-
+                                                    # * 100k objects, apprx 5 min run time.
+        sourceFile = current_dir + "\\models.csv",
     )
     reg.fillRegister(1000)

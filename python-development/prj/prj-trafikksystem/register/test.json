@@ -1,0 +1,7004 @@
+{
+    "register": [
+        {
+            "id": "KA-31460",
+            "brand": "Hyundai",
+            "model": "Santa Fe 2020",
+            "owner": "Paul Frey",
+            "fuel": "electric"
+        },
+        {
+            "id": "AK-98301",
+            "brand": "Ford",
+            "model": "Expedition 2020",
+            "owner": "Mary Bland",
+            "fuel": "diesel"
+        },
+        {
+            "id": "SW-45755",
+            "brand": "Audi",
+            "model": "Q8 2020",
+            "owner": "Jaime Wooten",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "HW-49763",
+            "brand": "Toyota",
+            "model": "Corolla 2020",
+            "owner": "Shannon Mason",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "BA-53836",
+            "brand": "Ford",
+            "model": "F250 Super Duty Crew Cab 2020",
+            "owner": "Jazmin Lee",
+            "fuel": "electric"
+        },
+        {
+            "id": "GT-47220",
+            "brand": "Volkswagen",
+            "model": "Arteon 2020",
+            "owner": "Douglas Martin",
+            "fuel": "electric"
+        },
+        {
+            "id": "MJ-63446",
+            "brand": "Nissan",
+            "model": "Sentra 2020",
+            "owner": "Ralph Reyes",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "XT-65899",
+            "brand": "Toyota",
+            "model": "Sequoia 2020",
+            "owner": "Lawrence Oliver",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "QW-86344",
+            "brand": "Chevrolet",
+            "model": "Camaro 2020",
+            "owner": "John Berry",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GX-28362",
+            "brand": "GMC",
+            "model": "Sierra 3500 HD Crew Cab 2020",
+            "owner": "Mary Swales",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "FU-95791",
+            "brand": "Toyota",
+            "model": "Tundra CrewMax 2020",
+            "owner": "Cleveland Bryson",
+            "fuel": "electric"
+        },
+        {
+            "id": "DJ-63257",
+            "brand": "Chevrolet",
+            "model": "Colorado Extended Cab 2020",
+            "owner": "Peter Hilton",
+            "fuel": "diesel"
+        },
+        {
+            "id": "MG-56159",
+            "brand": "Chevrolet",
+            "model": "Silverado 2500 HD Double Cab 2020",
+            "owner": "Milton Robinson",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "HE-47581",
+            "brand": "GMC",
+            "model": "Sierra 1500 Double Cab 2020",
+            "owner": "Larry Shirilla",
+            "fuel": "diesel"
+        },
+        {
+            "id": "YZ-71806",
+            "brand": "Toyota",
+            "model": "Tundra Double Cab 2020",
+            "owner": "Jesus Stamp",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "VK-17872",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG GLC Coupe 2020",
+            "owner": "Barbara Ayres",
+            "fuel": "electric"
+        },
+        {
+            "id": "LN-52753",
+            "brand": "MINI",
+            "model": "Clubman 2020",
+            "owner": "Kathleen Orizabal",
+            "fuel": "electric"
+        },
+        {
+            "id": "IZ-28142",
+            "brand": "GMC",
+            "model": "Sierra 1500 Double Cab 2020",
+            "owner": "Patricia Wilson",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JY-26226",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG GLC 2020",
+            "owner": "Thomas Shaw",
+            "fuel": "electric"
+        },
+        {
+            "id": "KJ-86917",
+            "brand": "Toyota",
+            "model": "C-HR 2020",
+            "owner": "Jesse Brymer",
+            "fuel": "diesel"
+        },
+        {
+            "id": "PX-66005",
+            "brand": "Cadillac",
+            "model": "CT6 2020",
+            "owner": "Jennifer Downs",
+            "fuel": "electric"
+        },
+        {
+            "id": "TI-91602",
+            "brand": "Honda",
+            "model": "CR-V Hybrid 2020",
+            "owner": "Floyd Wright",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BZ-34668",
+            "brand": "Freightliner",
+            "model": "Sprinter 4500 Crew 2020",
+            "owner": "Angelo Marks",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "BT-99969",
+            "brand": "Ford",
+            "model": "Transit 350 Passenger Van 2020",
+            "owner": "Dorothy Hamilton",
+            "fuel": "electric"
+        },
+        {
+            "id": "SD-11733",
+            "brand": "Alfa Romeo",
+            "model": "Stelvio 2020",
+            "owner": "Hazel Holland",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BT-69465",
+            "brand": "Acura",
+            "model": "RLX 2020",
+            "owner": "James Young",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "FV-90020",
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 4500 Crew 2020",
+            "owner": "Ellen Capps",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "VT-79939",
+            "brand": "Toyota",
+            "model": "Corolla Hatchback 2020",
+            "owner": "Jessie Morris",
+            "fuel": "electric"
+        },
+        {
+            "id": "AG-42595",
+            "brand": "Porsche",
+            "model": "Macan 2020",
+            "owner": "Lisa Ohara",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "BO-28491",
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 4500 Cargo 2020",
+            "owner": "Johnny Boles",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "NO-82633",
+            "brand": "FIAT",
+            "model": "500L 2020",
+            "owner": "Shirley Jarvis",
+            "fuel": "diesel"
+        },
+        {
+            "id": "CU-92610",
+            "brand": "Ford",
+            "model": "Edge 2020",
+            "owner": "Evelyn Landry",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "FL-46893",
+            "brand": "Ford",
+            "model": "Transit 250 Cargo Van 2020",
+            "owner": "Timmy Schmidt",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "FA-11457",
+            "brand": "Audi",
+            "model": "S8 2020",
+            "owner": "Edward Riley",
+            "fuel": "electric"
+        },
+        {
+            "id": "WB-90134",
+            "brand": "Ford",
+            "model": "Transit 350 Passenger Van 2020",
+            "owner": "Gerald Burns",
+            "fuel": "electric"
+        },
+        {
+            "id": "GP-98768",
+            "brand": "Subaru",
+            "model": "Ascent 2020",
+            "owner": "Donald Brooks",
+            "fuel": "electric"
+        },
+        {
+            "id": "TH-56870",
+            "brand": "Ford",
+            "model": "F250 Super Duty Crew Cab 2020",
+            "owner": "Norman Myers",
+            "fuel": "electric"
+        },
+        {
+            "id": "OU-51697",
+            "brand": "Toyota",
+            "model": "Corolla 2020",
+            "owner": "Brittany Hammock",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "TY-63184",
+            "brand": "Lexus",
+            "model": "RC 2020",
+            "owner": "Jonathan Kattner",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "LJ-11583",
+            "brand": "Mercedes-Benz",
+            "model": "E-Class 2020",
+            "owner": "Sandra Lewis",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "TE-66270",
+            "brand": "Nissan",
+            "model": "Murano 2020",
+            "owner": "Sarah Greaves",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "BC-65742",
+            "brand": "Ram",
+            "model": "ProMaster Cargo Van 2020",
+            "owner": "Michael Perez",
+            "fuel": "electric"
+        },
+        {
+            "id": "TN-61760",
+            "brand": "Nissan",
+            "model": "Altima 2020",
+            "owner": "Shirley Jaimes",
+            "fuel": "electric"
+        },
+        {
+            "id": "TT-57742",
+            "brand": "Buick",
+            "model": "Enclave 2020",
+            "owner": "Annette Thompson",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "ST-18511",
+            "brand": "Kia",
+            "model": "Soul 2020",
+            "owner": "Phillip Craver",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "NG-16287",
+            "brand": "GMC",
+            "model": "Canyon Crew Cab 2020",
+            "owner": "William Haskins",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WS-82894",
+            "brand": "Freightliner",
+            "model": "Sprinter 2500 Cargo 2020",
+            "owner": "Nancy Ackerman",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "GI-70179",
+            "brand": "BMW",
+            "model": "4 Series 2020",
+            "owner": "Nancy Franklin",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "BJ-25737",
+            "brand": "Volkswagen",
+            "model": "Golf 2020",
+            "owner": "Connie Weaver",
+            "fuel": "diesel"
+        },
+        {
+            "id": "OS-52358",
+            "brand": "Honda",
+            "model": "Odyssey 2020",
+            "owner": "Gene Wong",
+            "fuel": "electric"
+        },
+        {
+            "id": "TD-15535",
+            "brand": "Nissan",
+            "model": "Sentra 2020",
+            "owner": "Robert Thurston",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "SH-92743",
+            "brand": "Ford",
+            "model": "F350 Super Duty Crew Cab 2020",
+            "owner": "Rose Gatto",
+            "fuel": "electric"
+        },
+        {
+            "id": "LM-53104",
+            "brand": "Toyota",
+            "model": "Avalon Hybrid 2020",
+            "owner": "Diana Acevedo",
+            "fuel": "electric"
+        },
+        {
+            "id": "NN-75013",
+            "brand": "Land Rover",
+            "model": "Defender 110 2020",
+            "owner": "Susan Wagner",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "GK-88661",
+            "brand": "GMC",
+            "model": "Acadia 2020",
+            "owner": "Rosalie Parker",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AG-97275",
+            "brand": "Genesis",
+            "model": "G80 2020",
+            "owner": "Randy Sullens",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "YK-75538",
+            "brand": "Ram",
+            "model": "1500 Classic Crew Cab 2020",
+            "owner": "Paul King",
+            "fuel": "electric"
+        },
+        {
+            "id": "YE-91782",
+            "brand": "Hyundai",
+            "model": "Santa Fe 2020",
+            "owner": "Jason Shelly",
+            "fuel": "electric"
+        },
+        {
+            "id": "QL-54132",
+            "brand": "Hyundai",
+            "model": "Accent 2020",
+            "owner": "Jesus Myers",
+            "fuel": "electric"
+        },
+        {
+            "id": "IB-65722",
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 2500 Passenger 2020",
+            "owner": "Denise Reynolds",
+            "fuel": "diesel"
+        },
+        {
+            "id": "IC-65066",
+            "brand": "Cadillac",
+            "model": "XT5 2020",
+            "owner": "Ruby Glaze",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "KH-91809",
+            "brand": "Ram",
+            "model": "1500 Quad Cab 2020",
+            "owner": "Gladys Harbin",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "HU-44858",
+            "brand": "Chevrolet",
+            "model": "Equinox 2020",
+            "owner": "Tanisha Turner",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "RS-82893",
+            "brand": "Subaru",
+            "model": "Ascent 2020",
+            "owner": "Carlos Spade",
+            "fuel": "electric"
+        },
+        {
+            "id": "KL-21548",
+            "brand": "Porsche",
+            "model": "718 Cayman 2020",
+            "owner": "Ella Brown",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JR-19254",
+            "brand": "Volvo",
+            "model": "V90 2020",
+            "owner": "Charles Turnbow",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "CJ-28025",
+            "brand": "INFINITI",
+            "model": "QX60 2020",
+            "owner": "Joanna Bachman",
+            "fuel": "diesel"
+        },
+        {
+            "id": "XY-75126",
+            "brand": "Cadillac",
+            "model": "CT5 2020",
+            "owner": "Dorothy Black",
+            "fuel": "electric"
+        },
+        {
+            "id": "KP-31630",
+            "brand": "Jeep",
+            "model": "Renegade 2020",
+            "owner": "Brenda Strong",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GM-60748",
+            "brand": "Kia",
+            "model": "Niro EV 2020",
+            "owner": "Peter Friel",
+            "fuel": "electric"
+        },
+        {
+            "id": "KZ-77479",
+            "brand": "Buick",
+            "model": "Enclave 2020",
+            "owner": "Mike August",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AZ-58541",
+            "brand": "Mercedes-Benz",
+            "model": "CLS 2020",
+            "owner": "Linda Garrett",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZU-25377",
+            "brand": "Toyota",
+            "model": "Avalon 2020",
+            "owner": "Beulah Young",
+            "fuel": "electric"
+        },
+        {
+            "id": "DZ-74920",
+            "brand": "BMW",
+            "model": "X3 M 2020",
+            "owner": "Edward Richards",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZM-20463",
+            "brand": "Nissan",
+            "model": "Frontier King Cab 2020",
+            "owner": "Darla Mclemore",
+            "fuel": "diesel"
+        },
+        {
+            "id": "XS-66438",
+            "brand": "Jeep",
+            "model": "Renegade 2020",
+            "owner": "Robert Chestnut",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ME-88697",
+            "brand": "Honda",
+            "model": "Civic Type R 2020",
+            "owner": "Traci Greene",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JI-90704",
+            "brand": "MAZDA",
+            "model": "CX-5 2020",
+            "owner": "Kevin Rose",
+            "fuel": "electric"
+        },
+        {
+            "id": "BC-88002",
+            "brand": "Nissan",
+            "model": "Maxima 2020",
+            "owner": "Johnny Miller",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "LJ-32300",
+            "brand": "Honda",
+            "model": "Civic 2020",
+            "owner": "Shirley Iacobelli",
+            "fuel": "diesel"
+        },
+        {
+            "id": "PU-52510",
+            "brand": "Honda",
+            "model": "CR-V Hybrid 2020",
+            "owner": "Miriam Daugherty",
+            "fuel": "diesel"
+        },
+        {
+            "id": "UW-50434",
+            "brand": "Volkswagen",
+            "model": "Passat 2020",
+            "owner": "Richard Benscoter",
+            "fuel": "electric"
+        },
+        {
+            "id": "QO-63112",
+            "brand": "Chevrolet",
+            "model": "Silverado 1500 Crew Cab 2020",
+            "owner": "Thomas Frank",
+            "fuel": "electric"
+        },
+        {
+            "id": "KS-37709",
+            "brand": "Jeep",
+            "model": "Gladiator 2020",
+            "owner": "Martin Miller",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AH-60594",
+            "brand": "Porsche",
+            "model": "Cayenne 2020",
+            "owner": "Jim Dougherty",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "QI-92029",
+            "brand": "Chevrolet",
+            "model": "Spark 2020",
+            "owner": "Patrick King",
+            "fuel": "electric"
+        },
+        {
+            "id": "GA-92431",
+            "brand": "Ford",
+            "model": "F150 Regular Cab 2020",
+            "owner": "Joshua Paton",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "DB-59738",
+            "brand": "Alfa Romeo",
+            "model": "Giulia 2020",
+            "owner": "Raquel Kaufman",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AB-48160",
+            "brand": "Lexus",
+            "model": "GS 2020",
+            "owner": "Sharon Epperson",
+            "fuel": "electric"
+        },
+        {
+            "id": "EG-11596",
+            "brand": "Porsche",
+            "model": "Cayenne Coupe 2020",
+            "owner": "Lori Larmore",
+            "fuel": "electric"
+        },
+        {
+            "id": "EE-68732",
+            "brand": "Mercedes-Benz",
+            "model": "G-Class 2020",
+            "owner": "Raleigh White",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GV-87443",
+            "brand": "Subaru",
+            "model": "Ascent 2020",
+            "owner": "Henry Pinard",
+            "fuel": "electric"
+        },
+        {
+            "id": "DH-80139",
+            "brand": "Chevrolet",
+            "model": "Silverado 2500 HD Crew Cab 2020",
+            "owner": "Christian Sanders",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WO-40949",
+            "brand": "Porsche",
+            "model": "Panamera 2020",
+            "owner": "Kandi Mai",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "DX-19180",
+            "brand": "BMW",
+            "model": "X6 2020",
+            "owner": "Mark Nipper",
+            "fuel": "electric"
+        },
+        {
+            "id": "WC-62751",
+            "brand": "Nissan",
+            "model": "NV1500 Cargo 2020",
+            "owner": "Roy Campbell",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LB-36083",
+            "brand": "Cadillac",
+            "model": "Escalade 2020",
+            "owner": "Dorothy Cisneros",
+            "fuel": "electric"
+        },
+        {
+            "id": "BW-64980",
+            "brand": "Nissan",
+            "model": "Armada 2020",
+            "owner": "Karen Lamm",
+            "fuel": "diesel"
+        },
+        {
+            "id": "OH-13345",
+            "brand": "Nissan",
+            "model": "Altima 2020",
+            "owner": "Adam Hargrove",
+            "fuel": "electric"
+        },
+        {
+            "id": "WU-47847",
+            "brand": "Kia",
+            "model": "Optima Hybrid 2020",
+            "owner": "Osvaldo Lee",
+            "fuel": "electric"
+        },
+        {
+            "id": "QH-25984",
+            "brand": "GMC",
+            "model": "Canyon Crew Cab 2020",
+            "owner": "Christine Howard",
+            "fuel": "diesel"
+        },
+        {
+            "id": "RY-49122",
+            "brand": "MINI",
+            "model": "Hardtop 2 Door 2020",
+            "owner": "Scott Taylor",
+            "fuel": "electric"
+        },
+        {
+            "id": "EM-82128",
+            "brand": "Hyundai",
+            "model": "Sonata Hybrid 2020",
+            "owner": "David Eiche",
+            "fuel": "electric"
+        },
+        {
+            "id": "IT-92010",
+            "brand": "Ford",
+            "model": "F150 Regular Cab 2020",
+            "owner": "Abel Marshall",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "LK-76429",
+            "brand": "Jeep",
+            "model": "Renegade 2020",
+            "owner": "Larry Williams",
+            "fuel": "diesel"
+        },
+        {
+            "id": "CK-50631",
+            "brand": "GMC",
+            "model": "Sierra 1500 Regular Cab 2020",
+            "owner": "Gayle Perkins",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AI-88284",
+            "brand": "Toyota",
+            "model": "Yaris 2020",
+            "owner": "Gary Mcthay",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "VT-55500",
+            "brand": "Nissan",
+            "model": "Murano 2020",
+            "owner": "Charles Dickerson",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "ZC-79432",
+            "brand": "Chevrolet",
+            "model": "Suburban 2020",
+            "owner": "Vincent Henderson",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ZJ-68488",
+            "brand": "Kia",
+            "model": "Telluride 2020",
+            "owner": "Mary Kramer",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "DY-54712",
+            "brand": "Genesis",
+            "model": "G90 2020",
+            "owner": "Albertha James",
+            "fuel": "diesel"
+        },
+        {
+            "id": "MO-65836",
+            "brand": "Land Rover",
+            "model": "Discovery 2020",
+            "owner": "Lance Tucker",
+            "fuel": "diesel"
+        },
+        {
+            "id": "PB-49772",
+            "brand": "Jaguar",
+            "model": "F-TYPE 2020",
+            "owner": "Joyce Thiessen",
+            "fuel": "electric"
+        },
+        {
+            "id": "WP-94614",
+            "brand": "Toyota",
+            "model": "Corolla 2020",
+            "owner": "Donnie Johnson",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "DR-87354",
+            "brand": "Ford",
+            "model": "Transit 350 Passenger Van 2020",
+            "owner": "Cynthia Morris",
+            "fuel": "electric"
+        },
+        {
+            "id": "PW-60031",
+            "brand": "Jaguar",
+            "model": "E-PACE 2020",
+            "owner": "Alvin Simonds",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "TC-18602",
+            "brand": "Hyundai",
+            "model": "Santa Fe 2020",
+            "owner": "Trista Lona",
+            "fuel": "electric"
+        },
+        {
+            "id": "MJ-26527",
+            "brand": "Subaru",
+            "model": "Outback 2020",
+            "owner": "Lynn Reed",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "RB-49341",
+            "brand": "Volvo",
+            "model": "V90 2020",
+            "owner": "Clarence Alteri",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "DF-17253",
+            "brand": "GMC",
+            "model": "Yukon XL 2020",
+            "owner": "Margaret Snively",
+            "fuel": "electric"
+        },
+        {
+            "id": "AD-86079",
+            "brand": "BMW",
+            "model": "3 Series 2020",
+            "owner": "Bruce Ricci",
+            "fuel": "electric"
+        },
+        {
+            "id": "MQ-51716",
+            "brand": "Audi",
+            "model": "A7 2020",
+            "owner": "Stephanie Brown",
+            "fuel": "electric"
+        },
+        {
+            "id": "DR-75678",
+            "brand": "Volkswagen",
+            "model": "Jetta 2020",
+            "owner": "Katherine Shannon",
+            "fuel": "electric"
+        },
+        {
+            "id": "GO-95951",
+            "brand": "Lincoln",
+            "model": "Continental 2020",
+            "owner": "Rodney Kestler",
+            "fuel": "diesel"
+        },
+        {
+            "id": "EX-23210",
+            "brand": "Ram",
+            "model": "ProMaster Cargo Van 2020",
+            "owner": "Virgil Browning",
+            "fuel": "electric"
+        },
+        {
+            "id": "XR-62843",
+            "brand": "Cadillac",
+            "model": "XT6 2020",
+            "owner": "William Benefiel",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ZQ-20623",
+            "brand": "Nissan",
+            "model": "LEAF 2020",
+            "owner": "Kenneth White",
+            "fuel": "electric"
+        },
+        {
+            "id": "IY-40285",
+            "brand": "Ford",
+            "model": "F150 SuperCrew Cab 2020",
+            "owner": "Michael Brantley",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "MP-93945",
+            "brand": "Ram",
+            "model": "1500 Crew Cab 2020",
+            "owner": "Jeanne Turner",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "YZ-14105",
+            "brand": "Audi",
+            "model": "A6 2020",
+            "owner": "Phillip Hawk",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JQ-81070",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG CLS 2020",
+            "owner": "Alvin Hoover",
+            "fuel": "diesel"
+        },
+        {
+            "id": "XV-96735",
+            "brand": "Subaru",
+            "model": "BRZ 2020",
+            "owner": "Stephanie Dupre",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "KU-45967",
+            "brand": "Ford",
+            "model": "F450 Super Duty Crew Cab 2020",
+            "owner": "Kristen Velasquez",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZP-49847",
+            "brand": "Toyota",
+            "model": "Tacoma Access Cab 2020",
+            "owner": "Bertha Okeefe",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LX-27319",
+            "brand": "Audi",
+            "model": "A6 allroad 2020",
+            "owner": "Merle Strobel",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ER-31464",
+            "brand": "Lincoln",
+            "model": "Nautilus 2020",
+            "owner": "Frederick Boswell",
+            "fuel": "diesel"
+        },
+        {
+            "id": "DL-52732",
+            "brand": "Volvo",
+            "model": "V90 2020",
+            "owner": "Carlos Turner",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "OA-89769",
+            "brand": "MAZDA",
+            "model": "CX-9 2020",
+            "owner": "Yolanda Oglesby",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "TD-86891",
+            "brand": "Acura",
+            "model": "TLX 2020",
+            "owner": "Carlos Gertelman",
+            "fuel": "diesel"
+        },
+        {
+            "id": "XR-29898",
+            "brand": "Genesis",
+            "model": "G80 2020",
+            "owner": "Joan Peterson",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "CC-33744",
+            "brand": "Honda",
+            "model": "Passport 2020",
+            "owner": "Dwight Parker",
+            "fuel": "electric"
+        },
+        {
+            "id": "JP-26256",
+            "brand": "Ford",
+            "model": "F150 SuperCrew Cab 2020",
+            "owner": "Mathilde Vonbraunsberg",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "EY-81444",
+            "brand": "Tesla",
+            "model": "Model 3 2020",
+            "owner": "Richard Blair",
+            "fuel": "electric"
+        },
+        {
+            "id": "DX-95161",
+            "brand": "Subaru",
+            "model": "WRX 2020",
+            "owner": "Brenda Lopez",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LJ-44126",
+            "brand": "Mitsubishi",
+            "model": "Outlander Sport 2020",
+            "owner": "Jesus Brewer",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WZ-32821",
+            "brand": "Land Rover",
+            "model": "Range Rover Velar 2020",
+            "owner": "Andrew Williamson",
+            "fuel": "electric"
+        },
+        {
+            "id": "SG-70621",
+            "brand": "Ford",
+            "model": "Fusion 2020",
+            "owner": "Judith Malone",
+            "fuel": "electric"
+        },
+        {
+            "id": "OQ-87607",
+            "brand": "Subaru",
+            "model": "BRZ 2020",
+            "owner": "Larry Nugent",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "OZ-58134",
+            "brand": "MAZDA",
+            "model": "CX-5 2020",
+            "owner": "Nancy Nance",
+            "fuel": "electric"
+        },
+        {
+            "id": "AI-54032",
+            "brand": "Toyota",
+            "model": "Land Cruiser 2020",
+            "owner": "Nicholas Galaviz",
+            "fuel": "diesel"
+        },
+        {
+            "id": "DZ-21377",
+            "brand": "Ram",
+            "model": "1500 Crew Cab 2020",
+            "owner": "Manuel Scott",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "YW-43700",
+            "brand": "Hyundai",
+            "model": "Elantra GT 2020",
+            "owner": "Florence Anaya",
+            "fuel": "diesel"
+        },
+        {
+            "id": "KJ-24962",
+            "brand": "INFINITI",
+            "model": "QX50 2020",
+            "owner": "Robert White",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QA-98313",
+            "brand": "Hyundai",
+            "model": "Ioniq Plug-in Hybrid 2020",
+            "owner": "Frank Payne",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BJ-40482",
+            "brand": "Toyota",
+            "model": "Tacoma Double Cab 2020",
+            "owner": "Ella Young",
+            "fuel": "diesel"
+        },
+        {
+            "id": "DH-12334",
+            "brand": "Audi",
+            "model": "S8 2020",
+            "owner": "Freda Momeni",
+            "fuel": "electric"
+        },
+        {
+            "id": "US-32155",
+            "brand": "Nissan",
+            "model": "Rogue 2020",
+            "owner": "Jonathan Harrington",
+            "fuel": "electric"
+        },
+        {
+            "id": "QI-29810",
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 3500 XD Cargo 2020",
+            "owner": "Jonathan Trollinger",
+            "fuel": "electric"
+        },
+        {
+            "id": "UI-23651",
+            "brand": "Toyota",
+            "model": "Land Cruiser 2020",
+            "owner": "Betty Estrada",
+            "fuel": "diesel"
+        },
+        {
+            "id": "KX-30644",
+            "brand": "Nissan",
+            "model": "Frontier Crew Cab 2020",
+            "owner": "Jan Horn",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WA-51204",
+            "brand": "Chevrolet",
+            "model": "Corvette 2020",
+            "owner": "Kathleen Block",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QN-77992",
+            "brand": "Hyundai",
+            "model": "Sonata Hybrid 2020",
+            "owner": "Marlon Woody",
+            "fuel": "electric"
+        },
+        {
+            "id": "CM-28317",
+            "brand": "Kia",
+            "model": "Telluride 2020",
+            "owner": "Michael Stump",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "BR-65599",
+            "brand": "Subaru",
+            "model": "Crosstrek 2020",
+            "owner": "Joey Ayers",
+            "fuel": "electric"
+        },
+        {
+            "id": "DL-66981",
+            "brand": "Chevrolet",
+            "model": "Camaro 2020",
+            "owner": "Brenda Kou",
+            "fuel": "diesel"
+        },
+        {
+            "id": "DF-20107",
+            "brand": "Kia",
+            "model": "Telluride 2020",
+            "owner": "James Gillman",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "XX-11548",
+            "brand": "Acura",
+            "model": "RDX 2020",
+            "owner": "Robert Moore",
+            "fuel": "diesel"
+        },
+        {
+            "id": "KD-52838",
+            "brand": "Tesla",
+            "model": "Model S 2020",
+            "owner": "Michael Mark",
+            "fuel": "diesel"
+        },
+        {
+            "id": "RT-37913",
+            "brand": "BMW",
+            "model": "X2 2020",
+            "owner": "Terry Schulze",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZS-49858",
+            "brand": "GMC",
+            "model": "Canyon Crew Cab 2020",
+            "owner": "Mary Garafano",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AO-64192",
+            "brand": "Chevrolet",
+            "model": "Silverado 1500 Regular Cab 2020",
+            "owner": "Kent Popham",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "DG-99920",
+            "brand": "Toyota",
+            "model": "Corolla Hatchback 2020",
+            "owner": "Robin Dicker",
+            "fuel": "electric"
+        },
+        {
+            "id": "IK-65107",
+            "brand": "Ram",
+            "model": "1500 Classic Quad Cab 2020",
+            "owner": "Brandon Troublefield",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GP-49412",
+            "brand": "Mercedes-Benz",
+            "model": "GLB 2020",
+            "owner": "Donald Taylor",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JZ-76344",
+            "brand": "Kia",
+            "model": "Stinger 2020",
+            "owner": "Gilbert Watson",
+            "fuel": "electric"
+        },
+        {
+            "id": "MV-54388",
+            "brand": "Chevrolet",
+            "model": "Trax 2020",
+            "owner": "Ollie Barb",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "WD-71541",
+            "brand": "Ford",
+            "model": "Ranger SuperCab 2020",
+            "owner": "Jessica Bear",
+            "fuel": "diesel"
+        },
+        {
+            "id": "NX-42777",
+            "brand": "Nissan",
+            "model": "Frontier Crew Cab 2020",
+            "owner": "Brent Lester",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JU-95356",
+            "brand": "Volvo",
+            "model": "XC90 2020",
+            "owner": "Lori Robbins",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JE-44825",
+            "brand": "Chrysler",
+            "model": "Pacifica Hybrid 2020",
+            "owner": "Alfred Lake",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ZI-79107",
+            "brand": "Acura",
+            "model": "MDX Sport Hybrid 2020",
+            "owner": "Michael Joseph",
+            "fuel": "electric"
+        },
+        {
+            "id": "RF-44090",
+            "brand": "BMW",
+            "model": "X3 2020",
+            "owner": "Elaine Murph",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JS-94020",
+            "brand": "Chevrolet",
+            "model": "Impala 2020",
+            "owner": "Steven Hart",
+            "fuel": "electric"
+        },
+        {
+            "id": "KS-10034",
+            "brand": "Toyota",
+            "model": "86 2020",
+            "owner": "Venice Webber",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "KQ-20538",
+            "brand": "Chevrolet",
+            "model": "Equinox 2020",
+            "owner": "Juan Judkins",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "FU-35662",
+            "brand": "Ram",
+            "model": "1500 Classic Crew Cab 2020",
+            "owner": "Lawrence Riddle",
+            "fuel": "electric"
+        },
+        {
+            "id": "JW-75844",
+            "brand": "Lexus",
+            "model": "GS 2020",
+            "owner": "Raymond Weese",
+            "fuel": "electric"
+        },
+        {
+            "id": "UP-78837",
+            "brand": "Freightliner",
+            "model": "Sprinter 3500 XD Crew 2020",
+            "owner": "Edward Howard",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LV-15871",
+            "brand": "Ram",
+            "model": "1500 Classic Quad Cab 2020",
+            "owner": "Chelsea Blakely",
+            "fuel": "diesel"
+        },
+        {
+            "id": "IE-90451",
+            "brand": "Honda",
+            "model": "Pilot 2020",
+            "owner": "Lee Franks",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WA-52567",
+            "brand": "Kia",
+            "model": "Optima Hybrid 2020",
+            "owner": "Robert Calderon",
+            "fuel": "electric"
+        },
+        {
+            "id": "OJ-12920",
+            "brand": "Chevrolet",
+            "model": "Impala 2020",
+            "owner": "Leonard Hightower",
+            "fuel": "electric"
+        },
+        {
+            "id": "RZ-53403",
+            "brand": "MINI",
+            "model": "Countryman 2020",
+            "owner": "Daniel Basquez",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BB-30634",
+            "brand": "Honda",
+            "model": "HR-V 2020",
+            "owner": "Frank Freeman",
+            "fuel": "diesel"
+        },
+        {
+            "id": "OC-39584",
+            "brand": "Hyundai",
+            "model": "Tucson 2020",
+            "owner": "George Bunch",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "NE-51551",
+            "brand": "Honda",
+            "model": "Ridgeline 2020",
+            "owner": "Charlene Morris",
+            "fuel": "diesel"
+        },
+        {
+            "id": "EI-31449",
+            "brand": "GMC",
+            "model": "Sierra 3500 HD Crew Cab 2020",
+            "owner": "Kelly Womack",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "FJ-94378",
+            "brand": "Mercedes-Benz",
+            "model": "CLS 2020",
+            "owner": "Violet Conti",
+            "fuel": "electric"
+        },
+        {
+            "id": "JY-88897",
+            "brand": "Kia",
+            "model": "Forte 2020",
+            "owner": "Albert Thurman",
+            "fuel": "electric"
+        },
+        {
+            "id": "SU-37218",
+            "brand": "Freightliner",
+            "model": "Sprinter 3500 Crew 2020",
+            "owner": "Mindy Decker",
+            "fuel": "diesel"
+        },
+        {
+            "id": "YB-62321",
+            "brand": "Tesla",
+            "model": "Model 3 2020",
+            "owner": "Steven Jones",
+            "fuel": "electric"
+        },
+        {
+            "id": "KS-29822",
+            "brand": "Audi",
+            "model": "Q5 2020",
+            "owner": "Cheryl Sanders",
+            "fuel": "electric"
+        },
+        {
+            "id": "NI-21483",
+            "brand": "Subaru",
+            "model": "WRX 2020",
+            "owner": "Richard Ramos",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AS-36722",
+            "brand": "Chrysler",
+            "model": "Pacifica Hybrid 2020",
+            "owner": "Laura Geathers",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GZ-33447",
+            "brand": "Honda",
+            "model": "CR-V 2020",
+            "owner": "Heather Curry",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "IB-96163",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG GLC Coupe 2020",
+            "owner": "Elaine Garland",
+            "fuel": "electric"
+        },
+        {
+            "id": "OI-47710",
+            "brand": "Ford",
+            "model": "Mustang 2020",
+            "owner": "Wendy Cushing",
+            "fuel": "electric"
+        },
+        {
+            "id": "PN-74577",
+            "brand": "Porsche",
+            "model": "Cayenne Coupe 2020",
+            "owner": "Rose Spomer",
+            "fuel": "electric"
+        },
+        {
+            "id": "WR-84119",
+            "brand": "Hyundai",
+            "model": "Tucson 2020",
+            "owner": "Sandra Marshall",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "CQ-65678",
+            "brand": "Lincoln",
+            "model": "MKZ 2020",
+            "owner": "Queen Harris",
+            "fuel": "electric"
+        },
+        {
+            "id": "AU-66115",
+            "brand": "Lexus",
+            "model": "GX 2020",
+            "owner": "Paul Belcher",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZU-37967",
+            "brand": "Hyundai",
+            "model": "Tucson 2020",
+            "owner": "Denise Connors",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "OP-30704",
+            "brand": "Jaguar",
+            "model": "F-TYPE 2020",
+            "owner": "Mathew Bentley",
+            "fuel": "electric"
+        },
+        {
+            "id": "BM-13118",
+            "brand": "Hyundai",
+            "model": "Ioniq Plug-in Hybrid 2020",
+            "owner": "Esmeralda Sierra",
+            "fuel": "diesel"
+        },
+        {
+            "id": "SO-44654",
+            "brand": "Kia",
+            "model": "Rio 2020",
+            "owner": "Joseph Phillips",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "LG-28983",
+            "brand": "BMW",
+            "model": "8 Series 2020",
+            "owner": "Lourie Fratus",
+            "fuel": "diesel"
+        },
+        {
+            "id": "DZ-16088",
+            "brand": "Toyota",
+            "model": "Avalon Hybrid 2020",
+            "owner": "Felix Thier",
+            "fuel": "electric"
+        },
+        {
+            "id": "WY-64294",
+            "brand": "Toyota",
+            "model": "Sequoia 2020",
+            "owner": "Tammy Mcdougald",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "FY-24245",
+            "brand": "Toyota",
+            "model": "Highlander Hybrid 2020",
+            "owner": "John Schultz",
+            "fuel": "electric"
+        },
+        {
+            "id": "NE-83611",
+            "brand": "Volkswagen",
+            "model": "Tiguan 2020",
+            "owner": "Delbert Goldsmith",
+            "fuel": "diesel"
+        },
+        {
+            "id": "NB-42842",
+            "brand": "Cadillac",
+            "model": "CT6 2020",
+            "owner": "Kevin Simon",
+            "fuel": "electric"
+        },
+        {
+            "id": "OV-16222",
+            "brand": "Nissan",
+            "model": "Sentra 2020",
+            "owner": "Dale Mccarthy",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "GG-72099",
+            "brand": "Dodge",
+            "model": "Grand Caravan Passenger 2020",
+            "owner": "Dale Mcclaughry",
+            "fuel": "electric"
+        },
+        {
+            "id": "BY-22351",
+            "brand": "Lincoln",
+            "model": "Nautilus 2020",
+            "owner": "Melissa Chang",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HM-17122",
+            "brand": "Chrysler",
+            "model": "300 2020",
+            "owner": "Phillip Bordeaux",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QB-16849",
+            "brand": "BMW",
+            "model": "8 Series 2020",
+            "owner": "Kimberley Gouty",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GW-51551",
+            "brand": "FIAT",
+            "model": "500X 2020",
+            "owner": "Karen Willingham",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ZH-41850",
+            "brand": "Honda",
+            "model": "Clarity Fuel Cell 2020",
+            "owner": "Ambrose Beaver",
+            "fuel": "diesel"
+        },
+        {
+            "id": "EX-77079",
+            "brand": "Kia",
+            "model": "Niro Plug-in Hybrid 2020",
+            "owner": "Ryan Reidy",
+            "fuel": "diesel"
+        },
+        {
+            "id": "PR-73992",
+            "brand": "Mercedes-Benz",
+            "model": "C-Class 2020",
+            "owner": "Katherine Roman",
+            "fuel": "electric"
+        },
+        {
+            "id": "RU-80023",
+            "brand": "Chevrolet",
+            "model": "Silverado 1500 Crew Cab 2020",
+            "owner": "Catherine Donlon",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZZ-72193",
+            "brand": "Land Rover",
+            "model": "Discovery 2020",
+            "owner": "Lori Mccarthy",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JI-42636",
+            "brand": "Kia",
+            "model": "Optima Plug-in Hybrid 2020",
+            "owner": "Jonathan Chandler",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "MK-22864",
+            "brand": "Ram",
+            "model": "ProMaster Cargo Van 2020",
+            "owner": "Jerry Murphy",
+            "fuel": "electric"
+        },
+        {
+            "id": "TV-57213",
+            "brand": "Hyundai",
+            "model": "Palisade 2020",
+            "owner": "Elizabeth Jones",
+            "fuel": "electric"
+        },
+        {
+            "id": "TC-94853",
+            "brand": "Hyundai",
+            "model": "Tucson 2020",
+            "owner": "Garry Wolfertz",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "PT-19516",
+            "brand": "Nissan",
+            "model": "LEAF 2020",
+            "owner": "Laurie Carchi",
+            "fuel": "electric"
+        },
+        {
+            "id": "OD-76994",
+            "brand": "Mitsubishi",
+            "model": "Outlander 2020",
+            "owner": "Joan Oliver",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "NK-82486",
+            "brand": "Jaguar",
+            "model": "I-PACE 2020",
+            "owner": "Johnie French",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AH-40189",
+            "brand": "Toyota",
+            "model": "Camry Hybrid 2020",
+            "owner": "Marian Neeley",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QR-44708",
+            "brand": "Chevrolet",
+            "model": "Express 3500 Cargo 2020",
+            "owner": "Lorraine Mead",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HF-56108",
+            "brand": "Toyota",
+            "model": "Camry Hybrid 2020",
+            "owner": "Augustine Hastings",
+            "fuel": "diesel"
+        },
+        {
+            "id": "KC-79709",
+            "brand": "Lexus",
+            "model": "GS 2020",
+            "owner": "Jason Coronado",
+            "fuel": "electric"
+        },
+        {
+            "id": "PT-81771",
+            "brand": "Porsche",
+            "model": "Panamera 2020",
+            "owner": "Dorothy Hanson",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "SJ-14535",
+            "brand": "Ford",
+            "model": "F150 Regular Cab 2020",
+            "owner": "Lena Owen",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AV-87448",
+            "brand": "Nissan",
+            "model": "LEAF 2020",
+            "owner": "John Corbin",
+            "fuel": "electric"
+        },
+        {
+            "id": "QZ-63327",
+            "brand": "Ford",
+            "model": "F150 SuperCrew Cab 2020",
+            "owner": "Rocio Landry",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "RJ-20692",
+            "brand": "Land Rover",
+            "model": "Discovery Sport 2020",
+            "owner": "Diana Fraher",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "QW-73807",
+            "brand": "Mercedes-Benz",
+            "model": "GLS 2020",
+            "owner": "Adam Howse",
+            "fuel": "electric"
+        },
+        {
+            "id": "PN-28307",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG GLC 2020",
+            "owner": "Fern Garcia",
+            "fuel": "electric"
+        },
+        {
+            "id": "XN-84084",
+            "brand": "Tesla",
+            "model": "Model Y 2020",
+            "owner": "Annie Favela",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ZO-44768",
+            "brand": "Nissan",
+            "model": "NV2500 HD Cargo 2020",
+            "owner": "Lourdes Murry",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JR-71567",
+            "brand": "Honda",
+            "model": "Insight 2020",
+            "owner": "Catherine Williams",
+            "fuel": "electric"
+        },
+        {
+            "id": "XA-29817",
+            "brand": "Freightliner",
+            "model": "Sprinter 2500 Passenger 2020",
+            "owner": "Elizabeth Pastorius",
+            "fuel": "diesel"
+        },
+        {
+            "id": "FO-47890",
+            "brand": "Nissan",
+            "model": "Armada 2020",
+            "owner": "Alma Pruden",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BQ-89261",
+            "brand": "Hyundai",
+            "model": "Tucson 2020",
+            "owner": "Eric German",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "BE-87065",
+            "brand": "Cadillac",
+            "model": "XT6 2020",
+            "owner": "Frankie Senteno",
+            "fuel": "diesel"
+        },
+        {
+            "id": "NF-40051",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG CLS 2020",
+            "owner": "Jill Crawford",
+            "fuel": "diesel"
+        },
+        {
+            "id": "KM-48289",
+            "brand": "Nissan",
+            "model": "GT-R 2020",
+            "owner": "Essie Price",
+            "fuel": "diesel"
+        },
+        {
+            "id": "VI-89752",
+            "brand": "Cadillac",
+            "model": "XT5 2020",
+            "owner": "Rosa Vanleuven",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "FZ-64556",
+            "brand": "BMW",
+            "model": "Z4 2020",
+            "owner": "Debbie Christian",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "DY-22743",
+            "brand": "Ford",
+            "model": "Transit 350 Passenger Van 2020",
+            "owner": "Holly Akins",
+            "fuel": "electric"
+        },
+        {
+            "id": "MS-22894",
+            "brand": "Mercedes-Benz",
+            "model": "S-Class 2020",
+            "owner": "Darlene Howard",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LY-89393",
+            "brand": "Volkswagen",
+            "model": "Arteon 2020",
+            "owner": "Lolita Crumm",
+            "fuel": "electric"
+        },
+        {
+            "id": "DD-98501",
+            "brand": "Acura",
+            "model": "TLX 2020",
+            "owner": "Jacob Curi",
+            "fuel": "diesel"
+        },
+        {
+            "id": "FL-85759",
+            "brand": "Dodge",
+            "model": "Charger 2020",
+            "owner": "Edward Dugan",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ZJ-68258",
+            "brand": "Ford",
+            "model": "Explorer 2020",
+            "owner": "Angela Smith",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "QL-27749",
+            "brand": "Jaguar",
+            "model": "F-TYPE 2020",
+            "owner": "Judith Hinson",
+            "fuel": "electric"
+        },
+        {
+            "id": "QR-51976",
+            "brand": "Honda",
+            "model": "HR-V 2020",
+            "owner": "Reginald Acuna",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AT-14478",
+            "brand": "Acura",
+            "model": "RDX 2020",
+            "owner": "Elaine Childers",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AV-16049",
+            "brand": "BMW",
+            "model": "2 Series 2020",
+            "owner": "Emily Shumway",
+            "fuel": "electric"
+        },
+        {
+            "id": "JH-10528",
+            "brand": "Mercedes-Benz",
+            "model": "GLE 2020",
+            "owner": "Harris Weller",
+            "fuel": "diesel"
+        },
+        {
+            "id": "SH-75948",
+            "brand": "Nissan",
+            "model": "Titan Crew Cab 2020",
+            "owner": "Tina Thomas",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "FK-44785",
+            "brand": "GMC",
+            "model": "Sierra 2500 HD Crew Cab 2020",
+            "owner": "Vickie Evans",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZZ-33475",
+            "brand": "Ford",
+            "model": "F450 Super Duty Crew Cab 2020",
+            "owner": "Evelyn Washburn",
+            "fuel": "electric"
+        },
+        {
+            "id": "QQ-62836",
+            "brand": "Toyota",
+            "model": "GR Supra 2020",
+            "owner": "April Henry",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GF-37152",
+            "brand": "FIAT",
+            "model": "500L 2020",
+            "owner": "Lloyd Finch",
+            "fuel": "diesel"
+        },
+        {
+            "id": "CJ-50297",
+            "brand": "Subaru",
+            "model": "WRX 2020",
+            "owner": "Charlie Aliaga",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BE-26300",
+            "brand": "Ford",
+            "model": "Fusion 2020",
+            "owner": "Micheal King",
+            "fuel": "electric"
+        },
+        {
+            "id": "RS-20565",
+            "brand": "GMC",
+            "model": "Sierra 1500 Crew Cab 2020",
+            "owner": "Charles Cleary",
+            "fuel": "electric"
+        },
+        {
+            "id": "SL-95534",
+            "brand": "Honda",
+            "model": "Accord 2020",
+            "owner": "Latonya Kimmell",
+            "fuel": "electric"
+        },
+        {
+            "id": "PX-19426",
+            "brand": "Volvo",
+            "model": "V60 2020",
+            "owner": "Vanessa Young",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GQ-12014",
+            "brand": "Buick",
+            "model": "Envision 2020",
+            "owner": "Robert Conklin",
+            "fuel": "diesel"
+        },
+        {
+            "id": "IN-82780",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG GLC 2020",
+            "owner": "Beverly Williams",
+            "fuel": "electric"
+        },
+        {
+            "id": "FT-14572",
+            "brand": "Ford",
+            "model": "Edge 2020",
+            "owner": "Steven Volkert",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AY-91367",
+            "brand": "INFINITI",
+            "model": "Q50 2020",
+            "owner": "Gloria Echevarria",
+            "fuel": "electric"
+        },
+        {
+            "id": "AK-30804",
+            "brand": "Volkswagen",
+            "model": "Golf 2020",
+            "owner": "Mae Wheeler",
+            "fuel": "diesel"
+        },
+        {
+            "id": "CM-31241",
+            "brand": "Alfa Romeo",
+            "model": "4C Spider 2020",
+            "owner": "Courtney Shivers",
+            "fuel": "electric"
+        },
+        {
+            "id": "FD-11772",
+            "brand": "Toyota",
+            "model": "Yaris 2020",
+            "owner": "Bill Myatt",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "XB-24733",
+            "brand": "Chrysler",
+            "model": "Pacifica 2020",
+            "owner": "Ana Moreno",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "OH-65988",
+            "brand": "Nissan",
+            "model": "NV3500 HD Passenger 2020",
+            "owner": "William Holmes",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AP-96771",
+            "brand": "Ford",
+            "model": "Expedition MAX 2020",
+            "owner": "Denise Mason",
+            "fuel": "diesel"
+        },
+        {
+            "id": "YC-68882",
+            "brand": "Toyota",
+            "model": "Tacoma Access Cab 2020",
+            "owner": "Louis Jordan",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WC-97899",
+            "brand": "Nissan",
+            "model": "Pathfinder 2020",
+            "owner": "Charles Hickey",
+            "fuel": "electric"
+        },
+        {
+            "id": "UV-84494",
+            "brand": "Volvo",
+            "model": "V90 2020",
+            "owner": "Jane Sailors",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "EV-91872",
+            "brand": "Volkswagen",
+            "model": "Golf GTI 2020",
+            "owner": "Anita Stephens",
+            "fuel": "electric"
+        },
+        {
+            "id": "MH-48567",
+            "brand": "Chrysler",
+            "model": "Voyager 2020",
+            "owner": "Luis James",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "CP-56854",
+            "brand": "Genesis",
+            "model": "G70 2020",
+            "owner": "Evelyn Saldana",
+            "fuel": "diesel"
+        },
+        {
+            "id": "UR-32699",
+            "brand": "Audi",
+            "model": "Q5 2020",
+            "owner": "Edward Sartin",
+            "fuel": "electric"
+        },
+        {
+            "id": "WS-96323",
+            "brand": "Honda",
+            "model": "Passport 2020",
+            "owner": "Roger Davis",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZV-59711",
+            "brand": "Ford",
+            "model": "Transit 250 Cargo Van 2020",
+            "owner": "William Chandler",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "XD-22806",
+            "brand": "Jaguar",
+            "model": "I-PACE 2020",
+            "owner": "Donald Damelio",
+            "fuel": "diesel"
+        },
+        {
+            "id": "NP-97129",
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 3500 Cargo 2020",
+            "owner": "Thomas Espenshade",
+            "fuel": "diesel"
+        },
+        {
+            "id": "XG-52654",
+            "brand": "Kia",
+            "model": "Optima 2020",
+            "owner": "Anthony Streeter",
+            "fuel": "electric"
+        },
+        {
+            "id": "YE-91057",
+            "brand": "Mitsubishi",
+            "model": "Outlander Sport 2020",
+            "owner": "Donald Keller",
+            "fuel": "diesel"
+        },
+        {
+            "id": "CH-38016",
+            "brand": "Buick",
+            "model": "Envision 2020",
+            "owner": "Sarah Owen",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HQ-82374",
+            "brand": "Freightliner",
+            "model": "Sprinter 4500 Cargo 2020",
+            "owner": "Ed Nelson",
+            "fuel": "electric"
+        },
+        {
+            "id": "QX-43081",
+            "brand": "Mercedes-Benz",
+            "model": "GLS 2020",
+            "owner": "Stuart Johnston",
+            "fuel": "electric"
+        },
+        {
+            "id": "SW-76066",
+            "brand": "Buick",
+            "model": "Enclave 2020",
+            "owner": "Wesley Sajovic",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AX-22500",
+            "brand": "Hyundai",
+            "model": "Accent 2020",
+            "owner": "Alfred Ball",
+            "fuel": "electric"
+        },
+        {
+            "id": "TB-28455",
+            "brand": "Mercedes-Benz",
+            "model": "GLC 2020",
+            "owner": "Dorothy Ramirez",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LE-24675",
+            "brand": "Audi",
+            "model": "A3 2020",
+            "owner": "James Creekmore",
+            "fuel": "electric"
+        },
+        {
+            "id": "ED-95226",
+            "brand": "Honda",
+            "model": "CR-V Hybrid 2020",
+            "owner": "Joseph Thomas",
+            "fuel": "diesel"
+        },
+        {
+            "id": "PZ-49910",
+            "brand": "Jaguar",
+            "model": "XF 2020",
+            "owner": "Lynda Young",
+            "fuel": "electric"
+        },
+        {
+            "id": "SG-79492",
+            "brand": "INFINITI",
+            "model": "QX80 2020",
+            "owner": "Jan Gallegas",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "RM-15819",
+            "brand": "Kia",
+            "model": "Niro 2020",
+            "owner": "Keith Pacheco",
+            "fuel": "electric"
+        },
+        {
+            "id": "FM-74352",
+            "brand": "Nissan",
+            "model": "TITAN XD Crew Cab 2020",
+            "owner": "Holly Wallace",
+            "fuel": "electric"
+        },
+        {
+            "id": "FN-11962",
+            "brand": "Audi",
+            "model": "Q3 2020",
+            "owner": "Jose Turner",
+            "fuel": "electric"
+        },
+        {
+            "id": "MP-26433",
+            "brand": "Nissan",
+            "model": "Frontier King Cab 2020",
+            "owner": "Jose Posey",
+            "fuel": "diesel"
+        },
+        {
+            "id": "PJ-99602",
+            "brand": "BMW",
+            "model": "7 Series 2020",
+            "owner": "Arthur Ruckman",
+            "fuel": "electric"
+        },
+        {
+            "id": "WK-59605",
+            "brand": "BMW",
+            "model": "3 Series 2020",
+            "owner": "Michael Kennedy",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZH-24046",
+            "brand": "Freightliner",
+            "model": "Sprinter 4500 Cargo 2020",
+            "owner": "Tia Haskins",
+            "fuel": "electric"
+        },
+        {
+            "id": "JX-48255",
+            "brand": "BMW",
+            "model": "2 Series 2020",
+            "owner": "Norman Burch",
+            "fuel": "electric"
+        },
+        {
+            "id": "QC-31713",
+            "brand": "Ford",
+            "model": "Transit Connect Passenger Wagon 2020",
+            "owner": "Steven Mattson",
+            "fuel": "electric"
+        },
+        {
+            "id": "VW-62682",
+            "brand": "Hyundai",
+            "model": "Kona Electric 2020",
+            "owner": "Juanita Davis",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "MH-94826",
+            "brand": "Ford",
+            "model": "F150 Regular Cab 2020",
+            "owner": "Anna Taber",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "XV-82351",
+            "brand": "BMW",
+            "model": "X3 2020",
+            "owner": "Elaine Welch",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JB-49799",
+            "brand": "Honda",
+            "model": "Clarity Fuel Cell 2020",
+            "owner": "Donald Adams",
+            "fuel": "diesel"
+        },
+        {
+            "id": "SA-10081",
+            "brand": "Jeep",
+            "model": "Cherokee 2020",
+            "owner": "Ben Grissom",
+            "fuel": "diesel"
+        },
+        {
+            "id": "VS-27298",
+            "brand": "Mercedes-Benz",
+            "model": "E-Class 2020",
+            "owner": "Mason Brushwood",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "TP-47301",
+            "brand": "Freightliner",
+            "model": "Sprinter 1500 Passenger 2020",
+            "owner": "Carissa Dibiase",
+            "fuel": "electric"
+        },
+        {
+            "id": "XR-33165",
+            "brand": "Buick",
+            "model": "Envision 2020",
+            "owner": "Lynn Clontz",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BG-12506",
+            "brand": "Acura",
+            "model": "RLX Sport Hybrid 2020",
+            "owner": "Richard Bueter",
+            "fuel": "diesel"
+        },
+        {
+            "id": "FY-28146",
+            "brand": "Porsche",
+            "model": "718 Spyder 2020",
+            "owner": "Alma Butler",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HD-31534",
+            "brand": "Mercedes-Benz",
+            "model": "GLA 2020",
+            "owner": "Martha Parks",
+            "fuel": "diesel"
+        },
+        {
+            "id": "YU-91162",
+            "brand": "Freightliner",
+            "model": "Sprinter 3500XD Cargo 2020",
+            "owner": "Heather Gentry",
+            "fuel": "electric"
+        },
+        {
+            "id": "LO-17962",
+            "brand": "Kia",
+            "model": "Sorento 2020",
+            "owner": "Jaime Maciel",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "SJ-42433",
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 3500 Crew 2020",
+            "owner": "Dawn Hicks",
+            "fuel": "diesel"
+        },
+        {
+            "id": "XR-45663",
+            "brand": "Toyota",
+            "model": "Avalon Hybrid 2020",
+            "owner": "Kerry Jackson",
+            "fuel": "electric"
+        },
+        {
+            "id": "NN-61838",
+            "brand": "Lexus",
+            "model": "RC 2020",
+            "owner": "William Dominguez",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "CA-13552",
+            "brand": "Mercedes-Benz",
+            "model": "C-Class 2020",
+            "owner": "Kimberly Martin",
+            "fuel": "electric"
+        },
+        {
+            "id": "XQ-90433",
+            "brand": "Lexus",
+            "model": "LX 2020",
+            "owner": "David Christiansen",
+            "fuel": "electric"
+        },
+        {
+            "id": "RJ-67220",
+            "brand": "Nissan",
+            "model": "Armada 2020",
+            "owner": "Michelle Mengel",
+            "fuel": "diesel"
+        },
+        {
+            "id": "VR-17551",
+            "brand": "MAZDA",
+            "model": "MAZDA6 2020",
+            "owner": "Michael Silvey",
+            "fuel": "electric"
+        },
+        {
+            "id": "UT-12035",
+            "brand": "Honda",
+            "model": "Civic Type R 2020",
+            "owner": "Daniel Dobbins",
+            "fuel": "diesel"
+        },
+        {
+            "id": "FA-20725",
+            "brand": "Toyota",
+            "model": "Avalon Hybrid 2020",
+            "owner": "Brett Aggas",
+            "fuel": "electric"
+        },
+        {
+            "id": "US-25334",
+            "brand": "MAZDA",
+            "model": "CX-5 2020",
+            "owner": "David Mcclain",
+            "fuel": "electric"
+        },
+        {
+            "id": "OO-37368",
+            "brand": "FIAT",
+            "model": "500X 2020",
+            "owner": "Tiffany White",
+            "fuel": "diesel"
+        },
+        {
+            "id": "EA-68446",
+            "brand": "Mercedes-Benz",
+            "model": "GLA 2020",
+            "owner": "James Harry",
+            "fuel": "diesel"
+        },
+        {
+            "id": "MS-88798",
+            "brand": "Ford",
+            "model": "Mustang 2020",
+            "owner": "Gregory Keegan",
+            "fuel": "electric"
+        },
+        {
+            "id": "RG-32695",
+            "brand": "Ford",
+            "model": "F150 Super Cab 2020",
+            "owner": "Antonio Porter",
+            "fuel": "electric"
+        },
+        {
+            "id": "AL-99786",
+            "brand": "Audi",
+            "model": "A3 2020",
+            "owner": "Cara Vaillancourt",
+            "fuel": "electric"
+        },
+        {
+            "id": "YR-95966",
+            "brand": "Nissan",
+            "model": "NV200 2020",
+            "owner": "Amber Scott",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AQ-23702",
+            "brand": "Alfa Romeo",
+            "model": "Stelvio 2020",
+            "owner": "Norma Herzog",
+            "fuel": "diesel"
+        },
+        {
+            "id": "UY-23834",
+            "brand": "Porsche",
+            "model": "718 Spyder 2020",
+            "owner": "Walter Reiter",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GN-29030",
+            "brand": "Buick",
+            "model": "Regal TourX 2020",
+            "owner": "Ellis Andreas",
+            "fuel": "electric"
+        },
+        {
+            "id": "QN-11266",
+            "brand": "GMC",
+            "model": "Sierra 1500 Double Cab 2020",
+            "owner": "Harry Smith",
+            "fuel": "diesel"
+        },
+        {
+            "id": "OA-61820",
+            "brand": "Toyota",
+            "model": "RAV4 Hybrid 2020",
+            "owner": "Pamela Smith",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BV-28356",
+            "brand": "Porsche",
+            "model": "Macan 2020",
+            "owner": "Loren Saxon",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AE-24900",
+            "brand": "Porsche",
+            "model": "Taycan 2020",
+            "owner": "William Cadorette",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HB-25340",
+            "brand": "Mitsubishi",
+            "model": "Outlander Sport 2020",
+            "owner": "Carlotta Cook",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LT-17141",
+            "brand": "MINI",
+            "model": "Hardtop 2 Door 2020",
+            "owner": "Jerome Briggs",
+            "fuel": "electric"
+        },
+        {
+            "id": "XY-89133",
+            "brand": "Buick",
+            "model": "Envision 2020",
+            "owner": "Rose Wagner",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BE-72378",
+            "brand": "Freightliner",
+            "model": "Sprinter 4500 Crew 2020",
+            "owner": "Joyce Mercer",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "ZP-71732",
+            "brand": "Ford",
+            "model": "Transit Connect Passenger Wagon 2020",
+            "owner": "Matthew Abernathy",
+            "fuel": "electric"
+        },
+        {
+            "id": "AX-95796",
+            "brand": "Mitsubishi",
+            "model": "Eclipse Cross 2020",
+            "owner": "Lee Mischler",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GD-62725",
+            "brand": "Buick",
+            "model": "Enclave 2020",
+            "owner": "Henry Pope",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "BF-71787",
+            "brand": "Alfa Romeo",
+            "model": "4C Spider 2020",
+            "owner": "Claudette Martens",
+            "fuel": "electric"
+        },
+        {
+            "id": "BX-36686",
+            "brand": "Alfa Romeo",
+            "model": "Giulia 2020",
+            "owner": "Justin Rountree",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "WI-84820",
+            "brand": "Chevrolet",
+            "model": "Colorado Extended Cab 2020",
+            "owner": "Lillian Banks",
+            "fuel": "diesel"
+        },
+        {
+            "id": "FP-60187",
+            "brand": "BMW",
+            "model": "X3 2020",
+            "owner": "Vera Fisher",
+            "fuel": "diesel"
+        },
+        {
+            "id": "MM-89823",
+            "brand": "Audi",
+            "model": "SQ5 2020",
+            "owner": "Allison Nelson",
+            "fuel": "electric"
+        },
+        {
+            "id": "RQ-49526",
+            "brand": "BMW",
+            "model": "X6 2020",
+            "owner": "Frances Salgado",
+            "fuel": "electric"
+        },
+        {
+            "id": "FH-27525",
+            "brand": "Chevrolet",
+            "model": "Silverado 1500 Crew Cab 2020",
+            "owner": "Billie Caruthers",
+            "fuel": "electric"
+        },
+        {
+            "id": "KU-65524",
+            "brand": "Toyota",
+            "model": "Highlander 2020",
+            "owner": "Juanita Vickery",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BN-35287",
+            "brand": "INFINITI",
+            "model": "Q50 2020",
+            "owner": "Philip Hawkins",
+            "fuel": "electric"
+        },
+        {
+            "id": "TZ-85062",
+            "brand": "Lexus",
+            "model": "LX 2020",
+            "owner": "Blanche Smith",
+            "fuel": "electric"
+        },
+        {
+            "id": "PD-70882",
+            "brand": "Ford",
+            "model": "EcoSport 2020",
+            "owner": "Jennifer Jacobs",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WK-11629",
+            "brand": "Nissan",
+            "model": "Armada 2020",
+            "owner": "Billie Luker",
+            "fuel": "diesel"
+        },
+        {
+            "id": "TL-50044",
+            "brand": "Toyota",
+            "model": "Highlander Hybrid 2020",
+            "owner": "Ana Fournier",
+            "fuel": "electric"
+        },
+        {
+            "id": "QB-59033",
+            "brand": "Volkswagen",
+            "model": "Jetta GLI 2020",
+            "owner": "Joseph Brubaker",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BG-81584",
+            "brand": "Nissan",
+            "model": "NV1500 Cargo 2020",
+            "owner": "Marcy Garcia",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QA-57251",
+            "brand": "Hyundai",
+            "model": "Sonata 2020",
+            "owner": "Bruce Beaulieu",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AD-77668",
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 4500 Crew 2020",
+            "owner": "Ken Rider",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "YS-87943",
+            "brand": "Volkswagen",
+            "model": "Atlas Cross Sport 2020",
+            "owner": "Julie Washington",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JR-77477",
+            "brand": "Acura",
+            "model": "MDX Sport Hybrid 2020",
+            "owner": "Diane Jacobson",
+            "fuel": "electric"
+        },
+        {
+            "id": "NS-47912",
+            "brand": "Chevrolet",
+            "model": "Silverado 2500 HD Double Cab 2020",
+            "owner": "David Carrington",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "RK-50826",
+            "brand": "Kia",
+            "model": "Stinger 2020",
+            "owner": "Katherine Evans",
+            "fuel": "electric"
+        },
+        {
+            "id": "HP-24202",
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 2500 Passenger 2020",
+            "owner": "Modesto Gallman",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WW-36379",
+            "brand": "Acura",
+            "model": "TLX 2020",
+            "owner": "Kayla Hickman",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QR-99583",
+            "brand": "Ford",
+            "model": "Ranger SuperCrew 2020",
+            "owner": "Lisa Hartman",
+            "fuel": "diesel"
+        },
+        {
+            "id": "FU-37432",
+            "brand": "Jeep",
+            "model": "Gladiator 2020",
+            "owner": "Alma Pineau",
+            "fuel": "diesel"
+        },
+        {
+            "id": "XN-65796",
+            "brand": "Alfa Romeo",
+            "model": "Giulia 2020",
+            "owner": "Mary Laramore",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AQ-27764",
+            "brand": "Freightliner",
+            "model": "Sprinter 1500 Cargo 2020",
+            "owner": "Yolanda King",
+            "fuel": "electric"
+        },
+        {
+            "id": "NU-41934",
+            "brand": "Mercedes-Benz",
+            "model": "CLS 2020",
+            "owner": "Robin Gomez",
+            "fuel": "electric"
+        },
+        {
+            "id": "KS-33575",
+            "brand": "Nissan",
+            "model": "GT-R 2020",
+            "owner": "Donna Dodson",
+            "fuel": "diesel"
+        },
+        {
+            "id": "OE-44413",
+            "brand": "Toyota",
+            "model": "4Runner 2020",
+            "owner": "Margaret Bentley",
+            "fuel": "electric"
+        },
+        {
+            "id": "RF-43133",
+            "brand": "Buick",
+            "model": "Regal TourX 2020",
+            "owner": "Stephen Massey",
+            "fuel": "electric"
+        },
+        {
+            "id": "NP-40664",
+            "brand": "Subaru",
+            "model": "Forester 2020",
+            "owner": "Tom Souder",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "FL-47443",
+            "brand": "Freightliner",
+            "model": "Sprinter 3500 XD Crew 2020",
+            "owner": "Christopher Baldwin",
+            "fuel": "diesel"
+        },
+        {
+            "id": "EX-98867",
+            "brand": "Audi",
+            "model": "A3 2020",
+            "owner": "Rene Balsamo",
+            "fuel": "electric"
+        },
+        {
+            "id": "WG-31852",
+            "brand": "Chevrolet",
+            "model": "Silverado 2500 HD Double Cab 2020",
+            "owner": "Michael Lucas",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "LM-35061",
+            "brand": "Jeep",
+            "model": "Wrangler Unlimited 2020",
+            "owner": "Louis Peters",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "LC-22188",
+            "brand": "Lexus",
+            "model": "LC 2020",
+            "owner": "Steven Sears",
+            "fuel": "electric"
+        },
+        {
+            "id": "GQ-53304",
+            "brand": "Lexus",
+            "model": "LX 2020",
+            "owner": "Nicole Tanner",
+            "fuel": "electric"
+        },
+        {
+            "id": "UD-76243",
+            "brand": "MINI",
+            "model": "Clubman 2020",
+            "owner": "Terrell Sells",
+            "fuel": "electric"
+        },
+        {
+            "id": "LG-64471",
+            "brand": "Chevrolet",
+            "model": "Blazer 2020",
+            "owner": "Matthew Hamilton",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "PR-78070",
+            "brand": "Lexus",
+            "model": "LC 2020",
+            "owner": "Anita Ledue",
+            "fuel": "electric"
+        },
+        {
+            "id": "JG-52310",
+            "brand": "Buick",
+            "model": "Regal TourX 2020",
+            "owner": "Jonathan Millonzi",
+            "fuel": "electric"
+        },
+        {
+            "id": "SI-12091",
+            "brand": "Volvo",
+            "model": "XC60 2020",
+            "owner": "Guy Meagher",
+            "fuel": "electric"
+        },
+        {
+            "id": "IQ-31761",
+            "brand": "Ford",
+            "model": "Edge 2020",
+            "owner": "Eric Keeton",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "ON-36520",
+            "brand": "Cadillac",
+            "model": "XT6 2020",
+            "owner": "Angel Rodriguez",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LC-12854",
+            "brand": "Porsche",
+            "model": "Cayenne Coupe 2020",
+            "owner": "Robert Pillsbury",
+            "fuel": "electric"
+        },
+        {
+            "id": "MS-36295",
+            "brand": "Ford",
+            "model": "Escape 2020",
+            "owner": "Mary Serrano",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "DI-80466",
+            "brand": "Kia",
+            "model": "Sportage 2020",
+            "owner": "Sandra Webb",
+            "fuel": "electric"
+        },
+        {
+            "id": "XD-80323",
+            "brand": "Nissan",
+            "model": "Pathfinder 2020",
+            "owner": "Kevin Hoyt",
+            "fuel": "electric"
+        },
+        {
+            "id": "BD-53615",
+            "brand": "Mercedes-Benz",
+            "model": "C-Class 2020",
+            "owner": "Donald Williams",
+            "fuel": "electric"
+        },
+        {
+            "id": "DJ-10287",
+            "brand": "Freightliner",
+            "model": "Sprinter 4500 Crew 2020",
+            "owner": "Brandy Mclaughlin",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "YG-63148",
+            "brand": "Nissan",
+            "model": "Versa 2020",
+            "owner": "Marlene Sandberg",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JT-75125",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG CLS 2020",
+            "owner": "George Rouse",
+            "fuel": "diesel"
+        },
+        {
+            "id": "NQ-80219",
+            "brand": "FIAT",
+            "model": "500X 2020",
+            "owner": "Lillian Medina",
+            "fuel": "diesel"
+        },
+        {
+            "id": "VT-29886",
+            "brand": "INFINITI",
+            "model": "QX50 2020",
+            "owner": "Mary Washington",
+            "fuel": "diesel"
+        },
+        {
+            "id": "KY-73368",
+            "brand": "Nissan",
+            "model": "Rogue 2020",
+            "owner": "Dewey Pough",
+            "fuel": "electric"
+        },
+        {
+            "id": "CL-50700",
+            "brand": "Mercedes-Benz",
+            "model": "GLB 2020",
+            "owner": "Kathy Wood",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HO-30694",
+            "brand": "Mitsubishi",
+            "model": "Outlander 2020",
+            "owner": "Daniel Summers",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "GS-69007",
+            "brand": "Nissan",
+            "model": "LEAF 2020",
+            "owner": "Roy Ward",
+            "fuel": "electric"
+        },
+        {
+            "id": "EQ-53905",
+            "brand": "Audi",
+            "model": "Q5 2020",
+            "owner": "Marissa Richards",
+            "fuel": "electric"
+        },
+        {
+            "id": "XI-96557",
+            "brand": "Buick",
+            "model": "Encore GX 2020",
+            "owner": "Stephen Kempf",
+            "fuel": "diesel"
+        },
+        {
+            "id": "PX-80543",
+            "brand": "MAZDA",
+            "model": "MX-5 Miata 2020",
+            "owner": "Minnie Verdin",
+            "fuel": "diesel"
+        },
+        {
+            "id": "RK-75997",
+            "brand": "Chevrolet",
+            "model": "Silverado 1500 Crew Cab 2020",
+            "owner": "Martin Peters",
+            "fuel": "electric"
+        },
+        {
+            "id": "WX-42179",
+            "brand": "INFINITI",
+            "model": "Q50 2020",
+            "owner": "Caroline Tofil",
+            "fuel": "electric"
+        },
+        {
+            "id": "SR-10420",
+            "brand": "Toyota",
+            "model": "Highlander Hybrid 2020",
+            "owner": "Joseph Trevino",
+            "fuel": "electric"
+        },
+        {
+            "id": "GV-26220",
+            "brand": "BMW",
+            "model": "X7 2020",
+            "owner": "Lynn Russell",
+            "fuel": "electric"
+        },
+        {
+            "id": "XP-50367",
+            "brand": "GMC",
+            "model": "Sierra 1500 Regular Cab 2020",
+            "owner": "Charlene Montgomery",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "CN-66937",
+            "brand": "Jaguar",
+            "model": "XE 2020",
+            "owner": "Alexandria Frank",
+            "fuel": "electric"
+        },
+        {
+            "id": "DV-35376",
+            "brand": "Honda",
+            "model": "CR-V 2020",
+            "owner": "Karen Queen",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "CH-45383",
+            "brand": "Toyota",
+            "model": "Corolla 2020",
+            "owner": "Dianne Fulford",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "KU-87362",
+            "brand": "Nissan",
+            "model": "Kicks 2020",
+            "owner": "Joseph Johnson",
+            "fuel": "diesel"
+        },
+        {
+            "id": "MK-87390",
+            "brand": "Honda",
+            "model": "Passport 2020",
+            "owner": "Phylicia Mcdevitt",
+            "fuel": "electric"
+        },
+        {
+            "id": "EZ-25343",
+            "brand": "GMC",
+            "model": "Canyon Crew Cab 2020",
+            "owner": "Jose Campbell",
+            "fuel": "diesel"
+        },
+        {
+            "id": "OQ-39462",
+            "brand": "Mitsubishi",
+            "model": "Outlander Sport 2020",
+            "owner": "Oscar Chambers",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ME-96044",
+            "brand": "Toyota",
+            "model": "Avalon 2020",
+            "owner": "David Hershberger",
+            "fuel": "electric"
+        },
+        {
+            "id": "RY-74540",
+            "brand": "Land Rover",
+            "model": "Range Rover 2020",
+            "owner": "Dennis Youngblood",
+            "fuel": "electric"
+        },
+        {
+            "id": "SX-38028",
+            "brand": "Ford",
+            "model": "Escape 2020",
+            "owner": "Gisele Jaramillo",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "CJ-10766",
+            "brand": "Chevrolet",
+            "model": "Bolt EV 2020",
+            "owner": "Andre Denson",
+            "fuel": "electric"
+        },
+        {
+            "id": "LE-46201",
+            "brand": "Toyota",
+            "model": "RAV4 Hybrid 2020",
+            "owner": "Linda Smith",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JP-17361",
+            "brand": "Jaguar",
+            "model": "F-TYPE 2020",
+            "owner": "Robert Mason",
+            "fuel": "electric"
+        },
+        {
+            "id": "XU-28665",
+            "brand": "Kia",
+            "model": "Sedona 2020",
+            "owner": "Joy Mems",
+            "fuel": "electric"
+        },
+        {
+            "id": "WW-51387",
+            "brand": "Mercedes-Benz",
+            "model": "Metris WORKER Cargo 2020",
+            "owner": "Paul Cluff",
+            "fuel": "electric"
+        },
+        {
+            "id": "TV-55016",
+            "brand": "Audi",
+            "model": "SQ5 2020",
+            "owner": "Alex Hendon",
+            "fuel": "electric"
+        },
+        {
+            "id": "SI-55974",
+            "brand": "Ford",
+            "model": "F150 Super Cab 2020",
+            "owner": "Enriqueta Wilson",
+            "fuel": "electric"
+        },
+        {
+            "id": "GM-75750",
+            "brand": "MINI",
+            "model": "Countryman 2020",
+            "owner": "David Bess",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QP-14810",
+            "brand": "Nissan",
+            "model": "Titan King Cab 2020",
+            "owner": "Bertha Baker",
+            "fuel": "electric"
+        },
+        {
+            "id": "NK-23690",
+            "brand": "MINI",
+            "model": "Countryman 2020",
+            "owner": "Christina Turk",
+            "fuel": "diesel"
+        },
+        {
+            "id": "YX-35836",
+            "brand": "Toyota",
+            "model": "Corolla 2020",
+            "owner": "Barry Shields",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "GK-47306",
+            "brand": "Freightliner",
+            "model": "Sprinter 1500 Passenger 2020",
+            "owner": "Jackie Conway",
+            "fuel": "electric"
+        },
+        {
+            "id": "OY-80485",
+            "brand": "Ram",
+            "model": "2500 Crew Cab 2020",
+            "owner": "Henry Matinez",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "OQ-69247",
+            "brand": "Ford",
+            "model": "Mustang 2020",
+            "owner": "Donald Hurley",
+            "fuel": "electric"
+        },
+        {
+            "id": "RJ-74687",
+            "brand": "Audi",
+            "model": "Q7 2020",
+            "owner": "Emma Bowen",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WE-75054",
+            "brand": "Kia",
+            "model": "Sportage 2020",
+            "owner": "Carol Scipioni",
+            "fuel": "electric"
+        },
+        {
+            "id": "HZ-13239",
+            "brand": "Volvo",
+            "model": "V60 2020",
+            "owner": "Tina Strait",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AH-70284",
+            "brand": "Freightliner",
+            "model": "Sprinter 3500 Crew 2020",
+            "owner": "John Johnson",
+            "fuel": "diesel"
+        },
+        {
+            "id": "NT-26713",
+            "brand": "MAZDA",
+            "model": "MX-5 Miata 2020",
+            "owner": "John Salinas",
+            "fuel": "diesel"
+        },
+        {
+            "id": "FR-90253",
+            "brand": "Ford",
+            "model": "F150 Super Cab 2020",
+            "owner": "Sherri Southerland",
+            "fuel": "electric"
+        },
+        {
+            "id": "HV-98687",
+            "brand": "Kia",
+            "model": "Optima Plug-in Hybrid 2020",
+            "owner": "Celeste Farrell",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "MR-64653",
+            "brand": "Toyota",
+            "model": "Tacoma Double Cab 2020",
+            "owner": "Hal Rockwell",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GU-97035",
+            "brand": "Kia",
+            "model": "Sportage 2020",
+            "owner": "Cheri Bailey",
+            "fuel": "electric"
+        },
+        {
+            "id": "NM-65566",
+            "brand": "Chrysler",
+            "model": "Voyager 2020",
+            "owner": "Saundra Johnson",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "XA-28421",
+            "brand": "Porsche",
+            "model": "911 2020",
+            "owner": "Annie Glenn",
+            "fuel": "diesel"
+        },
+        {
+            "id": "DH-45618",
+            "brand": "BMW",
+            "model": "X3 2020",
+            "owner": "Justine Davis",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AM-60888",
+            "brand": "Subaru",
+            "model": "Impreza 2020",
+            "owner": "Chris Johnson",
+            "fuel": "electric"
+        },
+        {
+            "id": "WU-47744",
+            "brand": "Honda",
+            "model": "Passport 2020",
+            "owner": "Samuel Strickland",
+            "fuel": "electric"
+        },
+        {
+            "id": "JO-84278",
+            "brand": "Hyundai",
+            "model": "Venue 2020",
+            "owner": "James Melendy",
+            "fuel": "diesel"
+        },
+        {
+            "id": "UQ-22795",
+            "brand": "Cadillac",
+            "model": "XT4 2020",
+            "owner": "Dan Farrow",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "FY-13523",
+            "brand": "Subaru",
+            "model": "WRX 2020",
+            "owner": "Dorothy Plumley",
+            "fuel": "diesel"
+        },
+        {
+            "id": "DV-76198",
+            "brand": "Jaguar",
+            "model": "XF 2020",
+            "owner": "Edith Almy",
+            "fuel": "electric"
+        },
+        {
+            "id": "YW-55204",
+            "brand": "Lexus",
+            "model": "LC 2020",
+            "owner": "Sylvia Ransdell",
+            "fuel": "electric"
+        },
+        {
+            "id": "JU-35991",
+            "brand": "Toyota",
+            "model": "Tundra CrewMax 2020",
+            "owner": "Jean Burgos",
+            "fuel": "electric"
+        },
+        {
+            "id": "RS-21274",
+            "brand": "BMW",
+            "model": "2 Series 2020",
+            "owner": "Elena Carlton",
+            "fuel": "electric"
+        },
+        {
+            "id": "MT-36208",
+            "brand": "Ford",
+            "model": "F450 Super Duty Crew Cab 2020",
+            "owner": "Brandon Whitfield",
+            "fuel": "electric"
+        },
+        {
+            "id": "VE-69837",
+            "brand": "Toyota",
+            "model": "Tundra CrewMax 2020",
+            "owner": "Randi Huff",
+            "fuel": "electric"
+        },
+        {
+            "id": "NA-26975",
+            "brand": "Lexus",
+            "model": "UX 2020",
+            "owner": "James Mahoney",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "YK-90232",
+            "brand": "Land Rover",
+            "model": "Discovery 2020",
+            "owner": "Raquel Phillips",
+            "fuel": "diesel"
+        },
+        {
+            "id": "NN-93281",
+            "brand": "Lexus",
+            "model": "LS 2020",
+            "owner": "Steven Little",
+            "fuel": "electric"
+        },
+        {
+            "id": "YP-95925",
+            "brand": "Toyota",
+            "model": "Yaris Hatchback 2020",
+            "owner": "Linda Lourentzos",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WI-33422",
+            "brand": "Honda",
+            "model": "Accord Hybrid 2020",
+            "owner": "Hilda Arriaga",
+            "fuel": "electric"
+        },
+        {
+            "id": "PM-53628",
+            "brand": "Subaru",
+            "model": "BRZ 2020",
+            "owner": "Helen Hiner",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "EW-77705",
+            "brand": "Lexus",
+            "model": "IS 2020",
+            "owner": "Precious Boland",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "GE-36157",
+            "brand": "Ford",
+            "model": "Ranger SuperCab 2020",
+            "owner": "Adam Ohara",
+            "fuel": "diesel"
+        },
+        {
+            "id": "PG-92941",
+            "brand": "Volkswagen",
+            "model": "Atlas 2020",
+            "owner": "Ariel Furfaro",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "OU-62148",
+            "brand": "Ford",
+            "model": "Fusion Plug-in Hybrid 2020",
+            "owner": "Dawn Green",
+            "fuel": "electric"
+        },
+        {
+            "id": "GT-48969",
+            "brand": "Lexus",
+            "model": "LC 2020",
+            "owner": "Andre Taylor",
+            "fuel": "electric"
+        },
+        {
+            "id": "SI-50384",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG CLS 2020",
+            "owner": "Susan Schillinger",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WF-48803",
+            "brand": "Kia",
+            "model": "Sportage 2020",
+            "owner": "Kourtney Ramero",
+            "fuel": "electric"
+        },
+        {
+            "id": "SP-77248",
+            "brand": "Chevrolet",
+            "model": "Tahoe 2020",
+            "owner": "Kelli Bilal",
+            "fuel": "electric"
+        },
+        {
+            "id": "LR-27947",
+            "brand": "Nissan",
+            "model": "Rogue Sport 2020",
+            "owner": "Melissa Holland",
+            "fuel": "diesel"
+        },
+        {
+            "id": "MI-70627",
+            "brand": "Porsche",
+            "model": "718 Cayman 2020",
+            "owner": "Terri Mccrary",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "HD-77732",
+            "brand": "Toyota",
+            "model": "Avalon Hybrid 2020",
+            "owner": "Eric Chavez",
+            "fuel": "electric"
+        },
+        {
+            "id": "RT-16744",
+            "brand": "Dodge",
+            "model": "Journey 2020",
+            "owner": "Amber Wymer",
+            "fuel": "electric"
+        },
+        {
+            "id": "TA-81981",
+            "brand": "Alfa Romeo",
+            "model": "Stelvio 2020",
+            "owner": "Lavonda Thompson",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BJ-72503",
+            "brand": "Honda",
+            "model": "Passport 2020",
+            "owner": "Sharon Venson",
+            "fuel": "electric"
+        },
+        {
+            "id": "UW-42579",
+            "brand": "BMW",
+            "model": "X3 M 2020",
+            "owner": "Rudolph Henderson",
+            "fuel": "electric"
+        },
+        {
+            "id": "IA-46398",
+            "brand": "Land Rover",
+            "model": "Discovery Sport 2020",
+            "owner": "Valerie Alexander",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "WA-87439",
+            "brand": "Chevrolet",
+            "model": "Blazer 2020",
+            "owner": "Jerry Salazar",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "KO-94793",
+            "brand": "Subaru",
+            "model": "Ascent 2020",
+            "owner": "Nikki Davidson",
+            "fuel": "electric"
+        },
+        {
+            "id": "QD-70815",
+            "brand": "Ford",
+            "model": "F350 Super Duty Super Cab 2020",
+            "owner": "Norbert Rennie",
+            "fuel": "electric"
+        },
+        {
+            "id": "AX-58163",
+            "brand": "Audi",
+            "model": "S8 2020",
+            "owner": "Kimberly Perez",
+            "fuel": "electric"
+        },
+        {
+            "id": "ID-68890",
+            "brand": "Audi",
+            "model": "A4 2020",
+            "owner": "Leon Gonser",
+            "fuel": "electric"
+        },
+        {
+            "id": "HZ-66680",
+            "brand": "Freightliner",
+            "model": "Sprinter 1500 Cargo 2020",
+            "owner": "Merle Slagle",
+            "fuel": "electric"
+        },
+        {
+            "id": "VD-78281",
+            "brand": "BMW",
+            "model": "8 Series 2020",
+            "owner": "Dorothy James",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WK-36090",
+            "brand": "MAZDA",
+            "model": "CX-30 2020",
+            "owner": "Mildred Goodwin",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "DQ-42056",
+            "brand": "Hyundai",
+            "model": "Tucson 2020",
+            "owner": "Paul Kennedy",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "QL-55618",
+            "brand": "Chrysler",
+            "model": "Pacifica 2020",
+            "owner": "Debora Goetz",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JP-76726",
+            "brand": "Porsche",
+            "model": "911 2020",
+            "owner": "Adela Bermeo",
+            "fuel": "diesel"
+        },
+        {
+            "id": "KN-78537",
+            "brand": "Ford",
+            "model": "F250 Super Duty Super Cab 2020",
+            "owner": "Honey Montero",
+            "fuel": "diesel"
+        },
+        {
+            "id": "KR-96321",
+            "brand": "Porsche",
+            "model": "718 Cayman 2020",
+            "owner": "Wilbur Broad",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "EM-20543",
+            "brand": "Audi",
+            "model": "SQ5 2020",
+            "owner": "Jennifer Chamberlin",
+            "fuel": "electric"
+        },
+        {
+            "id": "HJ-10346",
+            "brand": "Kia",
+            "model": "Sportage 2020",
+            "owner": "Don Walters",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZH-27546",
+            "brand": "Toyota",
+            "model": "Sienna 2020",
+            "owner": "Joyce Kincaid",
+            "fuel": "diesel"
+        },
+        {
+            "id": "NO-91642",
+            "brand": "Toyota",
+            "model": "Prius 2020",
+            "owner": "Angela Villicana",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "QE-88183",
+            "brand": "Chevrolet",
+            "model": "Silverado 1500 Regular Cab 2020",
+            "owner": "Irene Klyce",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "DF-44165",
+            "brand": "BMW",
+            "model": "M2 2020",
+            "owner": "William Spiller",
+            "fuel": "electric"
+        },
+        {
+            "id": "FT-23338",
+            "brand": "MAZDA",
+            "model": "MX-5 Miata RF 2020",
+            "owner": "Nora Bostwick",
+            "fuel": "diesel"
+        },
+        {
+            "id": "DA-96108",
+            "brand": "Honda",
+            "model": "Accord Hybrid 2020",
+            "owner": "Winfred Chiarini",
+            "fuel": "electric"
+        },
+        {
+            "id": "HD-34976",
+            "brand": "Toyota",
+            "model": "Sienna 2020",
+            "owner": "Darleen Colbert",
+            "fuel": "diesel"
+        },
+        {
+            "id": "PF-45157",
+            "brand": "INFINITI",
+            "model": "Q60 2020",
+            "owner": "Sarah Strong",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JP-78441",
+            "brand": "Audi",
+            "model": "R8 2020",
+            "owner": "Georgia Salyer",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "WQ-16284",
+            "brand": "Audi",
+            "model": "SQ5 2020",
+            "owner": "Stacey Buck",
+            "fuel": "electric"
+        },
+        {
+            "id": "PC-57206",
+            "brand": "FIAT",
+            "model": "500X 2020",
+            "owner": "George Rahe",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JY-55741",
+            "brand": "Ford",
+            "model": "Transit Connect Cargo Van 2020",
+            "owner": "Linda Self",
+            "fuel": "diesel"
+        },
+        {
+            "id": "MP-75689",
+            "brand": "Chevrolet",
+            "model": "Suburban 2020",
+            "owner": "Keith Walters",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AC-50806",
+            "brand": "Ford",
+            "model": "Ranger SuperCrew 2020",
+            "owner": "David Mcdougall",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BX-43530",
+            "brand": "Ford",
+            "model": "Ranger SuperCab 2020",
+            "owner": "Michele Roman",
+            "fuel": "diesel"
+        },
+        {
+            "id": "SZ-21517",
+            "brand": "GMC",
+            "model": "Sierra 1500 Crew Cab 2020",
+            "owner": "Dwayne Parnell",
+            "fuel": "electric"
+        },
+        {
+            "id": "YX-49067",
+            "brand": "Dodge",
+            "model": "Durango 2020",
+            "owner": "Joy Lara",
+            "fuel": "electric"
+        },
+        {
+            "id": "UU-19691",
+            "brand": "Cadillac",
+            "model": "CT4 2020",
+            "owner": "Mary Spiller",
+            "fuel": "electric"
+        },
+        {
+            "id": "HF-24633",
+            "brand": "Honda",
+            "model": "Pilot 2020",
+            "owner": "Roger Ratz",
+            "fuel": "diesel"
+        },
+        {
+            "id": "UC-38290",
+            "brand": "MINI",
+            "model": "Hardtop 2 Door 2020",
+            "owner": "Jon Turner",
+            "fuel": "electric"
+        },
+        {
+            "id": "AG-17750",
+            "brand": "Ford",
+            "model": "F150 Super Cab 2020",
+            "owner": "Edith Busbee",
+            "fuel": "electric"
+        },
+        {
+            "id": "QY-48529",
+            "brand": "Ram",
+            "model": "1500 Quad Cab 2020",
+            "owner": "Terri Herring",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "HD-77160",
+            "brand": "Hyundai",
+            "model": "Tucson 2020",
+            "owner": "Jesse King",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "MB-94933",
+            "brand": "Land Rover",
+            "model": "Discovery Sport 2020",
+            "owner": "Elizabeth Houck",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AG-16201",
+            "brand": "Freightliner",
+            "model": "Sprinter 2500 Cargo 2020",
+            "owner": "Crystal Johnson",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AT-70156",
+            "brand": "Nissan",
+            "model": "Titan King Cab 2020",
+            "owner": "Diane Altman",
+            "fuel": "electric"
+        },
+        {
+            "id": "PM-47679",
+            "brand": "Mercedes-Benz",
+            "model": "GLB 2020",
+            "owner": "Gail Jones",
+            "fuel": "diesel"
+        },
+        {
+            "id": "PM-28130",
+            "brand": "Land Rover",
+            "model": "Defender 90 2020",
+            "owner": "Arlene Rowe",
+            "fuel": "electric"
+        },
+        {
+            "id": "OD-54624",
+            "brand": "Chevrolet",
+            "model": "Malibu 2020",
+            "owner": "Willie Houseworth",
+            "fuel": "electric"
+        },
+        {
+            "id": "KE-35572",
+            "brand": "Nissan",
+            "model": "Murano 2020",
+            "owner": "Iris Fletcher",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "IT-78422",
+            "brand": "Hyundai",
+            "model": "Santa Fe 2020",
+            "owner": "Edward June",
+            "fuel": "electric"
+        },
+        {
+            "id": "XJ-16837",
+            "brand": "GMC",
+            "model": "Sierra 3500 HD Crew Cab 2020",
+            "owner": "Connie Pittman",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JB-72720",
+            "brand": "Alfa Romeo",
+            "model": "4C Spider 2020",
+            "owner": "Rolando Miller",
+            "fuel": "electric"
+        },
+        {
+            "id": "ME-49014",
+            "brand": "Tesla",
+            "model": "Model X 2020",
+            "owner": "William Biddle",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HP-72498",
+            "brand": "Mitsubishi",
+            "model": "Outlander 2020",
+            "owner": "Yi Beabout",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AF-36860",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG GLC 2020",
+            "owner": "Patti Bowes",
+            "fuel": "electric"
+        },
+        {
+            "id": "YP-78903",
+            "brand": "Alfa Romeo",
+            "model": "Giulia 2020",
+            "owner": "Jennifer Williams",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "YR-18758",
+            "brand": "Chevrolet",
+            "model": "Express 2500 Cargo 2020",
+            "owner": "Roxanne Pichette",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "DC-11436",
+            "brand": "Toyota",
+            "model": "Yaris Hatchback 2020",
+            "owner": "Tracy Shelton",
+            "fuel": "diesel"
+        },
+        {
+            "id": "PC-85542",
+            "brand": "Acura",
+            "model": "ILX 2020",
+            "owner": "Sarah Morrison",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "TU-41786",
+            "brand": "Toyota",
+            "model": "C-HR 2020",
+            "owner": "Maria Howard",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WS-67837",
+            "brand": "Volvo",
+            "model": "V90 2020",
+            "owner": "Doug Balzer",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "RF-70165",
+            "brand": "Nissan",
+            "model": "Kicks 2020",
+            "owner": "Phillip Pennington",
+            "fuel": "diesel"
+        },
+        {
+            "id": "CY-41414",
+            "brand": "Kia",
+            "model": "Optima Hybrid 2020",
+            "owner": "Paul Best",
+            "fuel": "electric"
+        },
+        {
+            "id": "FZ-57771",
+            "brand": "Mercedes-Benz",
+            "model": "CLA 2020",
+            "owner": "Tyrell Gonzalez",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "CM-31821",
+            "brand": "Jeep",
+            "model": "Cherokee 2020",
+            "owner": "Mike Gray",
+            "fuel": "diesel"
+        },
+        {
+            "id": "XH-58319",
+            "brand": "Chevrolet",
+            "model": "Bolt EV 2020",
+            "owner": "Harold Mcfarlane",
+            "fuel": "electric"
+        },
+        {
+            "id": "LI-22442",
+            "brand": "Subaru",
+            "model": "BRZ 2020",
+            "owner": "Sam Woodcock",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "XO-37372",
+            "brand": "Toyota",
+            "model": "Sequoia 2020",
+            "owner": "Joseph Reed",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "GQ-79894",
+            "brand": "Dodge",
+            "model": "Durango 2020",
+            "owner": "Clinton Hansen",
+            "fuel": "electric"
+        },
+        {
+            "id": "IN-56985",
+            "brand": "Lincoln",
+            "model": "Aviator 2020",
+            "owner": "Jennifer Hardy",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "ND-72963",
+            "brand": "Kia",
+            "model": "Niro 2020",
+            "owner": "Patrick Kelly",
+            "fuel": "electric"
+        },
+        {
+            "id": "CG-71715",
+            "brand": "Subaru",
+            "model": "Outback 2020",
+            "owner": "Marilyn Brown",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "TA-42990",
+            "brand": "Mitsubishi",
+            "model": "Outlander PHEV 2020",
+            "owner": "Gladis Maes",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AN-72315",
+            "brand": "Toyota",
+            "model": "Tacoma Access Cab 2020",
+            "owner": "Annette Collins",
+            "fuel": "diesel"
+        },
+        {
+            "id": "CG-42917",
+            "brand": "Mercedes-Benz",
+            "model": "Metris WORKER Cargo 2020",
+            "owner": "Beau Chisholm",
+            "fuel": "electric"
+        },
+        {
+            "id": "OH-98936",
+            "brand": "Volvo",
+            "model": "V90 2020",
+            "owner": "Teresa Mctigue",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "BG-14769",
+            "brand": "Toyota",
+            "model": "Corolla Hybrid 2020",
+            "owner": "Kevin Johnson",
+            "fuel": "diesel"
+        },
+        {
+            "id": "DP-33569",
+            "brand": "Nissan",
+            "model": "370Z 2020",
+            "owner": "Thomas Younce",
+            "fuel": "electric"
+        },
+        {
+            "id": "RX-26972",
+            "brand": "Porsche",
+            "model": "718 Boxster 2020",
+            "owner": "William Mucci",
+            "fuel": "diesel"
+        },
+        {
+            "id": "EM-15113",
+            "brand": "Honda",
+            "model": "Accord Hybrid 2020",
+            "owner": "Victor Robinson",
+            "fuel": "electric"
+        },
+        {
+            "id": "GG-48746",
+            "brand": "MAZDA",
+            "model": "CX-9 2020",
+            "owner": "Sandra Wallen",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "OW-57084",
+            "brand": "Chevrolet",
+            "model": "Camaro 2020",
+            "owner": "Dollie Burke",
+            "fuel": "diesel"
+        },
+        {
+            "id": "RI-96886",
+            "brand": "Hyundai",
+            "model": "Ioniq Hybrid 2020",
+            "owner": "Ann Barton",
+            "fuel": "electric"
+        },
+        {
+            "id": "YC-20030",
+            "brand": "Cadillac",
+            "model": "Escalade ESV 2020",
+            "owner": "Rosemary Mcelrath",
+            "fuel": "electric"
+        },
+        {
+            "id": "JH-77607",
+            "brand": "Ford",
+            "model": "Escape 2020",
+            "owner": "David Frazier",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "ZI-32436",
+            "brand": "Acura",
+            "model": "RLX 2020",
+            "owner": "Robert Strain",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "PQ-88843",
+            "brand": "Chevrolet",
+            "model": "Corvette 2020",
+            "owner": "Michael Blosser",
+            "fuel": "diesel"
+        },
+        {
+            "id": "SG-65159",
+            "brand": "BMW",
+            "model": "X6 2020",
+            "owner": "Leslie Nunn",
+            "fuel": "electric"
+        },
+        {
+            "id": "QF-87593",
+            "brand": "Mercedes-Benz",
+            "model": "A-Class 2020",
+            "owner": "Alfonzo Baker",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HA-43822",
+            "brand": "Jaguar",
+            "model": "F-PACE 2020",
+            "owner": "Juanita Demora",
+            "fuel": "electric"
+        },
+        {
+            "id": "AK-11268",
+            "brand": "Mercedes-Benz",
+            "model": "GLC 2020",
+            "owner": "Felix Lewis",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WM-77576",
+            "brand": "Kia",
+            "model": "Niro EV 2020",
+            "owner": "Douglas Brown",
+            "fuel": "electric"
+        },
+        {
+            "id": "GK-81586",
+            "brand": "Land Rover",
+            "model": "Range Rover Evoque 2020",
+            "owner": "William Cunningham",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BS-33617",
+            "brand": "Dodge",
+            "model": "Grand Caravan Passenger 2020",
+            "owner": "John Freeman",
+            "fuel": "electric"
+        },
+        {
+            "id": "BY-68219",
+            "brand": "Toyota",
+            "model": "Sequoia 2020",
+            "owner": "Ruth Bishop",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "FM-58282",
+            "brand": "GMC",
+            "model": "Sierra 3500 HD Crew Cab 2020",
+            "owner": "Aline Towler",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "NC-66436",
+            "brand": "Lexus",
+            "model": "RC 2020",
+            "owner": "Felix Choice",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "XD-61597",
+            "brand": "Toyota",
+            "model": "Tundra Double Cab 2020",
+            "owner": "Elizabeth Langholz",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "IS-30262",
+            "brand": "Chevrolet",
+            "model": "Silverado 1500 Crew Cab 2020",
+            "owner": "Glenn Trudeau",
+            "fuel": "electric"
+        },
+        {
+            "id": "CW-19534",
+            "brand": "Audi",
+            "model": "S4 2020",
+            "owner": "Elizabeth Sage",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GM-80193",
+            "brand": "Toyota",
+            "model": "C-HR 2020",
+            "owner": "John Fitzhugh",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HM-12466",
+            "brand": "BMW",
+            "model": "X2 2020",
+            "owner": "Rosie Allen",
+            "fuel": "electric"
+        },
+        {
+            "id": "MN-52245",
+            "brand": "Audi",
+            "model": "A4 2020",
+            "owner": "Thomas Bush",
+            "fuel": "electric"
+        },
+        {
+            "id": "VH-20090",
+            "brand": "Lexus",
+            "model": "GS 2020",
+            "owner": "John Gremo",
+            "fuel": "electric"
+        },
+        {
+            "id": "YX-49116",
+            "brand": "MINI",
+            "model": "Countryman 2020",
+            "owner": "Herbert Outlaw",
+            "fuel": "diesel"
+        },
+        {
+            "id": "FF-11657",
+            "brand": "Ford",
+            "model": "Expedition 2020",
+            "owner": "Julie Edwards",
+            "fuel": "diesel"
+        },
+        {
+            "id": "IZ-37750",
+            "brand": "Freightliner",
+            "model": "Sprinter 4500 Cargo 2020",
+            "owner": "Pearl Wilson",
+            "fuel": "electric"
+        },
+        {
+            "id": "EB-86185",
+            "brand": "Mercedes-Benz",
+            "model": "E-Class 2020",
+            "owner": "David Cline",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JQ-34269",
+            "brand": "Ram",
+            "model": "1500 Classic Crew Cab 2020",
+            "owner": "Julio Persad",
+            "fuel": "electric"
+        },
+        {
+            "id": "VE-69214",
+            "brand": "Lincoln",
+            "model": "Nautilus 2020",
+            "owner": "Timothy Hull",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AD-70904",
+            "brand": "Mercedes-Benz",
+            "model": "E-Class 2020",
+            "owner": "Patrick Davenport",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "GT-90244",
+            "brand": "GMC",
+            "model": "Yukon XL 2020",
+            "owner": "Arthur Brower",
+            "fuel": "electric"
+        },
+        {
+            "id": "ID-11654",
+            "brand": "Porsche",
+            "model": "911 2020",
+            "owner": "Chad Mitchell",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BK-58989",
+            "brand": "Honda",
+            "model": "Clarity Fuel Cell 2020",
+            "owner": "Dena Reynolds",
+            "fuel": "diesel"
+        },
+        {
+            "id": "TK-25880",
+            "brand": "Volvo",
+            "model": "XC90 2020",
+            "owner": "Catherine Tankersley",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "HG-49693",
+            "brand": "Dodge",
+            "model": "Charger 2020",
+            "owner": "Richard Lane",
+            "fuel": "diesel"
+        },
+        {
+            "id": "KO-91731",
+            "brand": "Land Rover",
+            "model": "Defender 110 2020",
+            "owner": "Arthur Mcadam",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "ZO-67196",
+            "brand": "Ford",
+            "model": "F250 Super Duty Super Cab 2020",
+            "owner": "George Woolley",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BO-10738",
+            "brand": "Dodge",
+            "model": "Challenger 2020",
+            "owner": "Ray Figueroa",
+            "fuel": "electric"
+        },
+        {
+            "id": "AZ-84586",
+            "brand": "Acura",
+            "model": "MDX 2020",
+            "owner": "Joseph Urbina",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "LL-17461",
+            "brand": "MINI",
+            "model": "Clubman 2020",
+            "owner": "Freddie Williams",
+            "fuel": "electric"
+        },
+        {
+            "id": "IO-78954",
+            "brand": "Kia",
+            "model": "Sedona 2020",
+            "owner": "Heide Rivera",
+            "fuel": "electric"
+        },
+        {
+            "id": "UB-29810",
+            "brand": "Audi",
+            "model": "A6 allroad 2020",
+            "owner": "George Lovitt",
+            "fuel": "diesel"
+        },
+        {
+            "id": "KC-51862",
+            "brand": "Volkswagen",
+            "model": "Golf GTI 2020",
+            "owner": "Jack Jones",
+            "fuel": "electric"
+        },
+        {
+            "id": "OA-86998",
+            "brand": "Freightliner",
+            "model": "Sprinter 2500 Cargo 2020",
+            "owner": "Caroline Gorman",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AH-90124",
+            "brand": "Subaru",
+            "model": "Ascent 2020",
+            "owner": "Kimberly Lavette",
+            "fuel": "electric"
+        },
+        {
+            "id": "WE-30929",
+            "brand": "Ram",
+            "model": "1500 Crew Cab 2020",
+            "owner": "Jenna Shiner",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "IZ-14888",
+            "brand": "Jaguar",
+            "model": "I-PACE 2020",
+            "owner": "Glenn Murphy",
+            "fuel": "diesel"
+        },
+        {
+            "id": "MS-20287",
+            "brand": "BMW",
+            "model": "2 Series 2020",
+            "owner": "Jeanie Kirkland",
+            "fuel": "electric"
+        },
+        {
+            "id": "DD-56041",
+            "brand": "Acura",
+            "model": "RLX 2020",
+            "owner": "Grace Clark",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "MN-81272",
+            "brand": "Honda",
+            "model": "Civic 2020",
+            "owner": "Sandra Munoz",
+            "fuel": "diesel"
+        },
+        {
+            "id": "YQ-34773",
+            "brand": "Lincoln",
+            "model": "Nautilus 2020",
+            "owner": "Anne Brady",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JK-28521",
+            "brand": "Hyundai",
+            "model": "Ioniq Plug-in Hybrid 2020",
+            "owner": "Nadia Pereira",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GH-89079",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG CLS 2020",
+            "owner": "Hubert Freitag",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LE-80017",
+            "brand": "Land Rover",
+            "model": "Range Rover 2020",
+            "owner": "Sharon May",
+            "fuel": "electric"
+        },
+        {
+            "id": "QA-95473",
+            "brand": "Kia",
+            "model": "Niro Plug-in Hybrid 2020",
+            "owner": "Lori Chapman",
+            "fuel": "diesel"
+        },
+        {
+            "id": "TD-70456",
+            "brand": "BMW",
+            "model": "3 Series 2020",
+            "owner": "Anthony Skinner",
+            "fuel": "electric"
+        },
+        {
+            "id": "CK-28914",
+            "brand": "Lincoln",
+            "model": "MKZ 2020",
+            "owner": "Ivan Sowers",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZH-61433",
+            "brand": "Jaguar",
+            "model": "I-PACE 2020",
+            "owner": "Richard Gergen",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LC-76384",
+            "brand": "Toyota",
+            "model": "Yaris Hatchback 2020",
+            "owner": "James Trujillo",
+            "fuel": "diesel"
+        },
+        {
+            "id": "OO-65418",
+            "brand": "Mitsubishi",
+            "model": "Outlander 2020",
+            "owner": "Sook Berry",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "ZH-58409",
+            "brand": "Hyundai",
+            "model": "Ioniq Plug-in Hybrid 2020",
+            "owner": "Roxanne Biss",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JQ-47899",
+            "brand": "Honda",
+            "model": "Civic 2020",
+            "owner": "Ora Daley",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ZD-89545",
+            "brand": "Hyundai",
+            "model": "Kona Electric 2020",
+            "owner": "Nancy Tolbert",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "RT-84160",
+            "brand": "Land Rover",
+            "model": "Discovery 2020",
+            "owner": "Christopher Smith",
+            "fuel": "diesel"
+        },
+        {
+            "id": "SN-85835",
+            "brand": "Honda",
+            "model": "HR-V 2020",
+            "owner": "Rebecca Mcferren",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WK-62144",
+            "brand": "GMC",
+            "model": "Acadia 2020",
+            "owner": "Gerald Lichtenstein",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "PD-15377",
+            "brand": "Chevrolet",
+            "model": "Express 2500 Cargo 2020",
+            "owner": "Todd Madonia",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "VK-81465",
+            "brand": "Mercedes-Benz",
+            "model": "CLS 2020",
+            "owner": "Michelle Gee",
+            "fuel": "electric"
+        },
+        {
+            "id": "GB-85795",
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 1500 Cargo 2020",
+            "owner": "Larry Reimer",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "MO-36977",
+            "brand": "Chevrolet",
+            "model": "Impala 2020",
+            "owner": "Theresa Salmon",
+            "fuel": "electric"
+        },
+        {
+            "id": "BH-80855",
+            "brand": "Kia",
+            "model": "Soul 2020",
+            "owner": "Albert Morris",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "VL-48414",
+            "brand": "Volvo",
+            "model": "V60 2020",
+            "owner": "Angela Ryan",
+            "fuel": "diesel"
+        },
+        {
+            "id": "FT-97538",
+            "brand": "BMW",
+            "model": "X3 M 2020",
+            "owner": "Nancy Meyers",
+            "fuel": "electric"
+        },
+        {
+            "id": "ML-61858",
+            "brand": "Chevrolet",
+            "model": "Equinox 2020",
+            "owner": "Michael Yarnell",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JE-37908",
+            "brand": "Chevrolet",
+            "model": "Malibu 2020",
+            "owner": "Keith Cleek",
+            "fuel": "electric"
+        },
+        {
+            "id": "WW-85277",
+            "brand": "MAZDA",
+            "model": "MAZDA6 2020",
+            "owner": "Sandra Scheetz",
+            "fuel": "electric"
+        },
+        {
+            "id": "XT-16804",
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 4500 Cargo 2020",
+            "owner": "Wendy Rodgers",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "YN-78101",
+            "brand": "Hyundai",
+            "model": "Tucson 2020",
+            "owner": "Tracy Tipler",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "KF-13101",
+            "brand": "Freightliner",
+            "model": "Sprinter 2500 Crew 2020",
+            "owner": "Richard Rocchio",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "OX-56123",
+            "brand": "Ford",
+            "model": "Fusion Plug-in Hybrid 2020",
+            "owner": "Dolores West",
+            "fuel": "electric"
+        },
+        {
+            "id": "TL-44216",
+            "brand": "Chrysler",
+            "model": "Pacifica 2020",
+            "owner": "Brittany Rummler",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "CK-95496",
+            "brand": "Ford",
+            "model": "Transit 250 Cargo Van 2020",
+            "owner": "Lawrence Burroughs",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "QB-18044",
+            "brand": "Mitsubishi",
+            "model": "Eclipse Cross 2020",
+            "owner": "Kenneth Perez",
+            "fuel": "diesel"
+        },
+        {
+            "id": "RW-16069",
+            "brand": "Ram",
+            "model": "3500 Crew Cab 2020",
+            "owner": "Hui Cornelius",
+            "fuel": "diesel"
+        },
+        {
+            "id": "XI-52037",
+            "brand": "Lexus",
+            "model": "UX 2020",
+            "owner": "Roosevelt Saucier",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "HJ-67157",
+            "brand": "Audi",
+            "model": "A5 2020",
+            "owner": "Lawrence Mercado",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HY-98427",
+            "brand": "Nissan",
+            "model": "LEAF 2020",
+            "owner": "Vickie Rebman",
+            "fuel": "electric"
+        },
+        {
+            "id": "XT-85320",
+            "brand": "Land Rover",
+            "model": "Defender 110 2020",
+            "owner": "Brad Averill",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "FY-78738",
+            "brand": "Acura",
+            "model": "ILX 2020",
+            "owner": "Amy Hayes",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "KK-98038",
+            "brand": "Lexus",
+            "model": "GS 2020",
+            "owner": "Joe Winger",
+            "fuel": "electric"
+        },
+        {
+            "id": "TH-51789",
+            "brand": "Cadillac",
+            "model": "CT4 2020",
+            "owner": "Peter Watson",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZW-47466",
+            "brand": "Volkswagen",
+            "model": "Tiguan 2020",
+            "owner": "Grant Thomas",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GC-20343",
+            "brand": "Freightliner",
+            "model": "Sprinter 2500 Passenger 2020",
+            "owner": "Irene Wiggins",
+            "fuel": "diesel"
+        },
+        {
+            "id": "DL-51561",
+            "brand": "Alfa Romeo",
+            "model": "Giulia 2020",
+            "owner": "Diane Donohue",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "UP-76156",
+            "brand": "Subaru",
+            "model": "Outback 2020",
+            "owner": "James Smith",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "CR-71572",
+            "brand": "Porsche",
+            "model": "Panamera 2020",
+            "owner": "James Braswell",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "ZW-62090",
+            "brand": "Subaru",
+            "model": "Crosstrek 2020",
+            "owner": "Katherine Guerrero",
+            "fuel": "electric"
+        },
+        {
+            "id": "TP-34461",
+            "brand": "Lincoln",
+            "model": "Aviator 2020",
+            "owner": "Frances Castellanos",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "CO-23542",
+            "brand": "Subaru",
+            "model": "Outback 2020",
+            "owner": "Sara Scott",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "DU-53061",
+            "brand": "Chevrolet",
+            "model": "Sonic 2020",
+            "owner": "Jimmy Michael",
+            "fuel": "electric"
+        },
+        {
+            "id": "QL-17231",
+            "brand": "Chevrolet",
+            "model": "Silverado 1500 Crew Cab 2020",
+            "owner": "Dawn Reynosa",
+            "fuel": "electric"
+        },
+        {
+            "id": "OZ-59262",
+            "brand": "Ford",
+            "model": "Expedition 2020",
+            "owner": "Charolette Phelan",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AK-13313",
+            "brand": "Ford",
+            "model": "Fusion Plug-in Hybrid 2020",
+            "owner": "Kathleen Shea",
+            "fuel": "electric"
+        },
+        {
+            "id": "UP-78628",
+            "brand": "Mercedes-Benz",
+            "model": "GLE 2020",
+            "owner": "Huong Mercado",
+            "fuel": "diesel"
+        },
+        {
+            "id": "RK-73447",
+            "brand": "Jeep",
+            "model": "Gladiator 2020",
+            "owner": "Louise Peron",
+            "fuel": "diesel"
+        },
+        {
+            "id": "KH-94689",
+            "brand": "Hyundai",
+            "model": "Kona Electric 2020",
+            "owner": "Jennifer Shupe",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "TL-36464",
+            "brand": "Toyota",
+            "model": "Camry Hybrid 2020",
+            "owner": "Nancy Hadlock",
+            "fuel": "diesel"
+        },
+        {
+            "id": "XI-38004",
+            "brand": "MAZDA",
+            "model": "MAZDA6 2020",
+            "owner": "Melissa Wixom",
+            "fuel": "electric"
+        },
+        {
+            "id": "PS-64644",
+            "brand": "Cadillac",
+            "model": "XT4 2020",
+            "owner": "Chad Barraclough",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "YK-84211",
+            "brand": "Volkswagen",
+            "model": "Golf GTI 2020",
+            "owner": "David Shifflett",
+            "fuel": "electric"
+        },
+        {
+            "id": "AF-87120",
+            "brand": "Ram",
+            "model": "2500 Crew Cab 2020",
+            "owner": "Reginald Ripp",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "SU-27117",
+            "brand": "MAZDA",
+            "model": "CX-3 2020",
+            "owner": "Charles Stroik",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "MZ-15118",
+            "brand": "Mitsubishi",
+            "model": "Outlander Sport 2020",
+            "owner": "Marie Bowman",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BD-38092",
+            "brand": "Lincoln",
+            "model": "Navigator 2020",
+            "owner": "Jerald Smolder",
+            "fuel": "diesel"
+        },
+        {
+            "id": "NH-40397",
+            "brand": "Mitsubishi",
+            "model": "Mirage G4 2020",
+            "owner": "Lincoln Lee",
+            "fuel": "electric"
+        },
+        {
+            "id": "LM-13712",
+            "brand": "Toyota",
+            "model": "Highlander Hybrid 2020",
+            "owner": "Peter Stone",
+            "fuel": "electric"
+        },
+        {
+            "id": "BK-67477",
+            "brand": "Lincoln",
+            "model": "Corsair 2020",
+            "owner": "Ralph Roberts",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AI-35143",
+            "brand": "Lexus",
+            "model": "GS 2020",
+            "owner": "Charlie Schneider",
+            "fuel": "electric"
+        },
+        {
+            "id": "JZ-91972",
+            "brand": "Honda",
+            "model": "Ridgeline 2020",
+            "owner": "Eloise Stewart",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QC-79852",
+            "brand": "Lexus",
+            "model": "UX 2020",
+            "owner": "Mildred Murphy",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "VS-17409",
+            "brand": "Nissan",
+            "model": "Sentra 2020",
+            "owner": "Tasha Ornelas",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "MG-30534",
+            "brand": "Mercedes-Benz",
+            "model": "A-Class 2020",
+            "owner": "Jessica Witcher",
+            "fuel": "diesel"
+        },
+        {
+            "id": "PK-28991",
+            "brand": "Tesla",
+            "model": "Model X 2020",
+            "owner": "Christine Virula",
+            "fuel": "diesel"
+        },
+        {
+            "id": "CC-83549",
+            "brand": "Kia",
+            "model": "Soul 2020",
+            "owner": "Kenneth Hernandez",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JF-39989",
+            "brand": "Kia",
+            "model": "Rio 2020",
+            "owner": "Mary Moore",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "YC-68461",
+            "brand": "BMW",
+            "model": "X7 2020",
+            "owner": "Mary Shoffner",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZU-55312",
+            "brand": "INFINITI",
+            "model": "QX60 2020",
+            "owner": "Katie Marx",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ON-46920",
+            "brand": "Alfa Romeo",
+            "model": "Giulia 2020",
+            "owner": "Vesta Emert",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "MZ-93410",
+            "brand": "Toyota",
+            "model": "Prius Prime 2020",
+            "owner": "Emma Gordon",
+            "fuel": "electric"
+        },
+        {
+            "id": "JU-55774",
+            "brand": "Volkswagen",
+            "model": "Atlas Cross Sport 2020",
+            "owner": "Kathryn Vanhook",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "FN-28372",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG GLC Coupe 2020",
+            "owner": "Karen Schippers",
+            "fuel": "electric"
+        },
+        {
+            "id": "KG-81114",
+            "brand": "Freightliner",
+            "model": "Sprinter 2500 Cargo 2020",
+            "owner": "Leigh Ayres",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "YF-12685",
+            "brand": "Nissan",
+            "model": "Maxima 2020",
+            "owner": "Joseph Scrivens",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "TG-67214",
+            "brand": "Honda",
+            "model": "Insight 2020",
+            "owner": "Alton Ramos",
+            "fuel": "electric"
+        },
+        {
+            "id": "CP-48390",
+            "brand": "GMC",
+            "model": "Sierra 3500 HD Crew Cab 2020",
+            "owner": "Joan Sweeney",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "PT-66686",
+            "brand": "Mercedes-Benz",
+            "model": "S-Class 2020",
+            "owner": "Carol James",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QI-59349",
+            "brand": "Ford",
+            "model": "Transit Connect Passenger Wagon 2020",
+            "owner": "Larry Garza",
+            "fuel": "electric"
+        },
+        {
+            "id": "IW-96433",
+            "brand": "Toyota",
+            "model": "Prius Prime 2020",
+            "owner": "Edwin Alberto",
+            "fuel": "electric"
+        },
+        {
+            "id": "HI-39594",
+            "brand": "Honda",
+            "model": "Accord 2020",
+            "owner": "Jeffery Brown",
+            "fuel": "electric"
+        },
+        {
+            "id": "NI-83615",
+            "brand": "Land Rover",
+            "model": "Defender 110 2020",
+            "owner": "Pamela Franco",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "HR-97751",
+            "brand": "Honda",
+            "model": "Clarity Plug-in Hybrid 2020",
+            "owner": "Cornelia Eicher",
+            "fuel": "electric"
+        },
+        {
+            "id": "HF-10131",
+            "brand": "Volvo",
+            "model": "S90 2020",
+            "owner": "Kristin Graham",
+            "fuel": "electric"
+        },
+        {
+            "id": "SL-49134",
+            "brand": "GMC",
+            "model": "Sierra 1500 Crew Cab 2020",
+            "owner": "Karl Finan",
+            "fuel": "electric"
+        },
+        {
+            "id": "XB-36319",
+            "brand": "Mercedes-Benz",
+            "model": "G-Class 2020",
+            "owner": "Erin Russell",
+            "fuel": "diesel"
+        },
+        {
+            "id": "YC-93420",
+            "brand": "Lexus",
+            "model": "IS 2020",
+            "owner": "Sandra Vinson",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "CU-53071",
+            "brand": "Subaru",
+            "model": "Legacy 2020",
+            "owner": "Nancy Mcclinton",
+            "fuel": "electric"
+        },
+        {
+            "id": "NJ-17612",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG GLC 2020",
+            "owner": "Scott Mcginity",
+            "fuel": "electric"
+        },
+        {
+            "id": "NK-76361",
+            "brand": "GMC",
+            "model": "Sierra 1500 Double Cab 2020",
+            "owner": "Charles Meadows",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LN-25076",
+            "brand": "Jeep",
+            "model": "Gladiator 2020",
+            "owner": "David Thomsen",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AT-22965",
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 3500 XD Crew 2020",
+            "owner": "Elias Garrison",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "BV-20966",
+            "brand": "Mercedes-Benz",
+            "model": "GLA 2020",
+            "owner": "Aaron Upton",
+            "fuel": "diesel"
+        },
+        {
+            "id": "TZ-53489",
+            "brand": "Ram",
+            "model": "1500 Crew Cab 2020",
+            "owner": "Priscilla Cox",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "NK-72234",
+            "brand": "BMW",
+            "model": "X5 2020",
+            "owner": "Zachariah Quarles",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JS-21791",
+            "brand": "Ram",
+            "model": "1500 Classic Quad Cab 2020",
+            "owner": "Inger Simone",
+            "fuel": "diesel"
+        },
+        {
+            "id": "MR-83918",
+            "brand": "Mercedes-Benz",
+            "model": "GLE 2020",
+            "owner": "Antonina Baker",
+            "fuel": "diesel"
+        },
+        {
+            "id": "YF-21511",
+            "brand": "Hyundai",
+            "model": "Elantra 2020",
+            "owner": "Cynthia Alvarez",
+            "fuel": "electric"
+        },
+        {
+            "id": "LC-68757",
+            "brand": "Acura",
+            "model": "TLX 2020",
+            "owner": "Pearl Roth",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ZS-73944",
+            "brand": "Jaguar",
+            "model": "F-PACE 2020",
+            "owner": "John Murray",
+            "fuel": "electric"
+        },
+        {
+            "id": "QN-62332",
+            "brand": "Ford",
+            "model": "F450 Super Duty Crew Cab 2020",
+            "owner": "Edward Mcguinn",
+            "fuel": "electric"
+        },
+        {
+            "id": "HG-44194",
+            "brand": "Hyundai",
+            "model": "Ioniq Plug-in Hybrid 2020",
+            "owner": "Elizabeth Villarreal",
+            "fuel": "diesel"
+        },
+        {
+            "id": "OE-95408",
+            "brand": "BMW",
+            "model": "X3 M 2020",
+            "owner": "Sabrina Mccomb",
+            "fuel": "electric"
+        },
+        {
+            "id": "GS-82851",
+            "brand": "Lincoln",
+            "model": "Corsair 2020",
+            "owner": "Val Nixon",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HB-36929",
+            "brand": "Dodge",
+            "model": "Grand Caravan Passenger 2020",
+            "owner": "Virginia Wolfe",
+            "fuel": "electric"
+        },
+        {
+            "id": "UG-72313",
+            "brand": "Audi",
+            "model": "A5 2020",
+            "owner": "Donny Sawtelle",
+            "fuel": "diesel"
+        },
+        {
+            "id": "EJ-75791",
+            "brand": "Freightliner",
+            "model": "Sprinter 1500 Cargo 2020",
+            "owner": "Chris Williams",
+            "fuel": "electric"
+        },
+        {
+            "id": "DH-95627",
+            "brand": "Chevrolet",
+            "model": "Express 2500 Cargo 2020",
+            "owner": "Heather Hoskins",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "ZM-97347",
+            "brand": "Volkswagen",
+            "model": "Atlas Cross Sport 2020",
+            "owner": "Brad Ciprian",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "BI-85572",
+            "brand": "Land Rover",
+            "model": "Defender 110 2020",
+            "owner": "Louis Hart",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "EZ-16366",
+            "brand": "Lexus",
+            "model": "IS 2020",
+            "owner": "Mary Villa",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "WM-14646",
+            "brand": "Nissan",
+            "model": "Rogue 2020",
+            "owner": "Laine Green",
+            "fuel": "electric"
+        },
+        {
+            "id": "VY-46888",
+            "brand": "Freightliner",
+            "model": "Sprinter 4500 Cargo 2020",
+            "owner": "Larry Lemanski",
+            "fuel": "electric"
+        },
+        {
+            "id": "GK-58532",
+            "brand": "Ford",
+            "model": "Explorer 2020",
+            "owner": "Billy Norman",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "WC-74393",
+            "brand": "Volkswagen",
+            "model": "Passat 2020",
+            "owner": "Juan Maxwell",
+            "fuel": "electric"
+        },
+        {
+            "id": "YG-46335",
+            "brand": "Kia",
+            "model": "Optima Hybrid 2020",
+            "owner": "Kevin Daugherty",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZE-35285",
+            "brand": "Lincoln",
+            "model": "MKZ 2020",
+            "owner": "Wayne Gatlin",
+            "fuel": "electric"
+        },
+        {
+            "id": "JS-93834",
+            "brand": "Acura",
+            "model": "RLX Sport Hybrid 2020",
+            "owner": "Anthony Eaves",
+            "fuel": "diesel"
+        },
+        {
+            "id": "MV-88418",
+            "brand": "Lincoln",
+            "model": "Navigator 2020",
+            "owner": "Jane Pilcher",
+            "fuel": "diesel"
+        },
+        {
+            "id": "XL-78213",
+            "brand": "Ford",
+            "model": "Transit 250 Cargo Van 2020",
+            "owner": "Douglas Barnett",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JV-90367",
+            "brand": "Tesla",
+            "model": "Model Y 2020",
+            "owner": "Mary Martinez",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BM-17803",
+            "brand": "Jaguar",
+            "model": "F-PACE 2020",
+            "owner": "Elizabeth Mcdonough",
+            "fuel": "electric"
+        },
+        {
+            "id": "YU-22210",
+            "brand": "Ram",
+            "model": "1500 Classic Crew Cab 2020",
+            "owner": "Nicholas Cruz",
+            "fuel": "electric"
+        },
+        {
+            "id": "PD-79681",
+            "brand": "BMW",
+            "model": "5 Series 2020",
+            "owner": "Leilani Mandolini",
+            "fuel": "diesel"
+        },
+        {
+            "id": "DQ-45689",
+            "brand": "Nissan",
+            "model": "Armada 2020",
+            "owner": "Barbara Jackson",
+            "fuel": "diesel"
+        },
+        {
+            "id": "EU-22283",
+            "brand": "Ram",
+            "model": "3500 Crew Cab 2020",
+            "owner": "Antoinette Lovette",
+            "fuel": "diesel"
+        },
+        {
+            "id": "SG-92829",
+            "brand": "BMW",
+            "model": "X3 2020",
+            "owner": "Joyce Lajaunie",
+            "fuel": "diesel"
+        },
+        {
+            "id": "IB-18977",
+            "brand": "Toyota",
+            "model": "Highlander 2020",
+            "owner": "Tony Acosta",
+            "fuel": "diesel"
+        },
+        {
+            "id": "VN-33599",
+            "brand": "Mercedes-Benz",
+            "model": "SLC 2020",
+            "owner": "Robert Fowler",
+            "fuel": "electric"
+        },
+        {
+            "id": "JW-70278",
+            "brand": "Ford",
+            "model": "Ranger SuperCrew 2020",
+            "owner": "Phillip Enriquez",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BJ-78343",
+            "brand": "Nissan",
+            "model": "NV3500 HD Cargo 2020",
+            "owner": "Amanda James",
+            "fuel": "electric"
+        },
+        {
+            "id": "OB-32347",
+            "brand": "Nissan",
+            "model": "Armada 2020",
+            "owner": "Cynthia Neri",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QZ-47064",
+            "brand": "Porsche",
+            "model": "718 Boxster 2020",
+            "owner": "Darrell Gomez",
+            "fuel": "diesel"
+        },
+        {
+            "id": "YZ-19284",
+            "brand": "Lexus",
+            "model": "GS 2020",
+            "owner": "Peter Latham",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZT-29540",
+            "brand": "Honda",
+            "model": "Odyssey 2020",
+            "owner": "Brandon Mosher",
+            "fuel": "electric"
+        },
+        {
+            "id": "RK-89960",
+            "brand": "Mercedes-Benz",
+            "model": "S-Class 2020",
+            "owner": "Robert Ellis",
+            "fuel": "diesel"
+        },
+        {
+            "id": "MK-26669",
+            "brand": "Acura",
+            "model": "ILX 2020",
+            "owner": "Jennifer Jones",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "XA-70716",
+            "brand": "Volvo",
+            "model": "S90 2020",
+            "owner": "Julie Hudson",
+            "fuel": "electric"
+        },
+        {
+            "id": "KK-90809",
+            "brand": "Hyundai",
+            "model": "Venue 2020",
+            "owner": "Benjamin Wilhelm",
+            "fuel": "diesel"
+        },
+        {
+            "id": "NH-81719",
+            "brand": "Kia",
+            "model": "Sedona 2020",
+            "owner": "Mariam Harris",
+            "fuel": "electric"
+        },
+        {
+            "id": "RU-55620",
+            "brand": "Cadillac",
+            "model": "Escalade 2020",
+            "owner": "Judy Nicholson",
+            "fuel": "electric"
+        },
+        {
+            "id": "DH-21694",
+            "brand": "Buick",
+            "model": "Encore 2020",
+            "owner": "Angela Barnes",
+            "fuel": "electric"
+        },
+        {
+            "id": "NJ-45568",
+            "brand": "Freightliner",
+            "model": "Sprinter 4500 Cargo 2020",
+            "owner": "Annette Philip",
+            "fuel": "electric"
+        },
+        {
+            "id": "RZ-43565",
+            "brand": "Lincoln",
+            "model": "Nautilus 2020",
+            "owner": "Denise Vacca",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ZW-94747",
+            "brand": "Lexus",
+            "model": "NX 2020",
+            "owner": "Teresa Gibeau",
+            "fuel": "electric"
+        },
+        {
+            "id": "YL-69241",
+            "brand": "Subaru",
+            "model": "Outback 2020",
+            "owner": "Barbara Powell",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "KV-77102",
+            "brand": "Toyota",
+            "model": "Avalon Hybrid 2020",
+            "owner": "Deborah Richard",
+            "fuel": "electric"
+        },
+        {
+            "id": "IO-40204",
+            "brand": "Nissan",
+            "model": "Titan Crew Cab 2020",
+            "owner": "Alta Olson",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "KI-48783",
+            "brand": "Lexus",
+            "model": "NX 2020",
+            "owner": "Deborah Riley",
+            "fuel": "electric"
+        },
+        {
+            "id": "IM-24099",
+            "brand": "Ram",
+            "model": "1500 Classic Quad Cab 2020",
+            "owner": "Gordon Owens",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BF-80527",
+            "brand": "Cadillac",
+            "model": "XT4 2020",
+            "owner": "Glenda German",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "QE-62887",
+            "brand": "Lexus",
+            "model": "GX 2020",
+            "owner": "Mattie Jenkins",
+            "fuel": "electric"
+        },
+        {
+            "id": "YG-43694",
+            "brand": "Mitsubishi",
+            "model": "Outlander 2020",
+            "owner": "Barry Myers",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "UT-82098",
+            "brand": "Genesis",
+            "model": "G90 2020",
+            "owner": "Lee Sonoda",
+            "fuel": "diesel"
+        },
+        {
+            "id": "NZ-80107",
+            "brand": "Buick",
+            "model": "Encore 2020",
+            "owner": "Ida Arzola",
+            "fuel": "electric"
+        },
+        {
+            "id": "DF-23587",
+            "brand": "Subaru",
+            "model": "BRZ 2020",
+            "owner": "Ashley Vancamp",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "CT-52552",
+            "brand": "Nissan",
+            "model": "NV3500 HD Cargo 2020",
+            "owner": "Gladis Maccormack",
+            "fuel": "electric"
+        },
+        {
+            "id": "FL-97727",
+            "brand": "Volvo",
+            "model": "XC60 2020",
+            "owner": "Shirley Wade",
+            "fuel": "electric"
+        },
+        {
+            "id": "IQ-69374",
+            "brand": "Hyundai",
+            "model": "Ioniq Hybrid 2020",
+            "owner": "Noah Williams",
+            "fuel": "electric"
+        },
+        {
+            "id": "HN-95130",
+            "brand": "BMW",
+            "model": "Z4 2020",
+            "owner": "Jacqueline Levenstein",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "OB-52607",
+            "brand": "Nissan",
+            "model": "Altima 2020",
+            "owner": "Sandra Gunter",
+            "fuel": "electric"
+        },
+        {
+            "id": "MA-76215",
+            "brand": "GMC",
+            "model": "Sierra 1500 Crew Cab 2020",
+            "owner": "Herbert Wilcox",
+            "fuel": "electric"
+        },
+        {
+            "id": "IT-22621",
+            "brand": "Subaru",
+            "model": "Ascent 2020",
+            "owner": "Thomas Mitchell",
+            "fuel": "electric"
+        },
+        {
+            "id": "NE-93844",
+            "brand": "Buick",
+            "model": "Encore GX 2020",
+            "owner": "Ashley Brown",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ZL-64957",
+            "brand": "Lexus",
+            "model": "IS 2020",
+            "owner": "Benjamin Fawcett",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "NV-50741",
+            "brand": "Jeep",
+            "model": "Grand Cherokee 2020",
+            "owner": "Florence Patel",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LM-13381",
+            "brand": "Porsche",
+            "model": "Cayenne 2020",
+            "owner": "Veronica Cook",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "LQ-96593",
+            "brand": "Alfa Romeo",
+            "model": "4C Spider 2020",
+            "owner": "Diane Harrington",
+            "fuel": "electric"
+        },
+        {
+            "id": "WT-97299",
+            "brand": "BMW",
+            "model": "3 Series 2020",
+            "owner": "Henry Meads",
+            "fuel": "electric"
+        },
+        {
+            "id": "NW-77351",
+            "brand": "Porsche",
+            "model": "Macan 2020",
+            "owner": "Phillip Garcia",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "QQ-95975",
+            "brand": "Nissan",
+            "model": "NV1500 Cargo 2020",
+            "owner": "Jennifer Magrath",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WV-39005",
+            "brand": "Lexus",
+            "model": "NX 2020",
+            "owner": "Matthew Hemmingsen",
+            "fuel": "electric"
+        },
+        {
+            "id": "QC-56603",
+            "brand": "Alfa Romeo",
+            "model": "Stelvio 2020",
+            "owner": "Eugene Goode",
+            "fuel": "diesel"
+        },
+        {
+            "id": "VV-37557",
+            "brand": "Land Rover",
+            "model": "Range Rover 2020",
+            "owner": "Daniel Besser",
+            "fuel": "electric"
+        },
+        {
+            "id": "UP-44118",
+            "brand": "BMW",
+            "model": "X4 2020",
+            "owner": "Marcia Wood",
+            "fuel": "electric"
+        },
+        {
+            "id": "AK-82376",
+            "brand": "Honda",
+            "model": "Odyssey 2020",
+            "owner": "Cora Jones",
+            "fuel": "electric"
+        },
+        {
+            "id": "OO-64192",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG C-Class 2020",
+            "owner": "Britany Freeman",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WS-90627",
+            "brand": "Audi",
+            "model": "S8 2020",
+            "owner": "Michael Gibson",
+            "fuel": "electric"
+        },
+        {
+            "id": "CB-24698",
+            "brand": "Chevrolet",
+            "model": "Sonic 2020",
+            "owner": "John Day",
+            "fuel": "electric"
+        },
+        {
+            "id": "PD-18100",
+            "brand": "Lexus",
+            "model": "LX 2020",
+            "owner": "Charles Collins",
+            "fuel": "electric"
+        },
+        {
+            "id": "RT-12887",
+            "brand": "Mercedes-Benz",
+            "model": "C-Class 2020",
+            "owner": "Michael Fields",
+            "fuel": "electric"
+        },
+        {
+            "id": "TJ-32172",
+            "brand": "Toyota",
+            "model": "Tundra CrewMax 2020",
+            "owner": "Don Woodman",
+            "fuel": "electric"
+        },
+        {
+            "id": "OR-53561",
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 2500 Cargo 2020",
+            "owner": "Rhonda Jack",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "PH-95214",
+            "brand": "Honda",
+            "model": "CR-V Hybrid 2020",
+            "owner": "Harry Gay",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LL-83132",
+            "brand": "GMC",
+            "model": "Terrain 2020",
+            "owner": "Agnes Drown",
+            "fuel": "electric"
+        },
+        {
+            "id": "WM-67206",
+            "brand": "Subaru",
+            "model": "Forester 2020",
+            "owner": "Teresa Hass",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JO-46116",
+            "brand": "Acura",
+            "model": "TLX 2020",
+            "owner": "Bobby Thompson",
+            "fuel": "diesel"
+        },
+        {
+            "id": "KS-10083",
+            "brand": "MAZDA",
+            "model": "MX-5 Miata RF 2020",
+            "owner": "Wayne Shelton",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QQ-89357",
+            "brand": "Chevrolet",
+            "model": "Silverado 1500 Double Cab 2020",
+            "owner": "Ronald Luce",
+            "fuel": "electric"
+        },
+        {
+            "id": "VE-17931",
+            "brand": "Lexus",
+            "model": "IS 2020",
+            "owner": "Matthew Stotts",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "NW-46461",
+            "brand": "INFINITI",
+            "model": "Q60 2020",
+            "owner": "Tony Odell",
+            "fuel": "diesel"
+        },
+        {
+            "id": "XZ-31238",
+            "brand": "Lincoln",
+            "model": "Aviator 2020",
+            "owner": "Kelly Absher",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "BY-92638",
+            "brand": "BMW",
+            "model": "5 Series 2020",
+            "owner": "Richard Bowens",
+            "fuel": "diesel"
+        },
+        {
+            "id": "UJ-60562",
+            "brand": "Cadillac",
+            "model": "CT5 2020",
+            "owner": "James Goss",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZM-73722",
+            "brand": "Toyota",
+            "model": "Camry 2020",
+            "owner": "Daniel Reynolds",
+            "fuel": "electric"
+        },
+        {
+            "id": "JW-84337",
+            "brand": "Honda",
+            "model": "Passport 2020",
+            "owner": "Mary Martinez",
+            "fuel": "electric"
+        },
+        {
+            "id": "YN-36646",
+            "brand": "Kia",
+            "model": "Niro Plug-in Hybrid 2020",
+            "owner": "Eugene Kim",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QJ-20880",
+            "brand": "Kia",
+            "model": "Rio 2020",
+            "owner": "William Evers",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "OB-94006",
+            "brand": "Honda",
+            "model": "CR-V Hybrid 2020",
+            "owner": "Scott James",
+            "fuel": "diesel"
+        },
+        {
+            "id": "MB-83781",
+            "brand": "Chevrolet",
+            "model": "Corvette 2020",
+            "owner": "Mariella Rowland",
+            "fuel": "diesel"
+        },
+        {
+            "id": "CD-64946",
+            "brand": "Mitsubishi",
+            "model": "Outlander Sport 2020",
+            "owner": "Alexander Thompson",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QU-92644",
+            "brand": "Chevrolet",
+            "model": "Silverado 2500 HD Double Cab 2020",
+            "owner": "William Tucker",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "NA-15800",
+            "brand": "Nissan",
+            "model": "NV2500 HD Cargo 2020",
+            "owner": "Elinor Mercado",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "RA-35765",
+            "brand": "Hyundai",
+            "model": "Tucson 2020",
+            "owner": "Gary Pool",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "LI-36407",
+            "brand": "Acura",
+            "model": "RDX 2020",
+            "owner": "Karen Baccam",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LY-17346",
+            "brand": "Mercedes-Benz",
+            "model": "Metris WORKER Cargo 2020",
+            "owner": "Richard Schott",
+            "fuel": "electric"
+        },
+        {
+            "id": "ET-83371",
+            "brand": "Volkswagen",
+            "model": "Arteon 2020",
+            "owner": "Kevin Votta",
+            "fuel": "electric"
+        },
+        {
+            "id": "HZ-76578",
+            "brand": "Ram",
+            "model": "ProMaster City 2020",
+            "owner": "Judith Flies",
+            "fuel": "diesel"
+        },
+        {
+            "id": "LX-27078",
+            "brand": "Ford",
+            "model": "F250 Super Duty Super Cab 2020",
+            "owner": "Ashley Drew",
+            "fuel": "diesel"
+        },
+        {
+            "id": "RV-42859",
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 3500 XD Crew 2020",
+            "owner": "Albert Sullivan",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "KO-29887",
+            "brand": "Mercedes-Benz",
+            "model": "GLE 2020",
+            "owner": "Michael Splawn",
+            "fuel": "diesel"
+        },
+        {
+            "id": "OX-67856",
+            "brand": "Mitsubishi",
+            "model": "Mirage 2020",
+            "owner": "Christine Polaco",
+            "fuel": "diesel"
+        },
+        {
+            "id": "XX-49430",
+            "brand": "MINI",
+            "model": "Hardtop 2 Door 2020",
+            "owner": "Robert Wu",
+            "fuel": "electric"
+        },
+        {
+            "id": "JH-96788",
+            "brand": "GMC",
+            "model": "Sierra 1500 Crew Cab 2020",
+            "owner": "Jerry Micheals",
+            "fuel": "electric"
+        },
+        {
+            "id": "BD-56582",
+            "brand": "Porsche",
+            "model": "Macan 2020",
+            "owner": "John Alcantara",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "WB-30260",
+            "brand": "MAZDA",
+            "model": "CX-30 2020",
+            "owner": "Grace Hale",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "OV-74785",
+            "brand": "Buick",
+            "model": "Envision 2020",
+            "owner": "Willie Chestnut",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HR-16284",
+            "brand": "Nissan",
+            "model": "NV1500 Cargo 2020",
+            "owner": "Thomas Slocum",
+            "fuel": "diesel"
+        },
+        {
+            "id": "DK-91246",
+            "brand": "Honda",
+            "model": "CR-V Hybrid 2020",
+            "owner": "Eric Duberry",
+            "fuel": "diesel"
+        },
+        {
+            "id": "NH-62544",
+            "brand": "Subaru",
+            "model": "WRX 2020",
+            "owner": "Lynn Young",
+            "fuel": "diesel"
+        },
+        {
+            "id": "UA-52628",
+            "brand": "Cadillac",
+            "model": "Escalade ESV 2020",
+            "owner": "Yu Givens",
+            "fuel": "electric"
+        },
+        {
+            "id": "JY-71128",
+            "brand": "Freightliner",
+            "model": "Sprinter 3500XD Cargo 2020",
+            "owner": "Vincent Perez",
+            "fuel": "electric"
+        },
+        {
+            "id": "PM-64484",
+            "brand": "Mercedes-Benz",
+            "model": "GLA 2020",
+            "owner": "Allene Butcher",
+            "fuel": "diesel"
+        },
+        {
+            "id": "OF-20552",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG A-Class 2020",
+            "owner": "Marcia Blakely",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JO-88122",
+            "brand": "Dodge",
+            "model": "Challenger 2020",
+            "owner": "Brandon Mullins",
+            "fuel": "electric"
+        },
+        {
+            "id": "TV-18877",
+            "brand": "Toyota",
+            "model": "Yaris Hatchback 2020",
+            "owner": "Brenda Paschall",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WS-32017",
+            "brand": "Honda",
+            "model": "Passport 2020",
+            "owner": "Elizabeth Cottrell",
+            "fuel": "electric"
+        },
+        {
+            "id": "IW-72623",
+            "brand": "Nissan",
+            "model": "370Z 2020",
+            "owner": "Emma Haid",
+            "fuel": "electric"
+        },
+        {
+            "id": "HJ-88610",
+            "brand": "Mercedes-Benz",
+            "model": "CLA 2020",
+            "owner": "Rita Katz",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "MH-38882",
+            "brand": "Alfa Romeo",
+            "model": "Stelvio 2020",
+            "owner": "Joanna Peterson",
+            "fuel": "diesel"
+        },
+        {
+            "id": "OP-15710",
+            "brand": "Hyundai",
+            "model": "Kona Electric 2020",
+            "owner": "Debra Serrano",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "GJ-25728",
+            "brand": "Hyundai",
+            "model": "NEXO 2020",
+            "owner": "Mae Ardis",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "SA-74684",
+            "brand": "Audi",
+            "model": "A6 2020",
+            "owner": "James Rigby",
+            "fuel": "diesel"
+        },
+        {
+            "id": "FJ-27855",
+            "brand": "Honda",
+            "model": "CR-V 2020",
+            "owner": "Bernardina Brennan",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "QQ-49847",
+            "brand": "Ford",
+            "model": "F150 SuperCrew Cab 2020",
+            "owner": "Thomas Clinton",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "WP-73675",
+            "brand": "Porsche",
+            "model": "Cayenne 2020",
+            "owner": "Donald Rivera",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "QZ-67874",
+            "brand": "GMC",
+            "model": "Acadia 2020",
+            "owner": "Gary Patrick",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "YU-21014",
+            "brand": "BMW",
+            "model": "X6 2020",
+            "owner": "Opal Odom",
+            "fuel": "electric"
+        },
+        {
+            "id": "TH-48320",
+            "brand": "Subaru",
+            "model": "Impreza 2020",
+            "owner": "Kenneth Garland",
+            "fuel": "electric"
+        },
+        {
+            "id": "KK-71400",
+            "brand": "Chevrolet",
+            "model": "Suburban 2020",
+            "owner": "Steven Dawson",
+            "fuel": "diesel"
+        },
+        {
+            "id": "TB-54732",
+            "brand": "Hyundai",
+            "model": "Ioniq Hybrid 2020",
+            "owner": "Delores Smith",
+            "fuel": "electric"
+        },
+        {
+            "id": "OO-79450",
+            "brand": "Kia",
+            "model": "Optima 2020",
+            "owner": "Phillip Page",
+            "fuel": "electric"
+        },
+        {
+            "id": "PR-57128",
+            "brand": "BMW",
+            "model": "X6 2020",
+            "owner": "Andrew Maloney",
+            "fuel": "electric"
+        },
+        {
+            "id": "SU-13862",
+            "brand": "Nissan",
+            "model": "Pathfinder 2020",
+            "owner": "Julieta Livley",
+            "fuel": "electric"
+        },
+        {
+            "id": "DC-72999",
+            "brand": "Toyota",
+            "model": "Sienna 2020",
+            "owner": "Patricia Beach",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WE-41564",
+            "brand": "Lexus",
+            "model": "GS 2020",
+            "owner": "James Welch",
+            "fuel": "electric"
+        },
+        {
+            "id": "JJ-88175",
+            "brand": "Tesla",
+            "model": "Model 3 2020",
+            "owner": "Shelia Dyer",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZM-65525",
+            "brand": "Porsche",
+            "model": "Cayenne 2020",
+            "owner": "Patricia Ferranti",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "ED-98184",
+            "brand": "Hyundai",
+            "model": "Ioniq Hybrid 2020",
+            "owner": "Lawrence Gunter",
+            "fuel": "electric"
+        },
+        {
+            "id": "RZ-82654",
+            "brand": "Honda",
+            "model": "Fit 2020",
+            "owner": "Donnie Molina",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "IY-30557",
+            "brand": "Volkswagen",
+            "model": "Atlas Cross Sport 2020",
+            "owner": "Yasmin Shipton",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "LB-63006",
+            "brand": "Hyundai",
+            "model": "Palisade 2020",
+            "owner": "Joseph Lee",
+            "fuel": "electric"
+        },
+        {
+            "id": "UP-15104",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG GLC Coupe 2020",
+            "owner": "Amanda Cook",
+            "fuel": "electric"
+        },
+        {
+            "id": "JM-33049",
+            "brand": "Mercedes-Benz",
+            "model": "Sprinter 4500 Cargo 2020",
+            "owner": "Ana Ramos",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "HV-12070",
+            "brand": "Freightliner",
+            "model": "Sprinter 4500 Crew 2020",
+            "owner": "Michael Mattingly",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "PR-53000",
+            "brand": "Jaguar",
+            "model": "I-PACE 2020",
+            "owner": "Katherine Kriegel",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HG-42220",
+            "brand": "Subaru",
+            "model": "Ascent 2020",
+            "owner": "James Burgess",
+            "fuel": "electric"
+        },
+        {
+            "id": "PD-93408",
+            "brand": "Land Rover",
+            "model": "Range Rover Sport 2020",
+            "owner": "Minnie Gibbs",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QK-70003",
+            "brand": "Dodge",
+            "model": "Journey 2020",
+            "owner": "Reginald Johnson",
+            "fuel": "electric"
+        },
+        {
+            "id": "VF-60453",
+            "brand": "Ford",
+            "model": "EcoSport 2020",
+            "owner": "Frances Pitts",
+            "fuel": "diesel"
+        },
+        {
+            "id": "TH-95246",
+            "brand": "Audi",
+            "model": "A6 2020",
+            "owner": "Jonathan Yocum",
+            "fuel": "diesel"
+        },
+        {
+            "id": "CQ-59700",
+            "brand": "Chevrolet",
+            "model": "Malibu 2020",
+            "owner": "Sharon Rancourt",
+            "fuel": "electric"
+        },
+        {
+            "id": "GC-51941",
+            "brand": "Ford",
+            "model": "Transit Connect Passenger Wagon 2020",
+            "owner": "James Johnson",
+            "fuel": "electric"
+        },
+        {
+            "id": "VX-38446",
+            "brand": "BMW",
+            "model": "X5 2020",
+            "owner": "Steven Davis",
+            "fuel": "diesel"
+        },
+        {
+            "id": "IG-66700",
+            "brand": "MAZDA",
+            "model": "CX-3 2020",
+            "owner": "Bertha Johnson",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "LY-40469",
+            "brand": "MAZDA",
+            "model": "MAZDA6 2020",
+            "owner": "Alvin Ruiz",
+            "fuel": "electric"
+        },
+        {
+            "id": "NI-42699",
+            "brand": "Volvo",
+            "model": "S60 2020",
+            "owner": "Irene Mortensen",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "YC-90425",
+            "brand": "MAZDA",
+            "model": "MX-5 Miata RF 2020",
+            "owner": "David Minard",
+            "fuel": "diesel"
+        },
+        {
+            "id": "MO-15163",
+            "brand": "Buick",
+            "model": "Regal TourX 2020",
+            "owner": "Michael Whitehead",
+            "fuel": "electric"
+        },
+        {
+            "id": "PH-63625",
+            "brand": "BMW",
+            "model": "3 Series 2020",
+            "owner": "Jennie Mann",
+            "fuel": "electric"
+        },
+        {
+            "id": "TO-61258",
+            "brand": "Toyota",
+            "model": "Corolla Hatchback 2020",
+            "owner": "Kathryn Lints",
+            "fuel": "electric"
+        },
+        {
+            "id": "JY-96976",
+            "brand": "Jeep",
+            "model": "Wrangler 2020",
+            "owner": "Michael Wiley",
+            "fuel": "diesel"
+        },
+        {
+            "id": "SS-90633",
+            "brand": "Toyota",
+            "model": "Highlander 2020",
+            "owner": "John Hughes",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BD-66622",
+            "brand": "Nissan",
+            "model": "Altima 2020",
+            "owner": "Cora Anderson",
+            "fuel": "electric"
+        },
+        {
+            "id": "OP-14568",
+            "brand": "Lincoln",
+            "model": "Corsair 2020",
+            "owner": "Joanne Boone",
+            "fuel": "diesel"
+        },
+        {
+            "id": "IR-23738",
+            "brand": "Ram",
+            "model": "1500 Classic Crew Cab 2020",
+            "owner": "David Watts",
+            "fuel": "electric"
+        },
+        {
+            "id": "VE-43702",
+            "brand": "Audi",
+            "model": "TT 2020",
+            "owner": "Beverly Sprague",
+            "fuel": "diesel"
+        },
+        {
+            "id": "XN-98472",
+            "brand": "GMC",
+            "model": "Yukon 2020",
+            "owner": "Brenda Reaves",
+            "fuel": "electric"
+        },
+        {
+            "id": "MY-58462",
+            "brand": "Nissan",
+            "model": "LEAF 2020",
+            "owner": "Alice Manzo",
+            "fuel": "electric"
+        },
+        {
+            "id": "PI-16464",
+            "brand": "Jeep",
+            "model": "Wrangler 2020",
+            "owner": "Marc Landrum",
+            "fuel": "diesel"
+        },
+        {
+            "id": "BY-72935",
+            "brand": "Freightliner",
+            "model": "Sprinter 4500 Cargo 2020",
+            "owner": "Rochelle Powell",
+            "fuel": "electric"
+        },
+        {
+            "id": "SB-21255",
+            "brand": "Ram",
+            "model": "1500 Classic Quad Cab 2020",
+            "owner": "Kathy Collin",
+            "fuel": "diesel"
+        },
+        {
+            "id": "TC-35465",
+            "brand": "Toyota",
+            "model": "Mirai 2020",
+            "owner": "Gloria Cantwell",
+            "fuel": "electric"
+        },
+        {
+            "id": "DU-54999",
+            "brand": "Ford",
+            "model": "F350 Super Duty Super Cab 2020",
+            "owner": "Thomas Stgeorge",
+            "fuel": "electric"
+        },
+        {
+            "id": "TZ-34020",
+            "brand": "Dodge",
+            "model": "Challenger 2020",
+            "owner": "Kimberly Anderson",
+            "fuel": "electric"
+        },
+        {
+            "id": "RF-36901",
+            "brand": "Honda",
+            "model": "Accord Hybrid 2020",
+            "owner": "Brandi Harris",
+            "fuel": "electric"
+        },
+        {
+            "id": "RS-69936",
+            "brand": "Mitsubishi",
+            "model": "Outlander Sport 2020",
+            "owner": "Bonnie Rosso",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WK-47590",
+            "brand": "Alfa Romeo",
+            "model": "4C Spider 2020",
+            "owner": "Ruby Parks",
+            "fuel": "electric"
+        },
+        {
+            "id": "QJ-36292",
+            "brand": "Hyundai",
+            "model": "Ioniq Plug-in Hybrid 2020",
+            "owner": "Patricia Torrence",
+            "fuel": "diesel"
+        },
+        {
+            "id": "FX-11560",
+            "brand": "Hyundai",
+            "model": "Sonata 2020",
+            "owner": "Jacque Malaspina",
+            "fuel": "diesel"
+        },
+        {
+            "id": "KH-76002",
+            "brand": "Ram",
+            "model": "1500 Quad Cab 2020",
+            "owner": "Bradley Lambes",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "MS-76723",
+            "brand": "Cadillac",
+            "model": "CT6-V 2020",
+            "owner": "Carolyn Corcoran",
+            "fuel": "diesel"
+        },
+        {
+            "id": "SK-43387",
+            "brand": "Ford",
+            "model": "Fusion Plug-in Hybrid 2020",
+            "owner": "Elsie Ross",
+            "fuel": "electric"
+        },
+        {
+            "id": "OU-42380",
+            "brand": "Toyota",
+            "model": "Prius 2020",
+            "owner": "Darren Legg",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "WX-73001",
+            "brand": "Kia",
+            "model": "Optima Plug-in Hybrid 2020",
+            "owner": "Norma Duran",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "YJ-29718",
+            "brand": "Land Rover",
+            "model": "Range Rover 2020",
+            "owner": "Jacqueline Cardello",
+            "fuel": "electric"
+        },
+        {
+            "id": "FW-54020",
+            "brand": "Mercedes-Benz",
+            "model": "Metris WORKER Cargo 2020",
+            "owner": "Albert Bouchard",
+            "fuel": "electric"
+        },
+        {
+            "id": "JA-14795",
+            "brand": "Genesis",
+            "model": "G90 2020",
+            "owner": "Marlin Aubin",
+            "fuel": "diesel"
+        },
+        {
+            "id": "VB-17175",
+            "brand": "Volvo",
+            "model": "S90 2020",
+            "owner": "Nadia Parrott",
+            "fuel": "electric"
+        },
+        {
+            "id": "CW-30576",
+            "brand": "Ford",
+            "model": "Expedition MAX 2020",
+            "owner": "Richard Potts",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ZU-73571",
+            "brand": "Chevrolet",
+            "model": "Silverado 2500 HD Crew Cab 2020",
+            "owner": "Oliver Gamez",
+            "fuel": "diesel"
+        },
+        {
+            "id": "VY-56905",
+            "brand": "Honda",
+            "model": "Accord Hybrid 2020",
+            "owner": "Pierre Dalke",
+            "fuel": "electric"
+        },
+        {
+            "id": "QR-33422",
+            "brand": "Acura",
+            "model": "RLX 2020",
+            "owner": "Angela Lamphere",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "QR-68366",
+            "brand": "Chevrolet",
+            "model": "Silverado 2500 HD Crew Cab 2020",
+            "owner": "Sherrie Purtell",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ZS-59587",
+            "brand": "Nissan",
+            "model": "Maxima 2020",
+            "owner": "Samuel Smith",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JB-24221",
+            "brand": "Volkswagen",
+            "model": "Tiguan 2020",
+            "owner": "Mathew Jehlicka",
+            "fuel": "diesel"
+        },
+        {
+            "id": "ZX-19881",
+            "brand": "Hyundai",
+            "model": "Tucson 2020",
+            "owner": "Kimberely Artis",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "MM-69317",
+            "brand": "Acura",
+            "model": "TLX 2020",
+            "owner": "Melva Myers",
+            "fuel": "diesel"
+        },
+        {
+            "id": "DK-71874",
+            "brand": "Toyota",
+            "model": "Camry Hybrid 2020",
+            "owner": "Marla Mansfield",
+            "fuel": "diesel"
+        },
+        {
+            "id": "GS-48903",
+            "brand": "Ford",
+            "model": "Transit Connect Passenger Wagon 2020",
+            "owner": "Howard Mason",
+            "fuel": "electric"
+        },
+        {
+            "id": "LM-25419",
+            "brand": "Lincoln",
+            "model": "Nautilus 2020",
+            "owner": "Mary Williams",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JP-46617",
+            "brand": "Ford",
+            "model": "Transit Connect Cargo Van 2020",
+            "owner": "Phyliss Lajoie",
+            "fuel": "diesel"
+        },
+        {
+            "id": "TB-39518",
+            "brand": "Toyota",
+            "model": "86 2020",
+            "owner": "Daniel Thibodeaux",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "JT-56550",
+            "brand": "Freightliner",
+            "model": "Sprinter 3500 Crew 2020",
+            "owner": "Susan Ruiz",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WW-41066",
+            "brand": "Dodge",
+            "model": "Challenger 2020",
+            "owner": "Sarah Mcgilvray",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZQ-15733",
+            "brand": "Land Rover",
+            "model": "Discovery Sport 2020",
+            "owner": "Clarence Gately",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "KH-14886",
+            "brand": "Acura",
+            "model": "RLX 2020",
+            "owner": "Debra Brooke",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "OF-86980",
+            "brand": "BMW",
+            "model": "Z4 2020",
+            "owner": "Raymon Wood",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "BB-16762",
+            "brand": "Chevrolet",
+            "model": "Sonic 2020",
+            "owner": "Ruben Quirion",
+            "fuel": "electric"
+        },
+        {
+            "id": "HV-99737",
+            "brand": "Porsche",
+            "model": "Macan 2020",
+            "owner": "William Simonton",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "KX-98260",
+            "brand": "Subaru",
+            "model": "Crosstrek 2020",
+            "owner": "Rafael Elkins",
+            "fuel": "electric"
+        },
+        {
+            "id": "MP-73280",
+            "brand": "Mercedes-Benz",
+            "model": "GLB 2020",
+            "owner": "Julia Sherman",
+            "fuel": "diesel"
+        },
+        {
+            "id": "RW-24175",
+            "brand": "Nissan",
+            "model": "NV3500 HD Cargo 2020",
+            "owner": "Marsha Blandford",
+            "fuel": "electric"
+        },
+        {
+            "id": "XM-76143",
+            "brand": "Volkswagen",
+            "model": "Passat 2020",
+            "owner": "Jamie Groves",
+            "fuel": "electric"
+        },
+        {
+            "id": "EE-54855",
+            "brand": "Toyota",
+            "model": "Corolla 2020",
+            "owner": "Linda Arndt",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "OW-14263",
+            "brand": "Toyota",
+            "model": "4Runner 2020",
+            "owner": "Marjorie Romero",
+            "fuel": "electric"
+        },
+        {
+            "id": "IH-86605",
+            "brand": "Honda",
+            "model": "Clarity Fuel Cell 2020",
+            "owner": "Frances Stoeger",
+            "fuel": "diesel"
+        },
+        {
+            "id": "AA-31435",
+            "brand": "Freightliner",
+            "model": "Sprinter 2500 Cargo 2020",
+            "owner": "Donald Quinn",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "HY-96373",
+            "brand": "Audi",
+            "model": "A7 2020",
+            "owner": "Alice Woods",
+            "fuel": "electric"
+        },
+        {
+            "id": "NL-51283",
+            "brand": "Kia",
+            "model": "Optima Plug-in Hybrid 2020",
+            "owner": "Robert Cason",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "IE-88885",
+            "brand": "Honda",
+            "model": "CR-V Hybrid 2020",
+            "owner": "Mitchell Braziel",
+            "fuel": "diesel"
+        },
+        {
+            "id": "JS-15791",
+            "brand": "Volkswagen",
+            "model": "Jetta GLI 2020",
+            "owner": "Christopher Glasby",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HB-63224",
+            "brand": "Toyota",
+            "model": "4Runner 2020",
+            "owner": "Librada Pritchett",
+            "fuel": "electric"
+        },
+        {
+            "id": "ME-33079",
+            "brand": "Genesis",
+            "model": "G80 2020",
+            "owner": "Robert Dykas",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "ZN-86385",
+            "brand": "Chevrolet",
+            "model": "Blazer 2020",
+            "owner": "Lee Lennard",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AA-41030",
+            "brand": "Mercedes-Benz",
+            "model": "E-Class 2020",
+            "owner": "Martina Byers",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "XT-69113",
+            "brand": "Volvo",
+            "model": "S90 2020",
+            "owner": "Mark Blanton",
+            "fuel": "electric"
+        },
+        {
+            "id": "OM-18635",
+            "brand": "Jeep",
+            "model": "Gladiator 2020",
+            "owner": "Consuelo Landrum",
+            "fuel": "diesel"
+        },
+        {
+            "id": "EE-29622",
+            "brand": "Porsche",
+            "model": "Panamera 2020",
+            "owner": "Harold Still",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "RR-52667",
+            "brand": "Chrysler",
+            "model": "Pacifica Hybrid 2020",
+            "owner": "Bruce Richardson",
+            "fuel": "diesel"
+        },
+        {
+            "id": "KL-32203",
+            "brand": "FIAT",
+            "model": "124 Spider 2020",
+            "owner": "Tammy Tacy",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "SX-39182",
+            "brand": "Toyota",
+            "model": "C-HR 2020",
+            "owner": "Polly Thao",
+            "fuel": "diesel"
+        },
+        {
+            "id": "WO-22309",
+            "brand": "Mercedes-Benz",
+            "model": "CLS 2020",
+            "owner": "Frank Hemphill",
+            "fuel": "electric"
+        },
+        {
+            "id": "WY-85883",
+            "brand": "Nissan",
+            "model": "GT-R 2020",
+            "owner": "Roy Peterson",
+            "fuel": "diesel"
+        },
+        {
+            "id": "HM-69608",
+            "brand": "Toyota",
+            "model": "Corolla 2020",
+            "owner": "Doug Buzzelli",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "XC-16383",
+            "brand": "Kia",
+            "model": "Cadenza 2020",
+            "owner": "Vida Graham",
+            "fuel": "diesel"
+        },
+        {
+            "id": "CY-74607",
+            "brand": "Nissan",
+            "model": "Pathfinder 2020",
+            "owner": "Gerald Peterson",
+            "fuel": "electric"
+        },
+        {
+            "id": "ZM-72756",
+            "brand": "Ford",
+            "model": "Edge 2020",
+            "owner": "Dorothy Copeland",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "AU-18079",
+            "brand": "Mercedes-Benz",
+            "model": "Mercedes-AMG CLS 2020",
+            "owner": "Mary Youmans",
+            "fuel": "diesel"
+        },
+        {
+            "id": "QH-64429",
+            "brand": "Hyundai",
+            "model": "Palisade 2020",
+            "owner": "Patrick Allred",
+            "fuel": "electric"
+        },
+        {
+            "id": "OV-20835",
+            "brand": "Kia",
+            "model": "Telluride 2020",
+            "owner": "Ray Johndrow",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "RS-74715",
+            "brand": "Kia",
+            "model": "Optima Hybrid 2020",
+            "owner": "Brenda Acuna",
+            "fuel": "electric"
+        },
+        {
+            "id": "AA-20439",
+            "brand": "Lexus",
+            "model": "NX 2020",
+            "owner": "Denita Lang",
+            "fuel": "electric"
+        },
+        {
+            "id": "GD-12565",
+            "brand": "Tesla",
+            "model": "Model 3 2020",
+            "owner": "Edward Bridges",
+            "fuel": "electric"
+        },
+        {
+            "id": "IX-40528",
+            "brand": "Volvo",
+            "model": "S90 2020",
+            "owner": "Anna Mcdonald",
+            "fuel": "electric"
+        },
+        {
+            "id": "XM-66250",
+            "brand": "Buick",
+            "model": "Encore GX 2020",
+            "owner": "Joseph Kehoe",
+            "fuel": "diesel"
+        },
+        {
+            "id": "SA-10809",
+            "brand": "Chevrolet",
+            "model": "Silverado 1500 Crew Cab 2020",
+            "owner": "Ryan Mccormick",
+            "fuel": "electric"
+        },
+        {
+            "id": "SW-52224",
+            "brand": "Ford",
+            "model": "Transit 250 Cargo Van 2020",
+            "owner": "Sara Freeman",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "SP-49909",
+            "brand": "Chevrolet",
+            "model": "Trax 2020",
+            "owner": "Becky Hotaling",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "ES-64585",
+            "brand": "Porsche",
+            "model": "Cayenne 2020",
+            "owner": "Rodney Webster",
+            "fuel": "gasoline"
+        },
+        {
+            "id": "BP-79684",
+            "brand": "GMC",
+            "model": "Canyon Crew Cab 2020",
+            "owner": "Frances Jaillet",
+            "fuel": "diesel"
+        },
+        {
+            "id": "OL-25030",
+            "brand": "MAZDA",
+            "model": "CX-9 2020",
+            "owner": "Sean Brill",
+            "fuel": "gasoline"
+        }
+    ]
+}
