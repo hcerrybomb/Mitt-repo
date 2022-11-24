@@ -137,7 +137,6 @@ def trackData(min:int=10,max:int=100,years:int=1):
 
             json.dump(data,file2,indent=2)
             
-            done = True
             print(f"\r.json file updated {count2} total car passings tracked and registered")
             print(f'elapsed time {round(time.time() - start,2)}s\n')
 
