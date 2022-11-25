@@ -7,6 +7,7 @@ import sys
 import csv
 import names
 import json
+import tracemalloc
 
 
 def see_help_reg():
@@ -90,34 +91,45 @@ class Register():
         that are sent to the .json register. 
         <amt> is the amount of car objects to be created and sent to the register.
         """
-
+        start = time.time()
+        tracemalloc.start()
         models = []
         fuels = ['electric','gasoline','diesel']
-        with open(self.targetFile, 'w') as file:
-            json.dump({"register":[]}, file)
         with open(self.sourceFile, "r") as models:
             csvreader = csv.reader(models)
             header = next(csvreader)
             models=[]
             for row in csvreader:
                 models.append([row[1], row[2]+" "+row[0],fuels[random.randint(0,2)]])
-        with open(self.targetFile, 'r') as file:
-            data = json.load(file)
+        data = {"register":[]}
+        carCount = 0
+        for i in range(amt):
+            build = models[random.randint(0,len(models)-1)]
+            car = RegBil(
+                gen_number_plate(),
+                build[0],
+                build[1],
+                names.get_full_name(),
+                #"nametest",
+                build[2]
+                )
+            data['register'].append(car.__dict__)
+            carCount = carCount + 1
+            print(f"\rAdding cars to dict object {carCount}/{amt} memory: {tracemalloc.get_traced_memory()}",end=' ')
+        print(f"\n\nDict created\nElapsed time: {round(time.time() - start,2)}s")
+
         with open(self.targetFile, 'w') as file:
-            for i in range(amt):
-                build = models[random.randint(0,len(models)-1)]
-                car = RegBil(gen_number_plate(),build[0],build[1],names.get_full_name(),build[2])
-                data['register'].append(car.__dict__)
             json.dump(data, file, indent=4)
+        print("elapsed time")
 
 
 see_help_reg()
 if __name__ == "__main__":
     current_dir = sys.path[0]
-    reg = Register(
+    register = Register(
         targetFile = current_dir + "\\test.json",   # * you can test the program in test.json-
                                                     # * register.json is already filled with-
                                                     # * 100k objects, apprx 5 min run time.
         sourceFile = current_dir + "\\models.csv",
     )
-    reg.fillRegister(1000)
+    register.fillRegister(1000)
