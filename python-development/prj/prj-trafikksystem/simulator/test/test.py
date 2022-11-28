@@ -8,7 +8,7 @@ import sys
 import tracemalloc
 import path
 folder = path.Path(__file__).abspath()
-sys.path.append(folder.parent.parent)
+sys.path.append(folder.parent.parent.parent)
 from register.fillregister import RegBil
 months = [
     ["Jan",31],
@@ -105,9 +105,50 @@ class Simulator():
             tracemalloc.start()
 
             data = {"data":{}}
-            for i, j, k in range(2022, self.years + 2022), range(12):
-                print(i,j,k)
-            if False:
+            for year in range(2022, self.years + 2022):
+              data["data"].update({f"{year}":{}})
+              for month in range(len(months)):
+                data["data"][f"{year}"].update({f"{months[month][0]}":[]})
+                for day in range(months[month][1]):
+                  day_total = 0
+                  data["data"][f"{year}"][f"{months[month][0]}"].append({f"{day}":[]})
+                  for hour in range(24):
+                    hour_total = 0
+                    data["data"][f"{year}"][f"{months[month][0]}"][day][f"{day}"].append({f"{hour}":[]})
+                    for cars in range(random.randint(self.min, self.max)):
+                      hour_total += 1
+                      carCount += 1
+                      index = random.randint(0,99999)
+                      print(register[index])
+                      proxCar = register[index%2][index]
+                      fuelVar = "fossil"
+                      if proxCar["fuel"]=="electric":
+                        fuelVar = "electric"
+                      new = SimBil(proxCar["id"],proxCar["brand"],proxCar["model"],proxCar["owner"],proxCar["fuel"],f"{hour}:00")
+                      data["data"][f"{year}"][f"{months[month][0]}"][day][f"{day}"][hour][f"{hour}"].append(new)
+                      print(f"\rSimulating and adding drives to data: {hourCount}/{self.years * 8760} hours ({self.years}) year/s     memory: {tracemalloc.get_traced_memory()}",end=' ')
+                    data["data"][f"{year}"][f"{months[month][0]}"][day][f"{day}"][hour][f"{hour}"].append({"total":hour_total})
+                    day_total += hour_total
+                  data["data"][f"{year}"][f"{months[month][0]}"][day].append({"total":day_total})
+              print(f'\nElapsed time {round(time.time() - start,2)}s\n\n')
+
+
+            dumped = False
+            def loading_str():
+                for x in itertools.cycle(["   ",".  ",".. ","..."]):
+                    if dumped:
+                        break
+                    sys.stdout.write(f'\rloading to .json file{x}')
+                    sys.stdout.flush()
+                    time.sleep(0.2)
+            load_str = threading.Thread(target=loading_str)
+            load_str.start()
+            json.dump(data, dataFile, indent=1)
+            dumped = True
+                
+            print(f"\r.json file updated {carCount} total car passings tracked and registered")
+            print(f'elapsed time {round(time.time() - start,2)}s\n')
+            if False: 
                 for i in range(2022, self.years + 2022):
                     new = {f"{i}":{}}
                     data["data"].update(new)
@@ -138,21 +179,21 @@ class Simulator():
                     print(f'\nElapsed time {round(time.time() - start,2)}s\n\n')
 
 
-                dumped = False
-                def loading_str():
-                    for x in itertools.cycle(["   ",".  ",".. ","..."]):
-                        if dumped:
-                            break
-                        sys.stdout.write(f'\rloading to .json file{x}')
-                        sys.stdout.flush()
-                        time.sleep(0.2)
-                load_str = threading.Thread(target=loading_str)
-                load_str.start()
-                json.dump(data, dataFile, indent=1)
-                dumped = True
-                
-                print(f"\r.json file updated {carCount} total car passings tracked and registered")
-                print(f'elapsed time {round(time.time() - start,2)}s\n')
+                    dumped = False
+                    def loading_str():
+                        for x in itertools.cycle(["   ",".  ",".. ","..."]):
+                            if dumped:
+                                break
+                            sys.stdout.write(f'\rloading to .json file{x}')
+                            sys.stdout.flush()
+                            time.sleep(0.2)
+                    load_str = threading.Thread(target=loading_str)
+                    load_str.start()
+                    json.dump(data, dataFile, indent=1)
+                    dumped = True
+                    
+                    print(f"\r.json file updated {carCount} total car passings tracked and registered")
+                    print(f'elapsed time {round(time.time() - start,2)}s\n')
             
 
 
@@ -165,6 +206,6 @@ if __name__ == "__main__":
         max = 100,
         years = 1,
         targetFile = current_dir + "\\data.json",
-        sourceFile = current_dir[:len(current_dir)-len("simulator")] + "\\register\\register.json"
+        sourceFile = current_dir[:len(current_dir)-len("simulator\\test")] + "\\register\\test.json"
     )
     simulator.simulate()

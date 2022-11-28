@@ -6,11 +6,28 @@ from simulator.simulator import months
 #? THE DAY WITH MOST PASSINGS
 #? WHICH HOUR HAS MOST PASSINGS THAT DAY
 
-
 current_dir = sys.path[0]
 
-
 date_frequency = set()
+
+class Display():
+    def __init__(
+        self,
+        sourceFile:str
+    ):
+        self.sourceFile = sourceFile
+
+    def day():
+        return
+    def hourOfDay():
+        return
+
+
+        
+
+
+
+
 
 
 with open(f"{current_dir}\\trackdata\\data.json", "rb") as f:

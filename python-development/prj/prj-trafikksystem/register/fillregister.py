@@ -5,9 +5,10 @@ import random
 import time
 import sys
 import csv
-import names
 import json
 import tracemalloc
+import itertools
+import threading
 
 
 def see_help_reg():
@@ -74,16 +75,18 @@ class Register():
     """
     Class for instantiating the register of cars to be used in the simulator.
     <targetFile> is the target path for the .json file that will become the register of cars.
-    <sourceFile> is the source path for the .csv models file filled with car models.
+    <modelsFile> is the source path for the .csv models file filled with car models.
     """
 
     def __init__(
         self,
         targetFile:str,
-        sourceFile:str
+        modelsFile:str,
+        namesFile:str
     ):
         self.targetFile = targetFile
-        self.sourceFile = sourceFile
+        self.modelsFile = modelsFile
+        self.namesFile = namesFile
     
     def fillRegister(self,amt:int=1000):
         """
@@ -95,41 +98,69 @@ class Register():
         tracemalloc.start()
         models = []
         fuels = ['electric','gasoline','diesel']
-        with open(self.sourceFile, "r") as models:
+        with open(self.modelsFile, "r") as models:
             csvreader = csv.reader(models)
             header = next(csvreader)
             models=[]
             for row in csvreader:
                 models.append([row[1], row[2]+" "+row[0],fuels[random.randint(0,2)]])
-        data = {"register":[]}
+        data = {"register":{
+                "electric":[],
+                "gas":[]}}
         carCount = 0
+        names = []
+        with open(self.namesFile, "r") as names:
+            csvreader = csv.reader(names)
+            header = next(csvreader)
+            names = []
+            for row in csvreader:
+                names.append(row[0])
         for i in range(amt):
             build = models[random.randint(0,len(models)-1)]
             car = RegBil(
                 gen_number_plate(),
                 build[0],
                 build[1],
-                names.get_full_name(),
-                #"nametest",
+                #names.get_full_name(),
+                names[i],
                 build[2]
                 )
-            data['register'].append(car.__dict__)
+            if build[2]=="electric":
+                data['register']['electric'].append(car.__dict__)
+            else:
+                data['register']['gas'].append(car.__dict__)
+                
             carCount = carCount + 1
             print(f"\rAdding cars to dict object {carCount}/{amt} memory: {tracemalloc.get_traced_memory()}",end=' ')
         print(f"\n\nDict created\nElapsed time: {round(time.time() - start,2)}s")
 
-        with open(self.targetFile, 'w') as file:
+        
+        dumped = False
+        def loading_str():
+            for x in itertools.cycle(["   ",".  ",".. ","..."]):
+                if dumped:
+                    break
+                sys.stdout.write(f'\rloading to .json file{x}')
+                sys.stdout.flush()
+                time.sleep(0.2)
+        load_str = threading.Thread(target=loading_str)
+        load_str.start()
+        with open(self.targetFile, 'w') as file:    
             json.dump(data, file, indent=4)
-        print("elapsed time")
+        dumped = True
+        print(f"Elapsed time: {round(time.time() - start,2)}s")
 
 
 see_help_reg()
 if __name__ == "__main__":
     current_dir = sys.path[0]
     register = Register(
-        targetFile = current_dir + "\\test.json",   # * you can test the program in test.json-
-                                                    # * register.json is already filled with-
-                                                    # * 100k objects, apprx 5 min run time.
-        sourceFile = current_dir + "\\models.csv",
+        targetFile = current_dir + "\\test.json",   
+        # * you can test the program in test.json
+        # * register.json is already filled with
+        # * 100k objects, apprx 20 seconds run time.
+        
+        modelsFile = current_dir + "\\models.csv",
+        namesFile = current_dir + "\\names.csv"
     )
-    register.fillRegister(1000)
+    register.fillRegister(100000)
