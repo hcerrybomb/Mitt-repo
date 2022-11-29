@@ -98,38 +98,37 @@ class Simulator():
             register = register["register"]
             
         with open(self.targetFile[0], 'w') as dataFile:
-            
             hourCount = 0
             carCount = 0
             start = time.time()
             tracemalloc.start()
-
+            len_elec = len(register["electric"]) - 1
+            len_foss = len(register["gas"]) - 1
             data = {"data":{}}
             for year in range(2022, self.years + 2022):
               data["data"].update({f"{year}":{}})
-              for month in range(len(months)):
+              for month in range(2): #! HERHEHREHREHHRE
                 data["data"][f"{year}"].update({f"{months[month][0]}":[]})
-                for day in range(months[month][1]):
+                for day in range(2):
                   day_total = 0
                   data["data"][f"{year}"][f"{months[month][0]}"].append({f"{day}":[]})
                   for hour in range(24):
                     hour_total = 0
                     data["data"][f"{year}"][f"{months[month][0]}"][day][f"{day}"].append({f"{hour}":[]})
-                    for cars in range(random.randint(self.min, self.max)):
+                    max = self.max / 2
+                    if 10 > hour > 6 or 19 > hour > 14: max = self.max
+                    for cars in range(random.randint(self.min, max)):
                       hour_total += 1
                       carCount += 1
-                      index = random.randint(0,99999)
-                      print(register[index])
-                      proxCar = register[index%2][index]
-                      fuelVar = "fossil"
-                      if proxCar["fuel"]=="electric":
-                        fuelVar = "electric"
-                      new = SimBil(proxCar["id"],proxCar["brand"],proxCar["model"],proxCar["owner"],proxCar["fuel"],f"{hour}:00")
-                      data["data"][f"{year}"][f"{months[month][0]}"][day][f"{day}"][hour][f"{hour}"].append(new)
-                      print(f"\rSimulating and adding drives to data: {hourCount}/{self.years * 8760} hours ({self.years}) year/s     memory: {tracemalloc.get_traced_memory()}",end=' ')
+                      if random.randint(0,1)%2==0:proxCar = register["electric"][random.randint(0,len_elec)]
+                      else:proxCar = register["gas"][random.randint(0,len_foss)]
+                      data["data"][f"{year}"][f"{months[month][0]}"][day][f"{day}"][hour][f"{hour}"].append(
+                        SimBil(proxCar["id"],proxCar["brand"],proxCar["model"],proxCar["owner"],proxCar["fuel"],f"{hour}:00").__dict__)
+                    hourCount += 1
+                    print(f"\rSimulating and adding drives to data: {hourCount}/{self.years * 8760} hours ({self.years}) year/s     memory: {tracemalloc.get_traced_memory()}",end=' ')
                     data["data"][f"{year}"][f"{months[month][0]}"][day][f"{day}"][hour][f"{hour}"].append({"total":hour_total})
                     day_total += hour_total
-                  data["data"][f"{year}"][f"{months[month][0]}"][day].append({"total":day_total})
+                  data["data"][f"{year}"][f"{months[month][0]}"][day].update({"total":day_total})
               print(f'\nElapsed time {round(time.time() - start,2)}s\n\n')
 
 
@@ -143,7 +142,7 @@ class Simulator():
                     time.sleep(0.2)
             load_str = threading.Thread(target=loading_str)
             load_str.start()
-            json.dump(data, dataFile, indent=1)
+            json.dump(data, dataFile, indent=4)
             dumped = True
                 
             print(f"\r.json file updated {carCount} total car passings tracked and registered")
@@ -202,8 +201,8 @@ see_help_sim()
 if __name__ == "__main__":
     current_dir = sys.path[0]
     simulator = Simulator(
-        min = 10,
-        max = 100,
+        min = 1,
+        max = 4,
         years = 1,
         targetFile = current_dir + "\\data.json",
         sourceFile = current_dir[:len(current_dir)-len("simulator\\test")] + "\\register\\test.json"

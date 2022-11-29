@@ -1,3 +1,5 @@
+import random
+
 list1= ["1","1","1","1","1","1","1","1","1","1","1","here"]
 list2= ["1","1","1","1","1","1","1","1","1",]
 list3= ["1","1"]
@@ -8,3 +10,4 @@ list6= ["1","1","1","1","1","1"]
 list7 = [len(list1),len(list2),len(list3),len(list4),len(list5),len(list6),]
 print(list7)
 print(max(list7))
+print(1%2)
