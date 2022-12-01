@@ -1,5 +1,7 @@
 # prj-trafikksystem-simulator
-System som simulerer og tracker data fra et registreringspunkt langs en vei
+System som simulerer og tracker data fra et registreringspunkt langs en vei.
+Koden er skrevet på engelsk for bedre forståelse og terminologi for utrykk som
+det ikke finnes bra deskriptorer for på norsk. 
 
 Ting som trengs:
 
@@ -16,7 +18,7 @@ Ting som trengs:
     > ferdig.
 
 
-Forklaring:
+Forklaring av systemet:
 
     main.py er hovedskriptet i systemet, når du kjører skripter får du prompter for om du vil
     se hjelp for resten av filene i systemet og deres klasser, og du blir promptet om du vil
