@@ -40,4 +40,9 @@ Forklaring av systemet:
     og de respektive timene på de dagene med flest passeringer
 
     Man kan kjøre fillregister.py og simulator.py på egen hånd eller via main.py som en import.
+
+    Om man vil, kan man manuelt gå inn i register.json og data.json, og se dataene som blir 
+    lagt til når skriptene blir kjørt for å få en forståelse av datastrukturen. 
+
+
         

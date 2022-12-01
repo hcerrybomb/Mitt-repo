@@ -182,9 +182,10 @@ if __name__ == "__main__":
     )
 
     register = Register(
-        targetFile = CURRENT_DIR + "\\register\\register.json",           
-        modelsFile = CURRENT_DIR + "\\register\\resources\\models.csv",
-        namesFile = CURRENT_DIR + "\\register\\resources\\names.csv"
+        target_file = CURRENT_DIR + "\\register\\register.json",           
+        models_file = CURRENT_DIR + "\\register\\resources\\models.csv",
+        names_file = CURRENT_DIR + "\\register\\resources\\names.csv",
+        amt = 100000
     )
 
     simulator = Simulator(
@@ -199,7 +200,7 @@ if __name__ == "__main__":
         "The register is already filled and a tracked simulation\n"
         +"has already been run, but you can OPTIONALLY run both\n"
         +"these scripts to test that they work.\n"
-        +"by default there is 100'000 different cars/persons in\n"
+        +"By default there is 100'000 different cars/persons in\n"
         +"the register, and the simulation simulates 1 year (8760 hours)\n"
         +"of between 10 and 100 cars passing by each hour."
         )
@@ -243,4 +244,5 @@ if __name__ == "__main__":
 
     display.day()
     display.hour()
+
     print("\n\nProgram done.")

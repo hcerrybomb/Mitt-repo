@@ -258,4 +258,4 @@ if __name__ == "__main__":
         source_file = source_file_path
     )
 
-    Simulator.simulate()
+    simulator.simulate()

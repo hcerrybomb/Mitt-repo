@@ -98,27 +98,32 @@ class Register():
 
     <models_file> is the source path for the .csv models file
     filled with car models.
+
+    <names_file> is the source path for the .csv names file
+    filled with randomly generated names
+
+    <amt> is the amount of car objects to be created and sent
+    to the register.
     """
 
     def __init__(
         self,
         target_file: str,
         models_file: str,
-        names_file: str,  
-    ):
+        names_file: str,
+        amt: int  
+        ):
 
         self.target_file = target_file
         self.models_file = models_file
         self.names_file = names_file
+        self.amt = amt
     
-    
-    def fill_register(self, amt: int=100000):
-        """
-        Function that makes a python dict object filled with
-        randomized car objects that are sent to the .json register.
 
-        <amt> is the amount of car objects to be created and sent
-        to the register.
+    def fill_register(self):
+        """
+        Method that makes a python dict object filled with
+        randomized car objects that are sent to the .json register.
         """
 
         start = time.time()
@@ -132,12 +137,18 @@ class Register():
             models=[]
 
             for row in csvreader:
-                models.append([row[1], row[2]," ",
-                row[0],fuels[random.randint(0,2)]])
+                models.append(
+                    [
+                        row[1], 
+                        row[2]+" "+row[0],
+                        fuels[random.randint(0,2)]
+                    ]
+                )
 
-        data = {"register":{
-                "electric":[],
-                "gas":[]}
+        data = {
+            "register":{
+            "electric":[],
+            "gas":[]}
         }
         car_count = 0
         names = []
@@ -150,7 +161,7 @@ class Register():
             for row in csvreader:
                 names.append(row[0])
 
-        for i in range(amt):
+        for i in range(self.amt):
             build = models[random.randint(0,len(models)-1)]
             car = RegBil(
                 gen_number_plate(),
@@ -158,8 +169,8 @@ class Register():
                 build[1],
                 names[i],
                 build[2]
-                )
-            
+            )
+
             if build[2]=="electric":
                 data['register']['electric'].append(car.__dict__)
 
@@ -167,11 +178,11 @@ class Register():
                 data['register']['gas'].append(car.__dict__)
                 
             car_count = car_count + 1
-            print(f"\rAdding cars to dict object {car_count}/{amt}"
-            +f" memory: {tracemalloc.get_traced_memory()}",end=' ')
+            print(f"\rAdding cars to dict object {car_count}/{self.amt}"
+            + f" memory: {tracemalloc.get_traced_memory()}",end=' ')
         
         print(f"\n\nDict created\nElapsed time:"
-        +f" {round(time.time() - start,2)}s")
+        + f" {round(time.time() - start,2)}s")
         dumped = False
 
         def loading_str():
@@ -202,6 +213,8 @@ if __name__ == "__main__":
     register = Register(
         target_file = current_dir + "\\register.json",           
         models_file = current_dir + "\\resources\\models.csv",
-        names_file = current_dir + "\\resources\\names.csv"
+        names_file = current_dir + "\\resources\\names.csv",
+        amt = 100000
+
     )
-    register.fill_register(100000)
+    register.fill_register()
