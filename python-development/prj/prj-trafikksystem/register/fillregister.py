@@ -1,3 +1,8 @@
+"""fillregister.py can be used both as a standalone script to fill the register-
+with randomly generated car objects and their info sent to register.json
+OR
+be used as a module in main.py, also filling the script but in one coherent run. 
+"""
 import json
 import datetime
 import string
@@ -9,6 +14,7 @@ import json
 import tracemalloc
 import itertools
 import threading
+
 
 
 def see_help_reg():
@@ -82,13 +88,14 @@ class Register():
         self,
         targetFile:str,
         modelsFile:str,
-        namesFile:str
+        namesFile:str,
+        
     ):
         self.targetFile = targetFile
         self.modelsFile = modelsFile
         self.namesFile = namesFile
     
-    def fillRegister(self,amt:int=1000):
+    def fillRegister(self,amt: int=100000):
         """
         Function that makes a python dict object filled with randomized car objects-
         that are sent to the .json register. 
@@ -121,7 +128,6 @@ class Register():
                 gen_number_plate(),
                 build[0],
                 build[1],
-                #names.get_full_name(),
                 names[i],
                 build[2]
                 )
@@ -155,12 +161,8 @@ see_help_reg()
 if __name__ == "__main__":
     current_dir = sys.path[0]
     register = Register(
-        targetFile = current_dir + "\\test.json",   
-        # * you can test the program in test.json
-        # * register.json is already filled with
-        # * 100k objects, apprx 20 seconds run time.
-        
-        modelsFile = current_dir + "\\models.csv",
-        namesFile = current_dir + "\\names.csv"
+        targetFile = current_dir + "\\register.json",           
+        modelsFile = current_dir + "\\resources\\models.csv",
+        namesFile = current_dir + "\\resources\\names.csv"
     )
     register.fillRegister(100000)
