@@ -53,11 +53,10 @@ def see_help_sim():
             valid = True
 
         elif see_help == "n" or see_help == "N":
-            print("\nContinuing program\n\n")
             valid = True
 
         else:
-            print("\nInvalid input")
+            print("\nInvalid input!")
 
 
 class SimBil(RegBil):
@@ -105,19 +104,24 @@ class Simulator():
 
     def __init__(
         self,
-        min: int,
-        max: int,
-        years: int,
         target_file: str,
         source_file: str,
+        min: int=10,
+        max: int=100,
+        years: int=1,
+        data: dict={"data":{}},
+        car_count: int=0,
+        sim_start: float=time.time()
         ):
 
-        self.min = 10
-        self.max = 100
-        self.years = 1
+        self.min = min
+        self.max = max
+        self.years = years
         self.target_file = target_file,
         self.source_file = source_file
-
+        self.data = data
+        self.car_count = car_count
+        self.sim_start = sim_start
 
     def simulate(self):
         """
@@ -129,133 +133,149 @@ class Simulator():
         random amount of cars to pass that hour, with higher chances
         of more cars passing during rush hours (7-9 and 15-17)
         """
+        print('\n')
+        dict_start = time.time()
 
         with open(self.source_file, 'r') as register_file:
-            register = json.load(register_file)
+            print(f'\rLoading register...',end=' ')
+            contents = register_file.read()
+            register = json.loads(contents)
             register = register["register"]
             
-        with open(self.target_file[0], 'w') as data_file:
-            hour_count = 0
-            car_count = 0
+        hour_count = 0
 
-            start = time.time()
-            tracemalloc.start()
+        tracemalloc.start()
 
-            len_elec = len(register["electric"]) - 1
-            len_foss = len(register["gas"]) - 1
+        len_elec = len(register["electric"]) - 1
+        len_foss = len(register["gas"]) - 1
+        
+        
+        for year in range(2022, self.years + 2022):
+            self.data["data"].update(
+                {f"{year}":{}}
+            )
 
-            data = {"data":{}}
-            
-            for year in range(2022, self.years + 2022):
-                data["data"].update(
-                    {f"{year}":{}}
+            for month in range(len(MONTHS)): 
+                self.data["data"][f"{year}"].update(
+                    {f"{MONTHS[month][0]}":[]}
                 )
-
-                for month in range(len(MONTHS)): 
-                    data["data"][f"{year}"].update(
-                        {f"{MONTHS[month][0]}":[]}
+                
+                for day in range(MONTHS[month][1]):
+                    day_total = 0
+                    self.data["data"][f"{year}"][
+                    f"{MONTHS[month][0]}"].append(
+                        {f"{day}":[]}
                     )
-                    
-                    for day in range(MONTHS[month][1]):
-                        day_total = 0
-                        data["data"][f"{year}"][f"{MONTHS[month][0]}"].append(
-                            {f"{day}":[]}
+
+                    for hour in range(24):
+                        hour_total = 0
+                        self.data["data"][f"{year}"][
+                        f"{MONTHS[month][0]}"][
+                        day][f"{day}"].append(
+                            {f"{hour}":[]}
                         )
+                        max = self.max / 2
 
-                        for hour in range(24):
-                            hour_total = 0
-                            data["data"][f"{year}"][f"{MONTHS[month][0]}"][
-                            day][f"{day}"].append(
-                                {f"{hour}":[]}
+                        if 10 > hour > 6 or 19 > hour > 14:
+                            max = self.max
+
+                        for cars in range(random.randint(self.min, max)):
+                            hour_total += 1
+                            self.car_count += 1
+
+                            if random.randint(0,1)%2==0:
+                                proxCar = register["electric"][
+                                random.randint(0,len_elec)]
+
+                            else:
+                                proxCar = register["gas"][
+                                random.randint(0,len_foss)]
+
+                            self.data["data"][f"{year}"][
+                            f"{MONTHS[month][0]}"][day][f"{day}"][hour][
+                            f"{hour}"].append(
+                                SimBil(
+                                    proxCar["id"],
+                                    proxCar["brand"],
+                                    proxCar["model"],
+                                    proxCar["owner"],
+                                    proxCar["fuel"],
+                                    f"{hour}:00").__dict__
                             )
-                            max = self.max / 2
 
-                            if 10 > hour > 6 or 19 > hour > 14:
-                                max = self.max
+                        hour_count += 1
 
-                            for cars in range(random.randint(self.min, max)):
-                                hour_total += 1
-                                car_count += 1
-
-                                if random.randint(0,1)%2==0:
-                                    proxCar = register["electric"][
-                                    random.randint(0,len_elec)]
-
-                                else:
-                                    proxCar = register["gas"][
-                                    random.randint(0,len_foss)]
-
-                                data["data"][f"{year}"][
-                                f"{MONTHS[month][0]}"][day][f"{day}"][hour][
-                                f"{hour}"].append(
-                                    SimBil(
-                                        proxCar["id"],
-                                        proxCar["brand"],
-                                        proxCar["model"],
-                                        proxCar["owner"],
-                                        proxCar["fuel"],
-                                        f"{hour}:00").__dict__
-                                )
-
-                            hour_count += 1
-
-                            print(f"\rSimulating and adding drives to data:"
-                            + f" {hour_count}/{self.years * 8760} hours "
-                            + f"({self.years}) year/s    memory: "
-                            + f"{tracemalloc.get_traced_memory()}",end=' ')
-                            
-                            data["data"][f"{year}"][f"{MONTHS[month][0]}"][
-                            day][f"{day}"][hour][f"{hour}"].append(
-                                {"total":hour_total}
-                            )
-                            day_total += hour_total
+                        print(f"\rSimulating drives, "
+                        + f" {hour_count}/{self.years * 8760} hours, "
+                        + f"{year-2021}/{self.years} year/s   memory profile: "
+                        + f"{tracemalloc.get_traced_memory()}",end=' ')
                         
-                        data["data"][f"{year}"][f"{MONTHS[month][0]}"][
-                        day].update(
-                            {"total":day_total}
+                        self.data["data"][f"{year}"][
+                        f"{MONTHS[month][0]}"][day][f"{day}"][
+                        hour][f"{hour}"].append(
+                            {"total":hour_total}
                         )
-                
-                print(f'\nElapsed time {round(time.time() - start,2)}s\n\n')
-            
-            dumped = False
-            
-            def loading_str():
-
-                for x in itertools.cycle(["   ",".  ",".. ","..."]):
-
-                    if dumped:
-                        break
+                        day_total += hour_total
                     
-                    sys.stdout.write(
-                        f'\rloading to .json file (usually 1 min) {x}'
+                    self.data["data"][f"{year}"][f"{MONTHS[month][0]}"][
+                    day].update(
+                        {"total":day_total}
                     )
-                    sys.stdout.flush()
-                    time.sleep(0.2)
+                  
+            print(
+                f'\rSimulation done.      Elapsed time:   '
+                + f'{round(time.time() - dict_start,2)}s     '
+                + f'                                       \n'
+            )
+        
+    def dump_json(self):
+        load_start = time.time()
+        dumped = False
+        
+        def loading_str():
 
-            load_str = threading.Thread(target=loading_str)
-            load_str.start()
+            for x in itertools.cycle(["   ",".  ",".. ","..."]):
 
-            json.dump(data, data_file, indent=2)
-
-            dumped = True
+                if dumped:
+                    break
                 
-            print(f"\r.json file updated {car_count}"
-            + f" total car passings tracked and registered")
-            print(f'elapsed time {round(time.time() - start,2)}s\n')
+                sys.stdout.write(
+                    f'\rloading data object to data.txt{x}'
+                )
+                sys.stdout.flush()
+                time.sleep(0.2)
 
+        load_str = threading.Thread(target=loading_str)
+        load_str.start()
+
+        with open(self.target_file[0], 'w') as file:
+            file.write(json.dumps(self.data, indent=2))
+
+        dumped = True
+            
+        print(
+            f"\rLoaded to txt.        Elapsed time:   "
+            + f"{round(time.time() - load_start,2)}s"
+            + "                "
+        )
+        print(
+            f'\nSimulation created.   Total time:     '
+            + f'{round(time.time() - self.sim_start,2)}s\n'
+        )
 
 see_help_sim()
 
 if __name__ == "__main__":
-    current_dir = sys.path[0]
-    source_file_path = current_dir[:len(current_dir)-len("simulator")]
-    source_file_path += "register\\register.json"
+    current_dir = __file__[:len(__file__) - len("simulator.py")]
+    source_file_path = current_dir[:len(current_dir) - len("simulator/")]
+    source_file_path += "register/register.txt"
     simulator = Simulator(
+        target_file = current_dir + "\\data.txt",
+        source_file = source_file_path,
         min = 10,
         max = 100,
-        years = 1,
-        target_file = current_dir + "\\data.json",
-        source_file = source_file_path
+        years = 1
     )
 
     simulator.simulate()
+    simulator.dump_json()

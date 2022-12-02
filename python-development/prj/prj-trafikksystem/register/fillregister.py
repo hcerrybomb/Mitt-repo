@@ -26,21 +26,18 @@ def see_help_reg():
     valid = False
 
     while valid == False:
-        see_help = str(input("\nSee help for fill_register.py? [y/n] : " ))
+        see_help = str(input("\nSee help for fillregister.py? [y/n] : " ))
 
         if see_help == "y" or see_help == "Y":
             help(RegBil)
             help(Register)
-
             valid = True
 
         elif see_help == "n" or see_help == "N":
-            print("\nContinuing program\n")
-
             valid = True
 
         else:
-            print("\nInvalid input")
+            print("\nInvalid input!")
 
 
 def gen_number_plate():
@@ -78,14 +75,15 @@ class RegBil:
         self.owner = owner
         self.fuel = fuel
 
-
     def print_info(self):
         """
         Prints f string of all variables of object.
         """
 
-        print(f"\n\nPlate:{self.id}\nBrand:{self.brand}\nModel:{self.model}"
-        + f"\nOwner:{self.owner}\nFuel/El:{self.fuel}")
+        print(
+            f"\n\nPlate:{self.id}\nBrand:{self.brand}\nModel:{self.model}"
+            + f"\nOwner:{self.owner}\nFuel/El:{self.fuel}"
+        )
 
 
 class Register():
@@ -111,22 +109,30 @@ class Register():
         target_file: str,
         models_file: str,
         names_file: str,
-        amt: int  
+        amt: int,
+        data: dict={
+            "register":{
+            "electric":[],
+            "gas":[]}
+        },
+        reg_start: float=time.time()
         ):
 
         self.target_file = target_file
         self.models_file = models_file
         self.names_file = names_file
         self.amt = amt
+        self.data = data
+        self.reg_start = reg_start
     
 
-    def fill_register(self):
+    def create_register_obj(self):
         """
         Method that makes a python dict object filled with
         randomized car objects that are sent to the .json register.
         """
 
-        start = time.time()
+        dict_start = time.time()
         tracemalloc.start()
         models = []
         fuels = ['electric','gasoline','diesel']
@@ -145,11 +151,6 @@ class Register():
                     ]
                 )
 
-        data = {
-            "register":{
-            "electric":[],
-            "gas":[]}
-        }
         car_count = 0
         names = []
 
@@ -161,6 +162,7 @@ class Register():
             for row in csvreader:
                 names.append(row[0])
 
+        print('\n')
         for i in range(self.amt):
             build = models[random.randint(0,len(models)-1)]
             car = RegBil(
@@ -172,17 +174,26 @@ class Register():
             )
 
             if build[2]=="electric":
-                data['register']['electric'].append(car.__dict__)
+                self.data['register']['electric'].append(car.__dict__)
 
             else:
-                data['register']['gas'].append(car.__dict__)
+                self.data['register']['gas'].append(car.__dict__)
                 
-            car_count = car_count + 1
-            print(f"\rAdding cars to dict object {car_count}/{self.amt}"
-            + f" memory: {tracemalloc.get_traced_memory()}",end=' ')
+            car_count += 1
+            print(
+                f"\rAdding cars to dict object {car_count}/{self.amt}   "
+                + f"memory profile: {tracemalloc.get_traced_memory()}",end=' '
+            )
         
-        print(f"\n\nDict created\nElapsed time:"
-        + f" {round(time.time() - start,2)}s")
+        print(
+            f"\rDict created.         Elapsed time:"
+            + f"   {round(time.time() - dict_start,2)}s"
+            + f"                                                     \n"
+        )
+
+
+    def dump_json(self):
+        load_start = time.time()
         dumped = False
 
         def loading_str():
@@ -192,7 +203,10 @@ class Register():
                 if dumped:
                     break
 
-                sys.stdout.write(f'\rloading to .json file{x}')
+                sys.stdout.write(
+                    f'\rLoading register object to register.txt '
+                    + f'file{x}'
+                )
                 sys.stdout.flush()
                 time.sleep(0.2)
         
@@ -200,21 +214,30 @@ class Register():
         load_str.start()
 
         with open(self.target_file, 'w') as file:    
-            json.dump(data, file, indent=4)
+            file.write(json.dumps(self.data, indent=2))
 
         dumped = True
-        print(f"Elapsed time: {round(time.time() - start,2)}s")
+
+        print(
+            f"\rLoaded to txt.        Elapsed time:   "
+            + f"{round(time.time() - load_start,2)}s"
+            + "                "
+        )
+        print(
+            f'\nRegister created.     Total time:     '
+            + f'{round(time.time() - self.reg_start,2)}s\n'
+        )
 
 
 see_help_reg()
 
 if __name__ == "__main__":
-    current_dir = sys.path[0]
+    current_dir = __file__ [:len(__file__) - len("fillregister.py")]
     register = Register(
-        target_file = current_dir + "\\register.json",           
+        target_file = current_dir + "\\register.txt",           
         models_file = current_dir + "\\resources\\models.csv",
         names_file = current_dir + "\\resources\\names.csv",
         amt = 100000
-
     )
-    register.fill_register()
+    register.create_register_obj()
+    register.dump_json()

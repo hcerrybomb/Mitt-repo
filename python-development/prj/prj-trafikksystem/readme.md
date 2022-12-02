@@ -3,6 +3,7 @@ System som simulerer og tracker data fra et registreringspunkt langs en vei.
 Koden er skrevet på engelsk for bedre forståelse og terminologi for utrykk som
 det ikke finnes bra deskriptorer for på norsk. 
 
+
 Ting som trengs:
 
     Man trenger bare 1 python bibliotek for å kjøre systemet, dette er path
@@ -16,6 +17,28 @@ Ting som trengs:
         pip install path
 
     > ferdig.
+
+
+Hvordan man kjører: 
+
+    Last ned og pakk ut trafikksystem.zip folderen, husk hvor du pakker den ut. 
+
+    Kjør main.py enten ved å bruke din egen editor (spyder, vsc, etc. ), eller 
+    åpne ett cmd vindu igjen (kommandolinje) og kjør følgende kommandoer:
+
+        cd C:\Vei\Til\prj-trafikksystem
+
+        py main.py
+
+    Da vil programmet starte og videre instruksjoner vil printes ut i konsollen din. 
+
+
+    OM MAN ØNSKER kan man endre parameterene for hvor lang simulasjonen skal være og
+    hvor mange biler som skal simuleres. Man kan også endre antallet biler som registeret
+    skal fylles med MEN NB! det kan max være 1000000 biler i registeret (i 1.0)
+
+    Disse parameterene finnes i main.py, når klasse instansene blir laget, 
+    Mellom linje 189 og 198. 
 
 
 Forklaring av systemet:
@@ -43,6 +66,3 @@ Forklaring av systemet:
 
     Om man vil, kan man manuelt gå inn i register.json og data.json, og se dataene som blir 
     lagt til når skriptene blir kjørt for å få en forståelse av datastrukturen. 
-
-
-        
