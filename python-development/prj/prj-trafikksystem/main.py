@@ -1,3 +1,5 @@
+#%%
+
 """main.py is a standalone script that analyses the data from the
 simulator and displays the days and hours with the most passings.
 
@@ -6,11 +8,8 @@ realistic scenario and data usage in mind, which is why the register
 and the simulation is of such big scale. While this does add some run
 time to the scripts i believe its cooler to have it be a little slower
 and more realistic. """
-from calendar import day_abbr
-import time 
-import sys 
+import time
 import json
-import path
 
 from register.fillregister import Register
 from simulator.simulator import Simulator, MONTHS
@@ -75,6 +74,7 @@ class Display():
         days_known = True
         dict_start = time.time()
 
+        print('\n')
         with open(self.source_file, 'r') as data_file:
             print(f'\rLoading simulation data...',end=' ')
             data = json.load(data_file)
@@ -99,18 +99,17 @@ class Display():
                         days_data.append({
                             "year":f"{2022+year}",
                             "month":f"{MONTHS[month][0]}",
-                            "day":f"{day}"
+                            "day":f"{day}",
                         })
 
                         day_count += 1
-                        print(f'\rComparing days: {day_count}/365  '
+                        print(f'\rComparing days: {day_count-1}/365  '
                         + f' in year: {2022+year}', end=' ')
 
             while True:
                 max_day_index = days.index(max(days))
                 max_day_int = days[max_day_index]
                 max_day_data = days_data[max_day_index]
-
                 max_days.append(max_day_data)
 
                 del days[max_day_index]
@@ -118,22 +117,27 @@ class Display():
 
                 if days[days.index(max(days))] < max_day_int:
                     break
+            
+
+            
 
             print(
                 f'\rData analyzed.        Elapsed time:   '
                 + f'{round(time.time() - dict_start)}s  '
                 + f'                                 '
             )
+            time.sleep(1)
             print(
-                f'\nThe maximum amount of passings in a day was:'
-                + f' {max_day_int}\n'
+                f'\nThe maximum amount of passings in a day was:\n'
+                + f'   {max_day_int}\n'
                 + f'The day(s) with this amount of passings was:'
             )
             for i in range(len(max_days)):
                 print(
-                    f'   {max_days[i]["month"]} {max_days[i]["day"]}. '
+                    f'   {max_days[i]["month"]} {max_days[i]["day"]}, '
                     + f'{max_days[i]["year"]}'
                 )
+        del data
         
     
     def hour(self):
@@ -149,6 +153,8 @@ class Display():
 
         if days_known == False:
             Display.day()
+
+        dict_start = time.time()
 
         with open(self.source_file, 'r') as data_file:
             data = json.load(data_file)
@@ -175,21 +181,30 @@ class Display():
 
                     if hours[hours.index(max(hours))] < max_hour_int:
                         break
-        
+                
                 print(
-                    f'\nThe {max_days[i]["day"]}. {max_days[i]["month"]}'
-                    + f'  {max_days[i]["year"]} the hour(s)'
-                    + f' with the most passings was:\n'
+                    f"\nThe max amount of passings in an"
+                    + f' hour was:\n   {max_hour_int}'
+                )
+                print(
+                    f'Hour(s) with this many passings on {max_days[i]["month"]}'
+                    + f' {max_days[i]["day"]}, {max_days[i]["year"]} was:'
                 )
                 
                 for k in range(len(max_hours)):
-                    print(f'\t{max_hours[k]}:00-{max_hours[k]+1}:00')
-                
-                print(f"\nThe number was : {max_hour_int}")
+                    print(f'   {max_hours[k]}:00-{max_hours[k]+1}:00')
+                time.sleep(2)
+                print(
+                    '\n\nRegister, simulation, and data tracked.\n\n'
+                    + f'Program done.'
+                )
+
+        del data
 
 
 see_help_main()
 if __name__ == "__main__":
+
     CURRENT_DIR = __file__[:len(__file__) - len("main.py")]
     display = Display(
         source_file = CURRENT_DIR + "/simulator/data.txt"
@@ -201,7 +216,6 @@ if __name__ == "__main__":
         names_file = CURRENT_DIR + "/register/resources/names.csv",
 
         amt = 100000    # ? Amount of cars to fill the register with 
-                        # ! MAXIMUM 100'000
     )
 
     simulator = Simulator(
@@ -209,6 +223,8 @@ if __name__ == "__main__":
         min = 10,       # ? Minimum cars per hour
         max = 100,      # ? Maximum cars per hour
         years = 1,      # ? Years to run the simulation
+                        # ! Any amount >2 years requires powerful hardware
+
 
         target_file = CURRENT_DIR + "/simulator/data.txt",
         source_file = CURRENT_DIR + "/register/register.txt"
@@ -234,12 +250,13 @@ if __name__ == "__main__":
     while valid == False:
         time.sleep(0.5)
         gen_register = str(input(
-            f"\nFill the register with 100'000 random cars? [y/n] : "
+            f"\nFill the register with {register.amt} random cars? [y/n] : "
         ))
 
         if gen_register == "y" or gen_register == "Y":
             register.create_register_obj()
             register.dump_json()
+
             valid = True
 
         elif gen_register == "n" or gen_register == "N":
@@ -260,6 +277,7 @@ if __name__ == "__main__":
         if simulate == "y" or simulate == "Y":
             simulator.simulate()
             simulator.dump_json()
+
             valid = True
 
         elif simulate == "n" or simulate == "N":
@@ -269,6 +287,5 @@ if __name__ == "__main__":
             print("\nInvalid input")
 
     display.day()
-    #display.hour()
-
-    print("\n\nProgram done.")
+    display.hour()
+# %%

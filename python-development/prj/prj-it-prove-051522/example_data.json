@@ -1,0 +1,52 @@
+{
+    "data":[
+    {
+        "artist":"Harry Styles",
+        "album":"Harry's House",
+        "label":"Columbia Records",
+        "year":2022,
+        "type":"LP",
+        "rpm":45,
+        "color":"yellow"
+    },
+    {
+        "artist":"Black Sabbath",
+        "album":"Master of Reality",
+        "label":"Vertigo",
+        "year":1971,
+        "type":"LP",
+        "rpm":33,
+        "color":"black"
+    },
+    {
+        "artist":"The Prodigy",
+        "album":"The Fat of the Land",
+        "label":"Maverick",
+        "year":2019,
+        "type":"CD"
+    },
+    {
+        "artist":"Taylor Swift",
+        "album":"Lover",
+        "label":"Republic Records",
+        "year":2021,
+        "type":"CD"
+    },
+    {
+        "artist":"Tyler, the Creator",
+        "album":"Call Me If You Get Lost",
+        "label":"Columbia Records",
+        "year":2021,
+        "type":"CD"
+    },
+    {
+        "artist":"Oasis",
+        "album":"Definitely Maybe",
+        "label":"Epic",
+        "year":1994,
+        "type":"LP",
+        "rpm":33,
+        "color":"black"
+    }
+]
+}

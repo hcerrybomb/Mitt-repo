@@ -52,14 +52,6 @@ ax2.set_xlabel("År")
 
 
 
-
-
-
-
-
-
-
-
 fig2, (ax1, ax2) = subplots(1,2,constrained_layout=True )
 
 
@@ -78,10 +70,6 @@ ax1.plot(tot_aar,tot_torsk)
 
 
 
-
-
-
-
 torsk_fi = loadtxt("torsk-fartøyfylke-fi.csv", 
 delimiter=";",
 skiprows = 1, 
@@ -97,8 +85,6 @@ ax2.grid()
 ax2.plot(fi_aar, fi_torsk,c="red")
 
 
-
-
 torsk_sf = loadtxt("torsk-fartøyfylke-sf.csv", 
 delimiter=";",
 skiprows = 1, 
@@ -112,8 +98,6 @@ sf_torsk = torsk_sf[:-2,1]
 ax2.set_ylim(50000,230000)
 #ax2.grid()
 ax2.plot(sf_aar, sf_torsk, c="blue")
-
-
 
 
 torsk_mr = loadtxt("torsk-fartøyfylke-mr.csv", 
@@ -134,48 +118,38 @@ ax2.plot(mr_aar, mr_torsk, c="black")
 from pylab import *
 import statsmodels.api as sm
 data = loadtxt("fartøyfylke_og_art_data.csv", 
-delimiter=";",
-skiprows = 1, 
-usecols = (1,2))
+    delimiter=";",
+    skiprows = 1, 
+    usecols = (1,2)
+)
 
-fylker = ["Finnmark",
-"Troms",
-"Nordland",
-"Trøndelag",
-"Trøndelag",
-"Romsdal",
-"Fjordane",
-"Hordaland",
-"Rogaland",
-"Agder",
-"Agder",
-"Telemark",
-"Vestfold",
-"Oslo",
-"Buskerud",
-"Akershus",
-"Østfold",
-"Uoppgitt"]
+fylker = [
+    "Finnmark",
+    "Troms",
+    "Nordland",
+    "Trøndelag",
+    "Trøndelag",
+    "Romsdal",
+    "Fjordane",
+    "Hordaland",
+    "Rogaland",
+    "Agder",
+    "Agder",
+    "Telemark",
+    "Vestfold",
+    "Oslo",
+    "Buskerud",
+    "Akershus",
+    "Østfold",
+    "Uoppgitt"
+]
 
 
 index = 0
 for i in range(len(fylker)):
-    print(data[index:index+20,1])
+    #print(data[index:index+20,1])
     plot(data[index:index+20,0],data[index:index+20,1])
     index += 20
 ylim(0,25000)
-print(data[0:20,0])
+#print(data[0:20,0])
 
-
-
-
-
-
-
-
-
-
-
-
-
-# %%

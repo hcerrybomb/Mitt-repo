@@ -5,6 +5,7 @@ OR
 be used as a module in main.py, also simulating car passings and
 sending their data to data.json"""
 
+from atexit import register
 import json
 import random
 import time
@@ -12,11 +13,10 @@ import itertools
 import threading
 import time
 import sys
+import os
 import tracemalloc
-import path
 
-FOLDER = path.Path(__file__).abspath()
-sys.path.append(FOLDER.parent.parent)
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from register.fillregister import RegBil
 
@@ -138,8 +138,8 @@ class Simulator():
 
         with open(self.source_file, 'r') as register_file:
             print(f'\rLoading register...',end=' ')
-            contents = register_file.read()
-            register = json.loads(contents)
+            register = register_file.read()
+            register = json.loads(register)
             register = register["register"]
             
         hour_count = 0
@@ -207,8 +207,8 @@ class Simulator():
 
                         print(f"\rSimulating drives, "
                         + f" {hour_count}/{self.years * 8760} hours, "
-                        + f"{year-2021}/{self.years} year/s   memory profile: "
-                        + f"{tracemalloc.get_traced_memory()}",end=' ')
+                        + f"{year-2021}/{self.years} year/s ", end=' '
+                        )
                         
                         self.data["data"][f"{year}"][
                         f"{MONTHS[month][0]}"][day][f"{day}"][
@@ -222,12 +222,13 @@ class Simulator():
                         {"total":day_total}
                     )
                   
-            print(
-                f'\rSimulation done.      Elapsed time:   '
-                + f'{round(time.time() - dict_start,2)}s     '
-                + f'                                       \n'
-            )
-        
+        print(
+            f'\rSimulation done.      Elapsed time:   '
+            + f'{round(time.time() - dict_start,2)}s     '
+            + f'                                       \n'
+        )
+        del register
+    
     def dump_json(self):
         load_start = time.time()
         dumped = False
@@ -250,7 +251,7 @@ class Simulator():
 
         with open(self.target_file[0], 'w') as file:
             file.write(json.dumps(self.data, indent=2))
-
+        del self.data
         dumped = True
             
         print(
@@ -271,10 +272,7 @@ if __name__ == "__main__":
     source_file_path += "register/register.txt"
     simulator = Simulator(
         target_file = current_dir + "\\data.txt",
-        source_file = source_file_path,
-        min = 10,
-        max = 100,
-        years = 1
+        source_file = source_file_path
     )
 
     simulator.simulate()

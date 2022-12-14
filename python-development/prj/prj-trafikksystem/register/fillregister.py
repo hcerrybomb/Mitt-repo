@@ -109,7 +109,7 @@ class Register():
         target_file: str,
         models_file: str,
         names_file: str,
-        amt: int,
+        amt: int=100000,
         data: dict={
             "register":{
             "electric":[],
@@ -163,13 +163,19 @@ class Register():
                 names.append(row[0])
 
         print('\n')
+        name_index = 0
+        names_len = len(names)
         for i in range(self.amt):
+            if name_index == names_len - 1:
+                name_index = 0
+
             build = models[random.randint(0,len(models)-1)]
+
             car = RegBil(
                 gen_number_plate(),
                 build[0],
                 build[1],
-                names[i],
+                names[name_index],
                 build[2]
             )
 
@@ -180,9 +186,9 @@ class Register():
                 self.data['register']['gas'].append(car.__dict__)
                 
             car_count += 1
+            name_index += 1
             print(
-                f"\rAdding cars to dict object {car_count}/{self.amt}   "
-                + f"memory profile: {tracemalloc.get_traced_memory()}",end=' '
+                f"\rAdding cars to dict object {car_count}/{self.amt}",end=' '
             )
         
         print(
@@ -190,7 +196,7 @@ class Register():
             + f"   {round(time.time() - dict_start,2)}s"
             + f"                                                     \n"
         )
-
+        del names, models
 
     def dump_json(self):
         load_start = time.time()
@@ -215,7 +221,8 @@ class Register():
 
         with open(self.target_file, 'w') as file:    
             file.write(json.dumps(self.data, indent=2))
-
+        del self.data
+        
         dumped = True
 
         print(
