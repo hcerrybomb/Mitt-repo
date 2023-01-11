@@ -24,10 +24,6 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 client = commands.Bot(command_prefix=";;;")
 
 
-
-
-
-
 def parse_embed_json(json_file):
     embeds_json = loads(json_file)['embeds']
 
@@ -37,9 +33,10 @@ def parse_embed_json(json_file):
 
 
 @client.event
-async def on_message(message,ctx):
-    if message.content =="!ip":
-        await ctx.send("```connect 208.103.169.220:28015\nsteam://connect/208.103.169.220:28015```")
+async def on_message(message):
+    if message.content == "!ip":
+        genChannel = client.get_channel(968434095992496161)
+        await genChannel.send("```connect 208.103.169.220:28015\nsteam://connect/208.103.169.220:28015```")
 
 
 @client.event
@@ -50,7 +47,7 @@ async def on_message(message):
     if message.content== ";;;turret-raid":
         await interactionChannel.send("it works 1")
         alarmVoiceChannel = client.get_channel(968467857543426058)
-    
+        # ? writin gsocum entatio n for a discord oth si saw dai s
 
     
         vc = await alarmVoiceChannel.connect()
@@ -97,7 +94,7 @@ async def printPoll(ctx):
     embed.set_thumbnail(url="https://i.imgur.com/eN4wJfL.png")
 
     await pollChannel.send(embed=embed)
-    await pollChannel.send("https://strawpoll.com/polls/xVg7dV2kMZr")
+    await pollChannel.send("https://strawpoll.com/polls/e6Z2e42xwgN")
 
 @client.event
 async def on_ready():
@@ -113,7 +110,7 @@ async def on_ready():
     embed.set_thumbnail(url="https://i.imgur.com/eN4wJfL.png")
     await pollChannel.purge()
     await pollChannel.send(embed=embed)
-    await pollChannel.send("https://strawpoll.com/polls/xVg7dV2kMZr")
+    await pollChannel.send("https://strawpoll.com/polls/e6Z2e42xwgN")
 
 
 
@@ -122,10 +119,10 @@ async def on_ready():
         title="Next wipe!",
         url="", 
         description="Information regarding the upcoming NATO wipe!"
-        +"\n\n\n**When:**\nForced wipe 6/10/2022 @ 20:00 CEST"
+        +"\n\n\n**When:**\nwipe 29. 12. 2022 @ 16:00 CEST (17:00 Finland)"
         +"\n\n**Server:**\nRustoria EU Medium!"
         +"\n\n**Battlemetrics:**\nhttps://www.battlemetrics.com/servers/rust/9594569"
-        +"\n\n**Wipes:**\n6/10/2022 @ 20:00 CEST, BIWEEKLY WIPES"
+        +"\n\n**Wipes:**\n @ Force wipe, 5. 1. 2023 @ 20:00 CEST"
         +"\n\n**Connect:**\nconnect 208.103.169.220:28015\n\n",
         color=0xFF5733,
 
