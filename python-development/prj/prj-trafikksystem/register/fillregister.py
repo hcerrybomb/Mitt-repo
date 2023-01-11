@@ -1,65 +1,18 @@
-"""fillregister.py can be used both as a standalone script to fill the
-register with randomly generated car objects and their info sent to 
-register.json
-OR
-be used as a module in main.py, also filling the script but in one 
-coherent run. """
-
-import json
-import string
 import random
 import time
 import sys
 import csv
-import json
-import tracemalloc
-import itertools
-import threading
+import pickle
+import os
 
+# ? Appends parents folders (in this case, the register library)
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-def see_help_reg():
-    """
-    Simple function that asks the user if they would like to see help
-    for the classes of fill_register.py
-    """
-
-    valid = False
-
-    while valid == False:
-        see_help = str(input("\nSee help for fillregister.py? [y/n] : " ))
-
-        if see_help == "y" or see_help == "Y":
-            help(RegBil)
-            help(Register)
-            valid = True
-
-        elif see_help == "n" or see_help == "N":
-            valid = True
-
-        else:
-            print("\nInvalid input!")
-
-
-def gen_number_plate():
-    """
-    Function for generating number plate strings, simply returns a
-    string of 2 letters and 5 numbers at random.
-    """
-
-    letters = ''.join(random.choices(string.ascii_uppercase, k=2))
-    numbers = random.randint(10000, 100000)
-
-    return f'{letters}-{numbers}'
+from settings import Config
+from utils import prompt_help, gen_number_plate, loading_task
 
 
 class RegBil:
-    """
-    Class for car objects that are sent to the register of cars.
-
-    <id> is the number plate, <fuel> is either "electric", "gasoline", 
-    or "diesel". Rest are pretty self explanatory.
-    """
-
     def __init__(
         self, 
         id: str, 
@@ -75,35 +28,8 @@ class RegBil:
         self.owner = owner
         self.fuel = fuel
 
-    def print_info(self):
-        """
-        Prints f string of all variables of object.
-        """
-
-        print(
-            f"\n\nPlate:{self.id}\nBrand:{self.brand}\nModel:{self.model}"
-            + f"\nOwner:{self.owner}\nFuel/El:{self.fuel}"
-        )
-
 
 class Register():
-    """
-    Class for instantiating the register of cars to be used in the
-    simulator.
-
-    <target_file> is the target path for the .json file that will
-    become the register of cars.
-
-    <models_file> is the source path for the .csv models file
-    filled with car models.
-
-    <names_file> is the source path for the .csv names file
-    filled with randomly generated names
-
-    <amt> is the amount of car objects to be created and sent
-    to the register.
-    """
-
     def __init__(
         self,
         target_file: str,
@@ -126,14 +52,8 @@ class Register():
         self.reg_start = reg_start
     
 
-    def create_register_obj(self):
-        """
-        Method that makes a python dict object filled with
-        randomized car objects that are sent to the .json register.
-        """
-
+    def create_register(self):
         dict_start = time.time()
-        tracemalloc.start()
         models = []
         fuels = ['electric','gasoline','diesel']
 
@@ -198,53 +118,45 @@ class Register():
         )
         del names, models
 
-    def dump_json(self):
+    def dump_data(self):
         load_start = time.time()
+
+        def dump_data_obj():
+            with open(self.target_file, 'wb') as file:    
+                pickle.dump(self.data, file)
+            del self.data
+        
         dumped = False
 
-        def loading_str():
-
-            for x in itertools.cycle(["   ",".  ",".. ","..."]):
-
-                if dumped:
-                    break
-
-                sys.stdout.write(
-                    f'\rLoading register object to register.txt '
-                    + f'file{x}'
-                )
-                sys.stdout.flush()
-                time.sleep(0.2)
-        
-        load_str = threading.Thread(target=loading_str)
-        load_str.start()
-
-        with open(self.target_file, 'w') as file:    
-            file.write(json.dumps(self.data, indent=2))
-        del self.data
-        
-        dumped = True
+        loading_task(
+            prompt='Loading register object to register.pkl', 
+            bool=dumped,
+            func=dump_data_obj
+        )
 
         print(
-            f"\rLoaded to txt.        Elapsed time:   "
+            f"\rLoaded to .pkl.        Elapsed time:   "
             + f"{round(time.time() - load_start,2)}s"
             + "                "
         )
+
         print(
             f'\nRegister created.     Total time:     '
             + f'{round(time.time() - self.reg_start,2)}s\n'
         )
 
 
-see_help_reg()
+if Config.show_help_prompts:
+    prompt_help("\nSee help for fillregister.py?", [RegBil, Register])
 
 if __name__ == "__main__":
-    current_dir = __file__ [:len(__file__) - len("fillregister.py")]
+    CURRENT_DIR = __file__ [:len(__file__) - len("fillregister.py")]
     register = Register(
-        target_file = current_dir + "\\register.txt",           
-        models_file = current_dir + "\\resources\\models.csv",
-        names_file = current_dir + "\\resources\\names.csv",
-        amt = 100000
+        target_file = f'{CURRENT_DIR}\\register.pkl',           
+        models_file = f'{CURRENT_DIR}\\data\\models.csv',
+        names_file = f'{CURRENT_DIR}\\data\\names.csv',
+        amt = Config.reg_amount
     )
-    register.create_register_obj()
-    register.dump_json()
+
+    register.create_register()
+    register.dump_data()

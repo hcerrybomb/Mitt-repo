@@ -1,0 +1,6 @@
+**/envs
+**/env
+**/.env
+**/data/large
+**/config
+.env

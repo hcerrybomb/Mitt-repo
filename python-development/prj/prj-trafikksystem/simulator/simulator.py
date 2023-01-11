@@ -1,73 +1,19 @@
-"""simulator.py can be used both as a standalone script to simulate
-car passings with randomly generated car objects and their data sent to
-data.json
-OR
-be used as a module in main.py, also simulating car passings and
-sending their data to data.json"""
-
-from atexit import register
-import json
 import random
 import time
-import itertools
-import threading
 import time
 import sys
 import os
-import tracemalloc
+import datetime
+import pickle
 
+# ? Appends parents folders (in this case, the register library)
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+from settings import Config
 from register.fillregister import RegBil
-
-MONTHS = [
-    ["Jan",31],
-    ["Feb",28],
-    ["Mar",31],
-    ["Apr",30],
-    ["May",31],
-    ["Jun",30],
-    ["Jul",31],
-    ["Aug",31],
-    ["Sep",30],
-    ["Oct",31],
-    ["Nov",30],
-    ["Dec",31]
-]
-
-
-def see_help_sim():
-    """
-    Simple function that asks the user if they would like to see help
-    for the classes of simulator.py
-    """
-
-    valid = False
-
-    while valid == False:
-        see_help = str(input("\nSee help for simulator.py? [y/n] : " ))
-
-        if see_help == "y" or see_help == "Y":
-            help(SimBil)
-            help(Simulator)
-            valid = True
-
-        elif see_help == "n" or see_help == "N":
-            valid = True
-
-        else:
-            print("\nInvalid input!")
-
+from utils import prompt_help, gen_dates_list, loading_task
 
 class SimBil(RegBil):
-    """
-    Class for car object tracked for the simulator, inherited from
-    RegBil class in fillregister.py
-
-    <time_added> string of the hour the car passed the registration
-    point.
-    """
-
     def __init__(
         self,
         id,
@@ -75,33 +21,16 @@ class SimBil(RegBil):
         model,
         owner,
         fuel,
-        time_added: str
+        date: datetime.date,
+        hour: int
         ):
         
         super().__init__(id, brand, model, owner, fuel)
-        self.time_added = time_added
+        self.date = date
+        self.hour = hour
 
 
 class Simulator():
-    """
-    Class for the simulator that simulates an amount of cars
-    passing by the registering point and tracking their data
-    and moving that data to a .json folder in the local directory.
-
-    <min> the minimum amount of cars that pass each HOUR
-    of the simulation.
-
-    <max> the maximum amount of cars that pass each HOUR
-    of the simulation.
-
-    <years> is the amount of years the simulation will simulate.
-
-    <target_file> is a string of the file path for the json data file.
-
-    <source_file> is a string of the file path for the register of
-    cars made in the fillregister.py script.
-    """
-
     def __init__(
         self,
         target_file: str,
@@ -109,9 +38,14 @@ class Simulator():
         min: int=10,
         max: int=100,
         years: int=1,
-        data: dict={"data":{}},
+        data: dict={
+            "data":[],
+            "totals":[]
+        },
         car_count: int=0,
-        sim_start: float=time.time()
+        sim_start: float=time.time(),
+        days_list: list=[]
+
         ):
 
         self.min = min
@@ -122,105 +56,72 @@ class Simulator():
         self.data = data
         self.car_count = car_count
         self.sim_start = sim_start
+        self.days_list = days_list
 
     def simulate(self):
-        """
-        Method that simulates cars passing by a registering point,
-        using the register as example cars and tracking tracking X
-        amount of cars per hour, for X amount of years.
-        
-        The "simulating" is going through each hour and picking a
-        random amount of cars to pass that hour, with higher chances
-        of more cars passing during rush hours (7-9 and 15-17)
-        """
         print('\n')
         dict_start = time.time()
 
-        with open(self.source_file, 'r') as register_file:
+        with open(self.source_file, 'rb') as register_file:
             print(f'\rLoading register...',end=' ')
-            register = register_file.read()
-            register = json.loads(register)
+            register = pickle.load(register_file)
             register = register["register"]
-            
-        hour_count = 0
-
-        tracemalloc.start()
 
         len_elec = len(register["electric"]) - 1
         len_foss = len(register["gas"]) - 1
         
-        
-        for year in range(2022, self.years + 2022):
-            self.data["data"].update(
-                {f"{year}":{}}
-            )
+        days_list = gen_dates_list(self.years, 2022)
 
-            for month in range(len(MONTHS)): 
-                self.data["data"][f"{year}"].update(
-                    {f"{MONTHS[month][0]}":[]}
-                )
+        hour_count = 0
+        hour_total = 0
+
+        for day in days_list:
+            day_total = 0
+            hour_totals = []
+
+            for hour in range(24):
                 
-                for day in range(MONTHS[month][1]):
-                    day_total = 0
-                    self.data["data"][f"{year}"][
-                    f"{MONTHS[month][0]}"].append(
-                        {f"{day}":[]}
+                hour_total = 0
+
+                max = self.max / 2
+                if 10 > hour > 6 or 19 > hour > 14:
+                    max = self.max
+
+                for i in range(random.randint(self.min, max)):
+                    self.car_count += 1
+
+                    if random.randint(0,1):
+                        proxCar = register["electric"][
+                        random.randint(0,len_elec)]
+
+                    else:
+                        proxCar = register["gas"][
+                        random.randint(0,len_foss)]
+
+                    self.data['data'].append(
+                        SimBil(
+                            proxCar["id"],
+                            proxCar["brand"],
+                            proxCar["model"],
+                            proxCar["owner"],
+                            proxCar["fuel"],
+                            date = day, 
+                            hour = i
+                        ).__dict__
                     )
-
-                    for hour in range(24):
-                        hour_total = 0
-                        self.data["data"][f"{year}"][
-                        f"{MONTHS[month][0]}"][
-                        day][f"{day}"].append(
-                            {f"{hour}":[]}
-                        )
-                        max = self.max / 2
-
-                        if 10 > hour > 6 or 19 > hour > 14:
-                            max = self.max
-
-                        for cars in range(random.randint(self.min, max)):
-                            hour_total += 1
-                            self.car_count += 1
-
-                            if random.randint(0,1)%2==0:
-                                proxCar = register["electric"][
-                                random.randint(0,len_elec)]
-
-                            else:
-                                proxCar = register["gas"][
-                                random.randint(0,len_foss)]
-
-                            self.data["data"][f"{year}"][
-                            f"{MONTHS[month][0]}"][day][f"{day}"][hour][
-                            f"{hour}"].append(
-                                SimBil(
-                                    proxCar["id"],
-                                    proxCar["brand"],
-                                    proxCar["model"],
-                                    proxCar["owner"],
-                                    proxCar["fuel"],
-                                    f"{hour}:00").__dict__
-                            )
-
-                        hour_count += 1
-
-                        print(f"\rSimulating drives, "
-                        + f" {hour_count}/{self.years * 8760} hours, "
-                        + f"{year-2021}/{self.years} year/s ", end=' '
-                        )
-                        
-                        self.data["data"][f"{year}"][
-                        f"{MONTHS[month][0]}"][day][f"{day}"][
-                        hour][f"{hour}"].append(
-                            {"total":hour_total}
-                        )
-                        day_total += hour_total
-                    
-                    self.data["data"][f"{year}"][f"{MONTHS[month][0]}"][
-                    day].update(
-                        {"total":day_total}
-                    )
+                    hour_total += 1
+                hour_totals.append(hour_total)
+                print(f"\rSimulating drives, "
+                + f" {hour_count+1}/{self.years * 8760} hours, ", end=' '
+                )
+                hour_count += 1
+            self.data["totals"].append(
+                {
+                    "total":sum(hour_totals),
+                    "hour_totals":hour_totals
+                    # ? which hour and which day is implicit by list index                         
+                }
+            )
                   
         print(
             f'\rSimulation done.      Elapsed time:   '
@@ -229,51 +130,48 @@ class Simulator():
         )
         del register
     
-    def dump_json(self):
+    def dump_data(self):
         load_start = time.time()
-        dumped = False
-        
-        def loading_str():
-
-            for x in itertools.cycle(["   ",".  ",".. ","..."]):
-
-                if dumped:
-                    break
-                
-                sys.stdout.write(
-                    f'\rloading data object to data.txt{x}'
-                )
-                sys.stdout.flush()
-                time.sleep(0.2)
-
-        load_str = threading.Thread(target=loading_str)
-        load_str.start()
-
-        with open(self.target_file[0], 'w') as file:
-            file.write(json.dumps(self.data, indent=2))
-        del self.data
-        dumped = True
             
+        def dump_data_obj():
+            with open(self.target_file[0], "wb") as file:
+                pickle.dump(self.data, file)
+            del self.data
+
+        dumped = False
+
+        loading_task(
+            prompt='Loading data object to data.pkl', 
+            bool=dumped,
+            func=dump_data_obj
+        )
+
         print(
-            f"\rLoaded to txt.        Elapsed time:   "
+            f"\rLoaded to .pkl.        Elapsed time:   "
             + f"{round(time.time() - load_start,2)}s"
             + "                "
         )
+
         print(
             f'\nSimulation created.   Total time:     '
             + f'{round(time.time() - self.sim_start,2)}s\n'
         )
 
-see_help_sim()
+
+if Config.show_help_prompts:
+    prompt_help("\nSee help for simulator.py? ", [SimBil, Simulator])
 
 if __name__ == "__main__":
-    current_dir = __file__[:len(__file__) - len("simulator.py")]
-    source_file_path = current_dir[:len(current_dir) - len("simulator/")]
-    source_file_path += "register/register.txt"
+    CURRENT_DIR = __file__[:len(__file__) - len("simulator.py")]
+    source_file_path = CURRENT_DIR[:len(CURRENT_DIR) - len("simulator/")]
+    source_file_path += "\\register\\register.pkl"
     simulator = Simulator(
-        target_file = current_dir + "\\data.txt",
+        min = Config.sim_hour_min,
+        max = Config.sim_hour_max,
+        years = Config.sim_years,
+        target_file = f'{CURRENT_DIR}\\data.pkl',
         source_file = source_file_path
     )
 
     simulator.simulate()
-    simulator.dump_json()
+    simulator.dump_data()
