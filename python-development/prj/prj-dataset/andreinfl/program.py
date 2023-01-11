@@ -65,3 +65,5 @@ xlabel("År")
 
 ylabel("Verdi i euro")
 
+
+# %%
